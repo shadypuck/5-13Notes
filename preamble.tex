@@ -1,0 +1,25 @@
+\usepackage[margin=1in]{geometry}
+\usepackage{csquotes}
+\usepackage{fancyhdr}
+\usepackage{marginnote}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{subfiles}
+
+\MakeOuterQuote{"}
+
+\fancypagestyle{main}{
+    \fancyhf{}
+    \fancyhead[L]{\leftmark}
+    \fancyhead[R]{5.13}
+    \fancyfoot[R]{Labalme\ \thepage}
+}
+\fancypagestyle{plain}{
+    \fancyhead{}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+\setitemize[3]{label={\scriptsize$\blacksquare$}}
+
+\reversemarginpar
