@@ -18,6 +18,8 @@
 
 \pagenumbering{roman}
 \tableofcontents
+\listoffigures
+\listoftables
 \newpage
 
 
@@ -26,6 +28,8 @@
 \pagestyle{main}
 \renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ (#1)}{}}
 \subfile{Unit1/unit1.tex}
+
+\printbibliography[heading=bibintoc]
 
 
 
