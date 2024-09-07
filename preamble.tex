@@ -8,10 +8,12 @@
 \usepackage{siunitx}
 \usepackage[style=apa]{biblatex}
 \usepackage{tikz}
+\usepackage{float,subcaption}
 \usepackage{amsmath,amssymb}
+\usepackage{bm}
 \usepackage{mhchem}
 \usepackage{chemfig}
-\usepackage[hidelinks]{hyperref}
+\usepackage[colorlinks,allcolors=black,urlcolor=cyan]{hyperref}
 \usepackage{subfiles}
 
 \MakeOuterQuote{"}
@@ -41,7 +43,18 @@
 \addbibresource{\subfix{/main.bib}}
 \DefineBibliographyStrings{english}{bibliography={References}}
 
-\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{decorations.pathmorphing,calc,bending}
+\tikzset{
+    digit/.style={circle,draw,inner sep=1pt,text height=1.5ex},
+    curved arrow/.style 2 args={magenta,semithick,shorten <=#1,shorten >=#2}
+}
+\colorlet{rex}{red!80!black!90!orange!80}
 
 \setchemfig{atom sep=2em,fixed length=true,bond offset=3pt,cram width=3pt}
 \setcharge{extra sep=3pt}
+
+\newcommand{\cnc}[1]{[\ce{#1}]}
+\newcommand{\e}[1][]{\textup{e}^{#1}}
+\newcommand{\rc}{
+    {\tikz{\node[inner sep=0pt,label={[below=6.5pt,circle,fill,inner sep=0.1pt]},label={[below=7pt,circle,inner sep=0.06pt]}]{\scriptsize +};}}
+}

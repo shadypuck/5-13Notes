@@ -9,7 +9,7 @@
 
 
 \chapter{Structure Determination}
-\section{Intro + EA}
+\section{Intro + Elemental Analysis}
 \begin{itemize}
     \item \marginnote{9/4:}Teaching team.
     \begin{itemize}
@@ -313,6 +313,618 @@
         \item To measure this flue gas, though, they have a little handheld elemental analysis device!
     \end{itemize}
     \item Note that there is a relation between ideal/real-world combustion and the \ce{CuO} oxidant in Figure \ref{fig:combustionAnalysis}: The \ce{CuO} ensures that when we combust our EA sample, all the carbon is fully oxidized to \ce{CO2}! Without it, some \ce{CO} would be formed, and our stoichiometry would be thrown off.
+\end{itemize}
+
+
+
+\section{Mass Spectrometry}
+\begin{itemize}
+    \item \marginnote{9/6:}Lecture 1 recap.
+    \begin{itemize}
+        \item Elemental analysis (EA).
+        \begin{equation*}
+            \ce{SM + O2 ->[$\Delta$] CO2 + H2O}
+        \end{equation*}
+        \begin{itemize}
+            \item SM means "\underline{s}tarting \underline{m}aterial."
+            \item SM's we will focus on: Compounds of the form \ce{C_{$x$}H_{$y$}O_{$z$}}.
+        \end{itemize}
+        \item Empirical formula vs. molecular formula (see Table \ref{tab:EAmols}).
+    \end{itemize}
+    \item Today: Mass spectrometry (MS).
+    \begin{itemize}
+        \item Purpose: Convert empirical formulas to molecular formulas (and more!).
+        \item Reading: \textcite{bib:Clayden}, Chapter 3.
+    \end{itemize}
+    \item Lecture outline.
+    \begin{itemize}
+        \item Mass spectrometer schematic.
+        \item Mass spectrum elements.
+        \item Fragmentation, and common types.
+        \item Isotope effects in MS.
+        \item Ionization methods.
+    \end{itemize}
+    \item \textbf{Mass spectrometry}: A structure determination technique that tells us the exact mass of molecules and their "fragments." \emph{Also known as} \textbf{MS}, "\textbf{mass spec}."
+    \item Overview.
+    \begin{center}
+        \schemestart
+        \chemfig{\cnc{M}}
+        \arrow{-U>[\footnotesize$\textup{e}^-$][\footnotesize$2\textup{e}^-$]}
+        \chemfig{\charge{20=\scriptsize +,-3=$\cdot$}{\cnc{M}}}
+        \arrow(M--b)
+        \subscheme{
+            \chemfig{\charge{12=\scriptsize +}{\cnc{M$-b$}}}
+            \+{3mm}
+            \chemfig{\charge{[extra sep=1pt]30=$\cdot$}{\cnc{$b$}}}
+        }
+        \arrow(--a){0}[90,0.1]
+        \subscheme{
+            \chemfig{\charge{12=\scriptsize +}{\cnc{M$-a$}}}
+            \+{3mm}
+            \chemfig{\charge{[extra sep=1pt]30=$\cdot$}{\cnc{$a$}}}
+        }
+        \arrow(@b--c){0}[-90,0.1]
+        \subscheme{
+            \chemfig{\charge{12=\scriptsize +}{\cnc{M$-c$}}}
+            \+{3mm}
+            \chemfig{\charge{[extra sep=1pt]30=$\cdot$}{\cnc{$c$}}}
+        }
+        \arrow(@M--@a.west)
+        \arrow(@M--@c.west)
+        \schemestop
+    \end{center}
+    \begin{itemize}
+        \item You have a sample --- denoted by $\cnc{M}$ --- that you bombard with electrons ($\e[-]$). When an electron hits a molecule of your sample, it knocks off one of the molecule's electrons (and flies off itself). This ionizes your molecule to a \textbf{radical cation}, denoted by $\cnc{M}\rc$ and called the \textbf{molecular ion}.
+        \item This radical cation is unstable and fragments into a proper cation and a proper radical. The radical is usually not detected, but any cationic fragment produced --- the $\cnc{M$-a$}^+$, $\cnc{M$-b$}^+$, and $\cnc{M$-c$}^+$ above --- usually \emph{is} detected.
+    \end{itemize}
+    \item A (stepwise) schematic of a mass spectrometer.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{tikzpicture}
+            \fill [gray!70,rotate around={-10:(2.3,0)}] (1.8,-0.8)
+                -- node[below=1mm,black,digit]{5} (2.8,-0.8)
+                -- (2.8,0.6)
+                -- (1.8,0.6)
+            ;
+            \fill [white] (-0.3,0.1)
+                -- (0,0.1)
+                -- (0,0.5)
+                -- (1.5,0.5)
+                arc[start angle=90,end angle=35,radius=4cm]
+                -- ++(-145:1)
+                arc[start angle=35,end angle=90,radius=3cm]
+                -- (0,-0.5)
+                -- (0,-0.1)
+                --(-0.3,-0.1)
+            ;
+    
+            \draw [decorate,decoration={coil,segment length=2.2pt},rotate around={180:(0.4,0.4)}] (0.1,0.4) -- node[above=2mm,digit]{2} (0.7,0.4);
+    
+            \draw (0.2,-0.5)
+                -- (0.2,-0.9)
+                -- node[below=1mm,digit]{3} (0.5,-0.9)
+                -- (0.5,-0.5)
+            ;
+            \draw [-stealth] (0.35,-0.45) -- ++(0,0.23);
+            \draw [-stealth] (0.42,-0.45) -- ++(0.12,0.16);
+            \draw [-stealth] (0.28,-0.45) -- ++(-0.12,0.16);
+    
+            \draw
+                (-0.3,0) ellipse (0.3mm and 1mm)
+                (-0.3,0.1) -- (0,0.1)
+                    -- (0,0.5)
+                    -- (1.5,0.5)
+                    arc[start angle=90,end angle=35,radius=4cm] coordinate (b) node[right=1mm,digit]{6}
+                (-0.3,-0.1) -- (0,-0.1)
+                    -- (0,-0.5)
+                    -- (1.5,-0.5)
+                    arc[start angle=90,end angle=35,radius=3cm] coordinate (a) %node[left=2mm,digit]{6}
+            ;
+            \draw
+                (1,0.5) arc[start angle=90,end angle=-90,x radius=1mm,y radius=5mm]
+                (1.3,0.5) arc[start angle=90,end angle=-90,x radius=1mm,y radius=5mm]
+                (0.9,0.02)  -- ++(0.2,0)
+                (0.9,-0.02) -- ++(0.2,0)
+                (1.2,0.02)  -- ++(0.2,0)
+                (1.2,-0.02) -- ++(0.2,0)
+            ;
+            \draw
+                (1,0.5) arc[start angle=90,end angle=270,x radius=1mm,y radius=5mm]
+                (1.3,0.5) arc[start angle=90,end angle=270,x radius=1mm,y radius=5mm]
+            ;
+            \node [below,digit] at (1.15,-0.6) {4};
+            \draw [rotate=-55] ($(a)!0.5!(b)+(0,0.5)$) arc[start angle=90,end angle=-90,x radius=1mm,y radius=5mm];
+            \draw [rotate=-55] ($(a)!0.5!(b)+(0,0.5)$) arc[start angle=90,end angle=270,x radius=1mm,y radius=5mm];
+    
+            \node [label={[above,digit]1}] at (-1.8,0) {Sample}
+                edge [dashed,->] (-0.45,0)
+            ;
+            \draw [dashed,->] (-0.1,0) -- (0.85,0);
+            \draw [dashed,->] (1.45,0)
+                -- (1.5,0)
+                arc[start angle=90,end angle=49,radius=1.9cm] %node[circle,fill,inner sep=1pt]{}
+                -- ++({49-90}:1.65)
+            ;
+            \draw [dashed,->] (1.45,0)
+                -- (1.5,0)
+                arc[start angle=90,end angle=57,radius=2.3cm] %node[circle,fill,inner sep=1pt]{}
+                -- ++({57-90}:1.8)
+            ;
+            \draw [dashed,->] (1.45,0)
+                -- (1.5,0)
+                arc[start angle=90,end angle=63,radius=2.8cm] %node[circle,fill,inner sep=1pt]{}
+                -- ++({63-90}:1.93)
+            ;
+        \end{tikzpicture}
+        \caption{Mass spectrometer schematic.}
+        \label{fig:MSschematic}
+    \end{figure}
+    \begin{enumerate}
+        \item The sample is injected into a curved tube.
+        \item A heater vaporizes the sample.
+        \item An electron source (also known as an electron gun) shoots electrons at the vaporized sample, ionizing it. The ionized sample starts fragmenting.
+        \item The fragments encounter a series of negatively charged plates with slits in the middle. These negatively charged plates accelerate the positively charged cations.
+        \item A magnet deflects the accelerated, positively charged ions. The magnet deflects them based on their \textbf{mass-to-charge ratio}. Because of physics, the lightest ions are deflected the most, and the heaviest ions are deflected the least.
+        \item A detector records where the ions hit. This data is converted into a mass-to-charge ratio for each ion. This yields a spectrum of all the fragments' masses.
+    \end{enumerate}
+    \item \textbf{Mass-to-charge ratio} (of a cation): The cation's mass divided by its net charge. \emph{Denoted by} $\bm{m/z}$.
+    \begin{itemize}
+        \item For the purposes of this class, $z=1$.
+    \end{itemize}
+    \item Example mass spectrum: Acetone (\,{\tiny\chemfig[baseline=1mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:30](=[2]O)-[:-30]}}\,).
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[xscale=0.16,yscale=0.04]
+            \small
+            \node [rotate=90] at (-5.875,50) {Relative Intensity};
+            \node [below=5mm] at (35,0) {$m/z$};
+    
+            \footnotesize
+            \draw (-0.625,100) node[left]{$100$} -- ++(1.125,0);
+            \foreach \x in {10,20,...,60} {
+                \draw (\x,2.5) -- ++(0,-5) node[below]{$\x$};
+            }
+    
+            \draw [orange,ultra thick]
+                (15,0) -- ++(0,14) node[above=1mm,black,thin,digit]{15} node[above=6mm,black]{$\cnc{M$-43$}^+=\cnc{CH3}^+$}
+                (27,0) -- ++(0,1)
+                (28,0) -- ++(0,1)
+                (29,0) -- ++(0,1)
+                (43,0) -- ++(0,100) node[above=1mm,black,thin,digit]{43} node[above=6mm,black]{${}^{\color{white}+}\cnc{M$-15$}^+=[\chemfig[atom sep=1.4em,fixed length=false,bond sep=2pt]{H_3C-~O}]^+$}
+                (44,0) -- ++(0,3)
+                (58,0) -- ++(0,26) node[above=1mm,black,thin,digit]{58} node[above=6mm,black]{${}^{\color{white}+}\cnc{M}^+=\Big[{\tiny\chemfig[baseline=1.3mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:30](=[2]O)-[:-30]}}\Big]^+$}
+                (59,0) -- ++(0,2)
+            ;
+
+            \draw (0,110) -- (0,0) -- (70,0);
+        \end{tikzpicture}
+        \vspace{-0.5em}
+        \caption{Mass spectrum of acetone.}
+        \label{fig:MSacetone}
+    \end{figure}
+    \begin{itemize}
+        \item The $x$-axis is the mass-to-charge ratio, and the $y$-axis is the "relative intensity" of each peak.
+        \begin{itemize}
+            \item If a certain fragment gets produced more than another (and hence recorded more than it), we say it has a "higher relative intensity."
+        \end{itemize}
+        \item We identify two special types of peaks in a mass spectrum: The \textbf{parent peak} and the \textbf{base peak}. In the case of acetone\dots
+        \begin{itemize}
+            \item The parent peak lies at 58;
+            \item The base peak lies at 43.
+        \end{itemize}
+        \item The peak at 15 also has a relatively large magnitude, and from the fact that the mass of a methyl cation is approximately 15, we can infer that this peak corresponds to the methyl cation fragment.
+        \begin{itemize}
+            \item Notice that its intensity is significantly lower than the intensity of the base peak because we may recall from Orgo I that the methyl cation is a far less stable cation than the resonance-stabilized, secondary acylium ion at 43.
+        \end{itemize}
+        \item There are a number of smaller peaks, too, but they give less information.
+        \item Note that the major peaks may be appropriately referred to by \emph{any} of the three nomenclature methods in Figure \ref{fig:MSacetone}: By exact mass, by $\cnc{M$-a$}^+$, and/or by structure.
+    \end{itemize}
+    \item \textbf{Parent peak}: The peak in a mass spectrum corresponding to the molecular ion.
+    \begin{itemize}
+        \item The parent peak is always the rightmost peak in the spectrum.\footnote{Excepting isotope effects; discussed later in this lecture.} This is because it is created by the heaviest ion, and you can't have more mass than your initial molecule!
+        \item It is typically \emph{not} the tallest peak in the spectrum.
+        \item Useful information: It gives the molecular weight of the molecule.
+    \end{itemize}
+    \item \textbf{Base peak}: The tallest peak in a mass spectrum.
+    \begin{itemize}
+        \item The base peak corresponds to the fragment that the molecule forms most preferentially, which is usually also the most stable fragment.
+    \end{itemize}
+    \item \textbf{Fragmentation peak}: Any peak to the left of the parent peak.
+    \item Maxim: Molecules fragment in predictable ways to form stable cations.
+    \item At this point, let's formally define \textbf{fragmentation}.
+    \item \textbf{Fragmentation}: The formation of stable(-ish) cations.
+    \begin{itemize}
+        \item Recall from Orgo I (review your notes on cation stability!!) that stable cations tend to be more substituted, delocalized, atom-stabilized (e.g., close to a heteroatom), etc. 
+    \end{itemize}
+    \item Let's now discuss some common species that we analyze via MS --- and how they fragment.
+    \item Alkane fragmentation: Preferentially break bonds to get more substituted (e.g., $2^\circ$ \& $3^\circ$) carbocations.
+    \item Example: 2-methylbutane (\,{\tiny\chemfig[baseline=0.7mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:30](-[2])-[:-30]-[:30]}}\,).
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=1.4em}
+        \schemestart
+            \chemfig{-[:30](-[@{1}2])-[@{2}:-30]-[:30]}
+            \arrow(--.174)
+            \chemname{
+                \chemleft[
+                    \chemfig{-[:30](-[2])-[:-30]-[:30]}
+                \chemright]
+            }{$m/z=72$\\parent (minor)}
+            \+{,,2mm}
+            \chemname{
+                \chemleft[
+                    \chemfig{-[:30]\charge{[extra sep=5pt]90=$\oplus$}{}(-[2,,,,opacity=0])-[:-30]-[:30]}
+                \chemright]
+            }{$m/z=57$\\(major)}
+            \+{,,2mm}
+            \chemname{
+                \chemleft[
+                    \chemfig{-[:30]\charge{[extra sep=4pt]-30=$\oplus$}{}(-[2])-[:-30,,,,opacity=0]}
+                \chemright]
+            }{$m/z=43$\\(major)}
+            \arrow{0}[,0.1]\+{,,2.5em}\arrow(--.165){0}[0,0.1]
+            \chemname[1.2em]{
+                \chemleft[
+                    \chemfig{Et}
+                \chemright]
+            }{$m/z=29$\\(minor)}
+            \arrow{0}[,0.1]\+{,,3.43em}\arrow{0}[0,0.1]
+            \chemname[1.2em]{
+                \chemleft[
+                    \chemfig{Me}
+                \chemright]
+            }{$m/z=15$\\(minor)}
+        \schemestop
+        \hspace{-2mm}
+        \chemmove{
+            \draw [-,rex] ($(1)+(180:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{} -- ($(1)+(0:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{};
+            \draw [-,rex] ($(2)+(-120:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{} -- ($(2)+(60:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{};
+        }
+        \begin{tikzpicture}[remember picture,overlay]
+            % \draw (-13,0.37) -- ++(13,0);
+            % \draw (-13,-0.19) -- ++(13,0);
+            \node at (-8.82,0.65) {\tiny$\rc$};
+            \node at (-1.96,0.38) {${}^+$};
+            \node at (0,0.38) {${}^+$};
+        \end{tikzpicture}
+        \caption{Fragmentation of alkanes.}
+        \label{fig:fragAlkane}
+    \end{figure}
+    \begin{itemize}
+        \item All these peaks will appear, but the tallest will correspond to the species labeled "major" above.
+    \end{itemize}
+    \item Alcohol fragmentation.
+    \begin{itemize}
+        \item Dehydration: Yields an $\cnc{M$-18$}^+$ peak, corresponding to the loss of water.
+        \item $\alpha$-cleavage: Leads to a resonance-stabilized product.
+    \end{itemize}
+    \item Example: Pentan-3-ol (\,{\tiny\chemfig[baseline=1mm,atom sep=1em,bond offset=1pt,fixed length=false]{(-[:150])-[:30](-[2]OH)-[:-30]-[:30]}}\,).
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=1.4em}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemname{
+                    \chemfig{-[:-30]-[:30](-[@{1}2]OH)-[:-30]-[:30]}
+                }{$m/z=88$}
+                \arrow
+                \chemname{
+                    \chemfig{-[:-30]-[:30](-[2,,,,opacity=0]\phantom{OH})=_[:-30]-[:30]}
+                }{$m/z=70$}
+            \schemestop
+            \chemmove{
+                \draw [-,rex] ($(1)+(180:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{} -- ($(1)+(0:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{};
+            }
+            \caption{Dehydration.}
+            \label{fig:fragOHa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemname{
+                    \chemfig{-[:-30]-[:30](-[2]OH)-[@{2}:-30]-[:30]}
+                }{$m/z=88$}
+                \arrow
+                \chemname{
+                    \chemleft[\subscheme{
+                        \chemfig{-[:-30]-[:30]\charge{[extra sep=4pt]-30=$\oplus$}{}-[2]OH}
+                        \arrow{<->}
+                        \chemfig{-[:-30]-[:30]=^[2]\charge{[extra sep=4pt]180=$\oplus$}{O}H}
+                    }\chemright]
+                }{$m/z=59$}
+            \schemestop
+            \chemmove{
+                \draw [-,rex] ($(2)+(-120:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{} -- ($(2)+(60:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{};
+            }
+            \caption{$\alpha$-cleavage.}
+            \label{fig:fragOHb}
+        \end{subfigure}
+        \caption{Fragmentation of alcohols.}
+        \label{fig:fragOH}
+    \end{figure}
+    \item Ketone fragmentation.
+    \begin{itemize}
+        \item $\alpha$-cleavage: Leads to a resonance-stabilized product, once again.
+        \item McLafferty rearrangement: Only happens for ketones with a $\gamma$-proton.
+        \begin{itemize}
+            \item We select for this type of ketone because in this case, we can form a six-membered transition state. Recall that six-membered transition states are super stable in organic chemistry!
+            \item This fragmentation leads to a charged enol (that we see in the spectrum) and an uncharged olefin (that we don't see in the spectrum).
+        \end{itemize}
+    \end{itemize}
+    \item Example: Hexanones.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=1.4em}
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemname{
+                    \chemfig{(-[:-150])-[:-30]-[@{3}:30](=[2]O)-[@{2}:-30]-[:30]}
+                }{$m/z=100$}
+                \arrow(.11--.174)
+                \chemname{
+                    \chemleft[
+                        \chemfig{(-[:-150])-[:-30]-[:30]~[:30]\charge{[extra sep=5pt]100=$\oplus$}{O}}
+                    \chemright]
+                }{$m/z=71$}
+                \+
+                \chemname{
+                    \chemleft[
+                        \chemfig{(~[:150]\charge{[extra sep=5pt]80=$\oplus$}{O})-[:-30]-[:30]}
+                    \chemright]
+                }{$m/z=57$}
+            \schemestop
+            \chemmove{
+                \draw [-,rex] ($(2)+(-120:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{} -- ($(2)+(60:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{};
+                \draw [-,rex] ($(3)+(-60:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{} -- ($(3)+(120:0.18)$) node[circle,draw,fill=white,inner sep=1pt]{};
+            }
+            % \begin{tikzpicture}[remember picture,overlay]
+            %     \draw (-5,0.88) -- ++(13,0);
+            %     \draw (-5,0.32) -- ++(13,0);
+            % \end{tikzpicture}
+            \caption{$\alpha$-cleavage.}
+            \label{fig:fragKetonea}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{-[:30](=[2]O)-[:-30]\charge{[extra sep=4pt]-90=$\alpha$}{}-[:30]\charge{[extra sep=4pt]90=$\beta$}{}-[:-30]\charge{[extra sep=4pt]-90=$\gamma$}{}-[:30]}
+                \arrow(--.170)
+                \chemname[0em]{
+                    \chemleft[
+                        \chemfig[atom sep=2.5em,fixed length=false]{-[:30](=[@{db}2]O)-[@{sb2}:-30]-[@{sb3}:30]-[@{sb4}2](-[@{sb5}:150]H-[@{sb6,0.3}:-150,,,,opacity=0])-[:30]}
+                    \chemright]
+                }{$m/z=100$}
+                \arrow(.10--.151)
+                \chemname[1.5em]{
+                    \chemleft[
+                        \chemfig{-[:30](-[2]OH)=_[:-30]}
+                    \chemright]
+                }{$m/z=58$}
+                \arrow(--.210){0}[,0]\+{,,3.9mm}
+                \chemfig{=_[2]-[:30]}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={2pt}{1pt},arrows={-Stealth[harpoon,flex]}] (db) to[out=10,in=-70,out looseness=2,in looseness=1] (sb6);
+                \draw [curved arrow={2pt}{1pt},arrows={-Stealth[harpoon,flex,swap]}] (db) to[out=-10,in=70,out looseness=2,in looseness=1.5] (sb2);
+                \draw [curved arrow={1pt}{1pt},arrows={-Stealth[harpoon,flex]}] (sb3) to[out=130,in=50,out looseness=2,in looseness=1.5] (sb2);
+                \draw [curved arrow={1pt}{1pt},arrows={-Stealth[harpoon,flex,swap]}] (sb3) to[out=110,in=-170,out looseness=2,in looseness=1.5] (sb4);
+                \draw [curved arrow={1pt}{1pt},arrows={-Stealth[harpoon,flex]}] (sb5) to[out=-110,in=170,out looseness=2,in looseness=1.5] (sb4);
+                \draw [curved arrow={1pt}{1pt},arrows={-Stealth[harpoon,flex,swap]}] (sb5) to[out=-130,in=-50,out looseness=2,in looseness=1] (sb6);
+            }
+            \begin{tikzpicture}[remember picture,overlay]
+                % \draw (-5,1.45) -- ++(13,0);
+                % \draw (-5,0.32) -- ++(13,0);
+                \node at (-4.24,1.08) {\tiny$\rc$};
+                \node at (-1.12,0.8) {\tiny$\rc$};
+            \end{tikzpicture}
+            \caption{McLafferty rearrangement.}
+            \label{fig:fragKetoneb}
+        \end{subfigure}
+        \caption{Fragmentation of ketones.}
+        \label{fig:fragKetone}
+    \end{figure}
+    \item Isotope effects.
+    \item Principle: Mass spectrometry weighs individual molecules, so molecules containing a heavier (or lighter) isotope will appear separate from other molecules in the mass spectrum.
+    \item Atoms with notable isotope effects.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.17\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \draw [orange,ultra thick]
+                    (0.8,0) -- ++(0,1.2)
+                    (0.96,0) -- ++(0,0.05)
+                ;
+
+                \draw (0,1.4) -- (0,0) -- (1.8,0);
+            \end{tikzpicture}
+            \caption{Carbon.}
+            \label{fig:isotopeEffectsMSa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.17\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \draw [orange,ultra thick]
+                    (0.8,0) -- ++(0,0.6)
+                    (1.12,0) -- ++(0,0.6)
+                ;
+                
+                \draw (0,1.4) -- (0,0) -- (1.8,0);
+            \end{tikzpicture}
+            \caption{Bromine.}
+            \label{fig:isotopeEffectsMSb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.17\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \draw [orange,ultra thick]
+                    (0.8,0) -- ++(0,0.9)
+                    (1.12,0) -- ++(0,0.3)
+                ;
+                
+                \draw (0,1.4) -- (0,0) -- (1.8,0);
+            \end{tikzpicture}
+            \caption{Chlorine.}
+            \label{fig:isotopeEffectsMSc}
+        \end{subfigure}
+        \caption{Isotope effects in MS.}
+        \label{fig:isotopeEffectsMS}
+    \end{figure}
+    \begin{itemize}
+        \item Carbon: The $\ce{{}^12C}:\ce{{}^13C}$ ratio is $99:1$.
+        \begin{itemize}
+            \item Implication: For every $\cnc{M}\rc$, we see 1\% $\cnc{M$+1$}\rc$.
+            \item This is why we see tiny "shadow" peaks to the right of the parent peak and base peak in Figure \ref{fig:MSacetone}!
+            \begin{itemize}
+                \item Note that the "shadow" of the parent peak is 3\% its height (not 1\%) because there are \emph{three} carbons in the acetone molecular ion.
+                \item Similarly, the "shadow" of the base peak is 2\% its height because there are \emph{two} carbons in the acylium ion.
+            \end{itemize}
+        \end{itemize}
+        \item Bromine: The $\ce{{}^79Br}:\ce{{}^81Br}$ ratio is $1:1$.
+        \begin{itemize}
+            \item Implication: The $\cnc{M}\rc$ and $\cnc{M$+2$}\rc$ peaks exist in a $1:1$ ratio, i.e., have the same height/relative intensity.
+            \item The splitting of the molecular ion peak into two such peaks is a super recognizable, distinct, and useful fingerprint of bromine-containing compounds!
+        \end{itemize}
+        \item Chlorine: The $\ce{{}^35Cl}:\ce{{}^37Cl}$ ratio is $3:1$.
+        \begin{itemize}
+            \item Implication: The $\cnc{M}\rc$ and $\cnc{M$+2$}\rc$ peaks exist in a $3:1$ ratio.
+            \item Similar to bromine, this peak splitting is a fingerprint of chlorine-containing compounds.
+        \end{itemize}
+    \end{itemize}
+    \item Combining everything we've learned up to this point, let's do another example.
+    \item Example: Benzyl chloride (\,{\tiny\chemfig[baseline=0.5mm,atom sep=1em,bond offset=1pt,fixed length=false]{*6(=-=(--[:-30]Cl)-=-)}}\,).
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[xscale=0.08,yscale=0.04]
+            \small
+            \node [rotate=90] at (-11.75,50) {Relative Intensity};
+            \node [below=5mm] at (80,0) {$m/z$};
+    
+            \footnotesize
+            \draw (-1.25,100) node[left]{$100$} -- ++(2.5,0);
+            \foreach \x in {50,100,150} {
+                \draw (\x,2.5) -- ++(0,-5) node[below]{$\x$};
+            }
+    
+            \draw [orange,ultra thick]
+                (40,0) -- ++(0,8) node[above=1mm,black,thin,digit]{40}
+                (65,0) -- ++(0,12) node[above=1mm,black,thin,digit]{65}
+                (91,0) -- ++(0,100) node[above=1mm,black,thin,digit,label={[right=2mm,yshift=-2mm,black]
+                    \chemleft[
+                        \chemfig[atom sep=1em]{*6(=-=(-\charge{[extra sep=5pt]90=$\oplus$}{})-=-)}
+                    \chemright]
+                }]{91}
+                (92,0) -- ++(0,7) node[above right=1mm,black,thin,digit]{92}
+                (126,0) -- ++(0,27) node[above=1mm,black,thin,digit,label={[right=2.5mm,yshift=2mm,black]
+                    \chemleft[
+                        \chemfig[atom sep=1em]{*6(=-=(--[:-30]{}^{36}Cl)-=-)}
+                    \chemright{]^\rc}
+                }]{126}
+                (128,0) -- ++(0,9) node[above right=1mm,black,thin,digit,label={[right=2.5mm,yshift=-2mm,black]
+                    \chemleft[
+                        \chemfig[atom sep=1em]{*6(=-=(--[:-30]{}^{38}Cl)-=-)}
+                    \chemright{]^\rc}
+                }]{128}
+            ;
+    
+            \draw (0,110) -- (0,0) -- (160,0);
+        \end{tikzpicture}
+        \vspace{-0.5em}
+        \caption{Mass spectrum of benzyl chloride.}
+        \label{fig:MSBnCl}
+    \end{figure}
+    \begin{itemize}
+        \item The parent peak will lie at 126, and the corresponding chlorine isotope peak will lie at 128 and be one-third the height.
+        \item The base peak will lie at 91, and the corresponding carbon isotope peak will lie at 92 and be 7\% the height (to account for the 7 carbons in the benzylic cation that may be heavy).
+        \begin{itemize}
+            \item It will correspond to the most stable fragment, which in this case is the benzylic cation.
+            \item The benzylic cation is super stable because its positive charge can be resonance delocalized to four different atoms!
+            \item A large peak at $m/z=91$ strongly suggests the presence of an aromatic system.
+        \end{itemize}
+        \item This example focused on predicting the peaks in a mass spectrum based on reasonable fragmentation patterns. But what if we are given the mass spectrum? What data can we pull out then?
+    \end{itemize}
+    \item To answer this question, here are some guidelines for the interpretation of mass spectra.
+    \item Guidelines for interpretation.
+    \begin{itemize}
+        \item The parent peak provides the molecular weight of the molecule.
+        \begin{itemize}
+            \item This allows you to convert an empirical formula obtained from EA to the molecular formula.
+        \end{itemize}
+        \item The parent peak also reveals key atoms via distinct isotopic fingerprints.
+        \begin{itemize}
+            \item Examples include bromine and chlorine.
+            \item An additional one is the \textbf{nitrogen rule}.
+        \end{itemize}
+        \item Fragmentation patterns can identify substructures.
+        \begin{itemize}
+            \item Recall from Lecture 1 (9/4) that identifying substructures is part of the second step of the structure determination workflow!
+            \item Common fragments:
+            \begin{itemize}
+                \item Loss of a methyl group is $-15$.
+                \item Loss of an OH group is $-17$.
+                \item Loss of \ce{H2O} is $-18$.
+                \item Loss of \ce{CO2} is $-44$.
+                \item Loss of a \ce{{}^$t$Bu} group is $-57$.
+            \end{itemize}
+            \item Look at the $m/z$ of the fragments \emph{and} the difference in $m/z$ between certain fragments.
+            \begin{itemize}
+                \item Example: Maybe a certain fragment is formed by losing both a methyl group \emph{and} water.
+            \end{itemize}
+        \end{itemize}
+        \item Important note: These guidelines are just a guide; we will need multiple forms of evidence to support an assignment.
+    \end{itemize}
+    \item \textbf{Nitrogen rule}: If you have an odd number of nitrogen in a molecule, you will get an odd molecular weight.
+    \begin{itemize}
+        \item The basis for this rule lies in the fact that nitrogen is trivalent but has an even mass.
+        \begin{itemize}
+            \item This means that nitrogen tends to bond an odd number of groups (specifically, 3), making the overall mass odd.
+        \end{itemize}
+        \item Examples: Ammonia has an odd mass of $17=14+1+1+1$ and methylamine has an odd mass of $31=(14+1+1)+(12+1+1+1)$, while methane has an even mass of $16=12+1+1+1+1$ and ethane has an even mass of $30=(12+1+1+1)+(12+1+1+1)$.
+        \item You can read more about the nitrogen rule \href{https://en.wikipedia.org/wiki/Nitrogen_rule}{here}.
+        \item Implication: If you see an odd molecular weight, you \emph{might} have a nitrogen present!
+    \end{itemize}
+    \item Types of ionization.
+    \item \textbf{Electron ionization}: A beam of electrons. \emph{Denoted by} \textbf{EI}. \emph{Also known as} \textbf{hard ionization}.
+    \begin{itemize}
+        \item This is the method we are using in this class.
+    \end{itemize}
+    \item \textbf{Electrospray ionization}: Forms charged droplets. \emph{Denoted by} \textbf{ESI}. \emph{Also known as} \textbf{soft ionization}.
+    \begin{itemize}
+        \item ESI causes less fragmentation.
+        \item One implication of this is that you observe a larger parent peak.
+        \item Another consequence is that ESI can analyze a broader range of compounds via mass spectrometry than EI can, since some sensitive compounds (like proteins) would never survive an electron beam.
+        \begin{itemize}
+            \item Nobel Prize in Chemistry (2002) for this application of MS to biology!
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{High resolution mass spectrometry}. \emph{Denoted by} \textbf{HRMS}.
+    \begin{itemize}
+        \item In "normal" low-resolution mass spectrometry (LRMS), both \ce{N2} and \ce{C2H4} have $m/z=28$.
+        \item In HRMS, \ce{N2} has $m/z=28.0061$ and \ce{C2H4} has $m/z=28.0314$.
+    \end{itemize}
+    \item HRMS leads nicely into our application for today!
+    \item Application of MS to real-world chemistry: Isotopic signatures.
+    \begin{itemize}
+        \item Today, you learned that the $\ce{{}^12C}:\ce{{}^13C}$ ratio is $99:1$.
+        \begin{itemize}
+            \item In reality, this is an \emph{average} value.
+            \item The actual ratio of isotopes is globally uneven, and we as humans have mapped it.
+        \end{itemize}
+        \item Indeed, isotope abundances vary by time and location due to air patterns, etc.
+        \item For example, Montana is home to 2\% more \ce{{}^13C} than Florida!
+        \item Implication: We can tell if a narcotic is made in the US (and where) or another country based on the isotopic abundance in it.
+        \item We can also track where a person, drug, or uranium sample is from.
+        \begin{itemize}
+            \item Naturally, the government is very interested in this technology :)
+        \end{itemize}
+        \item You can also tell if a person eats corn or rice because this leads to different ratios of nitrogen isotopes in our bodies.
+    \end{itemize}
 \end{itemize}
 
 
