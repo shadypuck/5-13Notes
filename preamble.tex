@@ -31,30 +31,41 @@
 
 \reversemarginpar
 
-\deffootnotemark{\textsuperscript{\textup{[}\thefootnotemark\textup{]}}}
-\deffootnote[2.1em]{0em}{0em}{\textsuperscript{\thefootnote}}
-
 \setitemize[3]{label={\scriptsize$\blacksquare$}}
 \setitemize[4]{label={\tikz[scale=0.06,baseline={(0,-0.14)}]{
     \draw [line width=0.3pt] (0,1) -- (1.2,0) -- (0,-1) -- (3.5,0) -- cycle;
     \fill (1.2,0) -- (0,-1) -- (3.5,0);
 }}}
 
+\deffootnotemark{\textsuperscript{\textup{[}\thefootnotemark\textup{]}}}
+\deffootnote[2.1em]{0em}{0em}{\textsuperscript{\thefootnote}}
+
+\sisetup{range-phrase=--,range-units=single}
+\DeclareSIUnit{\calorie}{cal}
+
 \addbibresource{\subfix{/main.bib}}
 \DefineBibliographyStrings{english}{bibliography={References}}
 
-\usetikzlibrary{decorations.pathmorphing,calc,bending}
+\usetikzlibrary{decorations.pathmorphing,calc,bending,fpu}
 \tikzset{
     digit/.style={circle,draw,inner sep=1pt,text height=1.5ex},
-    curved arrow/.style 2 args={magenta,semithick,shorten <=#1,shorten >=#2}
+    curved arrow/.style 2 args={magenta,semithick,shorten <=#1,shorten >=#2},
+    wv/.style={decorate,decoration={coil,aspect=0,amplitude=1pt,segment length=4.7pt}}
 }
 \colorlet{rex}{red!80!black!90!orange!80}
+\colorlet{blx}{blue!90!green!80}
+\colorlet{blz}{blue!90!green!7}
+\colorlet{grx}{green!50!black}
+\colorlet{grz}{green!50!black!7}
 
 \setchemfig{atom sep=2em,fixed length=true,bond offset=3pt,cram width=3pt}
 \setcharge{extra sep=3pt}
+\definesubmol{wave}{-[::180,0.2,,,opacity=0]-[::90,0.5,,,opacity=0]-[::180,,,,wv]}
 
 \newcommand{\cnc}[1]{[\ce{#1}]}
 \newcommand{\e}[1][]{\textup{e}^{#1}}
 \newcommand{\rc}{
     {\tikz{\node[inner sep=0pt,label={[below=6.5pt,circle,fill,inner sep=0.1pt]},label={[below=7pt,circle,inner sep=0.06pt]}]{\scriptsize +};}}
 }
+
+\newcommand{\pKa}{\textup{p}K_\textup{a}}

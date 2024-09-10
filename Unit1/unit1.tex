@@ -210,7 +210,7 @@
             ;
         \end{tikzpicture}
         \caption{Combustion analysis schematic.}
-        \label{fig:combustionAnalysis}
+        \label{fig:schematicEA}
     \end{figure}
     \begin{itemize}
         \item Burn the sample in the presence of an oxidant such as cupric oxide (\ce{CuO}).
@@ -280,9 +280,9 @@
             \textbf{Structure} &
                 \footnotesize\chemfig[atom sep=1em]{-[:30]-[:-30]-[:30]OH} &
                 \footnotesize\chemfig[atom sep=1em]{-[:30]-[:-30]O-[:30]} &
-                \footnotesize\chemfig[atom sep=1em,baseline=0.8em]{H-[:30](=[2]O)-[:-30]H} &
-                \footnotesize\chemfig[atom sep=1em,baseline=0.8em]{-[:30](=[2]O)-[:-30]OH} &
-                \footnotesize\chemfig[atom sep=1em]{?(-[:190]HO)-[:-50,1.4](-[:170]HO)-[:10,1.5](-[:-55]OH)-[:-10,1.5](-[:10]OH)-[:130]O-[:190]?(-[:150,0.7]-[2]OH)}\\
+                \footnotesize\chemfig[atom sep=1em,baseline=1.2em]{H-[:30](=[2]O)-[:-30]H} &
+                \footnotesize\chemfig[atom sep=1em,baseline=0.65em]{-[:30](=[2]O)-[:-30]OH} &
+                \footnotesize\chemfig[atom sep=1em,baseline=-0.4em]{?(-[:190]HO)-[:-50,1.4](-[:170]HO)-[:10,1.5](-[:-55]OH)-[:-10,1.5](-[:10]OH)-[:130]O-[:190]?(-[:150,0.7]-[2]OH)}\\
             \textbf{Emp. formula} & \ce{C3H8O} & \ce{C3H8O} & \ce{CH2O} & \ce{CH2O} & \ce{CH2O}\\
             \textbf{Mol. formula} & \ce{C3H8O} & \ce{C3H8O} & \ce{CH2O} & \ce{C2H4O2} & \ce{C6H12O6}\\
         \end{tabular}
@@ -312,7 +312,7 @@
         \end{itemize}
         \item To measure this flue gas, though, they have a little handheld elemental analysis device!
     \end{itemize}
-    \item Note that there is a relation between ideal/real-world combustion and the \ce{CuO} oxidant in Figure \ref{fig:combustionAnalysis}: The \ce{CuO} ensures that when we combust our EA sample, all the carbon is fully oxidized to \ce{CO2}! Without it, some \ce{CO} would be formed, and our stoichiometry would be thrown off.
+    \item Note that there is a relation between ideal/real-world combustion and the \ce{CuO} oxidant in Figure \ref{fig:schematicEA}: The \ce{CuO} ensures that when we combust our EA sample, all the carbon is fully oxidized to \ce{CO2}! Without it, some \ce{CO} would be formed, and our stoichiometry would be thrown off.
 \end{itemize}
 
 
@@ -458,7 +458,7 @@
             ;
         \end{tikzpicture}
         \caption{Mass spectrometer schematic.}
-        \label{fig:MSschematic}
+        \label{fig:schematicMS}
     \end{figure}
     \begin{enumerate}
         \item The sample is injected into a curved tube.
@@ -493,10 +493,10 @@
                 (29,0) -- ++(0,1)
                 (43,0) -- ++(0,100) node[above=1mm,black,thin,digit]{43} node[above=6mm,black]{${}^{\color{white}+}\cnc{M$-15$}^+=[\chemfig[atom sep=1.4em,fixed length=false,bond sep=2pt]{H_3C-~O}]^+$}
                 (44,0) -- ++(0,3)
-                (58,0) -- ++(0,26) node[above=1mm,black,thin,digit]{58} node[above=6mm,black]{${}^{\color{white}+}\cnc{M}^+=\Big[{\tiny\chemfig[baseline=1.3mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:30](=[2]O)-[:-30]}}\Big]^+$}
+                (58,0) -- ++(0,26) node[above=1mm,black,thin,digit]{58} node[above=6mm,black]{${}^{\color{white}+}\cnc{M}\rc=\Big[{\tiny\chemfig[baseline=1.3mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:30](=[2]O)-[:-30]}}\Big]{}^\rc$}
                 (59,0) -- ++(0,2)
             ;
-
+    
             \draw (0,110) -- (0,0) -- (70,0);
         \end{tikzpicture}
         \vspace{-0.5em}
@@ -613,7 +613,9 @@
                 }{$m/z=88$}
                 \arrow
                 \chemname{
-                    \chemfig{-[:-30]-[:30](-[2,,,,opacity=0]\phantom{OH})=_[:-30]-[:30]}
+                    \chemleft[
+                        \chemfig{-[:-30]-[:30](-[2,,,,opacity=0]\phantom{OH})=_[:-30]-[:30]}
+                    \chemright{]^+}
                 }{$m/z=70$}
             \schemestop
             \chemmove{
@@ -924,6 +926,511 @@
             \item Naturally, the government is very interested in this technology :)
         \end{itemize}
         \item You can also tell if a person eats corn or rice because this leads to different ratios of nitrogen isotopes in our bodies.
+    \end{itemize}
+\end{itemize}
+
+
+
+\section{Infrared Spectroscopy}
+\begin{itemize}
+    \item \marginnote{9/9:}Lecture 2 recap.
+    \begin{itemize}
+        \item In mass spectrometry, you ionize your sample $\cnc{M}$ to the molecular ion $\cnc{M}\rc$.
+        \item $\cnc{M}\rc$ is detected as the parent peak.
+        \begin{itemize}
+            \item The parent peak provides the molecular weight (MW) of the molecule.
+            \item The parent peak also reveals any isotopic signatures.
+        \end{itemize}
+        \item Many molecular ions --- once formed --- will fragment into cations $\cnc{M$-a$}^+$, $\cnc{M$-b$}^+$, $\cnc{M$-c$}^+$, etc.
+        \begin{itemize}
+            \item More stable cations are formed more often, resulting in higher relative intensities.
+            \item The \emph{most} stable fragment gives rise to the base peak.
+        \end{itemize}
+        \item Common fragments include those resulting from\dots
+        \begin{itemize}
+            \item The loss of a methyl group;
+            \item The loss of a water molecule;
+            \item $\alpha$-cleavage;
+            \item The McLafferty rearrangement (for ketones).
+        \end{itemize}
+    \end{itemize}
+    \item Today: Infrared Spectroscopy (IR).
+    \begin{itemize}
+        \item Reading: \textcite{bib:Clayden}, Chapter 3.
+        \item Prof. Elkin highly recommends the section on IR; be sure to read this!!
+    \end{itemize}
+    \item Lecture outline.
+    \begin{itemize}
+        \item IR spectrometer schematic.
+        \item IR theory.
+        \item IR spectrum elements.
+        \item Key regions of an IR spectrum.
+    \end{itemize}
+    \item Principle: Irradiate a sample with infrared waves and detect where the sample absorbs these waves.
+    \begin{itemize}
+        \item This technique is useful for identifying certain functional groups, namely those that absorb IR waves well.
+    \end{itemize}
+    \pagebreak
+    \item A schematic of an infrared spectrometer.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{tikzpicture}
+            \node [draw,minimum height=9mm] {IR source};
+    
+            \node at (3,0) {\chemfig[atom sep=1.4em]{-[:15,0.75](=[2]O)-[:-45,0.8]}};
+            \draw (2.6,-0.5) -- node[below=3mm]{Sample} ++(0.8,-0.3) -- ++(0,1.4) -- ++(-0.8,0.3) -- cycle;
+    
+            \draw (5.7,0) ellipse (5mm and 8mm) node[below=9.5mm]{Detector};
+    
+            \draw [rex,semithick,-latex,decorate,decoration={snake,amplitude=1.5pt,segment length=5pt,post length=1.5mm}] (0.8,0.3) -- ++(0.5,0);
+            \draw [rex,semithick,-latex,decorate,decoration={snake,amplitude=1.5pt,segment length=7pt,post length=1.5mm}] (0.8,0.1) -- ++(0.8,0);
+            \draw [rex,semithick,-latex,decorate,decoration={snake,amplitude=1.5pt,segment length=9pt,post length=1.5mm}] (0.8,-0.1) -- ++(1.1,0);
+            \draw [rex,semithick,-latex,decorate,decoration={snake,amplitude=1.5pt,segment length=11pt,post length=1.5mm}] (0.8,-0.3) -- ++(1.4,0);
+    
+            \draw [rex,semithick,-latex,decorate,decoration={snake,amplitude=1.5pt,segment length=5pt,post length=1.5mm}] (3.5,0.3) -- ++(0.5,0);
+            \draw [rex,semithick,-latex,decorate,decoration={snake,amplitude=1.5pt,segment length=7pt,post length=1.5mm}] (3.5,0.1) -- ++(0.8,0);
+            \draw [rex,semithick,-latex,decorate,decoration={snake,amplitude=1.5pt,segment length=11pt,post length=1.5mm}] (3.5,-0.3) -- ++(1.4,0);
+        \end{tikzpicture}
+        \caption{Infrared spectrometer schematic.}
+        \label{fig:schematicIR}
+    \end{figure}
+    \begin{itemize}
+        \item We begin with a source of infrared radiation. This source shoots waves at our sample, which could be a molecule like acetone. The IR waves that the source emits have a range of frequencies.
+        \item The sample will absorb certain frequencies, and the frequencies that are not absorbed are detected by a detector. In other words, the director detects the \textbf{transmittance} of the sample.
+    \end{itemize}
+    \item \textbf{Transmittance}: How much of each frequency of radiation passes through the sample.
+    \item IR theory.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \node (1) at (0,0) [circle,draw=blx,fill=blz,thick] {$m_1^{}$};
+                \node (2) at (2,0) [circle,draw=grx,fill=grz,thick] {$m_2^{}$}
+                    edge [decorate,decoration={snake,segment length=6.8pt}] (1)
+                ;
+            \end{tikzpicture}
+            \caption{Springy bonds.}
+            \label{fig:IRtheorya}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \node (1) at (0,0) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}};
+                \node (2) at (2,0) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}}
+                    edge [decorate,decoration={snake,segment length=6.8pt}] (1)
+                ;
+    
+                \draw [->] (0.25,0.5) -- ++(-0.5,0);
+                \draw [->] (1.75,0.5) -- ++(0.5,0);
+            \end{tikzpicture}
+            \caption{Stretch.}
+            \label{fig:IRtheoryb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \node (1) at (-1.25,0) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}}
+                    edge [shorten <=2pt,bend right=10,->,thin] (-0.5,-0.3)
+                ;
+                \node (2) at (0,0.7) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}}
+                    edge [decorate,decoration={snake,segment length=6.8pt}] (1)
+                ;
+                \node (3) at (1.25,0) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}}
+                    edge [decorate,decoration={snake,segment length=6.8pt}] (2)
+                    edge [shorten <=2pt,bend left=10,->,thin] (0.5,-0.3)
+                ;
+            \end{tikzpicture}
+            \caption{Bend.}
+            \label{fig:IRtheoryc}
+        \end{subfigure}
+        \caption{Infrared spectroscopy theory.}
+        \label{fig:IRtheory}
+    \end{figure}
+    \begin{itemize}
+        \item Fundamental assumption: A chemical bond is like a spring between atoms.
+        \begin{itemize}
+            \item Recall from Gen Chem that in science, we often call a spring a \textbf{harmonic oscillator}. If you don't quite remember this term, review your Gen Chem notes or Google it!!
+        \end{itemize}
+        \item Let's dive a bit deeper into this analogy: Imagine we have two different atoms of masses $m_1,m_2$ joined by a "spring," as in Figure \ref{fig:IRtheorya}.
+        \begin{itemize}
+            \item Just like a real spring, chemical bonds can vibrate in different ways: They can stretch and contract (as in Figure \ref{fig:IRtheoryb}), bend (as in Figure \ref{fig:IRtheoryc}), etc.
+            \item All of these different motions are called the \textbf{vibrational modes} of the chemical bonds.
+        \end{itemize}
+        \item Bonds absorb energy from IR waves when the frequency ($\nu$) of the IR wave matches the frequency of the stretching/bending motion.
+        \begin{itemize}
+            \item In other words, when you hit the resonance frequency, you absorb energy.
+            \item This absorption of energy is detected as the loss of transmittance.
+        \end{itemize}
+        \item The change in energy between vibrational modes is related to characteristics of the bond as follows.
+        \begin{equation*}
+            \Delta E \approx \sqrt{\frac{k(m_1+m_2)}{m_1m_2}}
+        \end{equation*}
+        \begin{itemize}
+            \item $k$ is the force constant (proportional to the bond strength).
+            \item $m$ is the mass of atom 1 or 2.
+            \item Implication: Stronger bonds (i.e., those with larger values of $k$) require more energy (i.e., higher $\nu$ IR waves) to absorb.
+            \item Implication: Lighter atoms (i.e., those with lower values of $m$) require more energy (i.e., higher $\nu$ IR waves) to absorb.
+        \end{itemize}
+        \item One additional requirement: The chemical bond must have a dipole in order to absorb IR waves.
+        \begin{itemize}
+            \item Example: \ce{C#O} absorbs because \ce{O} is more electronegative than \ce{C}, but \ce{N#N} does not.
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item Questions on IR theory.
+    \begin{itemize}
+        \item Why do bonds absorb energy \emph{only} when the frequency of the IR waves matches the frequency of the bond's vibration?
+        \begin{itemize}
+            \item The answer to this question is beyond the scope of the class, but Prof. Elkin gives the quantum mechanical explanation.
+            \item Essentially, when a chemical bond absorbs energy, it gets excited to a higher-energy vibrational mode, which we may think of as a more intense vibration.
+            \item However, because vibrational modes are separated by a set amount of energy, lower energy photons won't have enough energy to make it to the next vibrational mode while higher energy photons will provide too much energy to reach anything stable.
+        \end{itemize}
+        \item Why don't bonds without dipoles absorb IR waves?
+        \begin{itemize}
+            \item The explanation is also quantum mechanical, and hence also beyond the scope of this class.
+            \item Essentially, symmetric bonds and molecules lack something called a dipole moment, and zero dipole moment zeroes out the absorption in the math of quantum mechanics. 
+            \item Note that there is some really cool math and physics underlying the answer to this question, and Prof. Elkin recommends you look it up if you're interested!!
+            \item In organic chemistry, however, we're more interested in what we can do with IR spectroscopy than in \emph{exactly} how it works. Essentially, for this class, you should learn how it works well enough to make sense of the trends in spectrum interpretation presented in this lecture, but you don't need to go deeper than that for now.
+        \end{itemize}
+        \item Why do lighter atoms require more energy? It seems like it would take more energy to push around a heavier atom.
+        \begin{itemize}
+            \item Check out the explanation in \textcite{bib:Clayden}; it's pretty comprehensive and understandable.
+        \end{itemize}
+    \end{itemize}
+    \item Example IR spectrum: Propionic acid (\,{\tiny\chemfig[baseline=-0.5mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:-30]-[:30](=[2]O)-[:-30]OH}}\,).
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[text height=1.5ex,text depth=0.25ex,xscale=1]
+            \small
+            \draw (0,4) -- node[rotate=90,above=6mm]{Transmittance (\%)} (0,0) -- node[below=4.7mm]{$\nu$ (\si{\per\centi\meter})} (14,0);
+    
+            \draw [|-]  (0 ,-1.9) -- node[below=1mm,draw]{\ce{X-H}} ++(6,0);
+            \draw [|-]  (6 ,-1.9) -- node[below=1mm,draw]{$sp$} ++(2,0);
+            \draw [|-]  (8 ,-1.9) -- node[below=1mm,draw]{\ce{X=Y}} ++(2,0);
+            \draw [|-|] (10,-1.9) -- node[below=1mm,draw]{single bonds} ++(4,0);
+    
+            \footnotesize
+            \node [below] at (0,0) {4000};
+            \draw (2,0.1)  -- ++(0,-0.1) node[below]{3500};
+            \draw (4,0.1)  -- ++(0,-0.1) node[below]{3000};
+            \draw (6,0.1)  -- ++(0,-0.1) node[below]{2500};
+            \draw (8,0.1)  -- ++(0,-0.1) node[below]{2000};
+            \draw (10,0.1) -- ++(0,-0.1) node[below]{1500};
+            \draw (12,0.1) -- ++(0,-0.1) node[below]{1000};
+            \draw (14,0.1) -- ++(0,-0.1) node[below]{500};
+            \draw (0,3.5) -- ++(-0.1,0) node[left]{100};
+    
+            \draw [<-] (0,-0.6) -- node[below=3mm,align=center]{Higher $E$\\(stronger bonds)} ++(2.3,0);
+            \draw [<-] (14,-0.6) -- node[below=3mm,align=center]{Lower $E$\\(weaker bonds)} ++(-2.3,0);
+    
+            \draw [rex,semithick,decorate,decoration={random steps,segment length=2pt,amplitude=0.8pt},/pgf/fpu/install only={reciprocal}] (0,3.5)
+                -- ++(2.5,0)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(1,-1.7) node[black,above=1.7cm]{\ce{O-H}}
+                to[out=0,in=180,out looseness=0.6,in looseness=0.4] ++(0.8,1.7)
+                -- ++(3.9,0)
+                to[out=0,in=180,out looseness=0.2,in looseness=0.1] ++(0.2,-3.2) node[black,above=3.2cm]{\ce{C=O}}
+                to[out=0,in=180,out looseness=0.1,in looseness=0.2] ++(0.2,3.2)
+                -- ++(1.2,0)
+                to[out=0,in=180,looseness=0.2] ++(0.15,-0.7)
+                to[out=0,in=180,looseness=0.5] ++(0.15,0.3) node[black,above=0.4cm]{\ce{C-O}}
+                to[out=0,in=180,looseness=0.5] ++(0.15,-1)
+                to[out=0,in=180,looseness=0.2] ++(0.15,1.4)
+                -- ++(0.3,0)
+                to[out=0,in=180,looseness=0.2] ++(0.2,-2) node[black,above=2cm]{\ce{C-O}}
+                to[out=0,in=180,looseness=0.2] ++(0.2,2)
+                -- ++(0.4,0)
+                to[out=0,in=180,looseness=0.8] ++(0.5,-0.6)
+                to[out=0,in=180,looseness=0.8] ++(0.3,0.2)
+                to[out=0,in=180,looseness=0.8] ++(0.2,-0.1)
+                to[out=0,in=180,looseness=0.8] ++(0.4,0.5)
+                -- ++(1.1,0)
+            ;
+        \end{tikzpicture}
+        \caption{Infrared spectrum of propionic acid.}
+        \label{fig:IRpropionic}
+    \end{figure}
+    \begin{itemize}
+        \item The $x$-axis is the frequency of the IR waves, measured in wavenumbers (\si{\per\centi\meter}).
+        \begin{itemize}
+            \item We typically are interested in the region from \SIrange{4000}{1500}{\per\centi\meter}.
+        \end{itemize}
+        \item The $y$-axis is the percent transmittance.
+        \item The \textbf{baseline} is 100\%, which means pure transmittance (aka, no \textbf{absorption}).
+        \begin{itemize}
+            \item Then we have \textbf{absorbance peaks}, each of which corresponds to a different chemical bond.
+        \end{itemize}
+        \item We can further break the spectrum down into regions.
+        \begin{itemize}
+            \item \ce{X-H} bonds occur in the \SIrange{4000}{2500}{\per\centi\meter} region.
+            \begin{itemize}
+                \item Peaks in this region are often broad. Specifically, a peak will be broad if the corresponding protons are \textbf{exchangeable}.
+                \item Hydrogen bonding can also lead to broadening.
+                \item We see this effect in both IR and NMR, so we'll talk about it more later this week!
+                \item For example, the \ce{O-H} peak is broad because this acidic proton is exchangeable.
+            \end{itemize}
+            \item $sp$-hybridized atoms occur in the \SIrange{2500}{2000}{\per\centi\meter} region.
+            \begin{itemize}
+                \item In other words, polar triple bonds show up here.
+                \item Examples: \ce{C#N} and \ce{C#C$'$}.
+            \end{itemize}
+            \item \ce{X=Y} bonds occur in the \SIrange{2000}{1500}{\per\centi\meter} region.
+            \begin{itemize}
+                \item This is for polar double bonds.
+                \item Examples: \ce{C=O}, \ce{C=C$'$},\footnote{The prime on the second carbon indicates that the carbons have different substituents. This is necessary if we are to have a dipole (symmetric \ce{C=C} bonds are nonpolar).} and \ce{C=N}.
+            \end{itemize}
+            \item Single bonds occur in the \SIrange{1500}{500}{\per\centi\meter} region.
+            \begin{itemize}
+                \item Examples: \ce{C-C$'$}, \ce{C-O}, and \ce{C-F}.
+            \end{itemize}
+            \item Some of these regions are useful, and some less so.
+        \end{itemize}
+        \item As you can infer from Figure \ref{fig:IRpropionic}, IR spectra look a bit like icicles.
+        \item Note that \ce{C-O} has two peaks because there are multiple bonding modes per bond.
+    \end{itemize}
+    \item \textbf{Absorption}: The loss of tranmittance.
+    \begin{itemize}
+        \item We typically plot transmittance in a spectrum, but the two measures are inversely proportional.
+    \end{itemize}
+    \item \textbf{Exchangeable} (proton): A hydrogen atom that is liable to break off of the rest of the molecule and be replaced by another hydrogen atom in solution.
+    \begin{itemize}
+        \item This is very much related to acidic protons! Recall that a Br\o nsted acid will donate its proton and then the conjugate base will pick up a new (possibly new) proton all the time. 
+    \end{itemize}
+    \item \textbf{Diagnostic regions}: \SIrange{4000}{1500}{\per\centi\meter} (useful) and \SIrange{1500}{500}{\per\centi\meter} (useless).
+    \item \textbf{Fingerprint region}: The region of an IR spectrum from \SIrange{1500}{500}{\per\centi\meter}.
+    \begin{itemize}
+        \item Within the fingerprint region, we have so many overlapping peaks that the spectrum becomes difficult to interpret.
+        \item However, its shape is characteristic of a molecule, even if it doesn't tell you anything specifically. This is just like a real fingerprint! Your fingerprint doesn't tell anyone else your name, age, date of birth, etc. --- but it does tell people that you're you!
+    \end{itemize}
+    \item Key regions.
+    \begin{table}[H]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{cc|cc|cc}
+            \multicolumn{2}{c|}{\textbf{\ce{X-H}}} & \multicolumn{2}{c|}{$\bm{sp}$} & \multicolumn{2}{c}{\textbf{\ce{X=Y}}}\\
+            \textbf{FG} & \textbf{$\bm{\nu}$ ($\textbf{cm}^{\bm{-1}}$)} & \textbf{FG} & \textbf{$\bm{\nu}$ ($\textbf{cm}^{\bm{-1}}$)} & \textbf{FG} & \textbf{$\bm{\nu}$ ($\textbf{cm}^{\bm{-1}}$)}\\ \hline
+            \ce{O-H} & \numrange{3600}{3200} & \ce{C#N} & \num{2200} & \ce{C=O} & \numrange{1840}{1630}\\
+            \ce{N-H} & \numrange{3100}{2700} & \ce{C#C$'$} & \num{2100} & \ce{C=N} & \numrange{1700}{1600}\\
+            \ce{C-H} & \numrange{3000}{2850} & \ce{C=C=C$'$} & \num{1950} & \ce{C=C$'$} & \numrange{1670}{1600}\\
+        \end{tabular}
+        \caption{Key regions of an infrared spectrum.}
+        \label{tab:IRregions}
+    \end{table}
+    \begin{itemize}
+        \item Note that functional groups listed higher up in each column of Table \ref{tab:IRregions} have stronger bonds, and thus absorb higher energy/higher $\nu$ photons.
+        \item Both \ce{O-H} and \ce{N-H} peaks are broad \emph{if} the proton is exchangeable.
+        \begin{itemize}
+            \item There is an example in \textcite{bib:Clayden} of an \ce{O-H} that is so sterically encumbered that you don't get proton exchange!!
+        \end{itemize}
+        \item Note also that \ce{C-H} peaks are often weak, and may not show up at all in some spectra.
+        \item Should this information be memorized, or will it be provided in a reference chart?
+        \begin{itemize}
+            \item Memorize the general regions and trends (as presented in the discussion following Figure \ref{fig:IRpropionic}), but not the explicit data in Table \ref{tab:IRregions}.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Broad} (peak): An absorbance peak that stretches over a wide range of wavenumbers.
+    \item \textbf{Sharp} (peak): An absorbance peak that is restricted to a narrow range of wavenumbers.
+    \item What determines the \emph{exact} absorption frequency of a chemical bond?
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \chemfig{-[:30](=[2]O)-[:-30]}
+            \caption{Acetone.}
+            \label{fig:IRexacta}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \chemfig{*6(-=-(-(=[2]O)-[:-30])=-=)}
+            \caption{Acetophenone.}
+            \label{fig:IRexactb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \chemfig{*6(-=-(-(=[2]O)-[:-30]*6(=-=-=-))=-=)}
+            \caption{Benzophenone.}
+            \label{fig:IRexactc}
+        \end{subfigure}
+        \caption{Related molecules with slightly different infrared absorption peaks.}
+        \label{fig:IRexact}
+    \end{figure}
+    \begin{itemize}
+        \item The exact frequency is determined by the atoms and functional groups surrounding the bond.
+        \item For example, consider acetone, acetophenone, and benzophenone.
+        \begin{itemize}
+            \item These three molecules all have \ce{C=O} bonds, but their \ce{C=O} bonds absorb IR waves at 1715, 1692, and \SI{1664}{\per\centi\meter}, respectively.
+            \item This effect can be attributed to increasing conjugation with the $\pi$-systems of the aromatic rings.
+        \end{itemize}
+        \item Indeed, the more conjugated the \ce{C=O} bond, the weaker it is. Conjugation takes off \SIrange{20}{30}{\per\centi\meter} per conjugation!
+        \item Conjugation is just one example, however; many other group of atoms can affect the absorption frequency.
+    \end{itemize}
+    \item Guidelines for interpretation.
+    \begin{itemize}
+        \item Look for the presence or absence of key functional groups.
+        \begin{itemize}
+            \item This is really good for \ce{O-H}, \ce{N-H}, \ce{C#N}, \ce{C=O}, \ce{C=N}, \ce{C=C$'$}, etc.
+        \end{itemize}
+        \item We'll also rationalize trends.
+        \begin{itemize}
+            \item Stronger bonds have higher frequencies, and hence get shifted to the left.
+            \item Weaker bonds have lower frequencies, and hence get shifted to the right.
+            \item Etc.
+        \end{itemize}
+    \end{itemize}
+    \item Why do we use wavenumbers instead of per second for frequency?
+    \begin{itemize}
+        \item Historical reasons; this is just the way chemists have always done it.
+    \end{itemize}
+    \pagebreak
+    \item Example spectrum: But-3-yn-2-one (\,{\tiny\chemfig[baseline=-0.3mm,atom sep=1em,bond offset=1pt,fixed length=false]{H-~-(=[:60]O)-[:-60]}}\,).
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[text height=1.5ex,text depth=0.25ex,xscale=1]
+            \small
+            \draw (0,4) -- node[rotate=90,above=6mm]{Transmittance (\%)} (0,0) -- node[below=4.7mm]{$\nu$ (\si{\per\centi\meter})} (14,0);
+    
+            \footnotesize
+            \node [below] at (0,0) {4000};
+            \draw (2,0.1)  -- ++(0,-0.1) node[below]{3500};
+            \draw (4,0.1)  -- ++(0,-0.1) node[below]{3000};
+            \draw (6,0.1)  -- ++(0,-0.1) node[below]{2500};
+            \draw (8,0.1)  -- ++(0,-0.1) node[below]{2000};
+            \draw (10,0.1) -- ++(0,-0.1) node[below]{1500};
+            \draw (12,0.1) -- ++(0,-0.1) node[below]{1000};
+            \draw (14,0.1) -- ++(0,-0.1) node[below]{500};
+            \draw (0,3.5) -- ++(-0.1,0) node[left]{100};
+    
+            \draw [rex,semithick,decorate,decoration={random steps,segment length=2pt,amplitude=0.8pt},/pgf/fpu/install only={reciprocal}] (0,3.5)
+                -- ++(2.6,0)
+                to[out=0,in=180,out looseness=0.2,in looseness=0.1] ++(0.2,-3.2) node[black,above=3.2cm]{\chemfig{H-C~!{wave}}}
+                to[out=0,in=180,out looseness=0.1,in looseness=0.2] ++(0.2,3.2)
+                -- ++(4.6,0)
+                to[out=0,in=180,out looseness=0.2,in looseness=0.1] ++(0.2,-3) node[black,above=3cm]{\ce{C#C$'$}}
+                to[out=0,in=180,out looseness=0.1,in looseness=0.2] ++(0.2,3)
+                -- ++(1,0)
+                to[out=0,in=180,out looseness=0.2,in looseness=0.1] ++(0.2,-2.5) node[black,above=2.5cm]{\ce{C=O}}
+                to[out=0,in=180,out looseness=0.1,in looseness=0.2] ++(0.2,2.5)
+                -- ++(1.2,0)
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.2,-1)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.2,0.7)
+                % -- ++(0.1,0)
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.3,-1)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.3,1.1)
+                % -- ++(0.1,0)
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.2,-0.9)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.2,1)
+                % -- ++(0.1,0)
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.3,-0.6)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.3,0.7)
+                -- ++(1.4,0)
+            ;
+        \end{tikzpicture}
+        \caption{Infrared spectrum of but-3-yn-2-one.}
+        \label{fig:IRbut}
+    \end{figure}
+    \begin{itemize}
+        \item This spectrum is composed of four major elements: A sharp peak at \SI{3300}{\per\centi\meter}, a sharp peak just to the left of \SI{2000}{\per\centi\meter}, a sharp peak at \SI{1700}{\per\centi\meter}, and the fingerprint region.
+        \item The sharp peak at \SI{3300}{\per\centi\meter} can be attributed to the propionic \ce{C-H} bond.
+        \item But wait: We said in Table \ref{tab:IRregions} that \ce{C-H} bonds lay between \SIrange{3000}{2850}{\per\centi\meter}. What gives?
+        \begin{itemize}
+            \item The leftward shift is due to the unique chemical environment of this specific \ce{C-H}.
+            \item In particular, the carbon in this bond is $sp$-hybridized. It follows that this \ce{C-H} bond is more polarized. Thus, the bond is stronger than usual, and we need higher frequency IR waves.
+        \end{itemize}
+        \item Evidence that propionic \ce{C-H} bonds are stronger: Bond dissociation energies (BDEs).\footnote{Look up BDEs in your Orgo I and Gen Chem notes if you don't remember them. These are important to know!!}
+        \begin{itemize}
+            \item The BDE for a propionic \ce{C-H} is about \SI[per-mode=symbol]{125}{\kilo\calorie\per\mole}, while the BDE for an alkane \ce{C-H} is about \SI[per-mode=symbol]{98}{\kilo\calorie\per\mole}.
+            \item This difference is also reflected in the relative $\pKa$'s of the two hydrogens: Alkane \ce{C-H}'s have $\pKa$'s in the 50s, while propionic \ce{C-H}'s have $\pKa$'s in the 20s.
+        \end{itemize}
+        \item Note that in this molecule, the $sp^3$ \ce{C-H} stretch only absorbs weakly, hence why we don't see a peak around \SI{3000}{\per\centi\meter}.
+    \end{itemize}
+    \item There is some theory on how much a certain vibration will absorb, but for our purposes, we'll assume that all stretches absorb a good healthy amount of radiation.
+    \item Application: IR is nondestructive.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[text height=1.5ex,text depth=0.25ex,xscale=1]
+            \small
+            \draw (0,4) -- node[rotate=90,above]{Brightness} (0,0) -- node[below]{$\lambda$ (\si{\micro\meter})} (10,0);
+    
+            \footnotesize
+            \draw [rex,semithick,decorate,decoration={random steps,segment length=2pt,amplitude=0.8pt},/pgf/fpu/install only={reciprocal}] (0,3.5)
+                -- ++(0.8,-0.7)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.2,-0.7) node[black,above=0.7cm]{\ce{CO2}}
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.2,0.5)
+                -- ++(0.5,-0.4)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.2,-1) node[black,above=1cm]{\ce{CO2}}
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.2,0.8)
+                -- ++(0.6,-0.4)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.3,-0.6) node[black,above=0.6cm]{\ce{H2O}}
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.2,0.4)
+                -- ++(0.4,-0.3)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.2,-0.6) node[black,above=0.6cm]{\ce{CO2}}
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.2,0.5)
+                to[out=-30,in=-145,looseness=1.1] ++(2.5,0.5)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.3,-0.2) node[black,above=0.3cm,xshift=-1mm]{\ce{CO2}}
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.3,0.5)
+                to ++(0.05,-0.3)
+                to ++(0.05,0.35)
+                to ++(0.05,-0.3)
+                to ++(0.05,0.35) node[black,above]{\ce{CO}}
+                to ++(0.05,-0.3)
+                to ++(0.05,0.35)
+                to ++(0.05,-0.3)
+                to ++(0.05,0.35)
+                -- ++(0.4,0.3)
+                to[out=0,in=180,out looseness=0.4,in looseness=0.5] ++(0.2,-0.8) node[black,above=0.9cm,xshift=-2mm]{\ce{CO2}}
+                to[out=0,in=180,out looseness=0.5,in looseness=0.4] ++(0.2,1)
+                -- (10,3.5)
+            ;
+        \end{tikzpicture}
+        \caption{Infrared spectrum of the atmosphere of Mars.}
+        \label{fig:IRmars}
+    \end{figure}
+    \begin{itemize}
+        \item EA and MS are destructive analytical techniques, meaning that the sample gets destroyed (e.g., by burning or fragmentation) in the process. This requires sample in hand, some of which we can destroy.
+        \item IR is nondestructive. This means that we can recover our sample after the experiment! In other words, IR spectroscopy can be run from afar.
+        \item For example, consider the spectrum in Figure \ref{fig:IRmars}.
+        \begin{itemize}
+            \item This is still an IR spectrum, even though the $x$-axis is in wavelength ($\lambda$) --- measured in \si{\micro\meter} --- and $y$-axis is in brightness.
+            \item The spectrum has a bad baseline, but we'll just forgive this.
+            \item A number of vibrational modes of \ce{CO2}, \ce{H2O}, and \ce{CO} are recorded.
+        \end{itemize}
+        \item What is this spectrum?
+        \begin{itemize}
+            \item It is an IR spectrum of the atmosphere of Mars!
+            \item It was taken by the James Webb Telescope two years ago, in 2022.
+            \item We've had an IR spectrum of the moon since the 1940s, but this is new and cool!
+        \end{itemize}
+        \item To generalize, here are some major applications of IR spectroscopy.
+        \begin{itemize}
+            \item Space.
+            \begin{itemize}
+                \item Just like the example in Figure \ref{fig:IRmars}, IR spectroscopy can be used to find new molecules in celestial bodies.
+                \item If you ever see a news story along the lines of "Amino acids found on an asteroid," the amino acids in question were probably detected using IR spectroscopy.
+            \end{itemize}
+            \item Climate science.
+            \begin{itemize}
+                \item Example: Measuring the concentrations of methane (a potent greenhouse gas) over the arctic.
+            \end{itemize}
+            \item Art.
+            \begin{itemize}
+                \item Example: Authenticating old paintings.
+                \item Indeed, we can use IR to look for diagnostic pigments.
+                \item A nondestructive method like IR is better in this context than a destructive method like EA or MS because you obviously don't want to chip off a bit of the paint just for an analysis!
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item Why is \ce{CO2} (a nonpolar molecule) IR active?
+    \begin{itemize}
+        \item The stretching modes are IR silent.
+        \item However, some of the bending modes induce a dipole, and these are the IR active modes.
+    \end{itemize}
+    \item Could we use IR to detect the presence of oxygen on Mars?
+    \begin{itemize}
+        \item Oxygen is probably not IR active, so we could not use IR to detect its presence on Mars. There is probably another way, though!
     \end{itemize}
 \end{itemize}
 
