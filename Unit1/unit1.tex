@@ -1699,7 +1699,7 @@
             \draw [-|]  (-4,0.6) -- node[above]{\chemfig{H-[:30]-[:-30]X}} (-2,0.6);
             \draw [-|]  (-2,0.6) -- node[above]{alkyl} (0,0.6);
             \draw [|-|] (-3,1.5) -- node[above]{allylic; \chemfig{=_[:30]-[:-30]-[:30]H}} (-1,1.5);
-            \draw [|-|] (-5,2.4) -- node[above]{\ce{OH} / \ce{NH} (broad)} (-1,2.4);
+            \draw [|-|] (-5,2.4) -- node[above]{\ce{OH} / \ce{NH}} (-1,2.4);
         \end{tikzpicture}
         \caption{Chemical shifts of common proton types.}
         \label{fig:chemShift}
@@ -1714,6 +1714,7 @@
         \begin{itemize}
             \item This is exactly the same as exchangeable protons from IR spectroscopy!
         \end{itemize}
+        \item \ce{OH} and \ce{NH} peaks are \emph{often} broad, although they can appear as sharp peaks, including with coupling to neighboring protons.
     \end{itemize}
     \item \textbf{Upfield} (chemical shift): A chemical shift that is more to the right side of an NMR spectrum. \emph{Also known as} \textbf{shielded}.
     \begin{itemize}
@@ -1735,7 +1736,7 @@
         \item The secondary protons are surrounded by two EWGs (1 methyl and 1 isopropyl), so it has the second highest chemical shift at 1.20.
         \item The primary protons then have the lowest chemical shifts. For example, the three protons at the right end of the molecule have a chemical shift of 0.86.
     \end{itemize}
-    \item Why are tertiary carbons more deshielded when tertiary carbocations are more stable due to electron-donating effects?
+    \item Why are tertiary carbons more deshielded when adjacent methyl groups donate to a carbocation?
     \begin{itemize}
         \item Prof. Elkin will not answer this question in full now because the answer comes from MO theory.
         \item Simply, carbon is more electronegative than hydrogen, so carbon is a better EWG than hydrogen.
@@ -1743,7 +1744,7 @@
     \pagebreak
     \item Why does more electron density lead to a greater shielding effect and hence a lower resonance frequency?
     \begin{itemize}
-        \item Prof. Elkin will return to this question later because it ties into part of Friday's lecture.
+        \item Because they feel more of the external magnetic field, so it takes more energy to flip them to the higher spin state.
     \end{itemize}
     \item \textbf{Integration} (of an NMR peak): The area under the peak.
     \begin{itemize}
@@ -1770,12 +1771,12 @@
                 -- (-7.3,0)
                 to[out=0,in=180,out looseness=0.1,in looseness=0.06] (-7.26,0.8) node[below=0.8cm]{7.26}
                 to[out=0,in=180,out looseness=0.06,in looseness=0.1] (-7.22,0)
-                -- (-3.69,0)
-                to[out=0,in=180,looseness=0.8] (-3.49,0.3) node[below=0.3cm]{3.49} node(3)[above]{1H}
-                to[out=0,in=180,looseness=0.8] (-3.29,0)
-                -- (-1.1,0)
-                to[out=0,in=180,out looseness=0.05,in looseness=0.03] (-1.05,2.3) node[below=2.3cm]{1.05} node(1)[above]{3H}
-                to[out=0,in=180,out looseness=0.03,in looseness=0.05] (-1,0)
+                -- (-3.54,0)
+                to[out=0,in=180,out looseness=0.05,in looseness=0.03] (-3.49,2.3) node[below=2.3cm]{3.49} node(1)[above]{3H}
+                to[out=0,in=180,out looseness=0.03,in looseness=0.05] (-3.44,0)
+                -- (-1.24,0)
+                to[out=0,in=180,looseness=0.8] (-1.04,0.3) node[below=0.3cm]{1.04} node(3)[above]{1H}
+                to[out=0,in=180,looseness=0.8] (-0.84,0)
                 -- (0,0)
             ;
     
@@ -1783,7 +1784,7 @@
                 (M.north east) edge[decorate,decoration=brace] (M.south east)
                 (M.east) edge[out=0,in=90,->,shorten <=2pt] (1.90)
                 (M.160) edge[decorate,decoration={brace,mirror}] (M.190)
-                (M.172) edge[out=-150,in=120,->,shorten <=2pt] (3)
+                (M.179) edge[out=135,in=90,->,shorten <=2pt,in looseness=1.7] (3)
             ;
             \draw [grx,rotate around={60:(-6.04,3.32)},-stealth,shorten >=2pt,shorten <=2pt] (-6.04,3.32) arc[start angle=90,end angle=-270,x radius=2mm,y radius=1mm];
         \end{tikzpicture}
@@ -1791,7 +1792,7 @@
         \label{fig:NMRMeOH}
     \end{figure}
     \begin{itemize}
-        \item In this example, there is free rotation around the \ce{C-O} single bond. This rotation puts all of the methyl protons in the chemical environment, i.e., they are chemically equivalent. Thus, because they are chemically equivalent they all have the identical resonance frequency of 1.05 and all contribute to that peak.
+        \item In this example, there is free rotation around the \ce{C-O} single bond. This rotation puts all of the methyl protons in the chemical environment, i.e., they are chemically equivalent. Thus, because they are chemically equivalent they all have the identical resonance frequency of 3.49 and all contribute to that peak.
         \begin{itemize}
             \item Indeed, \emph{any} single bond with unrestricted rotation makes protons chemically equivalent, leading to them resonating at the same frequency.
         \end{itemize}
@@ -1902,7 +1903,7 @@
             \item We tend to use the term "multiplet" when the splitting is either very complicated or low resolution, that is, when we cannot tell if the splitting is a triplet, quartet, septet, or something even more exotic (like what we'll discuss next class!).
         \end{itemize}
     \end{itemize}
-    \item Note that identical protons do not couple themselves.
+    \item Note that identical protons do not couple themselves.\footnote{For a (heavily mathematical, quantum mechanical) explanation of why, see \href{https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Physical_Chemistry_(LibreTexts)/14\%3A_Nuclear_Magnetic_Resonance_Spectroscopy/14.07\%3A_Spin-Spin_Coupling_Between_Chemically_Equivalent_Protons_is_Not_Observed}{this} resource.}
     \begin{itemize}
         \item This is why (for example) the septet in Figure \ref{fig:NMRpropane} is not an octet: The two secondary protons do not couple to each other.
     \end{itemize}
