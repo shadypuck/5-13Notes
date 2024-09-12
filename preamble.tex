@@ -10,7 +10,7 @@
 \usepackage{tikz}
 \usepackage{float,subcaption}
 \usepackage{amsmath,amssymb}
-\usepackage{bm}
+\usepackage{bm,xfrac}
 \usepackage{mhchem}
 \usepackage{chemfig}
 \usepackage[colorlinks,allcolors=black,urlcolor=cyan]{hyperref}
@@ -43,20 +43,26 @@
 \sisetup{range-phrase=--,range-units=single}
 \DeclareSIUnit{\calorie}{cal}
 
-\addbibresource{\subfix{/main.bib}}
+\addbibresource{\subfix{main.bib}}
 \DefineBibliographyStrings{english}{bibliography={References}}
 
-\usetikzlibrary{decorations.pathmorphing,calc,bending,fpu}
+\usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing,calc,bending,fpu}
 \tikzset{
     digit/.style={circle,draw,inner sep=1pt,text height=1.5ex},
     curved arrow/.style 2 args={magenta,semithick,shorten <=#1,shorten >=#2},
     wv/.style={decorate,decoration={coil,aspect=0,amplitude=1pt,segment length=4.7pt}}
 }
 \colorlet{rex}{red!80!black!90!orange!80}
+\colorlet{rez}{red!80!black!90!orange!7}
+\colorlet{gax}{gray}
+\colorlet{gay}{gray!50}
+\colorlet{gaz}{gray!7}
 \colorlet{blx}{blue!90!green!80}
 \colorlet{blz}{blue!90!green!7}
 \colorlet{grx}{green!50!black}
 \colorlet{grz}{green!50!black!7}
+\colorlet{yex}{yellow!50!orange}
+\colorlet{yez}{yellow!50!orange!10}
 
 \setchemfig{atom sep=2em,fixed length=true,bond offset=3pt,cram width=3pt}
 \setcharge{extra sep=3pt}

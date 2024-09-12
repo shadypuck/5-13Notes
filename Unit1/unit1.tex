@@ -97,8 +97,8 @@
         \centering
         \begin{tikzpicture}
             \begin{scope}[xshift=-1cm,scale=0.4]
-                \fill [gray!10] (-0.5,0) -- (-1,-1) -- (1,-1) -- (0.5,0);
-                \draw [gray!50,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] (-0.5,0) -- (0.5,0);
+                \fill [gaz] (-0.5,0) -- (-1,-1) -- (1,-1) -- (0.5,0);
+                \draw [gay,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] (-0.5,0) -- (0.5,0);
     
                 \draw [gray,ultra thick] (-0.3,1) -- (-0.3,0.5) -- (-1,-1) -- (1,-1) -- (0.3,0.5) -- (0.3,1);
             \end{scope}
@@ -160,27 +160,27 @@
                 edge[bend right=10,->] (0.5,-0.1)
             ;
     
-            \fill [gray!10] (1.4,-1)
+            \fill [gaz] (1.4,-1)
                 -- ({1.4+0.24},-1)
                 arc[start angle=-140,end angle=-40,x radius=0.73cm,y radius=1.12cm]
                 -- ({1.4+1.6},-1)
                 arc[start angle=-40,end angle=-140,x radius=1.04cm,y radius=1.66cm]
                 -- cycle
             ;
-            \draw [gray!50,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] (1.4,-1) -- (1.64,-1);
-            \draw [gray!50,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] (2.76,-1) -- (3,-1);
+            \draw [gay,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] (1.4,-1) -- (1.64,-1);
+            \draw [gay,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] (2.76,-1) -- (3,-1);
             \node at (2.2,-2.1) {\ce{CaCl2}}
                 edge[bend right=10,->] (2.2,-1.45)
             ;
-            \fill [gray!10] (3.5,-1)
+            \fill [gaz] (3.5,-1)
                 -- ({3.5+0.24},-1)
                 arc[start angle=-140,end angle=-40,x radius=0.73cm,y radius=1.12cm]
                 -- ({3.5+1.6},-1)
                 arc[start angle=-40,end angle=-140,x radius=1.04cm,y radius=1.66cm]
                 -- cycle
             ;
-            \draw [gray!50,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] (3.5,-1) -- ({3.5+0.24},-1);
-            \draw [gray!50,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] ({3.5+1.6-0.24},-1) -- ({3.5+1.6},-1);
+            \draw [gay,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] (3.5,-1) -- ({3.5+0.24},-1);
+            \draw [gay,thick,decorate,decoration={snake,segment length=4pt,amplitude=0.5pt}] ({3.5+1.6-0.24},-1) -- ({3.5+1.6},-1);
             \node at (4.3,-2.1) {\ce{KOH}}
                 edge[bend right=10,->] (4.3,-1.45)
             ;
@@ -539,7 +539,7 @@
     \end{itemize}
     \item Let's now discuss some common species that we analyze via MS --- and how they fragment.
     \item Alkane fragmentation: Preferentially break bonds to get more substituted (e.g., $2^\circ$ \& $3^\circ$) carbocations.
-    \item Example: 2-methylbutane (\,{\tiny\chemfig[baseline=0.7mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:30](-[2])-[:-30]-[:30]}}\,).
+    \item Example: Isopentane (\,{\tiny\chemfig[baseline=0.8mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:30](-[2])-[:-30]-[:30]}}\,).
     \begin{figure}[H]
         \centering
         \footnotesize
@@ -825,12 +825,12 @@
                 (92,0) -- ++(0,7) node[above right=1mm,black,thin,digit]{92}
                 (126,0) -- ++(0,27) node[above=1mm,black,thin,digit,label={[right=2.5mm,yshift=2mm,black]
                     \chemleft[
-                        \chemfig[atom sep=1em]{*6(=-=(--[:-30]{}^{36}Cl)-=-)}
+                        \chemfig[atom sep=1em]{*6(=-=(--[:-30]{}^{35}Cl)-=-)}
                     \chemright{]^\rc}
                 }]{126}
                 (128,0) -- ++(0,9) node[above right=1mm,black,thin,digit,label={[right=2.5mm,yshift=-2mm,black]
                     \chemleft[
-                        \chemfig[atom sep=1em]{*6(=-=(--[:-30]{}^{38}Cl)-=-)}
+                        \chemfig[atom sep=1em]{*6(=-=(--[:-30]{}^{37}Cl)-=-)}
                     \chemright{]^\rc}
                 }]{128}
             ;
@@ -961,10 +961,10 @@
     \end{itemize}
     \item Lecture outline.
     \begin{itemize}
-        \item IR spectrometer schematic.
-        \item IR theory.
-        \item IR spectrum elements.
-        \item Key regions of an IR spectrum.
+        \item Spectrometer schematic.
+        \item Theory.
+        \item Spectrum elements.
+        \item Key regions of a spectrum.
     \end{itemize}
     \item Principle: Irradiate a sample with infrared waves and detect where the sample absorbs these waves.
     \begin{itemize}
@@ -1018,8 +1018,8 @@
         \begin{subfigure}[b]{0.25\linewidth}
             \centering
             \begin{tikzpicture}
-                \node (1) at (0,0) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}};
-                \node (2) at (2,0) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}}
+                \node (1) at (0,0) [circle,draw=gax,fill=gaz,thick] {\phantom{$m_1^{}$}};
+                \node (2) at (2,0) [circle,draw=gax,fill=gaz,thick] {\phantom{$m_1^{}$}}
                     edge [decorate,decoration={snake,segment length=6.8pt}] (1)
                 ;
     
@@ -1032,13 +1032,13 @@
         \begin{subfigure}[b]{0.25\linewidth}
             \centering
             \begin{tikzpicture}
-                \node (1) at (-1.25,0) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}}
+                \node (1) at (-1.25,0) [circle,draw=gax,fill=gaz,thick] {\phantom{$m_1^{}$}}
                     edge [shorten <=2pt,bend right=10,->,thin] (-0.5,-0.3)
                 ;
-                \node (2) at (0,0.7) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}}
+                \node (2) at (0,0.7) [circle,draw=gax,fill=gaz,thick] {\phantom{$m_1^{}$}}
                     edge [decorate,decoration={snake,segment length=6.8pt}] (1)
                 ;
-                \node (3) at (1.25,0) [circle,draw=gray,fill=gray!7,thick] {\phantom{$m_1^{}$}}
+                \node (3) at (1.25,0) [circle,draw=gax,fill=gaz,thick] {\phantom{$m_1^{}$}}
                     edge [decorate,decoration={snake,segment length=6.8pt}] (2)
                     edge [shorten <=2pt,bend left=10,->,thin] (0.5,-0.3)
                 ;
@@ -1432,6 +1432,526 @@
     \begin{itemize}
         \item Oxygen is probably not IR active, so we could not use IR to detect its presence on Mars. There is probably another way, though!
     \end{itemize}
+\end{itemize}
+
+
+
+\section{Nuclear Magnetic Resonance - 1}
+\begin{itemize}
+    \item \marginnote{9/11:}Lecture 3 Recap.
+    \begin{itemize}
+        \item Key regions of an IR spectrum from Figure \ref{fig:IRpropionic}.
+        \item A follow-up on \ce{C-H} peaks.
+        \begin{itemize}
+            \item See Steven's announcement on Canvas.
+        \end{itemize}
+        \pagebreak
+        \item Essentially, \ce{C-H} peaks are typically (1) small and (2) not diagnostic.
+        \begin{enumerate}
+            \item The reason why \ce{C-H} peaks may be small is outside the scope of this class, but it has to do with the polarizability of the \ce{C-H} bond.
+            \item By not diagnostic, we mean that their presence or absence in an IR spectrum doesn't tell us very much since \ce{C-H} bonds exist in almost every organic molecule. Indeed, the real power of IR spectroscopy is in identifying heteroatoms and their stretches.
+        \end{enumerate}
+        \item Takeaway / expectation for this course: If you are given a spectrum displaying a peak in the \ce{C-H} region and there's nothing else to which you can assign this peak, you are expected to know that it's a \ce{C-H} peak.
+    \end{itemize}
+    \item A preview of what's to come in this course.
+    \begin{itemize}
+        \item The remainder of this week: Rich in content, because there's a lot to talk about in NMR.
+        \item Next week: We'll begin putting all of the structure determination techniques together.
+    \end{itemize}
+    \item Today: Nuclear magnetic resonance (NMR).
+    \begin{itemize}
+        \item Reading: \textcite{bib:Clayden}, Chapters 3 \& 13.
+        \item Be sure to read this!!
+    \end{itemize}
+    \item Lecture outline.
+    \begin{itemize}
+        \item Theory.
+        \item Spectrometer schematic.
+        \item Spectrum elements.
+        \item Trends in identifying peaks.
+        \item Integration.
+        \item Coupling.
+    \end{itemize}
+    \item \textbf{Nuclear magnetic resonance}: A method in which we measure the magnetic environment of the nucleus to learn about the chemical environment around atoms.
+    \begin{itemize}
+        \item This is one of the most powerful and widely used techniques in modern, real-life Orgo research.
+    \end{itemize}
+    \item NMR theory.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[text height=1.5ex,text depth=0.25ex]
+            \small
+            \draw [-latex] (-1,-1) -- node[left]{$E$} (-1,1);
+    
+            \footnotesize
+            \node [circle,draw=yex,fill=yez,thick] at (-0.27,0) {$\uparrow$};
+            \node (B) [circle,draw=yex,fill=yez,thick] at (0.27,0) {$\downarrow$};
+            \node (H) [circle,draw=rex,fill=rez,thick] at (1.9,0.5) {$\uparrow$}
+                edge [<-,dashed,shorten <=2pt,shorten >=2pt] (B)
+            ;
+            \draw (2.3,0.5) -- ++(0.5,0);
+            \node (L) [circle,draw=grx,fill=grz,thick] at (1.9,-0.5) {$\downarrow$}
+                edge [<-,dashed,shorten <=2pt,shorten >=2pt] (B)
+            ;
+            \draw (2.3,-0.5) -- ++(0.5,0);
+            \draw [<->,shorten <=1pt,shorten >=1pt] (2.55,-0.5) -- node[right=-1.3pt]{$E_f$} (2.55,0.5);
+    
+            \draw [->] (3.1,0.5) -- ++(0,-1);
+            \draw [->] (3.3,0.5) -- ++(0,-1);
+            \draw [->] (3.5,0.5) -- ++(0,-1);
+        \end{tikzpicture}
+        \caption{Nuclear magnetic resonance theory.}
+        \label{fig:theoryNMR}
+    \end{figure}
+    \begin{itemize}
+        \item Postulate: The nuclear spin has a small magnetic moment.
+        \begin{itemize}
+            \item We won't be diving too deeply into the physics, but recall from Gen Chem that \emph{spin} is one of the main quantum numbers of a nucleus.\footnote{$n$, $\ell$, $m_\ell$, $m_s$.}
+        \end{itemize}
+        % \item Essentially, in a magnetic field, two spins (up and down) separate so that the one that aligns goes down in energy and the opposite one rises in energy. The splitting energy is denoted $E_f$. \emph{get rid of this line??}
+        \item Normally (i.e., in the absence of an external magnetic field), nuclei can be either spin up ($\uparrow$) or spin down ($\downarrow$) and have the same energy.
+        \begin{itemize}
+            \item However, in an external magnetic field ($\downarrow\downarrow\downarrow$), the nuclei split into different energy levels.
+            \item The level that is \textbf{parallel} to the magnetic field is stabilized, and the level that is \textbf{antiparallel} to the magnetic field is destabilized.
+        \end{itemize}
+        \item If we irradiate a nucleus in the spin down state, we can flip it to the spin up state.
+        \begin{itemize}
+            \item However, we must irradiate it using a photon with the \textbf{resonance frequency} ($E_f$).
+        \end{itemize}
+        \item A plot of the frequency required to flip each nucleus is called an NMR spectrum.
+        \begin{itemize}
+            \item Example: If we only had one kind of nucleus in our sample, we would only see one peak in the spectrum. In particular, this peak would correspond to the frequency at which all of the (identical) nuclei present would flip.
+        \end{itemize}
+        \item Another consideration is that for a nucleus to spin flip, its nuclear spin must not equal zero.
+        \begin{itemize}
+            \item For example, the nuclei in \ce{{}^1H} and \ce{{}^13C} atoms have nonzero spin.
+            \begin{itemize}
+                \item We'll look at NMR spectra of these nuclei extensively in this course.
+            \end{itemize}
+            \item However --- and this is beyond the scope of this class --- chemists can also look at spin-active nuclei like \ce{{}^11B}, \ce{{}^19F}, and \ce{{}^31P}.
+        \end{itemize}
+        \item Lastly, note that the resonance frequency is not the same for all nuclei due to a phenomenon called \textbf{shielding}.
+    \end{itemize}
+    \item \textbf{Resonance frequency} (of an atomic nucleus in a certain magnetic field): The frequency of radiation needed to flip the spin of the nucleus from spin down to spin up. \emph{Denoted by} $\bm{E_f}$.
+    \item \textbf{Shielding}: The chemical environment affects the frequency at which a nucleus flips.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \footnotesize
+            \draw [densely dashed] (1.2,0) arc[start angle=0,end angle=180,x radius=1.2cm,y radius=1.7mm];
+            \node (L)  [circle,draw=grx,fill=grz,thick,text height=1.5ex,text depth=0.25ex] {$\downarrow$};
+            \draw [densely dashed] (1.2,0) arc[start angle=0,end angle=-180,x radius=1.2cm,y radius=1.7mm];
+            \node (e1) [circle,draw=gax,fill=gaz,thick,inner sep=1pt] at (1.2,0) {$\uparrow$};
+            \node (e2) [circle,draw=gax,fill=gaz,thick,inner sep=1pt] at (-1.2,0) {$\uparrow$};
+    
+            \draw (1.6,-0.5) to[out=0,in=0,looseness=0.5] (1.6,0.5) to[out=0,in=0,looseness=0.2] cycle;
+            \draw [->] (2.1,0.5) -- ++(0,-1);
+            \draw [->] (2.3,0.5) -- ++(0,-1);
+            \draw [->] (2.5,0.5) -- ++(0,-1);
+    
+            \node at (0,0.8) {$\e[-]$}
+                edge [out=0,in=90,->,shorten >=2pt] (e1)
+                edge [out=180,in=90,->,shorten >=2pt] (e2)
+            ;
+    
+            \node at (0.8,-0.8) {nucleus}
+                edge [out=180,in=-90,->,shorten >=2pt] (L)
+            ;
+            \node at (2.5,-0.8) {shield}
+                edge [out=180,in=-80,->] (1.7,-0.55)
+            ;
+    
+            \path (-5,0) -- (5,0);
+        \end{tikzpicture}
+        \caption{Shielding in NMR.}
+        \label{fig:shielding}
+    \end{figure}
+    \begin{itemize}
+        \item Essentially, electrons have their own magnetic moments, which "shield" the nucleus they surround from the external field.
+        \item More electron density --- such as that from electron-donating groups (EDGs) --- leads to more shielding.
+    \end{itemize}
+    \item A schematic of an NMR spectrometer.
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \footnotesize
+            \draw
+                (-1.3,0) -- ++(0,-1) to[out=-90,in=-90,looseness=0.5] ++(0.4,0) -- ++(0,1)
+                (1.3,0) -- ++(0,-1) to[out=-90,in=-90,looseness=0.5] ++(-0.4,0) -- ++(0,1)
+            ;
+            \filldraw [fill=white] (-1.5,0) -- ++(0,3.5) to[out=90,in=90] ++(3,0) -- ++(0,-3.5) to[out=-90,in=-90,looseness=0.5] cycle;
+            \draw (-0.7,0.1) rectangle (0.7,2);
+            \fill [white] (-0.1,0.3) rectangle (0.1,5);
+            \fill [gay] (-0.1,0.3) rectangle (0.1,0.63);
+            \draw (-0.1,0.3) rectangle (0.1,5);
+            \draw [decorate,decoration={coil,segment length=1.41mm,amplitude=2.5mm}] (0,0.25) -- (0,1);
+    
+            \fill [yex!50] (-0.03,4.3) to[out=-90,in=-90,looseness=0.5] ++(0.06,0) -- ++(0,0.3) -- ++(-0.06,0);
+            \draw (-0.03,4.3) to[out=-90,in=-90,looseness=0.5] ++(0.06,0) -- ++(0,1) -- ++(-0.06,0) -- cycle;
+            \fill [blx] (-0.04,5.28) -- ++(0.08,0) -- ++(0,0.05) -- ++(0.02,0) -- ++(0,0.05) -- ++(-0.12,0) -- ++(0,-0.05) -- ++(0.02,0) -- cycle;
+    
+            \node [right] at (2,5.1) {sample}
+                edge [out=180,in=0,->] (0.1,5.15)
+            ;
+            \node [right] at (2,3) {casing}
+                edge [out=180,in=0,->] (1.6,3.05)
+            ;
+            \node [right] at (2,1.7) {coolant}
+                edge [out=180,in=0,->] (0.8,1.75)
+            ;
+            \node [right] at (2,0.6) {magnet}
+                edge [out=180,in=0,->] (0.3,0.65)
+            ;
+            \node [right] at (2,-0.1) {probe}
+                edge [out=180,in=-60,in looseness=0.5,->] (0.05,0.25)
+            ;
+    
+            \path (-5,0) -- (5,0);
+        \end{tikzpicture}
+        \caption{NMR spectrometer schematic.}
+        \label{fig:schematicNMR}
+    \end{figure}
+    \begin{itemize}
+        \item We have NMR spectrometers all over campus at MIT!
+        \item Basically, an NMR machine looks like a box with legs.
+        \item The "box" is a casing containing coolant.
+        \item The coolant keeps everything at the right temperature.
+        \begin{itemize}
+            \item Typically, the coolant is either liquid helium or liquid nitrogen.
+            \item We use coolant because the magnet in an NMR spectrometer works more efficiently at lower temperatures.
+        \end{itemize}
+        \item The sample we are analyzing gets lowered into the magnet.
+        \begin{itemize}
+            \item The "sample" consists of a glass tube filled with the chemical we seek to analyze.
+            \item Note that before we put the chemical in the tube, we usually dissolve it in a liquid solvent.
+        \end{itemize}
+        \item In the center of the magnet, there is a probe. The probe detects the frequencies that the nuclei absorb.
+        \item For scale, a typical NMR machines are about the size of a person, though some are smaller and some are as big as a shed!
+    \end{itemize}
+    \item Example NMR spectrum: Methyl acetate (\,{\tiny\chemfig[baseline=-0.5mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:-30]O-[:30](=[2]O)-[:-30]}}\,).
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[text height=1.5ex,text depth=0.25ex,every node/.style=black]
+            \small
+            \draw (-12,4) -- node[rotate=90,above]{Intensity} (-12,0) -- node[below=4.7mm]{ppm} (0,0);
+    
+            \footnotesize
+            \node [below=1mm] at (0,0) {0};
+            \draw (-6,0.1) -- ++(0,-0.2) node[below]{6};
+            \node [below=1mm] at (-12,0) {12};
+    
+            \draw [blx,semithick] (-12,0)
+                -- (-7.3,0)
+                to[out=0,in=180,out looseness=0.1,in looseness=0.06] (-7.26,0.8) node(7)[above]{7.26}
+                to[out=0,in=180,out looseness=0.06,in looseness=0.1] (-7.22,0)
+                -- (-3.71,0)
+                to[out=0,in=180,out looseness=0.05,in looseness=0.03] (-3.66,2.3) node(3)[above]{3.66}
+                to[out=0,in=180,out looseness=0.03,in looseness=0.05] (-3.61,0)
+                -- (-2.1,0)
+                to[out=0,in=180,out looseness=0.05,in looseness=0.03] (-2.05,2.3) node(2)[above]{2.05}
+                to[out=0,in=180,out looseness=0.03,in looseness=0.05] (-2,0)
+                -- (0,0)
+            ;
+    
+            \node (M) at (-6,3) {\chemfig[atom sep=1.4em]{MeO-[:30](=[2]O)-[:-30]Me}}
+                (M.-2) edge[out=0,in=90,->] (2.90)
+                (M.-161) edge[out=-90,in=180,->] (3.180)
+            ;
+            \node at (-8,1.6) {solvent}
+                edge[out=-90,in=180,->] (7.180)
+            ;
+        \end{tikzpicture}
+        \caption{NMR spectrum of methyl acetate.}
+        \label{fig:NMRMeOAc}
+    \end{figure}
+    \begin{itemize}
+        \item The $y$-axis is the intensity of the NMR peaks.
+        \item The $x$-axis is in parts per million (ppm).
+        \begin{itemize}
+            \item Raw NMR peaks are reported in hertz, but then we can divide by the magnet strength to get ppm (a uniform scale).\footnote{To elaborate: It is a fact of physics that the stronger the external magnetic field, the larger the energy level splitting $E_f$ (see Figure \ref{fig:theoryNMR}). If the $E_f$ of a nucleus increases, then we will need a higher frequency photon to flip it than we would have needed in the previous, weaker external magnetic field. Thus, to cancel out the influence of the external magnetic field strength on our raw data, we divide by the magnetic field strength. This division ensures that whether a specific NMR spectrometer's magnet is stronger or weaker, we can identify identical nuclei with an identical ppm value in our spectrum.}
+        \end{itemize}
+        \item We get two peaks at 3.66 and 2.05, corresponding to the two types of protons in the molecule.
+        \item We also get a third peak at 7.26, corresponding to the solvent in which the methyl acetate is dissolved.
+        \begin{itemize}
+            \item However, you can ignore this peak.
+            \item We are discussing solvent peaks now so that if you ever look up an NMR spectrum online (or something) and see an extra peak, you know it probably corresponds to the solvent.
+        \end{itemize}
+    \end{itemize}
+    \item We now discuss some common resonance frequencies, i.e., the resonance frequencies for protons in common functional groups. We call such resonance frequencies the \textbf{chemical shift}.
+    \pagebreak
+    \item \textbf{Chemical shift} (of a nucleus): The resonance frequency of the nucleus. \emph{Denoted by} $\bm{\delta}$. \emph{Units} \textbf{ppm}.
+    \begin{figure}[h!]
+        \centering
+        \setchemfig{atom sep=1em,bond offset=1.5pt,fixed length=false,chemfig style={-,font=\scriptsize}}
+        \begin{tikzpicture}
+            \footnotesize
+            \draw (-12,0) -- (0,0);
+            \foreach \x in {0,...,12} {
+                \draw ({-\x},0.1) -- ++(0,-0.2) node[below]{$\x$};
+            }
+            \draw [<-] (-12,-0.8) -- ++(0.9,0) node[right]{downfield = deshielded = EWG};
+            \draw [<-] (0,-0.8) -- ++(-0.9,0) node[left]{EDG = shielded = upfield};
+    
+            \draw [|-|] (-12,0.6) -- node[above]{\chemfig{-[:30](=[2]O)-[:-30]OH}} (-11,0.6);
+            \draw [|-|] (-10,0.6) -- node[above]{\chemfig{-[:30](=[2]O)-[:-30]H}} (-9,0.6);
+            \draw [|-|] (-8,0.6) -- node[above]{aryl} (-6,0.6);
+            \draw [-|]  (-6,0.6) -- node[above]{vinyl} (-4,0.6);
+            \draw [-|]  (-4,0.6) -- node[above]{\chemfig{H-[:30]-[:-30]X}} (-2,0.6);
+            \draw [-|]  (-2,0.6) -- node[above]{alkyl} (0,0.6);
+            \draw [|-|] (-3,1.5) -- node[above]{allylic; \chemfig{=_[:30]-[:-30]-[:30]H}} (-1,1.5);
+            \draw [|-|] (-5,2.4) -- node[above]{\ce{OH} / \ce{NH} (broad)} (-1,2.4);
+        \end{tikzpicture}
+        \caption{Chemical shifts of common proton types.}
+        \label{fig:chemShift}
+    \end{figure}
+    \begin{itemize}
+        \item Tetramethylsilane (TMS / \ce{SiMe4}) has a chemical shift of 0 \emph{by definition}.
+        \begin{itemize}
+            \item In other words, TMS is used as an NMR reference compound, and we express the chemical shift of all other nuclei as the distance from TMS in ppm.
+        \end{itemize}
+        \item There are two directions: \textbf{Upfield} and \textbf{downfield}.
+        \item Peaks corresponding to carboxylic acid protons, alcohol protons, and amine protons are often broad due to chemical exchange.
+        \begin{itemize}
+            \item This is exactly the same as exchangeable protons from IR spectroscopy!
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Upfield} (chemical shift): A chemical shift that is more to the right side of an NMR spectrum. \emph{Also known as} \textbf{shielded}.
+    \begin{itemize}
+        \item Protons with upfield chemical shifts are often near electron donating groups (EDGs).
+    \end{itemize}
+    \item \textbf{Downfield} (chemical shift): A chemical shift that is more to the left side of an NMR spectrum. \emph{Also known as} \textbf{deshielded}.
+    \begin{itemize}
+        \item Protons with downfield chemical shifts are often near electron withdrawing groups (EWGs).
+    \end{itemize}
+    \item Important trend: More and stronger EWGs leads to a higher chemical shift.
+    \item Example: $\ce{H3C-F}>\ce{H3C-Cl}>\ce{H3C-Br}$.
+    \begin{itemize}
+        \item Sorted by electronegativity, fluorine is more electronegative than chlorine, which is more electronegative than bromine.
+        \item As such, the chemical shift of the protons in fluoromethane (4.10) is greater than the chemical shift of the protons in chloromethane (3.05), which is greater than the chemical shift of the protons in bromomethane (2.68).
+    \end{itemize}
+    \item Example: Isopentane (\,{\tiny\chemfig[baseline=0.8mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:30](-[2])-[:-30]-[:30]}}\,).
+    \begin{itemize}
+        \item The sole tertiary proton is surrounded by three EWGs (2 methyl and 1 ethyl), so it has the highest chemical shift at 1.46.
+        \item The secondary protons are surrounded by two EWGs (1 methyl and 1 isopropyl), so it has the second highest chemical shift at 1.20.
+        \item The primary protons then have the lowest chemical shifts. For example, the three protons at the right end of the molecule have a chemical shift of 0.86.
+    \end{itemize}
+    \item Why are tertiary carbons more deshielded when tertiary carbocations are more stable due to electron-donating effects?
+    \begin{itemize}
+        \item Prof. Elkin will not answer this question in full now because the answer comes from MO theory.
+        \item Simply, carbon is more electronegative than hydrogen, so carbon is a better EWG than hydrogen.
+    \end{itemize}
+    \pagebreak
+    \item Why does more electron density lead to a greater shielding effect and hence a lower resonance frequency?
+    \begin{itemize}
+        \item Prof. Elkin will return to this question later because it ties into part of Friday's lecture.
+    \end{itemize}
+    \item \textbf{Integration} (of an NMR peak): The area under the peak.
+    \begin{itemize}
+        \item The integration of a peak is equal to the number of nuclei in that chemical environment.
+        \begin{itemize}
+            \item In other words, nuclei that are \textbf{chemically equivalent} help form the same peak in an NMR spectrum.
+        \end{itemize}
+        \item Only \emph{relative} integrations matter; there is no use for \emph{absolute} integration values.
+    \end{itemize}
+    \item \textbf{Chemically equivalent} (protons): A set of protons within a molecule that are in the same chemical environment.
+    \item Example NMR spectrum: Methanol (\ce{MeOH}).
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[text height=1.5ex,text depth=0.25ex,every node/.style=black]
+            \small
+            \draw (-12,4) -- node[rotate=90,above]{Intensity} (-12,0) -- node[below=4.7mm]{ppm} (0,0);
+    
+            \footnotesize
+            \node [below=1mm] at (0,0) {0};
+            \draw (-6,0.1) -- ++(0,-0.2) node[below]{6};
+            \node [below=1mm] at (-12,0) {12};
+    
+            \draw [blx,semithick] (-12,0)
+                -- (-7.3,0)
+                to[out=0,in=180,out looseness=0.1,in looseness=0.06] (-7.26,0.8) node[below=0.8cm]{7.26}
+                to[out=0,in=180,out looseness=0.06,in looseness=0.1] (-7.22,0)
+                -- (-3.69,0)
+                to[out=0,in=180,looseness=0.8] (-3.49,0.3) node[below=0.3cm]{3.49} node(3)[above]{1H}
+                to[out=0,in=180,looseness=0.8] (-3.29,0)
+                -- (-1.1,0)
+                to[out=0,in=180,out looseness=0.05,in looseness=0.03] (-1.05,2.3) node[below=2.3cm]{1.05} node(1)[above]{3H}
+                to[out=0,in=180,out looseness=0.03,in looseness=0.05] (-1,0)
+                -- (0,0)
+            ;
+    
+            \node (M) [minimum height=1.4cm] at (-6,3) {\chemfig[atom sep=1.4em,baseline=-1mm]{H-[:30]O-[:-30]C(<[:-30]H)(<:[:-90]H)-[:30]H}}
+                (M.north east) edge[decorate,decoration=brace] (M.south east)
+                (M.east) edge[out=0,in=90,->,shorten <=2pt] (1.90)
+                (M.160) edge[decorate,decoration={brace,mirror}] (M.190)
+                (M.172) edge[out=-150,in=120,->,shorten <=2pt] (3)
+            ;
+            \draw [grx,rotate around={60:(-6.04,3.32)},-stealth,shorten >=2pt,shorten <=2pt] (-6.04,3.32) arc[start angle=90,end angle=-270,x radius=2mm,y radius=1mm];
+        \end{tikzpicture}
+        \caption{NMR spectrum of methanol.}
+        \label{fig:NMRMeOH}
+    \end{figure}
+    \begin{itemize}
+        \item In this example, there is free rotation around the \ce{C-O} single bond. This rotation puts all of the methyl protons in the chemical environment, i.e., they are chemically equivalent. Thus, because they are chemically equivalent they all have the identical resonance frequency of 1.05 and all contribute to that peak.
+        \begin{itemize}
+            \item Indeed, \emph{any} single bond with unrestricted rotation makes protons chemically equivalent, leading to them resonating at the same frequency.
+        \end{itemize}
+        \item However, the alcohol proton is in a different chemical environment from the other protons, leading to a second peak.
+        \begin{itemize}
+            \item Notice that this peak is broad because the alcohol proton is exchangeable!
+        \end{itemize}
+        \item Key takeaway: Chemical equivalence is why we see two peaks in Figure \ref{fig:NMRMeOH} (one for each \emph{chemically nonequivalent} type of proton) instead of four (one for \emph{every} proton).
+        \begin{itemize}
+            \item It is also why one peak integrates to three times the area of the other peak.
+            \item These integrations are often denoted 1H and 3H.
+        \end{itemize}
+        \item Notice that once again, we have an extra peak at 7.26 due to our solvent.
+    \end{itemize}
+    \item In our next example, we will see another way in which integration ratios can manifest themselves.
+    \begin{itemize}
+        \item However, there will also be another feature (as of yet unmentioned).
+        \item We will discuss this feature subsequently.
+    \end{itemize}
+    \pagebreak
+    \item Example NMR spectrum: Propane (\,{\tiny\chemfig[baseline=-0.2mm,atom sep=1em,bond offset=1pt,fixed length=false]{-[:30]-[:-30]}}\,).
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[text height=1.5ex,text depth=0.25ex,every node/.style=black,xscale=3]
+            \small
+            \draw (-2.5,4) -- node[rotate=90,above]{Intensity} (-2.5,0) -- node[below=4.7mm]{ppm} (-0.5,0);
+    
+            \footnotesize
+            \draw (-2,0.1) -- ++(0,-0.2) node[below]{2};
+            \draw (-1,0.1) -- ++(0,-0.2) node[below]{1};
+    
+            \draw [blx,semithick] (-2.5,0)
+                -- (-1.48,0)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-1.46,0.05)
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-1.44,0.01)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-1.42,0.3)
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-1.40,0.1)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-1.38,0.75)
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-1.36,0.2)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-1.34,1) node(2)[above]{2H}
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-1.32,0.2)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-1.30,0.75)
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-1.28,0.1)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-1.26,0.3)
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-1.24,0.01)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-1.22,0.05)
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-1.20,0)
+                -- (-0.96,0)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-0.94,1.1)
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-0.92,0.2)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-0.9,2.2) node(6)[above]{6H}
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-0.88,0.2)
+                to[out=0,in=180,out looseness=0.025,in looseness=0.015] (-0.86,1.1)
+                to[out=0,in=180,out looseness=0.015,in looseness=0.025] (-0.84,0)
+                -- (-0.5,0)
+            ;
+    
+            \node (M) [minimum height=1.2cm] at (-1.5,3) {\chemfig[atom sep=1.4em,baseline=3.8mm]{H_3C-[:30](-[:70]H)(-[:110]H)-[:-30]CH_3}}
+                (M.south east) edge[decorate,decoration=brace] (M.south west)
+                (M.south) edge[out=-90,in=-150,->,shorten <=2pt] (6)
+                (M.60) edge[decorate,decoration={brace,mirror}] (M.120)
+                (M.north) edge[out=90,in=150,->,shorten <=2pt,out looseness=1.5,in looseness=2] (2)
+            ;
+        \end{tikzpicture}
+        \caption{NMR spectrum of propane.}
+        \label{fig:NMRpropane}
+    \end{figure}
+    \begin{itemize}
+        \item This NMR spectrum consists of two "funny-shaped" peaks.
+        \item The ratio of their integrations is $1:3$. However, note that a $1:3$ ratio is equivalent to a $2:6$ ratio! (And a $3:9$ ratio, a $4:12$ ratio, etc.)
+        \item Thus, based on the NMR spectrum alone, we do not have enough information to decide what exact ratio the peaks are showing.
+        \begin{itemize}
+            \item Rather, we will need to know something else about the structure (such as the molecular formula!) in order to decide if it is $1:3$ or $2:6$!
+            \item Supposing we knew from EA and MS that the molecular formula was \ce{C3H8}, we could then confirm that this is a $2:6$ ratio because $2+6=8$ total protons.
+        \end{itemize}
+    \end{itemize}
+    \item Peaks have "funny shapes" due to an effect called \textbf{coupling}.
+    \item \textbf{Coupling}: When nuclei are adjacent to each other, they alter one another's resonance frequency by inducing a \sfrac{1}{2} increase or \sfrac{1}{2} decrease. \emph{Also known as} \textbf{proton coupling}, \textbf{peak splitting}, \textbf{multiplicity}.
+    \begin{itemize}
+        \item Coupling is based on the same physical idea as shielding.
+        \begin{itemize}
+            \item Indeed, just like electrons have magnetic moments that can interfere with their host nucleus, adjacent nuclei have magnetic moments that can interfere with their host nucleus.
+        \end{itemize}
+        \item When peaks split, they do so symmetrically about the original resonance frequency, and the new peaks have the same integration as the old peak.
+    \end{itemize}
+    \item There are more kinds of coupling besides proton-proton coupling, but proton-proton is all we'll talk about today (and probably in this whole class).
+    \item More on proton-proton splitting.
+    \begin{table}[h!]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.4}
+        \begin{tabular}{c|c|c|c}
+            \textbf{Adjacent Protons ($\bm{n}$)} & \textbf{Peak Pattern ($\bm{n+1}$)} & \textbf{Ratio of Peaks} & \textbf{Image}\\
+            \hline
+            0 & singlet (s) & $1$       & \tikz{\draw [blx,semithick,scale=0.04] (-7,0) -- (0,0) -- (0,8) -- (0,0) -- (7,0);}\\
+            1 & doublet (d) & $1:1$     & \tikz{\draw [blx,semithick,scale=0.04] (-7,0) -- (-1,0) -- (-1,4) -- (-1,0) -- (1,0) -- (1,4) -- (1,0) -- (7,0);}\\
+            2 & triplet (t) & $1:2:1$   & \tikz{\draw [blx,semithick,scale=0.04] (-7,0) -- (-2,0) -- (-2,2) -- (-2,0) -- (0,0) -- (0,4) -- (0,0) -- (2,0) -- (2,2) -- (2,0) -- (7,0);}\\
+            3 & quartet (q) & $1:3:3:1$ & \tikz{\draw [blx,semithick,scale=0.04] (-7,0) -- (-3,0) -- (-3,1) -- (-3,0) -- (-1,0) -- (-1,3) -- (-1,0) -- (1,0) -- (1,3) -- (1,0) -- (3,0) -- (3,1) -- (3,0) -- (7,0);}\\
+        \end{tabular}
+        \caption{Proton-proton coupling.}
+        \label{tab:1Hcoupling}
+    \end{table}
+    \begin{itemize}
+        \item Thus, in Figure \ref{fig:NMRpropane}, our peaks are a 2H septet and a 6H triplet.
+        \item The ratio of peaks forms \textbf{Pascal's Triangle}! You can Google why, if you're interested!!
+        \item Sometimes, these peak patterns are called \textbf{multiplets}.
+        \begin{itemize}
+            \item We tend to use the term "multiplet" when the splitting is either very complicated or low resolution, that is, when we cannot tell if the splitting is a triplet, quartet, septet, or something even more exotic (like what we'll discuss next class!).
+        \end{itemize}
+    \end{itemize}
+    \item Note that identical protons do not couple themselves.
+    \begin{itemize}
+        \item This is why (for example) the septet in Figure \ref{fig:NMRpropane} is not an octet: The two secondary protons do not couple to each other.
+    \end{itemize}
+    \item \textbf{Coupling constant}: A measure of coupling. \emph{Denoted by} $\bm{J}$. \emph{Units} \textbf{Hz}.
+    \begin{itemize}
+        \item Protons that couple each other have identical $J$ values.
+    \end{itemize}
+    \item Coupled protons split via \textbf{roofing}.
+    \item \textbf{Roofing}: A phenomenon in which coupled peaks slant towards each other.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[xscale=1.2]
+            \footnotesize
+            \draw (-3,2) -- (-3,0) -- (0,0);
+    
+            \draw [blx,semithick] (-3,0)
+                -- (-2.14,0)
+                to[out=0,in=180,out looseness=0.2,in looseness=0.1] (-2.07,0.9)
+                to[out=0,in=180,out looseness=0.1,in looseness=0.2] (-2,0)
+                to[out=0,in=180,out looseness=0.15,in looseness=0.07] (-1.93,1.2)
+                to[out=0,in=180,out looseness=0.07,in looseness=0.15] (-1.86,0)
+                -- (-1.14,0)
+                to[out=0,in=180,out looseness=0.15,in looseness=0.07] (-1.07,1.2)
+                to[out=0,in=180,out looseness=0.07,in looseness=0.15] (-1,0)
+                to[out=0,in=180,out looseness=0.2,in looseness=0.1] (-0.93,0.9)
+                to[out=0,in=180,out looseness=0.1,in looseness=0.2] (-0.86,0)
+                -- (0,0)
+            ;
+            \draw [densely dotted,very thick,yshift=2mm]
+                (-2.24,0.75) -- (-1.96,1.35)
+                (-1.04,1.35) -- (-0.76,0.75)
+            ;
+    
+            \draw [|-|] (-2.07,-0.2) -- (-1.93,-0.2);
+            \draw [|-|] (-1.07,-0.2) -- (-0.93,-0.2);
+            \node [below] at (-2.4,-0.6) {$J=\SI{6.5}{\hertz}$}
+                edge[out=30,in=-90,->,shorten >=2pt] (-2,-0.2)
+            ;
+            \node [below] at (-0.6,-0.6) {$J=\SI{6.5}{\hertz}$}
+                edge[out=150,in=-90,->,shorten >=2pt] (-1,-0.2)
+            ;
+        \end{tikzpicture}
+        \caption{Roofing in NMR.}
+        \label{fig:roofing}
+    \end{figure}
+    \begin{itemize}
+        \item When you couple two doublets, they have this extra fun shape that helps hint toward coupling.
+    \end{itemize}
+    \item Next time: Where $J$ comes from, compounds coupling, carbon NMR, and more!
 \end{itemize}
 
 
