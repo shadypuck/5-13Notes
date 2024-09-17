@@ -2068,7 +2068,7 @@
         \label{fig:couplingBenz}
     \end{figure}
     \begin{itemize}
-        \item Long range coupling is possible with $\pi$-systems.
+        \item \textbf{Long-range coupling} is possible with $\pi$-systems.
         \begin{itemize}
             \item Thus, protons \emph{meta} and \emph{para} to each other can couple even though they're not viscinal.
         \end{itemize}
@@ -2539,6 +2539,241 @@
         \end{itemize}
         \item All of the data is, indeed, consistent with the proposed molecule's structure.
     \end{enumerate}
+\end{itemize}
+
+
+
+\section{Structure Determination - 1}
+\begin{itemize}
+    \item \marginnote{9/16:}Lecture 5 recap: A review of the suggested \ce{{}^1H} NMR interpretation workflow.
+    \begin{enumerate}
+        \item Identify unique peaks: Tells you if the molecule has symmetry.
+        \begin{itemize}
+            \item Example: 6 protons but 4 peaks.
+        \end{itemize}
+        \item Chemical shifts: Tells you which functional groups may be present.
+        \item Integrations: Tells you how many protons there are at each position in the molecule.
+        \item Peak shape: Tells you which protons neighbor which other protons.
+        \item $J$ values: Tells you which protons \emph{really} neighbor which other protons.
+        \begin{itemize}
+            \item Example: If two peaks share a coupling constant, they correspond to neighboring protons.
+        \end{itemize}
+        \item Sanity check: Ensures that all your hypotheses derived from the previous steps are consistent.
+    \end{enumerate}
+    \item Today: Structure determination.
+    \begin{itemize}
+        \item Reading: \textcite{bib:Clayden}, Chapter 18.
+        \item This reading covers several examples of when NMR is really useful. In some of these examples, NMR is the technique \emph{needed} to solve a problem.
+        \item There's a good bit of stuff that's beyond the scope of the class, but it's really short (only 20 pages) and will be very helpful for you, so please read it!!
+    \end{itemize}
+    \item Lecture outline.
+    \begin{itemize}
+        \item Overview and recap of the 5 structure determination methods we've discussed to date.
+        \item Key signals across the 5 methods.
+        \item Examples of when certain techniques are more useful.
+    \end{itemize}
+    \item Methods overview.
+    \begin{itemize}
+        \item EA: Get the empirical formula.
+        \item MS: Get the molecular formula, isotope identities, stable fragments, and fragmentation patterns.
+        \begin{itemize}
+            \item Fragmentation patterns tell us a lot about connectivity.
+        \end{itemize}
+        \item IR: Get key functional groups.
+        \item \ce{{}^13C} NMR: Get the number of unique carbons, key functional groups.
+        \begin{itemize}
+            \item The number of unique carbons gives info on molecular symmetry.
+        \end{itemize}
+        \item \ce{{}^1H} NMR: Get the number of unique protons, key functional groups, and data about connectivity.
+        \begin{itemize}
+            \item The relevant connectivity data here comes from $J$ values.
+        \end{itemize}
+    \end{itemize}
+    \item Why do we need multiple analytical techniques for key functional groups?
+    \begin{itemize}
+        \item A single spectrum rarely contains the full picture. Rather, each technique gives a hint, and we --- as chemists --- are like detectives following the different lines of inquiry.
+        \item Different spectra can help in a \emph{confirmational} manner or an \emph{orthogonal} manner.
+        \begin{itemize}
+            \item Confirmational: Both IR and \ce{{}^13C} NMR show a ketone, so I'm pretty sure there's a ketone!
+            \item Orthogonal: Here's a new piece of information that none of the other techniques have given me yet.
+        \end{itemize}
+        \item Critical point: The final proposed molecular structure must be consistent with \emph{all} data.
+        \begin{itemize}
+            \item If you're matching the IR and the \ce{{}^1H} NMR but not the \ce{{}^13C} NMR, it can't be right!
+        \end{itemize}
+    \end{itemize}
+    \item We now look into some common signals and what they tell us.
+    \item Shortcuts: "Give away" signals.
+    \begin{itemize}
+        \item Bromine and chlorine in MS.
+        \item \ce{C=O} in IR and \ce{{}^13C} NMR.
+        \item OH stretch in IR and the (typically) broad peak in \ce{{}^1H} NMR.
+        \item \ce{CH3} peaks in \ce{{}^1H} NMR (i.e., upfield peaks that integrate to 3H) and MS (i.e., $\cnc{M$-15$}^+$ peaks).
+        \item Aldehyde protons in the $\SIrange{10}{11}{\partspermillion}$ region of \ce{{}^1H} NMR.
+        \item Roofing doublets in the aromatic region of \ce{{}^1H} NMR.
+        \begin{itemize}
+            \item Tends to indicate a \emph{para}-substituted benzene ring with different substituents on both sides.
+        \end{itemize}
+        \item And more! Practice, and notice trends!!
+    \end{itemize}
+    \item Let's do some practice now on some particularly hard examples.
+    \item Consider the following isomers.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{-[:30](=[2]O)-[:-30](<[6]OH)-[:30](<[2]OH)-[:-30]}
+            \caption{Original structure.}
+            \label{fig:isomerIdenta}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.18\linewidth}
+            \centering
+            \chemfig{-[:30](=[2]O)-[:-30](<:[6]OH)-[:30](<:[2]OH)-[:-30]}
+            \caption{Enantiomer.}
+            \label{fig:isomerIdentb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.18\linewidth}
+            \centering
+            \chemfig{-[:30](=[2]O)-[:-30](<[6]OH)-[:30](<:[2]OH)-[:-30]}
+            \caption{Diastereomer.}
+            \label{fig:isomerIdentc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.23\linewidth}
+            \centering
+            \chemfig{-[:30](<[2]OH)-[:-30](=[6]O)-[:30](<[2]OH)-[:-30]}
+            \caption{Constitutional isomer.}
+            \label{fig:isomerIdentd}
+        \end{subfigure}
+        \caption{Isomer identification with structure determination.}
+        \label{fig:isomerIdent}
+    \end{figure}
+    \item If we try to distinguish the original structure (Figure \ref{fig:isomerIdenta}) from any of the others using the structure determination techniques, we'll find that the results are\dots
+    \begin{table}[h!]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{rccc}
+             & \textbf{Enantiomer} & \textbf{Diastereomer} & \textbf{Constitutional isomer}\\
+            \textbf{EA:} & identical & identical & identical\\
+            \textbf{MS:} & identical & similar & different\\
+            \textbf{IR:} & identical & similar & different\\
+            \textbf{\ce{{}^13C} NMR:} & identical & different & different\\
+            \textbf{\ce{{}^1H} NMR:} & identical & different & different\\
+        \end{tabular}
+        \caption{Isomer identification with structure determination.}
+        \label{tab:isomerIdent}
+    \end{table}
+    \begin{itemize}
+        \item Distinguishing the enantiomer.
+        \begin{itemize}
+            \item In order to distinguish chiral materials, you have to have a chiral technique.
+            \item Specificaly, you would need a chiral light source to distinguish chiral molecules.
+            \begin{itemize}
+                \item We'll talk on Wednesday about IR with plane polarized light (Circular Dichroism), which would work, but we don't have that technique yet.
+            \end{itemize}
+            \item The only time the enantiomers could be distinguished using any of the techniques we've learned so far is with a weird edge case like a chiral solvent.
+        \end{itemize}
+        \item Distinguishing the diastereomer.
+        \begin{itemize}
+            \item Diastereomers can look different on MS and IR, but it's subtle. This is why we say \emph{similar}.
+            \item With \ce{{}^13C} NMR, the peaks are technically different, but practically similar.
+            \item With \ce{{}^1H} NMR, the Karplus equation makes certain $J$ values larger or smaller depending on the diastereomer.
+            \begin{itemize}
+                \item This can help us differentiate gauche, syn, and anti conformations.
+            \end{itemize}
+            \item Chapter 13 of \textcite{bib:Clayden} has more on distinguishing diastereomers; read it!!
+        \end{itemize}
+        \item Distinguishing the constitutional isomer.
+        \begin{itemize}
+            \item This molecule has a plane of symmetry, and thus only 3 unique carbons; this makes this molecule much easier to pick out using the techniques we know (e.g., \ce{{}^13C} NMR).
+        \end{itemize}
+    \end{itemize}
+    \item Example: Determine the structure of the molecule described by the following data.
+    \begin{itemize}
+        \item \ce{{}^13C} NMR: $\delta$ 171.4, 60.5, 21.0, 14.2.
+        \begin{itemize}
+            \item Per Figure \ref{fig:chemShift13C}, these peaks respectively correspond to a carbonyl, \ce{C-X},\footnote{Recall that "\ce{X}" is a placeholder for some as-of-yet-undetermined electronegative heteroatom, such as oxygen, nitrogen, or a halogen.} and two alkyl carbons.
+        \end{itemize}
+        \item \ce{{}^1H} NMR: $\delta$ 4.12 (q, 2H), 2.05 (s, 3H), 1.26 (t, 3H).
+        \begin{itemize}
+            \item The middle peak corresponds to a methyl group: {\tiny\chemfig[baseline=0mm,atom sep=1em,bond offset=1pt,fixed length=false]{CH_3-[4]!{wave}}}
+            \item The left peak corresponds to a \ce{C-X}, with 2H bonded to the C and 3H adjacent (it's split into a quartet): {\tiny\chemfig[baseline=0.5mm,atom sep=1em,bond offset=1pt,fixed length=false]{X-[:30](-[:70]H)(-[:110]H)-[:-30](-[:30]H)(-[:-30]H)(-[6]H)}}
+            \item The right peak probably corresponds to the adjacent 3H introduced above. This is because we'd predict that the adjacent 3H introduced above would be an alkyl 3H that gets split into a triplet, just like the right peak.
+        \end{itemize}
+        \item After this initial analysis, redraw the biggest fragment and start combining fragments.
+        \begin{itemize}
+            \item We could try bonding the ethyl-X group into the other methyl group (\,{\tiny\chemfig[baseline=-1.3mm,atom sep=1em,bond offset=1pt,fixed length=false]{H_3C-[:-30,1.4]X-[:30]-[:-30]}}\,), but this would leave no space for the carbonyl.
+            \item Thus, we can bond into the carbonyl and then the methyl group: {\tiny\chemfig[baseline=1mm,atom sep=1em,bond offset=1pt,fixed length=false]{H_3C-[:30](=[2]O)-[:-30]X-[:30]-[:-30]}}
+        \end{itemize}
+        \item The last thing we have to determine now is the identity of the heteroatom \ce{X}.
+        \begin{itemize}
+            \item If \ce{X} is a halogen, then the above structure implies that it's divalent. Since halogens don't like to form more than 1 bond, \ce{X} is probably not a halogen.
+            \item If $\ce{X}=\ce{NH}$, then this proton would have a \ce{{}^1H} NMR signal as well and should have shown up in the data.
+            \begin{itemize}
+                \item The proton could be \ce{{}^1H} NMR silent due to exchange, but we should probably \textbf{Occam's razor} that possibility out.
+            \end{itemize}
+            \item If $\ce{X}=\ce{O}$, then there would be no extra \ce{{}^1H} NMR signals: {\tiny\chemfig[baseline=1mm,atom sep=1em,bond offset=1pt,fixed length=false]{H_3C-[:30](=[2]O)-[:-30]O-[:30]-[:-30]}}
+            \begin{itemize}
+                \item This structure is consistent with all the data we have, so we can be confident that we have determined the structure.
+            \end{itemize}
+        \end{itemize}
+        \item This molecule is called ethyl acetate, and every organic chemist knows it because it's a common laboratory solvent and traces of it often appear in our NMR experiments.
+    \end{itemize}
+    \item \textbf{Occam's razor}: The simplest explanation is usually the best explanation.
+    \item Maxim: Occam's razor is king with structure determination.
+    \item Example: Describe how you would use the key signal(s) in the structure determination data of the following two compounds to tell them apart.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \chemfig{-[:30]*6(=-=(-(=[2]O)-[:-30]Cl)-=-)}
+            \caption{\emph{p}-Toluoyl chloride.}
+            \label{fig:compoundDiffa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \chemfig{*6(=-=(--[:-30](=[6]O)-[:30]Cl)-=-)}
+            \caption{Phenylacetyl chloride.}
+            \label{fig:compoundDiffb}
+        \end{subfigure}
+        \caption{Two compounds to differentiate using structure determination.}
+        \label{fig:compoundDiff}
+    \end{figure}
+    \begin{itemize}
+        \item EA key signals? No.
+        \begin{itemize}
+            \item The molecules have identical empirical formulas.
+        \end{itemize}
+        \item MS key signals? Tough.
+        \begin{itemize}
+            \item We'd get $\alpha$-cleavage with both ketones, leading to similar fragments.
+        \end{itemize}
+        \item IR key signals? Tough.
+        \begin{itemize}
+            \item The \ce{C=O} stretch would be the main IR-active signal, and both carbonyls are fairly similar.
+        \end{itemize}
+        \item \ce{{}^13C} NMR key signals? Tough.
+        \begin{itemize}
+            \item The molecules have roughly the same symmetry (8 carbons, 6 unique ones).
+        \end{itemize}
+        \item \ce{{}^1H} NMR key signals? Yes: Multiple key signals!
+        \begin{itemize}
+            \item Let's start in the alkyl region.
+            \begin{itemize}
+                \item Both molecules would have one alkyl peak: Figure \ref{fig:compoundDiffa} has a methyl group at the bottom-left of the aromatic ring, and Figure \ref{fig:compoundDiffb} has a methylene group connecting the aromatic ring to the acid chloride.
+                \item The methyl group will appear as a 3H singlet between $\SIrange{1}{2}{\partspermillion}$.
+                \item The methylene group will appear as a 2H singlet between $\SIrange{2}{4}{\partspermillion}$ (it is more downfield due to the nearby EWGs).
+            \end{itemize}
+            \item The peaks in the aryl region will also be different.
+            \begin{itemize}
+                \item For Figure \ref{fig:compoundDiffa}, the protons will split into two roofing doublets, both of which integrate to 2H.
+                \item For Figure \ref{fig:compoundDiffb}, the protons will split into a 2H doublet, a 2H doublet of doublets, and a 1H triplet.
+                \item However, note that for Figure \ref{fig:compoundDiffb}, the actual aromatic peaks of this molecule show up as what we call a "multiplet (m)," meaning that it is a messy mound of peaks that we can't assign a clean pattern to because they overlap too much. You can still integrate the multiplet and see that it contains 5H, and that's how you could differentiate this molecule from the other in practice.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
 \end{itemize}
 
 
