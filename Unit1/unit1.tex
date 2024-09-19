@@ -2778,5 +2778,415 @@
 
 
 
+\section{Structure Determination - 2}
+\begin{itemize}
+    \item \marginnote{9/18:}Lecture 6 recap: The journey from having a liquid to having the liquid's molecular structure.
+    \begin{enumerate}
+        \item EA: Get the empirical formula.
+        \item MS (parent peak): Transform the empirical formula to the molecular formula.
+        \item IR: Get key functional groups.
+        \item \ce{{}^13C} NMR: Get the number of unique carbons, and confirm key functional groups.
+        \item \ce{{}^1H} NMR: Get data about connecting fragments, and confirm key functional groups.
+        \item MS (fragments): Confirm connectivity data.
+        \item Double check: Does the proposed structure align with \emph{all} information?
+    \end{enumerate}
+    \item Autumn-themed aside: Eugenol (cloves) and cinnamaldehyde (cinnamon) make up pumpkin spice!
+    \item Today: More structure determination.
+    \item Lecture outline.
+    \begin{itemize}
+        \item Ring currents.
+        \item X-ray crystallography.
+        \item Circular dichroism.
+        \item Structure determination practice.
+    \end{itemize}
+    \item Note that X-ray and CD won't be on Exam 1, but they will be useful for any lab work we do.
+    \pagebreak
+    \item Ring currents and related effects.
+    \begin{figure}[h!]
+        \centering
+        \vspace{4em}
+        \footnotesize
+        \begin{subfigure}[b]{0.28\linewidth}
+            \centering
+            \chemfig{@{a}-[:20]@{b}-[:-3]H}
+            \chemmove{
+                \filldraw [-,thick,draw=orx,fill=ory] ($(a)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(a)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(a)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(a)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(b)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(b)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(b)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(b)+(0.0018,-0.1)$);
+            }
+            \vspace{2.3em}
+            \caption{Vinyl deshielding.}
+            \label{fig:ringCurrenta}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \chemfig[atom sep=3em]{@{a}-[,1.3]@{b}-[:30,1]@{c}-[:130,0.8]@{d}-[4,1.3]@{e}-[:-150,1]@{f}-[:-50,0.8]}
+            \chemmove{
+                \filldraw [-,thick,draw=orx,fill=white] ($(a)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(a)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(a)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(a)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(b)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(b)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(b)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(b)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(c)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(c)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(c)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(c)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(d)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(d)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(d)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(d)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(e)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(e)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(e)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(e)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(f)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(f)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(f)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(f)+(0.0018,-0.1)$);
+            }
+            \begin{tikzpicture}[remember picture,overlay]
+                \draw [->] (0.6,-0.5) -- ++(0,2);
+                \draw [->] (1,-0.5) -- ++(0,2);
+                \draw [->] (0.8,-0.5) -- node[align=center,fill=white]{external\\magnetic\\field} ++(0,2);
+    
+                \draw [gax,thick,-latex] (-1.45,2.2) arc[start angle=90,end angle=-250,x radius=1cm,y radius=0.4cm];
+                \draw [gax,thick,-latex] (-1.45,-0.8) arc[start angle=90,end angle=-250,x radius=1cm,y radius=0.4cm];
+                \node [align=center] at (-1.45,-1.22) {$\pi$-electrons\\circling};
+            \end{tikzpicture}
+            \vspace{5.1em}
+            \caption{Ring current induced.}
+            \label{fig:ringCurrentb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.28\linewidth}
+            \centering
+            \chemfig[atom sep=3em]{@{a}-[,1.3]@{b}-[:30,1]@{c}(-[,0.6]H)-[:130,0.8]@{d}-[4,1.3]@{e}-[:-150,1]@{f}(-[6,0.6,,,opacity=0]\phantom{H})-[:-50,0.8]}
+            \chemmove{
+                \filldraw [-,thick,draw=orx,fill=white] ($(a)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(a)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(a)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(a)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(b)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(b)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(b)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(b)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(c)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(c)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(c)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(c)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(d)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(d)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(d)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(d)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(e)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(e)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(e)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(e)+(0.0018,-0.1)$);
+                \filldraw [-,thick,draw=orx,fill=white] ($(f)+(0.0018,0.1)$) to[bend right=110,looseness=600] ($(f)+(-0.0018,0.1)$);
+                \filldraw [-,thick,draw=orx,fill=ory] ($(f)+(-0.0018,-0.1)$) to[bend right=110,looseness=600] ($(f)+(0.0018,-0.1)$);
+            }
+            \begin{tikzpicture}[remember picture,overlay]
+                \draw [gax,thick,-latex] (-1.9,-0.2) arc[start angle=-150,end angle=150,x radius=0.8cm,y radius=1.3cm];
+                \draw [gax,thick,-latex] (-2.4,-0.2) arc[start angle=-30,end angle=-330,x radius=0.8cm,y radius=1.3cm];
+            \end{tikzpicture}
+            \vspace{2.3em}
+            \caption{New magnetic field.}
+            \label{fig:ringCurrentc}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.38\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \node (M) {\chemfig{*6(--=---)}};
+                \node at (1.2,-0.4) {\SI{5.7}{\partspermillion}}
+                    edge [->,bend right=20] (M.20) 
+                ;
+                \path (-1.8,0) -- (1.8,0);
+            \end{tikzpicture}
+            \caption{Cyclohexene.}
+            \label{fig:ringCurrentd}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \node (M) {\chemfig{*6(=-=-=-)}};
+                \node at (1.2,-0.4) {\SI{7.3}{\partspermillion}}
+                    edge [->,bend right=20] (M.20) 
+                ;
+                \path (-1.8,0) -- (1.8,0);
+            \end{tikzpicture}
+            \caption{Benzene.}
+            \label{fig:ringCurrente}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.38\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \node (M) {\chemfig{*6([:-60]=-=*6(-=-*6(=-(-H)=*6(-=-(-[6]H)*6(=-=*6(-(-[,,,,opacity=0]\phantom{H})=-))))))}};
+                \node at (1.8,-0.8) {\SI{9.3}{\partspermillion}}
+                    edge [->,bend right=20] ([xshift=-2mm]M.12) 
+                ;
+                \node at (0,-0.8) {$-\SI{2.9}{\partspermillion}$}
+                    edge [->,bend right=20] (0,0.3) 
+                ;
+                \path (-2.5,0) -- (2.5,0);
+            \end{tikzpicture}
+            \caption{[18]annulene.}
+            \label{fig:ringCurrentf}
+        \end{subfigure}
+        \caption{Ring currents and related effects.}
+        \label{fig:ringCurrent}
+    \end{figure}
+    \begin{itemize}
+        \item Protons next to $\pi$-systems are deshielded.
+        \begin{itemize}
+            \item Example: Cyclohexene's vinyl protons are downfield at \SI{5.7}{\partspermillion} (see Figure \ref{fig:ringCurrentd}).
+            \item Alkene protons are deshielded because they lie in the nodal plane of the $\pi$-system, coplanar with the so-called "$\sigma$-bond network." This means that much of the electron density is above or below these protons in the $p$-lobes. Thus, the protons have less electron density near them, which we observe as deshielding (see Figure \ref{fig:ringCurrenta}).
+        \end{itemize}
+        \item While cyclohexene's vinyl protons are certainly deshielded compared to normal alkyl protons, benzene's six protons are even more deshielded, lying at \SI{7.3}{\partspermillion}.
+        \item What makes aromatic protons so much more deshielded?
+        \begin{itemize}
+            \item When benzene is placed in an external magnetic field, it orients itself perpendicular to the magnetic field because the $p$-orbitals all want to align with the magnetic field (see Figure \ref{fig:ringCurrentb}).
+            \begin{itemize}
+                \item Once benzene is oriented, the magnetic field causes the $\pi$-electrons to circle around the ring system.
+            \end{itemize}
+            \item These rotating electrons create a new magnetic field (see Figure \ref{fig:ringCurrentc}).
+            \begin{itemize}
+                \item This small, local magnetic field reinforces the external magnetic field, deshielding the external protons.
+            \end{itemize}
+            \item Prediction: In an aromatic ring big enough to have \emph{internal} protons (see Figure \ref{fig:ringCurrentf}), such protons will be extra shielded.
+            \begin{itemize}
+                \item Indeed, this prediction is experimentally confirmed: The internal protons of [18]annulene have a whopping $-\SI{2.9}{\partspermillion}$ chemical shift.
+            \end{itemize}
+            \item More $\pi$-electrons increases the ring current and ups the external protons' chemical shift, too.
+            \item There's much more physics here, if you're curious!! But it's beyond the scope of the course.
+        \end{itemize}
+        \item Ring currents of aromatic compounds have tons of applications to organic semiconductors, etc.
+    \end{itemize}
+    \item X-ray crystallography.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \chemfig[fixed length=false]{-[:30]-[:-30](=[6]O)-[:30](-[2]Br)-[:-30]}
+            \caption{2-bromopentan-3-one.}
+            \label{fig:xRayCrystala}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \chemfig[fixed length=false,bond offset=0pt]{@{5}-[:30]@{4}-[:-30]@{3}(-[6,0.8]@{3a}\phantom{O})-[:30]@{2}(-[2,1.2]@{2a}\phantom{Br})-[:-30]@{1}}
+            \chemmove{
+                \filldraw [fill=white] (5) circle (1.2mm);
+                \filldraw [fill=white] (4) circle (1.2mm);
+                \filldraw [fill=white] (3) circle (1.2mm);
+                \filldraw [fill=white] (2) circle (1.2mm);
+                \filldraw [fill=white] (1) circle (1.2mm);
+                % 
+                \filldraw [fill=white] (3a) circle (1.6mm);
+                \filldraw [fill=white] (2a) circle (3.4mm);
+            }
+            \caption{X-ray structure.}
+            \label{fig:xRayCrystalb}
+        \end{subfigure}
+        \caption{X-ray crystallography.}
+        \label{fig:xRayCrystal}
+    \end{figure}
+    \begin{itemize}
+        \item To begin, you grow a \textbf{crystal} of your sample.
+        \item We then shoot X-rays at the crystal.
+        \begin{itemize}
+            \item We choose \emph{X-rays}, in particular, from among all types of light because their wavelength is approximately \SI{1}{\angstrom}. This is on the same order  of magnitudeas most bond lengths, so we get nice interactions, described as follows.
+        \end{itemize}
+        \item Specifically, these X-rays \textbf{diffract} when they hit a nucleus, and then we measure the location to which they bounce back.
+        \begin{itemize}
+            \item X-rays don't interact with electrons so much; they more interact with hard, heavy, localized nuclei.
+            \item We have detectors all around the sample, and this allows us to back-calculate the positions of the nuclei.
+        \end{itemize}
+        \item The result of this data collection is that we know the exact position of every nucleus in every atom of our crystal.
+        \begin{itemize}
+            \item Once we have these positions, we can connect the dots to identify bonds.
+            \item So to clarify, X-rays do not "see" the bonds directly, but if two nuclei are \SI{1.4}{\angstrom} apart (for example), then we can reasonably assume that \SI{1.4}{\angstrom} is the bond length.
+        \end{itemize}
+        \item Result: We get a 3D structure of our molecule with exact connectivity.
+        \item Example: How a molecule looks to X-ray crystallography (see Figure \ref{fig:xRayCrystal}).
+        \begin{itemize}
+            \item To reiterate, every atom looks like a ball with size proportional to how much it weighs.
+            \begin{itemize}
+                \item For example, bromine is really heavy, so it shows up as a really big ball.
+            \end{itemize}
+            \item Once we have the atoms' positions, we --- as analysts --- draw in the bonds ourselves.
+            \begin{itemize}
+                \item For example, we know that \ce{C=O} bonds (as double bonds) tend to be shorter than single bonds, so it should not be surprising that the oxygen and C3 atoms appear closer together than any others.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Crystal}: A regular lattice of repeating \textbf{unit cells}.
+    \item \textbf{Unit cell}: The simplest thing that repeats.
+    \item Pros and cons of X-ray diffraction.
+    \begin{itemize}
+        \item Pros:
+        \begin{itemize}
+            \item It's super awesome: gives you an exact 3D picture of the molecule.
+            \item Can show you atoms that don't have NMR signals (like bromine).
+            \item Often considered the "smoking gun" in structure determination. That is to say, X-ray crystallography is the spectroscopic technique that produces results you can't really argue with.
+        \end{itemize}
+        \item Cons.
+        \begin{itemize}
+            \item It's expensive ($\sim$\$1000/run).
+            \item You can't just push a button, like you can with NMR.
+            \begin{itemize}
+                \item Rather, you need a technician to set the sample and an analyst to interpret the data (there's an art to it).
+            \end{itemize}
+            \item It's hard to grow crystals of certain compounds.
+            \item You can't see the hydrogens because they're very small, but that's usually not an issue because we can infer where they are from all the other data.
+            \item This \emph{crystal} structure naturally represents the molecule is the solid phase.
+            \begin{itemize}
+                \item This means that we don't get much information on the molecule's dynamics in solution (for example).
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item Circular dichroism (CD).
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.47\linewidth}
+            \centering
+            \begin{tikzpicture}[every node/.style=black]
+                \node {\chemfig{Me-[:30](<[2]Br)-[:-30]Et}};
+        
+                \draw [rex,semithick,decorate,decoration={coil,aspect=0.9,amplitude=2mm},-latex] (-3.2,0) -- node[below=2mm]{L} (-1,0);
+                \draw [rex,semithick,decorate,decoration={coil,aspect=0.9,amplitude=2mm},-latex] (1,0) -- node[below=2mm]{L} (3.2,0);
+            \end{tikzpicture}
+            \caption{Absorption of L light.}
+            \label{fig:schematicCDa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.47\linewidth}
+            \centering
+            \begin{tikzpicture}[every node/.style=black]
+                \node {\chemfig{Me-[:30](<[2]Br)-[:-30]Et}};
+        
+                \draw [rex,semithick,decorate,decoration={coil,aspect=0.9,amplitude=1mm,segment length=5pt,pre length=7pt},latex-,rotate=180] (-2.4,0) -- node[below=2mm]{R} (-1,0);
+                \draw [rex,semithick,decorate,decoration={coil,aspect=0.9,amplitude=2mm,pre length=7pt},latex-,rotate=180] (1,0) -- node[below=2mm]{R} (3.2,0);
+            \end{tikzpicture}
+            \caption{Absorption of R light.}
+            \label{fig:schematicCDb}
+        \end{subfigure}
+        \caption{Circular dichroism spectrophotometer schematic.}
+        \label{fig:schematicCD}
+    \end{figure}
+    \begin{itemize}
+        \item CD can be used to differentiate enantiomers!
+        \item Uses circularly polarized light, that is, light that rotates either left or right.
+        \begin{itemize}
+            \item Circularly polarized light is created with a \textbf{polarimeter}.
+        \end{itemize}
+        \item Once the light is created, you shoot it at your sample and see what gets absorbed.
+        \begin{itemize}
+            \item Some molecules --- e.g., (\emph{R})-2-bromobutane --- will not absorb the L light, but will absorb some of the R light.
+            \item Note the similarities between Figure \ref{fig:schematicCD} and Figure \ref{fig:schematicIR}.
+        \end{itemize}
+        \item One enantiomer will absorb one handedness of light, and the other enantiomer will absorb the other handedness of light.
+        \begin{itemize}
+            \item I.e., one enantiomer absorbs L and the other enantiomer absorbs R.
+            \item You don't know which enantiomer will absorb which light before you test it!
+            \item Implication: It's not always that (\emph{R})-enantiomers absorb R-light. It's just that one will absorb one, and the other will absorb the other.
+        \end{itemize}
+        \item CD allows us to calculate the \textbf{specific rotation} of a molecule.
+        \item Example measurement of $[\alpha]$: 2-bromobutane.
+        \begin{itemize}
+            \item The (\emph{R})-enantomier has $[\alpha]=\ang{-23.1}$,\footnote{Verbally, we say, "the R enantiomer rotates plane-polarized light by 23 degrees in the negative direction."} and the (\emph{S})-enantiomer has $[\alpha]=+\ang{23.1}$.
+            \item For a racemic mixture, $[\alpha]=\ang{0}$.
+            \item If you have an $80:20$ mixture $R:S$, then this mixture has 60\% ee. This is because in an $80:20$ ratio, the 20\% of the sample that's (\emph{S}) cancels out 20\% of the sample that's (\emph{R}). Thus, the ee is $80\%-20\%=60\%$. It follows that $[\alpha]=-\ang{13.9}$.
+        \end{itemize}
+        \item It follows from the last line above that CD can be used to measure the ee of your system!
+    \end{itemize}
+    \item \textbf{Specific rotation} (of a molecule): A measure of the degree to which a molecule at temperature $T$ rotates plane-polarized light of wavelength $\lambda$. \emph{Denoted by} $\bm{[\alpha]_\lambda^T}$.
+    \begin{itemize}
+        \item We calculate this using both the sign ($+/-$) and the amplitude of the light after passing through the sample.
+        \item The typical temperature is \SI{25}{\celsius}, and the typical wavelength is \SI{589}{\nano\meter}.
+    \end{itemize}
+    \item How do you obtain a pure sample of your enantiomer for an initial CD experiment, i.e., how do you know what 100\% ee looks like?
+    \begin{itemize}
+        \item There are methods that can purify enantiomers, like chiral column chromatography.
+        \item Thus, even if your reaction doesn't yield 100\% ee, you can separate the products into two samples that are 100\% ee and 0\% ee, and analyze those first.
+    \end{itemize}
+    \item What if you have multiple chiral centers?
+    \begin{itemize}
+        \item Enantiomer pairs have opposite-signed specific rotations.
+        \item Diastereomers look like completely different molecules to CD, but (to reiterate) each enantiomeric pair of diastereomers will have opposite-signed specific rotations.
+    \end{itemize}
+    \item Example structure determination: Diacetyl.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{-[:30](=[2]O)-[:-30](=[6]O)-[:30]}
+        \caption{Diacetyl.}
+        \label{fig:diacetyl}
+    \end{figure}
+    \begin{itemize}
+        \item EA: \ce{C2H3O} (MW = 43).
+        \item MS: 86, 43.
+        \begin{itemize}
+            \item Larger mass is the parent peak!
+            \item With EA, this tells us that the molecular formula is \ce{C4H6O2}.
+        \end{itemize}
+        \item \ce{{}^13C} NMR: 200, 20.
+        \begin{itemize}
+            \item 4 carbons but only 2 signals implies symmetry.
+            \item One alkyl peak and one carbonyl peak.
+        \end{itemize}
+        \item \ce{{}^1H} NMR: 1 singlet (6H).
+        \begin{itemize}
+            \item This means you have 2 \ce{CH3}'s, 3 \ce{CH2}'s, or 6 \ce{CH}'s.
+            \item 6 \ce{CH}'s is impossible because that's too many carbons!
+            \item 3 \ce{CH2}'s is also not possible.
+            \item Diacetyl is possible; in fact, diacetyl's ability to cleave symmetrically into acylium ions explains the MS peaks!
+        \end{itemize}
+    \end{itemize}
+    \item Example structure determination: Determine the product.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemname{
+                \chemfig{*6(---(-[:10])(-[:50]Br)---)}
+            }{SM\hspace{2em}}
+            \arrow{->[$\Delta$][\ce{MeOH}]}
+            \chemname{
+                \chemfig{*6(--=(-)---)}
+            }{E\textsubscript{1}\hspace{1.6em}}
+            \+
+            \chemname{
+                \chemfig{*6(---(-[:10])(-[:50]OMe)---)}
+            }{S\textsubscript{N}1\hspace{3.2em}}
+            \+
+            \chemname{
+                \chemfig{*6(---(-[:10])(-[:50]OH)---)}
+            }{Hydration\hspace{2.6em}}
+        \schemestop
+        \caption{Characterizing the products of a chemical reaction.}
+        \label{fig:characterizeProducts}
+    \end{figure}
+    \begin{itemize}
+        \item We begin by predicting the products that will result upon heating the 1-bromo-1-methylcyclohexane starting material (SM) in methanol.
+        \begin{itemize}
+            \item E\textsubscript{1} elimination is one thing that could happen.
+            \item S\textsubscript{N}1 substitution of the methanol solvent is another thing that could happen.
+            \item And if your methanol is somehow contaminated with water, hydration could also happen (S\textsubscript{N}1 mechanism as well, just with a different nucleophile).
+        \end{itemize}
+        \pagebreak
+        \item What key signals can we look for to differentiate these 3 structures in our product mixture?
+        \item MS.
+        \begin{itemize}
+            \item $\cnc{M}\rc$ and $\cnc{M$+2$}\rc$ peaks of equal height is characteristic of bromine, and hence unreacted SM.
+            \item The most stable fragment for the SM is the tertiary carbocation formed by cleaving the \ce{C-Br} bond.
+            \item The most stable fragments for both E\textsubscript{1} and S\textsubscript{N}1 have the same mass as the parent peak.
+            \begin{itemize}
+                \item We form an allylic carbocation from E\textsubscript{1} by cleaving the ring $\beta$ to the alkene.
+                \item We form an oxygen-stabilized carbocation from S\textsubscript{N}1 by performing $\alpha$-cleavage adjacent to the ether and then stabiliing the primary carbocation with one of the oxygen's lone pairs.
+            \end{itemize}
+            \item Thus, the bromine-containing SM is the only compound that can truly be distinguished from the other four using MS alone.
+        \end{itemize}
+        \item IR.
+        \begin{itemize}
+            \item E\textsubscript{1}'s \ce{C=C} bond is unique among the four compounds.
+            \item The hydration product's \ce{O-H} stretch will likewise be unique.
+        \end{itemize}
+        \item \ce{{}^13C} NMR.
+        \begin{itemize}
+            \item S\textsubscript{N}1's ether methyl peak is unique among the four compounds.
+            \item We can also pick up on E\textsubscript{1}'s \ce{C=C} bond here.
+        \end{itemize}
+        \item \ce{{}^1H} NMR.
+        \begin{itemize}
+            \item E\textsubscript{1}'s proton off the vinyl group is unique.
+            \item We can also pick up on S\textsubscript{N}1's ether methyl peak here.
+            \item We can also pick up on the hydration product's \ce{O-H} stretch here.
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
