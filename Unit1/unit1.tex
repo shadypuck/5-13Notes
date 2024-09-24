@@ -3188,5 +3188,287 @@
 
 
 
+\section{Review for Exam 1}
+\begin{itemize}
+    \item \marginnote{9/23:}Lecture 7 recap: Determining the products in Figure \ref{fig:characterizeProducts}.
+    \begin{itemize}
+        \item When you run a reaction (as in Figure \ref{fig:characterizeProducts}), how do you know what your products are?
+        \begin{itemize}
+            \item To answer such questions, chemists use a suite of structure determination techniques!
+            \item Examples include EA, MS, IR, \ce{{}^13C} NMR, and \ce{{}^1H} NMR.
+        \end{itemize}
+        \item EA: Can give us the empirical formulae of the compounds.
+        \begin{itemize}
+            \item EA takes a while to run, so it might not be our first tool, but it can be useful.
+        \end{itemize}
+        \item MS: Can identify the \ce{{}^79Br} and \ce{{}^81Br} peaks in the SM.
+        \item IR: Can identify the \ce{O-H} and \ce{C=C} peaks where present.
+        \item \ce{{}^13C} NMR: Can identify the \ce{C=C} bonds, and some symmetry differences (by number of peaks).
+        \item \ce{{}^1H} NMR: Can identify the \ce{C=C} and \ce{O-Me} fragments where present.
+        \begin{itemize}
+            \item Recall that this is sometimes our most powerful method.
+        \end{itemize}
+    \end{itemize}
+    \item Today: Review for Exam 1.
+    \item Lecture outline.
+    \begin{itemize}
+        \item Exam logistics and tips.
+        \item Review ($\text{EA}\to\text{MS}\to\text{IR}\to\text{\ce{{}^1H} NMR}\to\text{\ce{{}^13C} NMR}$).
+        \item Practice problems.
+    \end{itemize}
+    \pagebreak
+    \item Exam logistics.
+    \begin{itemize}
+        \item Wednesday, 12-1pm in 50-340 (the third floor of the Walker Memorial).
+        \item Exam starts a 12:05pm on the dot!!
+    \end{itemize}
+    \item Study techniques.
+    \begin{itemize}
+        \item Study by practicing.
+        \begin{itemize}
+            \item This unit is not about reciting information, but about applying techniques.
+            \item Try timing yourself on the practice exams to get a feel for what it's like to do structure determination problems under a time crunch.
+        \end{itemize}
+        \item Familiarize yourself with the reference material.
+        \begin{itemize}
+            \item Know how to look stuff up!
+            \item Don't waste seconds or minutes searching for information because the first time you're seeing the reference sheets is when you take the exam.
+        \end{itemize}
+        \item Prof. Elkin's test-taking strategy: Go through the exam quickly first, answering what you can right away. Then go back a second time to ensure your answers are consistent with \emph{all} the data.
+    \end{itemize}
+    \item Will \ce{{}^1H} NMR peaks be labeled, e.g., with their splitting, coupling constant, and integration?
+    \begin{itemize}
+        \item There will be some problems where more data is given, and some where less data is given.
+    \end{itemize}
+    \item EA review.
+    \begin{itemize}
+        \item Combust organic compounds into \ce{CO2} and \ce{H2O}.
+        \item This provides the empirical formula.
+    \end{itemize}
+    \item MS review.
+    \begin{itemize}
+        \item Identify key atoms (use the parent peak): \ce{Cl}, \ce{Br}, and \ce{N}.
+        \item Identify key fragments: Stable-ish cations.
+        \item Watch for common mass differences ($-\ce{Me}$, $-\ce{H2O}$, etc.)
+        \begin{itemize}
+            \item Don't do too much math on your calculator! Just look for \emph{common} differences.
+        \end{itemize}
+    \end{itemize}
+    \item IR review.
+    \begin{itemize}
+        \item Key regions: \ce{X-H}, $sp$, and \ce{X=Y}.
+        \item Stronger bonds have a higher $\nu$ (\si{\per\centi\meter}).
+    \end{itemize}
+    \item \ce{{}^1H} NMR review.
+    \begin{itemize}
+        \item Key regions of chemical shift.
+        \begin{itemize}
+            \item A general rule is that more EWGs yields a more downfield/deshielded/to the left peak.
+        \end{itemize}
+        \item Consider integration and symmetry.
+        \item Coupling (shape and $J$ value) tell us about connectivity.
+    \end{itemize}
+    \item \ce{{}^13C} NMR review.
+    \begin{itemize}
+        \item Key regions of chemical shift.
+        \item The number of peaks tells us about symmetry.
+    \end{itemize}
+    \item Are we responsible for book information or just what was presented in class?
+    \begin{itemize}
+        \item Yes and no.
+        \item You do need to read the textbook, because it explains class concepts in greater depth (specifically, the depth we're expecting you to know).
+        \item However, we're not going to try to ask "gotcha" questions on specific things in the textbook.
+    \end{itemize}
+    \pagebreak
+    \item Example structure determination: 1,1-dichlorocyclobutane.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{*4([1]--(-[:70]Cl)(-[:110]Cl)--)}
+        \caption{1,1-dichlorocyclobutane.}
+        \label{fig:dichlorocyclobutane}
+    \end{figure}
+    \begin{itemize}
+        \item Given data.
+        \begin{itemize}
+            \item EA: \ce{C2H3Cl}.
+            \item \ce{{}^13C} NMR: 84.1, 46.6, 15.4.
+            \item \ce{{}^1H} NMR: 2.94 (t, $J=\SI{7.6}{\hertz}$, 4H), 2.15 (pentet, $J=\SI{7.6}{\hertz}$, 2H).\footnote{Pentets are also sometimes referred to as quintets.}
+        \end{itemize}
+        \item Let's start by deducing the molecular formula.
+        \begin{itemize}
+            \item How can we do this if we don't have MS data?
+            \item Instead, sum the \ce{{}^1H} NMR integrations to learn that the molecule has 6H total. Thus, since the empirical formula has only 3H, we must double the empirical formula to get \ce{C4H6Cl2}.
+        \end{itemize}
+        \item Let's now look for the presence of symmetry in the molecule.
+        \begin{itemize}
+            \item Even though the molecule has 4 carbons, there are only 2 proton peaks --- and their matching $J$ values indicate that the protons in the peaks couple to each other.
+            \item Additionally, since the 2.94 triplet integrates to \emph{four} protons, this peak probably corresponds to 2 sets containing 2 chemically equivalent protons each. Indeed, the only time when four protons are located on the same carbon is in methane!
+        \end{itemize}
+        \item This analysis of the \ce{{}^1H} NMR data can be used to draw the following molecular fragment.
+        \begin{center}
+            \footnotesize
+            \chemfig[atom sep=1.4em]{(-[:-150]!{wave})(-[:110]H)(-[:70]H)-[:-30](-[:-110]H)(-[:-70]H)-[:30](-[:110]H)(-[:70]H)-[:-30]!{wave}}
+        \end{center}
+        \begin{itemize}
+            \item The bottom two protons correspond to the pentet, since they are split by the other four (chemically equivalent) protons.
+            \item The other four protons are, in turn, split into a triplet by the two pentet protons.
+        \end{itemize}
+        \item Having constructed the above fragment, we only have one carbon left in our molecular formula.
+        \begin{itemize}
+            \item We must maintain symmetry, so we can't just add it to one side or the other of the above fragment.
+            \item If we can't add it to one side or the other, we must add it to both! That is, let's close this fragment into a cyclobutane ring.
+            \item Then the last two atoms we have are the two chlorines, and we can bond these to the new carbon to fill its octet, include them in the molecule, and eliminate the possibility of any hydrogens on this last carbon interfering with the splitting of the other two sets of hydrogens.
+        \end{itemize}
+        \item Sanity check: Does this molecule match the \ce{{}^13C} NMR peaks?
+        \begin{itemize}
+            \item It is a symmetric molecule with only three chemically unique carbon positions, so we expect three peaks (which we see).
+            \item We expect one of these peaks to be in the \ce{R-X} region ($\SIrange{50}{100}{\partspermillion}$), which we see.
+            \item We expect the other two peaks to be in the alkyl region ($\SIrange{0}{50}{\partspermillion}$), with one significantly more downfield than the other due to the nearby chlorine EWGs. We see this, too.
+        \end{itemize}
+        \item Therefore, since 1,1-dichlorocyclobutane was deduced from our data and matches it all, we can be fairly confident that it is the right structure.
+    \end{itemize}
+    \pagebreak
+    \item Example structure determination: Dimethoxyethane.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{H_3C-[:-30]O-[:30](-[:110]H)(-[:70]H)-[:-30](-[:-110]H)(-[:-70]H)-[:30]O-[:-30]CH_3}
+        \caption{Dimethoxyethane.}
+        \label{fig:DME}
+    \end{figure}
+    \begin{itemize}
+        \item Given data.
+        \begin{itemize}
+            \item EA: \ce{C2H5O}.
+            \item MS: 90, 45.
+            \item \ce{{}^13C} NMR: 71.3, 59.3.
+            \item \ce{{}^1H} NMR: 3.55 (s, 4H), 3.40 (s, 6H).
+        \end{itemize}
+        \item As before, let's start by deducing the molecular formula.
+        \begin{itemize}
+            \item Via \ce{{}^1H} NMR: 10H total, so double the empirical to \ce{C4H10O2}.
+            \item Via MS: \ce{C2H5O} has a mass of 45, so double the empirical to \ce{C4H10O2} (mass 90).
+        \end{itemize}
+        \item Key signals.
+        \begin{itemize}
+            \item The \ce{{}^1H} NMR peak at \SI{3.40}{\partspermillion} has an integration of 6H, so it likely corresponds to two chemically equivalent methyl groups. Additionally, the relatively downfield chemical shift (and lack of splitting) indicates that the methyl groups are coordinated to a heteroatom.
+            \begin{itemize}
+                \item From the molecular formula, the heteroatom would have to be oxygen!
+                \item This means that our molecule contains two methoxy (\,{\tiny\chemfig[baseline=-1.4mm,atom sep=1em,bond offset=1pt]{O(-[:-150]!{wave})-[:-30]CH_3}}\,) groups.
+            \end{itemize}
+            \item The \ce{{}^1H} NMR peak at \SI{3.55}{\partspermillion} has an integration of 4H, so it likely corresponds to two chemically equivalent \ce{CH2} groups. As before, its relatively downfield chemical shift (and lack of splitting) also indicates coordination to oxygen.
+            \begin{itemize}
+                \item This means that our molecule also contains two groups that look like this: {\tiny\chemfig[baseline=-2mm,atom sep=1em,bond offset=1pt,fixed length=false]{O(-[:-150]!{wave})-[:-30](-[:-65]H)(-[:-115]H)-[:30]!{wave}}}
+            \end{itemize}
+        \end{itemize}
+        \item Now how do we couple the fragments?
+        \begin{itemize}
+            \item The methoxy groups must go at either end of the molecule, and this forces coordination to an additional \ce{CH2} past the oxygen. Now we have two fragments that look like this: {\tiny\chemfig[baseline=-1mm,atom sep=1em,bond offset=1pt,fixed length=false]{H_3C-[:30]O-[:-30](-[:-65]H)(-[:-115]H)-[:30]!{wave}}}
+            \item Since this consists of all atoms, the only thing left to do is combine these two fragments to make the molecule in Figure \ref{fig:DME} --- in spite of the fact that this appears to bring protons that we \emph{know} don't couple right next to each other.
+            \item However, looking at the full molecule, we can observe that it has rotational symmetry! (In other words, if you rotate the molecule \ang{180} in the plane of the page, you get the same molecule.) This explains the lack of coupling: All four protons in the center of the molecule are actually chemically equivalent, and adjacent but chemically equivalent protons don't couple each other!
+        \end{itemize}
+        \item Sanity check: Could this molecule fragment to give the right MS peaks?
+        \begin{itemize}
+            \item Yes!
+            \item The molecular ion would give rise to the parent peak at 90.
+            \item Cleavage of the central \ce{C-C} bond would break the molecule in half, yielding a resonance-stabilized fragment half the weight of the molecule (i.e., $m/z=45$).
+        \end{itemize}
+    \end{itemize}
+    \item When do we need to take long-range coupling into account?
+    \begin{itemize}
+        \item It is oftentimes very small, and we can't really see it on low-resolution NMR machines.
+        \item Mainly, you should know that it exists, but you should not expect too many examples of it on the exam.
+    \end{itemize}
+    \item Example structure determination: Isobutyl acetate.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \chemfig{-[:30](=[2]O)-[:-30]O-[:30]-[:-30](-[6])-[:30]}
+        \caption{Isobutyl acetate.}
+        \label{fig:iBuOAc}
+    \end{figure}
+    \begin{itemize}
+        \item Given data.
+        \begin{itemize}
+            \item Molecular formula: \ce{C6H12O2}.
+            \item IR: 1746.
+            \item \ce{{}^13C} NMR: 170.2, 70.4, 27.6, 20.7, 19.4.
+            \item \ce{{}^1H} NMR: 3.76 (d, $J=\SI{7.0}{\hertz}$, 2H), 2.04 (s, 3H), 1.97 (triplet of septets, $J=\num{7.0},\SI{6.8}{\hertz}$, 1H), 0.95 (d, $J=\SI{6.8}{\hertz}$, 6H).
+        \end{itemize}
+        \item Key signals.
+        \begin{itemize}
+            \item The sole IR stretch and most downfield \ce{{}^13C} NMR peak both suggest a carbonyl: {\tiny\chemfig[baseline=-2.3mm,atom sep=1em,bond offset=1pt,fixed length=false]{O=[6](-[:-30]!{wave})(-[:-150]!{wave})}}
+            \item The second most downfield \ce{{}^13C} NMR peak and \SI{3.76}{\partspermillion} \ce{{}^1H} NMR peak combine to suggest a carbon adjacent to a heteroatom and bearing 2 hydrogens: {\tiny\chemfig[baseline=-2mm,atom sep=1em,bond offset=1pt,fixed length=false]{X(-[:-150]!{wave})-[:-30](-[:-65]H)(-[:-115]H)-[:30]!{wave}}}
+            \begin{itemize}
+                \item Again, the molecular formula implies that the heteroatom would have to be oxygen: {\tiny\chemfig[baseline=-1.7mm,atom sep=1em,bond offset=1pt,fixed length=false]{O(-[:-150]!{wave})-[:-30](-[:-65]H)(-[:-115]H)-[:30]!{wave}}}
+            \end{itemize}
+            \item The two most upfield \ce{{}^1H} NMR peaks combine to suggest an isopropyl group: {\tiny\chemfig[baseline=-0.5mm,atom sep=1em,bond offset=1pt,fixed length=false]{(-[:-150]!{wave})(-[2])(-[:-30])(-[:30]H)}}
+            \begin{itemize}
+                \item Indeed, in this isopropyl group, the drawn proton will split all 6 methyl protons into a doublet, and the six chemically equivalent methyl protons will split the drawn proton into a septet (the triplet part must then come from additional protons vicinal to the fragment).
+            \end{itemize}
+            \item The last remaining \ce{{}^1H} NMR peak (\SI{2.04}{\partspermillion}) suggests a methyl group: {\tiny\chemfig[baseline=-0.2mm,atom sep=1em,bond offset=1pt,fixed length=false]{CH_3-[4]!{wave}}}
+        \end{itemize}
+        \item We can now hijack the $J$ values to find out exactly how to assemble these fragments.
+        \begin{itemize}
+            \item The two methyl groups in the isopropyl group have $J=\SI{6.8}{\hertz}$.
+            \item Thus, they are coupled to the other proton(s) with $J=\SI{6.8}{\hertz}$. We can see that this is the sole proton in the triplet of septets, which corresponds to the hydrogen in the isopropyl group, as we would expect. This hydrogen also couples to some other group with $J=\SI{7.0}{\hertz}$.
+            \item The other group with $J=\SI{7.0}{\hertz}$ is the peak at \SI{3.76}{\partspermillion}, and which corresponds to the {\tiny\chemfig[baseline=-1.8mm,atom sep=1em,bond offset=1pt,fixed length=false]{O(-[:-150]!{wave})-[:-30](-[:-65]H)(-[:-115]H)-[:30]!{wave}}} fragment. Therefore, we can join these two fragments to create: {\tiny\chemfig[baseline=0.3mm,atom sep=1em,bond offset=1pt,fixed length=false]{O(-[:-150]!{wave})-[:-30]-[:30](-[2])(-[:-30])}}
+            \item At this point, we've used everything except the methyl group and the carbonyl. But the only way to include both of these is to bond the carbonyl to the above fragment and then the methyl to the carbonyl. This bonding will yield the final structure in Figure \ref{fig:iBuOAc}.
+        \end{itemize}
+        \item Sanity check: Do the protons and carbons in isobutyl acetate have the chemical shifts we'd expect based on their position in the molecule?
+        \begin{table}[h!]
+            \centering
+            \small
+            \renewcommand{\arraystretch}{1.2}
+            \begin{subtable}[b]{0.3\linewidth}
+                \centering
+                \begin{tabular}{c|c}
+                    \ce{{}^1H} NMR & Region\\
+                    \hline
+                    3.76 & $\alpha$-heteroatom\\
+                    2.04 & alkyl\\
+                    1.97 & alkyl\\
+                    0.95 & alkyl\\
+                    \phantom{19.4}
+                \end{tabular}
+                \caption{\ce{{}^1H} NMR.}
+                \label{tab:iBuOAca}
+            \end{subtable}
+            \begin{subtable}[b]{0.3\linewidth}
+                \centering
+                \begin{tabular}{c|c}
+                    \ce{{}^13C} NMR & Region\\
+                    \hline
+                    170.2 & carbonyl\\
+                    70.4 & $\alpha$-heteroatom\\
+                    27.6 & alkyl\\
+                    20.7 & alkyl\\
+                    19.4 & alkyl\\
+                \end{tabular}
+                \caption{\ce{{}^13C} NMR.}
+                \label{tab:iBuOAcb}
+            \end{subtable}
+            \caption{Correlating isobutyl acetate's NMR peaks and functional groups.}
+            \label{tab:iBuOAc}
+        \end{table}
+        \pagebreak
+        \begin{itemize}
+            \item Per Table \ref{tab:iBuOAc}, yes!
+            \item Note: The \SI{2.04}{\partspermillion} peak corresponds to the methyl group $\alpha$ to the carbonyl.
+            \item Note: The \SI{1.97}{\partspermillion} peak corresponds to the substituted proton $\beta$ to the oxygen.
+            \begin{itemize}
+                \item Recall from Lecture 4 that this hydrogen is relatively downfield because it's surrounded by "electronegative" carbon atoms!
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item When does a peak display complex splitting, versus a "simple" doublet, triplet, quartet, etc.?
+    \begin{itemize}
+        \item You're a "something of somethings" if you couple chemically distinct protons, and you're just a "something" if you only couple one type of chemically equivalent protons.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
