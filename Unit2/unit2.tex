@@ -20,5 +20,635 @@
 
 
 
+\section{Molecular Orbital Theory - 2}
+\begin{itemize}
+    \item \marginnote{9/30:}Lecture 10 recap: What MO theory can explain.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=1.4em}
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \schemestart
+                \chemfig{@{N}\charge{30=$\ominus$}{Nuc}}
+                \arrow{0}
+                \chemfig{-[:30]@{C}(=[2]@{O}O)-[:-30]}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={11pt}{1pt},gray,densely dashed] (N) to[out=30,in=150] (O);
+                \draw [curved arrow={11pt}{2pt}] (N) to[out=30,in=-100,in looseness=1.5] (C);
+            }
+            \vspace{3.9em}
+            \caption{A regioselective reaction.}
+            \label{fig:MOexplainsa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.32\linewidth}
+            \centering
+            \setchemfig{autoreset cntcycle=false}
+            \schemestart
+                \chemfig{*6(--=---)}
+                \arrow(c1--c23){0}[,1.5]
+                \subscheme{
+                    \chemfig{*6(--(<Br)-(<Br)---)}
+                    \arrow(c2--c3){0}[-90,0.5]
+                    \chemfig{*6(--(<:Br)-(<Br)---)}
+                }
+            \schemestop
+            \chemmove{
+                \draw ([xshift=9pt]c1.east) -- node[above]{\ce{Br2}} ($(c1)!0.5!(c23)$) coordinate (c25) -- (c25 |- c2) -- ([xshift=-9pt]c2.west);
+                \draw (c25) -- (c25 |- c3) -- ([xshift=-9pt]c3.west);
+                \node [magenta] at (cyclecenter2) {X};
+                \node [magenta] at (cyclecenter3) {$\checkmark$};
+            }
+            \caption{A diasterioselective reaction.}
+            \label{fig:MOexplainsb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \schemestart
+                \chemfig{PhMgBr}
+                \arrow{0}[,0.1]\+{,,1em}
+                \chemfig{-[:60](-[:120])=(-[:60])-[:-60]}
+                \arrow(c1--c23){0}
+                \subscheme{
+                    \chemfig{rxn}
+                    \arrow(c2--c3){0}[-90,0.5]
+                    \chemfig{{no\ rxn}}
+                }
+            \schemestop
+            \chemmove{
+                \draw ([xshift=9pt]c1.east) -- ($(c1)!0.6!(c23)$) coordinate (c25) -- (c25 |- c2) -- ([xshift=-9pt]c2.west);
+                \draw (c25) -- (c25 |- c3) -- ([xshift=-9pt]c3.west);
+                \node [magenta,above] at (c2.north) {X};
+                \node [magenta,below] at (c3.south) {$\checkmark$};
+            }
+            \vspace{3.65em}
+            \caption{An unreactive mixture.}
+            \label{fig:MOexplainsc}
+        \end{subfigure}\\[2em]
+        \setchemfig{atom sep=3em}
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \vspace{1em}
+            \schemestart
+                \chemfig{@{N}\charge{30=$\ominus$}{Nuc}}
+                \arrow{0}[-35,0.6]
+                \chemfig{@{C}C(<:[:160]R)(<[:-160]R)-@{O}O}
+            \schemestop
+            \chemmove{
+                \filldraw [thick,draw=orx,fill=white,rotate around={ 17:(C)}] ($(C)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(C)+(-0.0018,0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory  ,rotate around={-17:(C)}] ($(C)+(0.0018,-0.2)$) to[bend left=120,looseness=900] ($(C)+(-0.0018,-0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory  ,rotate around={-17:(O)}] ($(O)+(0.0018,0.2)$) to[bend right=120,looseness=500] ($(O)+(-0.0018,0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=white,rotate around={ 17:(O)}] ($(O)+(0.0018,-0.2)$) to[bend left=120,looseness=500] ($(O)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [curved arrow={11pt}{4em}] (N) to[out=30,in=107,in looseness=3] (C);
+            }
+            \vspace{1.7em}
+            \caption{MO explanation.}
+            \label{fig:MOexplainsd}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.32\linewidth}
+            \centering
+            \vspace{1.6em}
+            \schemestart
+                \chemfig{@{N}\charge{30=$\ominus$}{Br}}
+                \arrow{0}[50,0.6]
+                \chemfig{*3([:-30]@{C1}(-R)-(-R)-@{Br}\charge{[extra sep=5pt]90=$\oplus$}{Br}-[@{3}])}
+            \schemestop
+            \chemmove{
+                \filldraw [thick,draw=orx,fill=ory,rotate around={-30:(C1)}] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=920] ($(C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,draw=orx,rotate around={-30:(C1)}] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=460] ($(C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate around={-30:(Br)}] ($(Br)+(0.0018,-0.2)$) to[bend left=120,looseness=300] ($(Br)+(-0.0018,-0.2)$) -- cycle;
+                \draw [thick,draw=orx,rotate around={-30:(Br)}] ($(Br)+(0.0018,0.2)$) to[bend right=120,looseness=600] ($(Br)+(-0.0018,0.2)$) -- cycle;
+                % 
+                \draw [curved arrow={8pt}{3.5em}] (N) to[out=30,in=-110,in looseness=2] (C1);
+                \draw [curved arrow={4pt}{1pt}] (3) to[bend left=70,looseness=2.2] (Br);
+            }
+            \caption{MO explanation.}
+            \label{fig:MOexplainse}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \draw (-0.5,2) -- ++(-0.5,0) node[left,align=right]{$\pi^*$\\LUMO};
+                \draw (0.5,0) -- node{\Large$\upharpoonleft$\hspace{-1mm}$\downharpoonright$} ++(0.5,0) node[right,align=left]{\ce{Ph-}\\HOMO};
+                \draw [<->] (0,0) -- node[right]{$\Delta E$} (0,2);
+            \end{tikzpicture}
+            \caption{MO explanation.}
+            \label{fig:MOexplainsf}
+        \end{subfigure}
+        % \begin{tikzpicture}[remember picture,overlay]
+        %     \draw (-15,3.4) -- ++(15,0);
+        % \end{tikzpicture}
+        \caption{MO theory explains these phenomena.}
+        \label{fig:MOexplains}
+    \end{figure}
+    \begin{itemize}
+        \item Regioselectivity.
+        \begin{itemize}
+            \item Consider a nucleophile adding into a carbonyl (Figure \ref{fig:MOexplainsa}).
+            \begin{itemize}
+                \item Experimentally, we observe that the nucleophile attacks the carbon atom (magenta arrow) instead of the oxygen atom (grey dashed arrow).
+            \end{itemize}
+            \item To understand why, we must consider the carbonyl's molecular orbitals (Figure \ref{fig:MOexplainsd}).
+            \begin{itemize}
+                \item Specifically, we must consider the carbonyl's LUMO, since this will be the MO that interacts with the nucleophile's HOMO. Here, the LUMO is the carbonyl's $\pi^*$-orbital.
+                \item The carbonyl's LUMO has big lobes on carbon and small lobes on oxygen; in other words, this LUMO is \textbf{polarized} toward carbon.
+                \item The difference in lobe size explains why the nucleophile attacks carbon instead of oxygen.
+            \end{itemize}
+        \end{itemize}
+        \item Diastereoselectivity.
+        \begin{itemize}
+            \item Consider the bromination of an alkene (Figure \ref{fig:MOexplainsb}).
+            \begin{itemize}
+                \item Experimentally, we observe that the \emph{anti} adduct is formed instead of the \emph{syn} adduct.
+            \end{itemize}
+            \item To understand why, we consider the MOs of the bromonium ion intermediate (Figure \ref{fig:MOexplainse}).
+            \begin{itemize}
+                \item For the same reason as before, we must consider the bromonium ion's LUMO. Here, the LUMO is the \ce{C-Br} $\sigma^*$-orbital.
+                \item The bromonium ion's LUMO has its largest lobe behind carbon.
+                \item Thus, this is the lobe that will be attacked by the \ce{Br-} nucleophile. Such an attack is called a "backside attack" and induces the \emph{anti} product.
+            \end{itemize}
+        \end{itemize}
+        \item Reactivity.
+        \begin{itemize}
+            \item Consider a Grignard reagent adding into an olefin (Figure \ref{fig:MOexplainsc}).
+            \begin{itemize}
+                \item Experimentally, we observe no reaction here.
+            \end{itemize}
+            \item To understand why, we must consider the relative energies of the reacting MOs (Figure \ref{fig:MOexplainsf}).
+            \begin{itemize}
+                \item Essentially, the alkene's LUMO (a $\pi^*$-orbital) is much higher in energy than the phenyl anion's HOMO. Thus, the $\Delta E$ gap is too big, i.e., there is a lack of energy symmetry.
+                \item Therefore, by Rule 3 from Lecture 10, no reaction occurs.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item Today: More MO theory.
+    \item Lecture outline.
+    \begin{itemize}
+        \item The B\"{u}rgi-Dunitz angle.
+        \item Hyperconjugation.
+        \item The anomeric effect.
+        \item Stereoelectronic effects and the rate of reaction.
+    \end{itemize}
+    \item \textbf{B\"{u}rgi-Dunitz angle}: The angle at which nucleophiles typically add to carbonyls. \emph{Given by} \ang{107}.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=3em}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \schemestart
+                \chemfig{@{C}C(<:[:160]R)(<[:-160]R)(-[:107,,,,<-]@{N}Nuc)=@{O}O}
+            \schemestop
+            \chemmove{
+                \pic [draw,-,shorten <=4pt,shorten >=2pt,angle eccentricity=1.6,angle radius=6mm,pic text={\ang{107}}] {angle=O--C--N};
+            }
+            \vspace{2.5em}
+            \caption{Definition.}
+            \label{fig:BDanglea}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \vspace{1em}
+            \schemestart
+                \chemfig{@{N}\charge{[extra sep=2.2em]-73=$\ominus$}{Nuc}}
+                \arrow{0}[-72,1.2]
+                \chemfig{@{C}C(<:[:160]R)(<[:-160]R)-[@{1}]@{O}O}
+            \schemestop
+            \chemmove{
+                \filldraw [thick,draw=orx,fill=white,rotate around={ 17:(C)}] ($(C)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(C)+(-0.0018,0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory  ,rotate around={-17:(C)}] ($(C)+(0.0018,-0.2)$) to[bend left=120,looseness=900] ($(C)+(-0.0018,-0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory  ,rotate around={-17:(O)}] ($(O)+(0.0018,0.2)$) to[bend right=120,looseness=500] ($(O)+(-0.0018,0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=white,rotate around={ 17:(O)}] ($(O)+(0.0018,-0.2)$) to[bend left=120,looseness=500] ($(O)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [thick,draw=orx,rotate around={17:(N)}] ($(N)+(0.0018,-0.2)$) to[bend left=120,looseness=900] ($(N)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw (C) ++(107:1.3) -- node[right]{\scriptsize Yes!} ++(107:-0.2);
+                \draw (C) ++(-107:1.3) -- node[right]{\scriptsize Yes!} ++(-107:-0.2);
+                \draw (C) ++(180:1.3) node[left,align=center]{\scriptsize No!\\(*)} -- ++(180:-0.2);
+                % 
+                \draw (O) ++(73:0.94) -- node[right]{\scriptsize No!} ++(73:-0.2);
+                \draw (O) ++(-73:0.94) -- node[right]{\scriptsize No!} ++(-73:-0.2);
+                % 
+                \draw (1) ++(-90:0.4) node[below]{\scriptsize No!} -- ++(-90:-0.2);
+            }
+            \vspace{2.5em}
+            \caption{Effective overlap.}
+            \label{fig:BDangleb}
+        \end{subfigure}
+        \caption{B\"{u}rgi-Dunitz angle.}
+        \label{fig:BDangle}
+    \end{figure}
+    \begin{itemize}
+        \item This is the angle between the new \ce{C-Nuc} bond and the carbonyl's $\sigma$-plane (Figure \ref{fig:BDanglea}).
+        \item Nucleophiles attack at this angle because it's the location of the $\pi^*$-lobe on carbon (Figure \ref{fig:MOexplainsd}).
+        \item Let's elaborate a bit on Figure \ref{fig:MOexplainsd} now (Figure \ref{fig:BDangleb}).
+        \begin{itemize}
+            \item Once again, consider the carbonyl $\pi^*$-orbital (its LUMO) and its "butterfly" lobes.
+            \item The nucleophile must approach the $\pi^*$-orbital with the right symmetry. This is why we see its HOMO's lobe approach the carbon atom's $\pi^*$-lobe dead-on at exactly the right angle.
+            \begin{itemize}
+                \item This angle leads to efficient overlap, and hence an effective sharing of electron density.
+                \item This is an example of Rule 3 from Lecture 10.
+            \end{itemize}
+            \item Are there any other locations at which we can add into the carbonyl?
+            \begin{itemize}
+                \item We can also add into the shaded carbon $\pi^*$-lobe on the other side of the $\sigma$-plane by reversing the shading of the nucleophile's lobe!
+                \item However, any other angle of attack will \emph{not} work.
+                \item Note (*): A backside attack is good for interacting with the $\sigma^*$-orbital, but bad for interacting with the $\pi^*$-orbital that we need for carbonyl chemistry.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Hyperconjugation}: The mixing of filled and empty orbitals to stabilize a system.
+    \item Example (from 5.12): Stabilizing carbocations.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=3em}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \chemfig{@{C1}\charge{[extra sep=2em]90=$\oplus$}{C}(<:[:160]R)(<[:-160]R)-@{C2}C(<:[:20]H)(<[:-20]H)-[@{1}2]@{H}H}
+            \chemmove{
+                \draw [thick,orx] ($(C1)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(C1)+(-0.0018,0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,-0.2)$) to[bend left=120,looseness=900] ($(C1)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [thick,orx] (H) circle (2mm);
+                \draw [thick,orx] (1) ellipse (1.7mm and 3.4mm);
+                \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,-0.2)$) to[bend left=130,looseness=500] ($(C2)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [curved arrow={7pt}{8pt}] ([yshift=6mm]C2.center) to[bend right=35,looseness=1.3] ([yshift=6mm]C1.center);
+            }
+            \vspace{3.74em}
+            \caption{$1^\circ$ carbocation.}
+            \label{fig:hyperconjugationCCa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \chemfig{@{C1}\charge{[extra sep=2em]90=$\oplus$}{C}(<:[:155,1.4]R_2@{C2}C-[@{2}2,,2]@{H2}H)(<[:-130,1.2]R_2@{C3}C-[@{3}2,,2]@{H3}H)-[,1.2]@{C4}CR_2-[@{4}2]@{H4}H}
+            \chemmove{
+                \draw [thick,orx] ($(C1)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(C1)+(-0.0018,0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,-0.2)$) to[bend left=120,looseness=900] ($(C1)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [thick,orx] (H2) circle (2mm);
+                \draw [thick,orx] (2) ellipse (1.7mm and 3.4mm);
+                \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,-0.2)$) to[bend left=130,looseness=500] ($(C2)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [thick,orx] (H3) circle (2mm);
+                \draw [thick,orx] (3) ellipse (1.7mm and 3.4mm);
+                \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,-0.2)$) to[bend left=130,looseness=500] ($(C3)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [thick,orx] (H4) circle (2mm);
+                \draw [thick,orx] (4) ellipse (1.7mm and 3.4mm);
+                \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,-0.2)$) to[bend left=130,looseness=500] ($(C4)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [curved arrow={7pt}{8pt}] ([yshift=6mm]C4.center) to[bend right=35,looseness=1.3] ([yshift=6mm]C1.center);
+                \draw [curved arrow={7pt}{10pt}] ([yshift=6mm]C2.center) to[bend left=30,looseness=1.2] ([yshift=6mm]C1.center);
+                \draw [curved arrow={7pt}{6pt}] ([yshift=6mm]C3.center) to[bend right=20,looseness=1.1] ([xshift=-1mm,yshift=6mm]C1.center);
+            }
+            \vspace{1.5em}
+            \caption{$3^\circ$ carbocation.}
+            \label{fig:hyperconjugationCCb}
+        \end{subfigure}
+        % \begin{tikzpicture}[remember picture,overlay]
+        %     \draw (-10,2.2) -- ++(15,0);
+        % \end{tikzpicture}
+        \caption{Hyperconjugation stabilizes carbocations.}
+        \label{fig:hyperconjugationCC}
+    \end{figure}
+    \begin{itemize}
+        \item Consider a primary ($1^\circ$) carbocation (Figure \ref{fig:hyperconjugationCCa}).
+        \begin{itemize}
+            \item In a carbocation, the positively charged carbon localizes its lack of electron density to an empty $p$-orbital.
+            \item However, adjacent to this empty $p$-orbital is a full $\sigma$-orbital, namely, the adjacent \ce{C-H} bond. Moreover, this bond has the right \emph{geometry} to donate into the empty $p$-orbital.
+            \item Thus, the $\sigma$-orbital of the \ce{C-H} bond will donate electron density into the empty $p$-orbital, delocalizing both positive and negative charges and thereby stabilizing the system.
+        \end{itemize}
+        \item We denote hyperconjugation interactions using a special \textbf{notation}; the particular hyperconjugation in Figure \ref{fig:hyperconjugationCC} is denoted $\sigma_{\ce{CH}}\to p_{\ce{C}}$.\footnote{This is pronounced "sigma \ce{C-H} to $p$ C donation" or (very explicitly) "sigma see aech to pee see donation."}
+        \item In a tertiary ($3^\circ$) carbocation, we get electron donation from \emph{three} adjacent $\sigma_{\ce{CH}}$ orbitals.
+        \begin{itemize}
+            \item These \emph{three} stabilizing interactions explain why $3^\circ$ carbocations are more stable than $1^\circ$ ones!
+            \item Such effects are also why more substituted cations are more stable in general.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Hyperconjugation notation}: The concise method for denoting a certain hyperconjugative orbital interaction. \emph{Given by}
+    \begin{equation*}
+        \text{orbital\textsubscript{atoms}} \to \text{orbital\textsubscript{atoms}}
+    \end{equation*}
+    \begin{itemize}
+        \item The arrow means "donates into."
+        \begin{itemize}
+            \item Indeed, we always write the filled orbital first (before the arrow) and the empty orbital second (after the arrow).
+        \end{itemize}
+        \item Possible orbitals: $\sigma,\sigma^*,\pi,\pi^*,p,n$.
+        \begin{itemize}
+            \item Note that $n$ denotes a \underline{n}onbonding lone pair.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Anomeric effect}: The tendency of heteroatom substituents adjacent to heteroatoms in cyclohexane derivatives to prefer the axial orientation.
+    \item Let's break this rather complicated definition down through an example.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \setchemfig{fixed length=false}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{?-[:20](-[2,,,,white]\phantom{H})-[:-50](-[:20]OMe)-[:170]-[:-160]-[:130]?}
+                \arrow(.-13--.-167){<<->}
+                \chemfig{?(-[2]@{H1}H)-[:-20]-[:10](-[2]@{O}OMe)-[:-130]-[:160](-[2,,,,white,very thick,double=black,double distance=0.4pt]@{H2}H)-[:-170]?}
+            \schemestop
+            \chemmove{
+                \draw [-,cyan,thick] ([xshift=2pt,yshift=2pt]H1.50) to[out=-40,in=40] ([xshift=2pt,yshift=-2pt]H1.-50);
+                \draw [-,cyan,thick] ([xshift=2pt,yshift=2pt]H2.50) to[out=-40,in=40] ([xshift=2pt,yshift=-2pt]H2.-50);
+                \draw [-,cyan,thick] ([xshift=-2pt,yshift=2pt]O.130) to[out=-140,in=140] ([xshift=-2pt,yshift=-2pt]O.-130);
+            }
+            \caption{Sterics win in methoxycyclohexane.}
+            \label{fig:anomerica}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{?-[:20]-[:-50](-[:20]OMe)-[:170]O-[:-160]-[:130]?(-[2,,,,white]\phantom{OMe})}
+                \arrow(.-10--.-170){<->>}
+                \chemfig{?-[:-20]-[:10](-[2]OMe)-[:-130]O-[:160]-[:-170]?}
+            \schemestop
+            \caption{Anomeric wins in 2-methoxytetrahydropyran.}
+            \label{fig:anomericb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \setchemfig{atom sep=3em}
+            \schemestart
+                \chemfig{?-[:20]-[:-50]@{C2}(-[:20]@{O2}O-[:-40])-[:170]@{O1}\charge{[extra sep=2.6em]90=\:}{\charge{[extra sep=2em]-50=\:}{O}}-[:-160]-[:130]?(-[2,,,,white]\phantom{O}-[:60,,,,white])}
+                \arrow(.-10--.-170){<->>}[,2]
+                \chemfig{?-[:-20]-[:10]@{C2b}(-[2]@{O2b}O-[:30])-[:-130]@{O1b}\charge{[extra sep=2.6em]-90=\:}{\charge{[extra sep=2.4em]20=\:}{O}}-[:160]-[:-170]?}
+            \schemestop
+            \chemmove{
+                \draw [thick,orx,rotate around={-70:(C2)}] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=920] ($(C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate around={-70:(C2)}] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=460] ($(C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate around={-70:(O2)}] ($(O2)+(0.0018,-0.2)$) to[bend left=120,looseness=300] ($(O2)+(-0.0018,-0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate around={-70:(O2)}] ($(O2)+(0.0018,0.2)$) to[bend right=120,looseness=600] ($(O2)+(-0.0018,0.2)$) -- cycle;
+                % 
+                \draw [line width=3pt,white] ($(O1)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(O1)+(-0.0018,0.2)$) -- cycle;
+                \draw [line width=3pt,white,rotate around={-140:(O1)}] ($(O1)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(O1)+(-0.0018,0.2)$) -- cycle;
+                \fill [white] ($(O1)+(0.0018,0.2)$) to[bend right=120,looseness=400] ($(O1)+(-0.0018,0.2)$) -- cycle;
+                \fill [white,rotate around={-140:(O1)}] ($(O1)+(0.0018,0.2)$) to[bend right=125,looseness=750] ($(O1)+(-0.0018,0.2)$) -- cycle;
+                \draw [thick,orx] ($(O1)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(O1)+(-0.0018,0.2)$) -- cycle;
+                \draw [thick,orx,rotate around={-140:(O1)}] ($(O1)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(O1)+(-0.0018,0.2)$) -- cycle;
+                % 
+                \draw [curved arrow={3.1em}{2.2em},gray,densely dashed] (O1) to[out=-45,in=10,looseness=3.5] (O2);
+            }
+            \chemmove{
+                \draw [thick,orx] ($(C2b)+(0.0018,0)$) to[bend left=120,looseness=920] ($(C2b)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C2b)+(0.0018,0)$) to[bend right=120,looseness=460] ($(C2b)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(O2b)+(0.0018,-0.2)$) to[bend left=120,looseness=300] ($(O2b)+(-0.0018,-0.2)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(O2b)+(0.0018,0.2)$) to[bend right=120,looseness=600] ($(O2b)+(-0.0018,0.2)$) -- cycle;
+                % 
+                \draw [line width=3pt,white,rotate around={-70:(O1b)}] ($(O1b)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(O1b)+(-0.0018,0.2)$) -- cycle;
+                \fill [white,rotate around={-70:(O1b)}] ($(O1b)+(0.0018,0.2)$) to[bend right=127,looseness=794] ($(O1b)+(-0.0018,0.2)$) -- cycle;
+                \draw [thick,orx,rotate around={-70:(O1b)}] ($(O1b)+(0.0018,0.2)$) to[bend right=120,looseness=900] ($(O1b)+(-0.0018,0.2)$) -- cycle;
+                \draw [thick,orx] ($(O1b)+(0.0018,-0.2)$) to[bend left=120,looseness=900] ($(O1b)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [curved arrow={3.3em}{3.3em}] (O1b) to[out=-90,in=-90,looseness=4.5] (C2b);
+            }
+            \vspace{4em}
+            \caption{MOs explain the anomeric effect.}
+            \label{fig:anomericc}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.37\linewidth}
+            \centering
+            \schemestart
+                \chemfig{?-[:-20]-[:10](-[@{2}2]@{O2}OMe)-[@{1}:-130]@{O1}O-[:160]-[:-170]?}
+                \arrow{<->}
+                \chemfig{?-[:-20]-[:10](-[2,,,,white]\charge{135=$\ominus$}{O}Me)=^[:-130]\charge{-45=$\oplus$}{O}-[:160]-[:-170]?}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={1pt}{2pt}] (O1) to[bend right=70,looseness=2.5] (1);
+                \draw [curved arrow={2pt}{1pt}] (2) to[bend left=70,looseness=2.5] (O2);
+            }
+            \vspace{0.7em}
+            \caption{Resonance explains the anomeric effect.}
+            \label{fig:anomericd}
+        \end{subfigure}
+        \caption{Anomeric effect.}
+        \label{fig:anomeric}
+    \end{figure}
+    \begin{itemize}
+        \item In methoxycyclohexane, the methoxy group prefers to be equatorial to avoid 1,3-diaxial interactions (Figure \ref{fig:anomerica}).
+        \begin{itemize}
+            \item This leads to a $70:30$ distribution in favor of the equatorial conformer.
+        \end{itemize}
+        \item However, in 2-methoxytetrahydropyran, the methoxy group prefers to be \emph{axial} due to the anomeric effect (Figure \ref{fig:anomericb}).
+        \begin{itemize}
+            \item This \emph{also} leads to a $70:30$ distribution, but this time in favor of the axial conformer.
+            \item Notice how this empirical observation reflects the definition of the anomeric effect: We have a heteroatom substituent (the methoxy group) adjacent to a heteroatom in cyclohexane (the oxygen in the six-membered ring), and it is prefering the axial orientation!
+        \end{itemize}
+        \item What causes the anomeric effect? Let's investigate the stabilization of the axial conformer further using molecular orbitals (Figure \ref{fig:anomericc}).
+        \begin{itemize}
+            \item In 2-methoxytetrahydropyran's equatorial conformation, we get poor overlap between the oxygen lone pair's orbital and the \ce{C-OMe} antibonding orbital. This poor overlap is due to the \emph{gauche} orientation of said orbitals.
+            \item In 2-methoxytetrahydropyran's axial conformation, we get really nice overlap between the oxygen lone pair and the $\sigma^*$-orbital of the \ce{C-OMe} bond. This is because both orbitals have large lobes pointing axial down. Because of this favorable geometry, $n_{\ce{O}}\to\sigma_{\ce{CO}}^*$ hyperconjugation occurs.\footnote{Note that there is no particular reason why overlap with a $\sigma^*$-orbital, in particular, is stabilizing. Rather, the point is that we have a filled orbital (the lone pair) adjacent to an empty orbital (which just happens to be a $\sigma^*$ orbital), so hyperconjugation can occur to spread out the negative and positive charges. This delocalization --- like any --- is then inherently stabilizing.}
+        \end{itemize}
+        \item Another way of showing how the anomeric effect stabilizes the axial conformer is by using resonance diagrams (Figure \ref{fig:anomericd}).
+        \begin{itemize}
+            \item Indeed, starting from the typical picture, we can push the lone pair into an \ce{O=C} $\pi$-bond and formally break the \ce{C-OMe} $\sigma$-bond.
+            \item The result is called a \textbf{no-bond resonance form}.
+            \item Something should feel off to you here, though.
+            \begin{itemize}
+                \item When you learned to draw resonance structures, you learned that you can't break $\sigma$-bonds.
+                \item However, we are now telling you that sometimes, you \emph{are} allowed to break $\sigma$-bonds. This is "next-level resonance structures."
+            \end{itemize}
+            \item Note that 2-methoxytetrahydropyran doesn't go all the way to the no-bond resonance form, but said resonance form \emph{is} a major contributor.
+            \begin{itemize}
+                \item This also means that the no-bond resonance form affects the reactivity of the molecule.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item Both hyperconjugation and the anomeric effect fall under the broader category of \textbf{stereoelectronic effects}.
+    \begin{itemize}
+        \item Note that they are not the only examples of such effects, though.
+    \end{itemize}
+    \item \textbf{Stereoelectronic effect}: An effect on structure or reactivity of a molecule caused by the spatial orientation of its orbitals.
+    \begin{itemize}
+        \item We've previously learned that everything in Orgo can be explained by steric and electronic effects, but stereoelectronic effects are like a secret third option!
+    \end{itemize}
+    \item Let's now look at some more places where stereoelectronic effects crop up.
+    \pagebreak
+    \item Example: Hyperconjugation in noncationic species.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \schemestart
+                \chemname{\chemfig{H-[:-60](<:[:-150]H)(<[:-120]H)-(<:[:60]H)(<[:30]H)-[:-60]H}}{Staggered}
+                \arrow{<<->}
+                \chemname{\chemfig{H-[:-60](<:[:-150]H)(<[:-120]H)-(<[:-60]H)(<:[:-30]H)-[:60]H}}{Eclipsed}
+            \schemestop
+            \caption{Ethane's conformers.}
+            \label{fig:ethaneStaggereda}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \chemfig[atom sep=3em]{@{H1}H-[@{1}:-60]@{C1}C-@{C2}C-[:-60]@{H2}H}
+            \chemmove{
+                \draw [thick,orx] (H1) circle (2mm);
+                \draw [thick,orx,rotate around={30:(1)}] (1) ellipse (1.7mm and 3.4mm);
+                \filldraw [thick,draw=orx,fill=ory,rotate around={30:(C1)}] ($(C1)+(0.0018,-0.2)$) to[bend left=130,looseness=500] ($(C1)+(-0.0018,-0.2)$) -- cycle;
+                % 
+                \draw [thick,orx] (H2) circle (2mm);
+                \filldraw [thick,draw=orx,fill=ory,rotate around={30:(C2)}] ($(C2)+(0.0018,-0.2)$) to[bend left=120,looseness=730] ($(C2)+(-0.0018,-0.2)$) -- cycle;
+                \draw [thick,orx,rotate around={30:(C2)}] ($(C2)+(0.0018,0.2)$) to[bend right=130,looseness=500] ($(C2)+(-0.0018,0.2)$) -- cycle;
+                % 
+                \draw [curved arrow={0pt}{1.6em}] ([xshift=-1pt,yshift=5mm]C1.north) to[bend left=30] ([yshift=2mm]C2.north);
+            }
+            \caption{$\sigma_{\ce{CH}}\to\sigma_{\ce{CH}}^*$ stabilization.}
+            \label{fig:ethaneStaggeredb}
+        \end{subfigure}
+        \caption{Hyperconjugation stabilizes staggered ethane.}
+        \label{fig:ethaneStaggered}
+    \end{figure}
+    \begin{itemize}
+        \item We may have learned that ethane prefers the staggered conformer over the eclipsed conformer (Figure \ref{fig:ethaneStaggereda}) due to sterics.
+        \begin{itemize}
+            \item This is not true!
+            \item We know this because \ce{H} is really tiny.
+        \end{itemize}
+        \item In fact, this preference is due to hyperconjugation, a stereoelectronic effect (Figure \ref{fig:ethaneStaggeredb}).
+        \begin{itemize}
+            \item Staggered ethane is stabilized by electron donation from the $\sigma$-bond of one \ce{C-H} bond into the adjacent, antiperiplanar \ce{C-H} bond's $\sigma^*$ orbital: $\sigma_{\ce{CH}}\to\sigma_{\ce{CH}}^*$.
+            \item This is a small interaction, but it occurs six times, once for each \ce{C-H} $\sigma$-bond!
+        \end{itemize}
+        \item Takeaway: Electron delocalization is stabilizing, and more delocalization is more stabilizing.
+    \end{itemize}
+    \item Example: Stereoelectronic stabilization can accelerate reactions.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \chemnameinit{}
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(---(-Br)---)}
+                \arrow{->[\ce{MeOH}]}[,1.2]
+                \chemfig{*6(---(-OMe)---)}
+            \schemestop
+            \caption{S\textsubscript{N}1 without an adjacent heteroatom.}
+            \label{fig:stereoelectronicRxna}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(---(-Br)-O--)}
+                \arrow{->[\ce{MeOH}]}[,1.2]
+                \chemfig{*6(---(-OMe)-O--)}
+            \schemestop
+            \caption{S\textsubscript{N}1 with an adjacent heteroatom.}
+            \label{fig:stereoelectronicRxnb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(---(-[@{a1}]@{aBr}Br)---)}
+                \arrow{->[][-\ce{Br-}]}[,1.2]
+                \chemfig{*6(---@{bC}\charge{[extra sep=5pt]30=$\oplus$}{}---)}
+                \arrow(--.-170){->[\chemfig{Me@{cO}\charge{90=\:}{O}H}]}[,1.2]
+                \chemname{
+                    \chemfig{*6(---(-@{dO}\charge{[extra sep=5pt]-90=$\oplus$}{O}(-[@{d1}2]@{dH}H)-[:-30])---)}
+                }{Oxonium}
+                \arrow(.-10--){->[\chemfig{@{eBr}\charge{45=$\ominus$}{Br}}]}[,1.2]
+                \chemfig{*6(---(-OMe)---)}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={2pt}{2pt}] (a1) to[bend left=70,looseness=2] (aBr);
+                \draw [curved arrow={5pt}{10pt}] (cO) to[out=90,in=30,looseness=1.7] (bC);
+                \draw [curved arrow={9pt}{1pt}] (eBr) to[out=45,in=0,looseness=1.7] (dH);
+                \draw [curved arrow={2pt}{2pt}] (d1) to[bend right=70,looseness=2] (dO);
+            }
+            \caption{No heteroatom mechanism.}
+            \label{fig:stereoelectronicRxnc}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(---(-[@{a1}]@{aBr}Br)-O--)}
+                \arrow{->[][-\ce{Br-}]}[,1.2]
+                \chemleft{[}
+                    \subscheme{
+                        \chemfig{*6(---\charge{[extra sep=5pt]30=$\oplus$}{}-[@{b1}]@{bO}\charge{90=\:}{O}--)}
+                        \arrow{<->}
+                        \chemfig{*6(-@{cC}--=\charge{[extra sep=5pt]90=$\oplus$}{O}--)}
+                    }
+                \chemright{]}
+                \arrow[,1.2]
+                \chemfig{...}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={2pt}{2pt}] (a1) to[bend left=70,looseness=2] (aBr);
+                \draw [curved arrow={5pt}{2pt}] (bO) to[out=90,in=60,looseness=3] (b1);
+                \node [below=1mm] at (cC) {Oxocarbenium};
+            }
+            \vspace{1.2em}
+            \caption{Possible heteroatom-promoted mechanism.}
+            \label{fig:stereoelectronicRxnd}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(---(-[@{a2}]@{aBr}Br)-[@{a1}]@{aO}\charge{90=\:}{O}--)}
+                \arrow{->[][-\ce{Br-}]}[,1.2]
+                \chemfig{*6(---@{bC}=\charge{[extra sep=5pt]90=$\oplus$}{O}--)}
+                \arrow(--.-160){->[\chemfig{Me@{cO}\charge{90=\:}{O}H}]}[,1.2]
+                \chemfig{*6(---(-@{dO}\charge{[extra sep=5pt]-90=$\oplus$}{O}(-[@{d1}2]@{dH}H)-[:-30])-O--)}
+                \arrow(.-20--){->[\chemfig{@{eBr}\charge{45=$\ominus$}{Br}}]}[,1.2]
+                \chemfig{*6(---(-OMe)-O--)}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={5pt}{2pt}] (aO) to[out=90,in=60,looseness=3] (a1);
+                \draw [curved arrow={2pt}{2pt}] (a2) to[bend right=70,looseness=2] (aBr);
+                \draw [curved arrow={5pt}{2pt}] (cO) to[out=90,in=30,looseness=1.7] (bC);
+                \draw [curved arrow={9pt}{1pt}] (eBr) to[out=45,in=0,looseness=1.7] (dH);
+                \draw [curved arrow={2pt}{2pt}] (d1) to[bend right=70,looseness=2] (dO);
+            }
+            \caption{Better heteroatom-promoted mechanism.}
+            \label{fig:stereoelectronicRxne}
+        \end{subfigure}
+        \caption{Stereoelectronic effects accelerate reactions.}
+        \label{fig:stereoelectronicRxn}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the S\textsubscript{N}1 substitution of bromocyclohexane to methoxycyclohexane (Figure \ref{fig:stereoelectronicRxna}), vs. the S\textsubscript{N}1 substitution of 2-bromotetrahydropyran to 2-methoxytetrahydropyran (Figure \ref{fig:stereoelectronicRxnb}).
+        \item Which of these substitutions occurs faster?
+        \item To answer this question, let's look at the mechanism of each (Figures \ref{fig:stereoelectronicRxnc}-\ref{fig:stereoelectronicRxnd}).
+        \begin{itemize}
+            \item Note that in Figure \ref{fig:stereoelectronicRxnc}, either bromide or another equivalent of methanol can do the final deprotonation of the \textbf{oxonium} ion.\footnote{Note that --- comparing the $\pKa$ of protonated methanol to \ce{HBr} --- methanol is actually almost a million times more basic than bromide. As such, for every one time bromide does the final deprotonation, methanol will do it to almost a million other oxonium intermediates. However, it can still be useful to think of bromide as \emph{formally} doing the final deprotonation so as to balance the reaction \ce{C6H11Br + CH3OH -> C6H11OCH3 + HBr}.}
+            \item Note that in Figure \ref{fig:stereoelectronicRxnd}, the fact that the \textbf{oxocarbenium} ion obeys the octet rule implies that it is the more stable resonance structure.
+        \end{itemize}
+        \item In fact, the oxocarbenium ion is an example of oxygen stabilizing a carbocation through $n_{\ce{O}}\to p_{\ce{C}}$ hyperconjugation.
+        \item This is one example of hyperconjugation in this reaction scheme, but there is another effect as well.
+        \begin{itemize}
+            \item In the original 2-bromotetrahydropyran molecule, the oxygen lone pair will also hyperconjugate into the \ce{C-Br} $\sigma^*$-orbital per the anomeric effect.
+            \item In other words, \ce{O} mediates the departure of the leaving group through $n_{\ce{O}}\to\sigma_{\ce{CBr}}^*$ hyperconjugation.
+        \end{itemize}
+        \item Thus, since both hyperconjugative stabilizing effects can (and do!) happen, it is better to say mechanistically that the arrow pushing in the first step happens simultaneously (Figure \ref{fig:stereoelectronicRxne}).
+        \begin{itemize}
+            \item Indeed, the rule in arrow pushing is "make a bond, break a bond," so that's what we do.
+        \end{itemize}
+        \item We can now complete the mechanism for the heteroatom-promoted reaction (Figure \ref{fig:stereoelectronicRxne}).
+        \begin{itemize}
+            \item \ce{MeOH} adds into the $\pi^*$-orbital of the oxocarbenium (at the B\"{u}rgi-Dunitz angle!), also kicking electrons up to the oxygen in a concerted step.
+            \item Then we get deprotonation again.
+        \end{itemize}
+        \item Now that we've got both mechanisms, let's consider the energy surface in order to compare the rates of reaction.
+        \begin{itemize}
+            \item Both reactions will have two-humped energy surfaces, befitting a mechanism with only one true catinoic intermediate.
+            \item However, in the energy surface for the heteroatom-promoted reaction, $n_{\ce{O}}\to p_{\ce{C}}$ hyperconjugation will stabilize the intermediate and $n_{\ce{O}}\to\sigma_{\ce{CBr}}^*$ will stabilize the transition state of the first step, lowering its activation energy!
+            \item Thus, the heteroatom-promoted S\textsubscript{N}1 is faster!
+        \end{itemize}
+        \item Takeaway: The overall reaction specifics depend on geometry and orbital overlap.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
