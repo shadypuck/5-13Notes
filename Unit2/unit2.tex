@@ -650,5 +650,667 @@
 
 
 
+\section{Pericyclics}
+\begin{itemize}
+    \item \marginnote{10/2:}Lecture 11 recap.
+    \begin{itemize}
+        \item Hyperconjugation involves the delocalization of electrons, and hence is stabilizing.
+        \begin{itemize}
+            \item This is a very common phenomenon, and it underlies most 5.12 reactions!
+        \end{itemize}
+        \item $\sigma_{\ce{CH}}\to p_{\ce{C}}$ hyperconjugation makes substituted cations more stable (see Figure \ref{fig:hyperconjugationCC}).
+        \item $\sigma_{\ce{CH}}\to\sigma_{\ce{CH}}^*$ makes ethane more stable when staggered than eclipsed (see Figure \ref{fig:ethaneStaggeredb}).
+        \item $n_{\ce{O}}\to\sigma_{\ce{CX}}^*$ stabilizes axially positioned heteroatom substituents with $\alpha$-heteroatoms in cyclohexane derivatives, per the anomeric effect (see Figure \ref{fig:anomericc}).
+    \end{itemize}
+    \item Today: Pericyclic reactions.
+    \begin{itemize}
+        \item They are cool because they couple MO theory to reactivity.
+        \item This is a whole new class of reactions, and we will spend the rest of Unit 2 talking about them.
+        \item Essentially, the rest of this unit looks like: "Here's a new reaction, and here's the MO picture underlying it."
+    \end{itemize}
+    \item \textbf{Pericyclic} (reaction): A reaction characterized by a \textbf{concerted} movement of electrons in a \textbf{cyclic} transition state.
+    \item \textbf{Concerted} (reaction): A reaction in which all electron movements happen at the same time, i.e., all bonds break and form in the same step.
+    \begin{itemize}
+        \item There are no intermediates, and hence only a single "hump" in the energy diagram (Figure \ref{fig:concertedStepwiseNrga}).
+        \item Concerted reactions contrast with \textbf{stepwise} reactions.
+        \item Concerted reactions can be \textbf{synchronous} or \textbf{asynchronous}.
+        \begin{itemize}
+            \item Essentially, we ask, "Is the transition state symmetric? Are all bonds breaking and forming to the same extent at the same time, or are some bonds breaking/forming first with others breaking/forming later?"
+            \item We touch on this concept to illustrate that even \emph{concerted} reactions can have subtle differences between them.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Stepwise} (reaction): A reaction that \emph{has} intermediates in its energy landscape.
+    \begin{itemize}
+        \item There \emph{are} intermediates, and hence multiple "humps" in the energy diagram (Figure \ref{fig:concertedStepwiseNrgb}).
+    \end{itemize}
+    \item To reiterate, concerted and stepwise reactions can be differentiated using their energy diagrams.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \begin{tikzpicture}[scale=2]
+                \small
+                \draw (0,1) -- (0,0) -- node[below]{\small Rxn coord $\to$} (1.2,0);
+                \draw [grx,thick] (0.1,0.4)
+                    to[out=0,in=180] (0.5,0.8)
+                    to[out=0,in=180] (1,0.2)
+                ;
+            \end{tikzpicture}
+            \caption{Concerted.}
+            \label{fig:concertedStepwiseNrga}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \begin{tikzpicture}[scale=2]
+                \small
+                \draw (0,1) -- (0,0) -- node[below]{\small Rxn coord $\to$} (1.2,0);
+                \draw [grx,thick] (0.1,0.4)
+                    to[out=0,in=180] (0.35,0.8)
+                    to[out=0,in=180] (0.5,0.6)
+                    to[out=0,in=180] (0.65,0.7)
+                    to[out=0,in=180] (1,0.2)
+                ;
+            \end{tikzpicture}
+            \caption{Stepwise.}
+            \label{fig:concertedStepwiseNrgb}
+        \end{subfigure}
+        \caption{Concerted vs. stepwise energy diagrams.}
+        \label{fig:concertedStepwiseNrg}
+    \end{figure}
+    \begin{itemize}
+        \item Example: S\textsubscript{N}2 reactions are concerted, and S\textsubscript{N}1 reactions are stepwise.
+    \end{itemize}
+    \item \textbf{Synchronous} (concerted reaction): All bond-making and -breaking occurs to an equal extent in the transition state.
+    \item \textbf{Asynchronous} (concerted reaction): All bond-making and -breaking does \emph{not} occur to an equal extent in the transition state.
+    \item \textbf{Cyclic} (transition state): A transition state in which all bonds that are being broken and made are connected in a ring.
+    \begin{itemize}
+        \item Important implication: This is not as complicated as it sounds; rather, it just means that when you draw your electron arrows, you draw them in a ring.
+        \item See Figure \ref{fig:dielsAlder} for an example.
+    \end{itemize}
+    \pagebreak
+    \item History of pericyclic reactions.
+    \begin{itemize}
+        \item MO theory was developed \emph{because} of pericyclic reactions.
+        \begin{itemize}
+            \item Essentially, pericyclic reactions used to be called "no mechanism" reactions since everything happened in one step.
+            \item The extent to which organic chemists didn't understand how pericyclic reactions worked drove them to develop a theory that explained why they did.
+        \end{itemize}
+        \item Today, pericyclic reactions are credited with introducing quantum theory into organic chemistry.
+        \begin{itemize}
+            \item Before pericyclic reactions, organic chemists thought that they could explain everything they needed to with Lewis structures and arrow pushing mechanisms.
+            \item However, after pericyclic reactions, it became clear to organic chemists that there \emph{was} value in keeping track of where all the electrons are actually located in MOs and such.
+        \end{itemize}
+    \end{itemize}
+    \item We'll now do an overview of the different classes of pericyclic reactions, i.e., what we have to look forward to over the next couple of weeks.
+    \begin{itemize}
+        \item Types we'll discuss: \textbf{Cycloadditions}, \textbf{electrocyclizations}, and \textbf{sigmatropic rearrangements}.
+        \item Specifically, we've got one lecture on each of these topics coming up (and then a couple others).
+        \item As such, it's a good idea to get a general sense of these reactions now, but you don't need to think too much about them since you will get much more information in the coming days and weeks.
+    \end{itemize}
+    \item \textbf{Cycloaddition}: A pericyclic reaction in which two separate $\pi$-systems react to convert two $\pi$-bonds into two $\sigma$-bonds.
+    \begin{itemize}
+        \item Nomenclature: $[m+n]$, where $m$ and $n$ are the numbers of atoms in the two separate $\pi$-systems.
+        \begin{itemize}
+            \item To reiterate: One of the $\pi$-systems has $m$ atoms, and the other has $n$ atoms.
+        \end{itemize}
+        \item Example: We may speak of a "$[4+2]$ cycloaddition." This specific pericyclic reaction is also called the \textbf{Diels-Alder reaction}.
+        \item The reverse reaction of a cycloaddition is called a \textbf{cycloreversion}.
+    \end{itemize}
+    \item \textbf{Diels-Alder reaction}: A $[4+2]$ cycloaddition.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6([:-120]=-=)}
+            \arrow{0}[,0.1]\+{,1em,0.7em}
+            \chemfig{=[2]}
+            \arrow
+            \chemfig{*6([4]-[@{6},,,,opacity=0]=[@{1}]-[@{2}]=[@{3}]-[@{4},,,,opacity=0](=^[@{5}2]))}
+            \arrow
+            \chemleft{[}
+                \chemfig{*6([4]@{C6}-[,,,,dashed]@{C1}-@{C2}-@{C3}-@{C4}-[,,,,dashed]@{C5}-)}
+            \chemright{]^\ddagger}
+            \arrow
+            \chemfig{*6(-----=)}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={4pt}{2pt}] (1) to[bend right=60,looseness=1.5] (6);
+            \draw [curved arrow={4pt}{2pt}] (3) to[bend right=60,looseness=1.5] (2);
+            \draw [curved arrow={4pt}{2pt}] (5) to[bend right=60,looseness=1.5] (4);
+            % 
+            \draw [-,dashed]
+                ($(C1)+(-90:2.5pt)$) -- ($(C2)+(-30:2.5pt)$)
+                ($(C2)+(-30:2.5pt)$) -- ($(C3)+( 30:2.5pt)$)
+                ($(C3)+( 30:2.5pt)$) -- ($(C4)+( 90:2.5pt)$)
+                ($(C5)+(150:2.5pt)$) -- ($(C6)+(-150:2.5pt)$)
+            ;
+        }
+        \caption{Diels-Alder reaction.}
+        \label{fig:dielsAlder}
+    \end{figure}
+    \begin{itemize}
+        \item This is a really cool reaction --- one of the most powerful in organic chemistry, in fact.
+        \item We'll spend the next two lectures talking about it!
+        \item Note that the magenta electron arrows in Figure \ref{fig:dielsAlder} can go either counterclockwise \emph{or} clockwise.
+        \begin{itemize}
+            \item As long as they lead to the right product, you can draw either!
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Cycloreversion}: A pericyclic reaction in which one system reacts to convert two $\sigma$-bonds back into two $\pi$-bonds in two separate $\pi$-systems.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*4(-[@{1}]-[@{2}]-[@{3}]-[@{4}])}
+            \arrow
+            \chemfig{=[2]}
+            \+{,,0.7em}
+            \chemfig{=[2]}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={2pt}{2pt}] (1) to[bend left=45,looseness=1.5] (2);
+            \draw [curved arrow={2pt}{2pt}] (3) to[bend left=45,looseness=1.5] (4);
+        }
+        \caption{A cycloreversion.}
+        \label{fig:cycloreversion}
+    \end{figure}
+    \begin{itemize}
+        \item Sometimes, we give cycloreversions special names.
+        \item Example: We can call the reaction in Figure \ref{fig:cycloreversion} either a "$4\pi$ cycloreversion" or a "retro-$[2+2]$."
+    \end{itemize}
+    \pagebreak
+    \item \textbf{Electrocyclization}: A pericyclic reaction in which one system reacts to convert one $\pi$-bond into one $\sigma$-bond, or vice versa.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([:-120]=-=-=)}
+                \arrow
+                \chemfig{*6([:-120]=[@{1}]-[@{2}]=[@{3}]-[@{4}]=[@{5}]-[@{6},,,,opacity=0])}
+                \arrow
+                \chemfig{*6([:-120]-=-=--)}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={4pt}{2pt}] (1) to[bend right=60,looseness=1.5] (6);
+                \draw [curved arrow={4pt}{2pt}] (3) to[bend right=60,looseness=1.5] (2);
+                \draw [curved arrow={4pt}{2pt}] (5) to[bend right=60,looseness=1.5] (4);
+            }
+            \caption{Converting $1\pi\to 1\sigma$ bond.}
+            \label{fig:electrocyc6pa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([:-120]-[@{1}]=[@{2}]-[@{3}]=[@{4}]-[@{5}]-[@{6}])}
+                \arrow
+                \chemfig{*6([:-120]=-=-=)}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={2pt}{2pt}] (6) to[bend right=60,looseness=1.5] (5);
+                \draw [curved arrow={4pt}{2pt}] (4) to[bend right=60,looseness=1.5] (3);
+                \draw [curved arrow={4pt}{2pt}] (2) to[bend right=60,looseness=1.5] (1);
+            }
+            \caption{Converting $1\sigma\to 1\pi$ bond.}
+            \label{fig:electrocyc6pb}
+        \end{subfigure}
+        \caption{A forward and reverse $6\pi$ electrocyclization.}
+        \label{fig:electrocyc6p}
+    \end{figure}
+    \begin{itemize}
+        \item Nomenclature: $m\pi$, where $m$ is the number of electrons involved.
+        \item Always ring-opening or ring-closing.
+        \item Example: We may speak of a "$6\pi$ electrocyclization" (Figure \ref{fig:electrocyc6pa}).
+        \begin{itemize}
+            \item Notice how we go from 5 $\sigma$- and 3 $\pi$-bonds to 6 $\sigma$- and 2 $\pi$-bonds in Figure \ref{fig:electrocyc6pa}.
+        \end{itemize}
+        \item We can also go in reverse (Figure \ref{fig:electrocyc6pb}).
+    \end{itemize}
+    \item \textbf{Sigmatropic rearrangement}: A pericyclic reaction in which a $\sigma$-bond moves to the end of the $\pi$-system.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6([:-120]\charge{90={\tiny\color{grx}$2$}}{}=\charge{150={\tiny\color{grx}$3$}}{}-\charge{-150={\tiny\color{grx}$4$}}{}=\charge{-90={\tiny\color{grx}$5$}}{}-[,,,,opacity=0]\charge{0={\tiny\color{grx}$1$}}{H}-\charge{30={\tiny\color{grx}$1$}}{}-)}
+            \arrow
+            \chemfig{*6([:-120]=[@{1}]-[@{2}]=[@{3}]-[@{4,0.8},,,,opacity=0]H-[@{5}]-[@{6}])}
+            \arrow
+            \chemfig{*6([:-120]\charge{90={\tiny\color{grx}$2$}}{}-\charge{150={\tiny\color{grx}$3$}}{}=\charge{-150={\tiny\color{grx}$4$}}{}-\charge{-90={\tiny\color{grx}$5$}}{}-\charge{0={\tiny\color{grx}$1$}}{H}-[,,,,opacity=0]\charge{30={\tiny\color{grx}$1$}}{}=)}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={4pt}{2pt}] (1) to[bend right=60,looseness=1.5] (6);
+            \draw [curved arrow={4pt}{2pt}] (3) to[bend right=60,looseness=1.5] (2);
+            \draw [curved arrow={2pt}{2pt}] (5) to[bend right=60,looseness=1.5] (4);
+        }
+        \caption{A $[1,5]$ sigmatropic rearrangement.}
+        \label{fig:sigmatrop15}
+    \end{figure}
+    \begin{itemize}
+        \item Nomenclature: $[m,n]$, where $m$ and $n$ are the "numbers" of the atoms to which the two ends of the $\sigma$-bond moves.
+        \begin{itemize}
+            \item We'll dive into this nomenclature more in the lecture on sigmatropic rearrangements.
+            \item In particular, we will discuss a very specific way of "numbering" the atoms in our starting material and product!
+        \end{itemize}
+        \item Example: We may speak of a "$[1,5]$ sigmatropic rearrangement" (Figure \ref{fig:sigmatrop15}).
+        \begin{itemize}
+            \item You can push the electron arrows either way, but Masha likes to start with the $\sigma$-bond and move that to the end of the $\pi$-system.
+            \item Observe that one end of the $\sigma$-bond (the side at the hydrogen) moved from atom 1 to atom 1, and the other end (the side at the carbon) moved from atom 1 to atom 5. This is related to the aforementioned "numbering."
+        \end{itemize}
+    \end{itemize}
+    \item To reiterate from earlier, start familiarizing yourself with these types of reactions, but remember that we will go over these in more detail later in the course.
+    \item Moving on, let's bring MOs back into the picture.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{*6([:-120]=-=)}
+            \caption{Top view.}
+            \label{fig:butadieneMOsa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{@{C1}=[,0.8]@{C2}-[,1.1]@{C3}=[,0.8]@{C4}}
+            \vspace{1.7em}
+            \chemmove{
+                \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+            }
+            \caption{Side view.}
+            \label{fig:butadieneMOsb}
+        \end{subfigure}
+        \caption{Two views of buta-1,3-diene.}
+        \label{fig:butadieneMOs}
+    \end{figure}
+    \begin{itemize}
+        \item Observe that the reactants in Figures \ref{fig:dielsAlder}, \ref{fig:electrocyc6p}, and \ref{fig:sigmatrop15} are all conjugated systems!
+        \item Thus, they have $\pi$-MOs. Let's consider the diene from Figure \ref{fig:dielsAlder}, in particular.
+        \item Looking at it from the side, we see that each $\pi$-bond is made up of two $p$-orbitals.
+    \end{itemize}
+    \pagebreak
+    \item We can mix the four $p$-AOs in Figure \ref{fig:butadieneMOsb} to make MOs, but we have to do so according to the following rules.
+    \begin{enumerate}
+        \item The number of MOs is equal to the number of atoms under consideration.
+        \begin{itemize}
+            \item Example: A diene will have four MOs.
+            \item Example: An olefin will have two MOs.
+        \end{itemize}
+        \item The lowest-energy MO has no \textbf{nodes}.
+        \item For every increase in $E$, we add a node (in such a way that symmetry is maintained).
+    \end{enumerate}
+    \item \textbf{Node}: A change in sign of the orbital, at which there is no electron density.
+    \item Example of nodes: Think of our $\pi$ and $\pi^*$ MOs.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{tikzpicture}
+            \node at (0,2) {\chemfig{@{C3}-@{C4}\charge{[extra sep=8pt]0=$\pi^*$}{}}};
+            \node          {\chemfig{@{C1}-@{C2}\charge{[extra sep=8pt]0=$\pi^{\color{white}*}$}{}}};
+            \draw [dashed] (0,1.3) -- (0,2.7);
+            \node (A) at (1,2.6) {node}
+                (A.west) edge [bend right=30,->,shorten >=2pt] (0,2.6)
+            ;
+    
+            \path (-1.5,-0.5) rectangle (1.5,2.5);
+        \end{tikzpicture}
+        \chemmove{
+            \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+        }
+        \caption{Nodes in $\pi$ and $\pi^*$ molecular orbitals.}
+        \label{fig:piMO}
+    \end{figure}
+    \begin{itemize}
+        \item The lower one has no nodes, because the phases are aligned left to right.
+        \item The upper one has 1 node, because the phases invert left to right.
+    \end{itemize}
+    \item We are now ready to draw an MO diagram for the diene in Figure \ref{fig:butadieneMOs}.
+    \item Diene MOs.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \small
+            \draw [-latex,very thick] (-2.5,-0.5) -- node[left]{$E$} (-2.5,6.5);
+            \node at (3.4,7) {\textbf{\# Nodes}};
+            \node at (7,7) {\textbf{Electron Population}};
+    
+            \footnotesize
+            \node at (0,6) {\chemfig{@{D0}-[,,,,opacity=0]@{D1}-[@{Db1}]@{D2}-[@{Db2}]@{D3}-[@{Db3}]@{D4}-[,,,,opacity=0]@{D5}}};
+            \node at (0,4) {\chemfig{@{C0}-[,,,,opacity=0]@{C1}-[@{Cb1}]@{C2}-[@{Cb2}]@{C3}-[@{Cb3}]@{C4}-[,,,,opacity=0]@{C5}}};
+            \node at (0,2) {\chemfig{@{B0}-[,,,,opacity=0]@{B1}-[@{Bb1}]@{B2}-[@{Bb2}]@{B3}-[@{Bb3}]@{B4}-[,,,,opacity=0]@{B5}}};
+            \node          {\chemfig{@{A0}-[,,,,opacity=0]@{A1}-[@{Ab1}]@{A2}-[@{Ab2}]@{A3}-[@{Ab3}]@{A4}-[,,,,opacity=0]@{A5}}};
+    
+            \node at (3.4,6) {3};
+            \node at (3.4,4) {2};
+            \node at (3.4,2) {1};
+            \node at (3.4,0) {0};
+    
+            \draw [ultra thick]
+                (6.75,6) -- ++(0.5,0)
+                (6.75,4) -- ++(0.5,0) node[right]{LUMO}
+                (6.75,2) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) node[right]{HOMO}
+                (6.75,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+            ;
+        \end{tikzpicture}
+        \chemmove{
+            \draw [-,dashed] ([yshift=-7mm]Db3.center) -- ([yshift=7mm]Db3.center);
+            \draw [-,dashed] ([yshift=-7mm]Db2.center) -- ([yshift=7mm]Db2.center);
+            \draw [-,dashed] ([yshift=-7mm]Db1.center) -- ([yshift=7mm]Db1.center);
+            \draw [-,dashed] ([yshift=-7mm]Cb3.center) -- ([yshift=7mm]Cb3.center);
+            \draw [-,dashed] ([yshift=-7mm]Cb1.center) -- ([yshift=7mm]Cb1.center);
+            \draw [-,dashed] ([yshift=-7mm]Bb2.center) -- ([yshift=7mm]Bb2.center);
+            % 
+            % \draw [-,pux,thick] ([xshift=-3mm]D1.center)
+            %     to[bend left=85,looseness=4] (Db1.center)
+            %     to[bend right=85,looseness=4] (Db2.center)
+            %     to[bend left=85,looseness=4] (Db3.center)
+            %     to[bend right=85,looseness=4] ([xshift=3mm]D4.center)
+            % ;
+            % \draw [-,pux,thick] ([xshift=-3mm]C1.center)
+            %     to[bend left=85,looseness=4] (Cb1.center)
+            %     to[bend right=85,looseness=2] (Cb3.center)
+            %     to[bend left=85,looseness=4] ([xshift=3mm]C4.center)
+            % ;
+            % \draw [-,pux,thick] ([xshift=-3mm]B1.center)
+            %     to[bend left=85,looseness=2] (Bb2.center)
+            %     to[bend right=85,looseness=2] ([xshift=3mm]B4.center)
+            % ;
+            % \draw [-,pux,thick] ([xshift=-3mm]A1.center) to[bend left=85] ([xshift=3mm]A4.center);
+            \draw [-,pux,thick] (D0)
+                sin ([yshift=6mm]$(D0)!{1/8}!(D5)$)
+                cos ($(D0)!{2/8}!(D5)$)
+                sin ([yshift=-6mm]$(D0)!{3/8}!(D5)$)
+                cos ($(D0)!{4/8}!(D5)$)
+                sin ([yshift=6mm]$(D0)!{5/8}!(D5)$)
+                cos ($(D0)!{6/8}!(D5)$)
+                sin ([yshift=-6mm]$(D0)!{7/8}!(D5)$)
+                cos (D5)
+            ;
+            \draw [-,pux,thick] (C0)
+                sin ([yshift=6mm]$(C0)!{1/6}!(C5)$)
+                cos ($(C0)!{2/6}!(C5)$)
+                sin ([yshift=-6mm]$(C0)!{3/6}!(C5)$)
+                cos ($(C0)!{4/6}!(C5)$)
+                sin ([yshift=6mm]$(C0)!{5/6}!(C5)$)
+                cos (C5)
+            ;
+            \draw [-,pux,thick] (B0)
+                sin ([yshift=6mm]$(B0)!0.25!(B5)$)
+                cos ($(B0)!0.5!(B5)$)
+                sin ([yshift=-6mm]$(B0)!0.75!(B5)$)
+                cos (B5)
+            ;
+            \draw [-,pux,thick] (A0)
+                sin ([yshift=6mm]$(A0)!0.5!(A5)$)
+                cos (A5)
+            ;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(A1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(A2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(A3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(A4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A4)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A4)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(B1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(B2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(B3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B4)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(B4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B4)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(D1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(D1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(D1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(D1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(D2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(D2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(D2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(D2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(D3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(D3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(D3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(D3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(D4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(D4)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(D4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(D4)+(-0.0018,0)$) -- cycle;
+        }
+        \caption{Reactive molecular orbitals of a diene.}
+        \label{fig:dieneMO}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item Let's start with a rule-by-rule analysis.
+        \begin{enumerate}
+            \item We have 4 atoms, so we draw lines for 4 MOs.
+            \item The lowest energy MO in Figure \ref{fig:dieneMO} does indeed have no nodes.
+            \begin{itemize}
+                \item Observe that Masha shades the top lobes first this time instead of the bottom lobes (as in Figure \ref{fig:piMO}) because the shading is arbitrary. This comment is review, but the concept is important to remember!!
+            \end{itemize}
+            \item For each increase in energy, we do indeed add one node.
+            \begin{itemize}
+                \item For the second-lowest energy level, we draw our node symmetrically right in the middle.
+                \begin{itemize}
+                    \item We go along shading the top (or bottom) lobes until we hit our node, and then we switch to shading the other side.
+                \end{itemize}
+                \item For the third-lowest energy level, we draw our nodes symmetrically as well.
+                \item For the highest energy level, we draw a node between every orbital and alternate shading.
+                \begin{itemize}
+                    \item The highest energy level has the same alternating structure in the MOs of every conjugated $\pi$-system. For another example, see Figure \ref{fig:allylMO}.
+                \end{itemize}
+            \end{itemize}
+        \end{enumerate}
+        \item Note that we also draw (in purple) the \textbf{waveform} for every MO.
+        \item Now let's populate our orbitals with electrons.
+        \begin{itemize}
+            \item There are four $\pi$-electrons in a diene, so per Aufbau, Pauli, and Hund, we fill the bottom two energy levels of our diagram.
+            \item Filling electrons allows us to identify our HOMO and LUMO, which will be useful for justifying reactivity.
+        \end{itemize}
+        \item Takeaway: You probably wouldn't just guess that the LUMO (or any other MO) of a diene looks the way it does, but you can derive it using the three rules and the method of Figure \ref{fig:dieneMO}.
+        \begin{itemize}
+            \item Then you can use the result of your derivation to make predictions about a diene's reactivity!
+            \item We'll cover such predictions next lecture.
+        \end{itemize}
+    \end{itemize}
+    \item Why do the nodes have to be symmetric?
+    \begin{itemize}
+        \item Because quantum mechanics.
+        \item Very simply, it has something to do with the waveform of each energy level, which you might notice mirrors the waveforms of the particle in a box.
+        \item See the end of my notes for this lecture for more detail.
+        \begin{itemize}
+            \item Note: All extra detail on this topic is beyond the scope of this class, and will never be tested nor appear on problem sets; it is purely to satisfy your curiosity.
+        \end{itemize}
+    \end{itemize}
+    \item An interesting finding about pericyclic reactions: They can be started by either heat ($\Delta$) or light ($h\nu$)!
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \small
+            \node at (0,3.8) {$\bm{\Delta}$};
+            \node at (2,3.8) {$\bm{h\nu}$};
+
+            \footnotesize
+            \draw [ultra thick]
+                (-0.25,3) -- ++(0.5,0)
+                (-0.25,2) node[left]{LUMO} -- ++(0.5,0)
+                (-0.25,1) node[left]{HOMO} -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+                (-0.25,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+            ;
+            \draw [ultra thick,xshift=2cm]
+                (-0.25,3) -- ++(0.5,0) node[right]{LUMO}
+                (-0.25,2) -- node{\Large$\upharpoonleft$} ++(0.5,0) node[right]{HOMO}
+                (-0.25,1) -- node{\Large$\downharpoonright$} ++(0.5,0)
+                (-0.25,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+            ;
+            \draw [-latex] (0.6,2) -- node[above]{$h\nu$} ++(0.8,0);
+        \end{tikzpicture}
+        \caption{A diene's reactive orbitals in thermal vs. photochemical pericyclic reactions.}
+        \label{fig:thermPhot}
+    \end{figure}
+    \begin{itemize}
+        \item When you think about it, heat and light are just different ways to add energy to our system so that the reaction goes.
+        \item Indeed, pericyclic reactions are cool because you don't have to add a chemical reagent to make one go; rather, you just heat it up or shine light at it, and it reacts away!
+        \item How do photochemical reactions work?
+        \begin{itemize}
+            \item When light is absorbed, one electron is excited from the HOMO to the LUMO, and none of the spins of \emph{any} of the electrons change (Figure \ref{fig:thermPhot}).
+            \begin{itemize}
+                \item There's a lot more photophysics here that you can go into, but that's beyond the scope of this course.
+            \end{itemize}
+            \item Such excitation is important because it gives us a new HOMO and a new LUMO.
+            \begin{itemize}
+                \item These new reactive orbitals have important consequences that we'll discuss later, especially for the stereochemistry of the product.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item Let's now look at the MOs of one more conjugated system.
+    \item Allyl MOs.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \setcharge{extra sep=5pt}
+            \small
+            \draw [-latex,very thick] (-2.5,-0.5) -- node[left]{$E$} (-2.5,4.5);
+            \node at (3.5,5) {\chemfig[atom sep=1.4em]{=_[:30]-[:-30]\charge{0=$\oplus$}{}}};
+            \node at (7,5) {\chemfig[atom sep=1.4em]{=_[:30]-[:-30]\charge{[extra sep=3pt]0=\.}{}}};
+            \node at (10.5,5) {\chemfig[atom sep=1.4em]{=_[:30]-[:-30]\charge{0=$\ominus$}{}}};
+    
+            \footnotesize
+            \node at (0,4) {\chemfig{@{C1}-[@{Cb1}]@{C2}-[@{Cb2}]@{C3}}};
+            \node at (0,2) {\chemfig{@{B1}-[@{Bb1}]@{B2}-[@{Bb2}]@{B3}}};
+            \node          {\chemfig{@{A1}-[@{Ab1}]@{A2}-[@{Ab2}]@{A3}}};
+    
+            \draw [ultra thick,xshift=-3.5cm]
+                (6.75,4) -- ++(0.5,0)
+                (6.75,2) -- ++(0.5,0) node[right]{LUMO}
+                (6.75,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+            ;
+            \draw [ultra thick]
+                (6.75,4) -- ++(0.5,0)
+                (6.75,2) -- node{\Large$\upharpoonleft$} ++(0.5,0) node[right]{SOMO}
+                (6.75,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+            ;
+            \draw [ultra thick,xshift=3.5cm]
+                (6.75,4) -- ++(0.5,0)
+                (6.75,2) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0) node[right]{HOMO}
+                (6.75,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+            ;
+        \end{tikzpicture}
+        \chemmove{
+            \draw [-,dashed] ([yshift=-7mm]Cb2.center) -- ([yshift=7mm]Cb2.center);
+            \draw [-,dashed] ([yshift=-7mm]Cb1.center) -- ([yshift=7mm]Cb1.center);
+            \draw [-,dashed] ([yshift=-7mm]B2.center) -- ([yshift=7mm]B2.center);
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(B1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(B3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B3)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(A1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(A2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(A3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A3)+(-0.0018,0)$) -- cycle;
+        }
+        \caption{Reactive molecular orbitals of an allyl group.}
+        \label{fig:allylMO}
+    \end{figure}
+    \begin{itemize}
+        \item Let's do another rule-by-rule analysis.
+        \begin{enumerate}
+            \item Three atoms going in means three MOs.
+            \item Shade all the same phases in the bottom MO.
+            \item Add nodes for the upper orbitals.
+            \begin{itemize}
+                \item Put your node right in the middle for the middle MO.
+                \begin{itemize}
+                    \item It has to be symmetric!
+                    \item Every time you have an odd number of atoms, some $p$-orbital will get deleted like this.
+                \end{itemize}
+                \item For the top MO, once again do everything alternating.
+            \end{itemize}
+        \end{enumerate}
+        \item Note that we have not yet specified whether this is an allyl cation, allyl radical, or allyl anion!
+        \item We will have a different number of electrons for all three species (even though we have the same MOs), so let's fill electrons for each of these species.
+        \begin{itemize}
+            \item Allyl cation: Two electrons, so fill just the bottom MO.
+            \begin{itemize}
+                \item Like any carbocation, the allyl cation will react as an electrophile.
+                \item If it reacts as an electrophile, it must react with its LUMO (which is the middle orbital).
+            \end{itemize}
+            \item Allyl radical: Three electrons, so fill the bottom MO and start filling the middle MO.
+            \begin{itemize}
+                \item Like any radical, the allyl radical reacts as a\dots well\dots radical.
+                \item If it reacts as a radical, it must react with its \textbf{SOMO} (also the middle orbital).
+            \end{itemize}
+            \pagebreak
+            \item Allyl anion: Four electrons, so fill the bottom and middle MOs.
+            \begin{itemize}
+                \item Like any carbanion, the allyl anion will react as a nucleophile.
+                \item If it reacts as a nucleophile, it must react with its HOMO (still the middle orbital!).
+            \end{itemize}
+        \end{itemize}
+        \item Interesting consequence of this filling: All three allyl species should only react with their middle-energy MO!
+        \begin{itemize}
+            \item This would predict that all allyl reactivity occurs at the termini of the allyl group, not the middle carbon, since all of the density of the middle orbital is at the termini and none of it is at the middle carbon.
+            \item This prediction is experimentally confirmed!
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Singly occupied molecular orbital}: The molecular orbital in which an unpaired radical electron exists. \emph{Also known as} \textbf{SOMO}.
+    \item An elaboration on why nodes must be placed symmetrically in the MOs of conjugated $\pi$-systems (see Figures \ref{fig:dieneMO} and \ref{fig:allylMO} and the associated discussion).
+    \begin{itemize}
+        \item Reminder: Everything from here, on, in these notes is beyond the scope of this class!
+        \item The long-short.
+        \begin{itemize}
+            \item The waveforms in Figure \ref{fig:dieneMO} are \emph{exactly} equal to their corresponding particle-in-a-box wave functions (according to some analyses of quantum mechanics).
+            \begin{itemize}
+                \item This relationship can be rationalized intuitively because a conjugated $\pi$-system is like an extended, one-dimensional box in which a quantum particle (namely, an electron) lives.
+            \end{itemize}
+            \item The implication is that the molecular orbitals of a conjugated $\pi$-system look \emph{exactly} like the particle-in-a-box orbitals, including having nodes in the same places.
+            \item This actually also means that the individual $p$-orbitals making up the MOs are different sizes!
+            \begin{itemize}
+                \item For example, in the lowest energy MO in Figure \ref{fig:dieneMO}, the two middle $p$-orbitals will be larger than the two terminal $p$-orbitals.
+                \item More relevantly, the HOMO and LUMO in Figure \ref{fig:dieneMO} will have larger terminal $p$-orbitals, which explains why dienes react at their ends and not in the middle; we have already seen an example of dienes reacting at their terminal carbons instead of their middle carbons in Figure \ref{fig:dielsAlder}.
+            \end{itemize}
+        \end{itemize}
+        \item More detail.
+        \begin{itemize}
+            \item The exact sizes of each $p$-orbital in a given MO of a conjugated $\pi$-system can be calculated --- by hand --- using only linear algebra. This calculation is part of something called \textbf{H\"{u}ckel theory}.
+            \item You can learn about H\"{u}ckel theory by taking a course in quantum mechanics, inorganic chemistry, or graduate physical organic chemistry.
+        \end{itemize}
+        \item If you are interested in reading more about this now, look through the attached PDF. I'd recommend starting with the diagrams and sine/cosine functions on pages 6.6 and 6.7. Enjoy!
+    \end{itemize}
+\end{itemize}
+
+\includepdf[pages=-]{BlackboardPics/L12/WhySymmetricNodes.pdf}
+
+
+
 
 \end{document}
