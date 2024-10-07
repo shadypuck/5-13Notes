@@ -894,7 +894,7 @@
         \end{itemize}
         \item Example: We may speak of a "$[1,5]$ sigmatropic rearrangement" (Figure \ref{fig:sigmatrop15}).
         \begin{itemize}
-            \item You can push the electron arrows either way, but Masha likes to start with the $\sigma$-bond and move that to the end of the $\pi$-system.
+            \item You can push the electron arrows either way, but Prof. Elkin likes to start with the $\sigma$-bond and move that to the end of the $\pi$-system.
             \item Observe that one end of the $\sigma$-bond (the side at the hydrogen) moved from atom 1 to atom 1, and the other end (the side at the carbon) moved from atom 1 to atom 5. This is related to the aforementioned "numbering."
         \end{itemize}
     \end{itemize}
@@ -1104,7 +1104,7 @@
             \item We have 4 atoms, so we draw lines for 4 MOs.
             \item The lowest energy MO in Figure \ref{fig:dieneMO} does indeed have no nodes.
             \begin{itemize}
-                \item Observe that Masha shades the top lobes first this time instead of the bottom lobes (as in Figure \ref{fig:piMO}) because the shading is arbitrary. This comment is review, but the concept is important to remember!!
+                \item Observe that Prof. Elkin shades the top lobes first this time instead of the bottom lobes (as in Figure \ref{fig:piMO}) because the shading is arbitrary. This comment is review, but the concept is important to remember!!
             \end{itemize}
             \item For each increase in energy, we do indeed add one node.
             \begin{itemize}
@@ -1308,7 +1308,707 @@
     \end{itemize}
 \end{itemize}
 
-\includepdf[pages=-]{BlackboardPics/L12/WhySymmetricNodes.pdf}
+% \includepdf[pages=-]{BlackboardPics/L12/WhySymmetricNodes.pdf}
+
+
+
+\section{Diels-Alder - 1}
+\begin{itemize}
+    \item \marginnote{10/4:}Lecture 12 recap.
+    \begin{itemize}
+        \item Periyclic reactions have concerted and cyclics transition states.
+        \begin{itemize}
+            \item Essentially, what unites all of these reactions is that they have electron arrows moving in a ring!
+        \end{itemize}
+        \item All of these reactions are theoretically reversible.
+        \item Prof. Elkin redraws the prototypical pericyclic reactions from last class.
+        \pagebreak
+        \item Three main classes.
+        \begin{enumerate}
+            \item Cycloaddition.
+            \begin{itemize}
+                \item Bond types changed: \ce{$2\pi$ <=> $2\sigma$}.
+                \item Nomenclature: $[m+n]$.
+                \item General form: See Figure \ref{fig:dielsAlder}.
+                \begin{itemize}
+                    \item To reiterate: This reaction can also proceed in reverse, i.e., from right to left!
+                \end{itemize}
+            \end{itemize}
+            \item Electrocyclization.
+            \begin{itemize}
+                \item Bond types changed: \ce{$1\pi$ <=> $1\sigma$}.
+                \item Nomenclature: $m\pi$.
+                \item General form: See Figure \ref{fig:electrocyc6p}.
+                \begin{itemize}
+                    \item To reiterate: This reaction can also proceed in reverse, i.e., from right to left!
+                \end{itemize}
+            \end{itemize}
+            \item Sigmatropic rearrangements.
+            \begin{itemize}
+                \item Bonds moved: $1\sigma$.
+                \item Nomenclature: $[m,n]$.
+                \item General form: See Figure \ref{fig:sigmatrop15}.
+                \begin{itemize}
+                    \item To reiterate: This reaction can also proceed in reverse, i.e., from right to left!
+                \end{itemize}
+            \end{itemize}
+        \end{enumerate}
+    \end{itemize}
+    \item Announcements.
+    \begin{itemize}
+        \item Please fill out the feedback survey in Canvas $>$ Announcements.
+        \item PSet 3 is due today.
+        \item PSet 4 will be posted today.
+        \begin{itemize}
+            \item It is the last PSet before Exam 2.
+            \item It only covers Diels-Alder content. However, the rest of this unit's content (cycloadditions, electrocyclizations, and sigmatropic rearrangements) \emph{will} be on Exam 2 as well.
+            \item So to prepare for the exam, continue doing the Recitation Worksheets even after PSet 4!!
+        \end{itemize}
+    \end{itemize}
+    \item Today: Diels-Alder (lecture 1 of 2).
+    \item Recall from last lecture that a \emph{Diels-Alder reaction} is a $[4+2]$ cycloaddition.
+    \begin{itemize}
+        \item Specifically, a \textbf{diene} reacts with an olefin, which we call the \textbf{dienophile}.
+        \item The simplest Diels-Alder (DA) reaction is drawn in Figure \ref{fig:dielsAlder}.
+        \begin{itemize}
+            \item This is actually a terrible Diels-Alder reaction because there's a poor HOMO-LUMO energy match (we'll talk more about what that means shortly).
+        \end{itemize}
+        \item The Diels-Alder is a powerful tool to make six-membered rings.
+        \begin{itemize}
+            \item We see a lot of six-membered rings in organic chemistry, so the Diels-Alder is very useful.
+        \end{itemize}
+        \item This reaction is very predictible: It is \textbf{regioselective}, \textbf{stereospecific}, and \textbf{reliable}.\footnote{We'll discuss both regioselectivity and stereospecificity later this lecture, and stereospecificity even further on Monday.}
+    \end{itemize}
+    \item \textbf{Diene}: A compound that contains two conjugated double bonds.
+    \begin{itemize}
+        \item The diene is (usually) the HOMO.
+        \item You can think of it as the nucleophile.
+    \end{itemize}
+    \item \textbf{Dienophile}: An olefin. \emph{Etymology} from Latin "lover of dienes."
+    \begin{itemize}
+        \item The dienophile is (usually) the LUMO.
+        \item You can think of it as the electrophile.
+    \end{itemize}
+    \item \textbf{Reliable} (reaction): A reaction that almost always works if you have the right energy matching.
+    \item Let's look at the MO picture for a Diels-Alder reaction.
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}
+            \small
+            \draw [-latex,very thick] (-2.5,-0.5) -- node[left]{$E$} (-2.5,6.5);
+    
+            \footnotesize
+            \node at (0,6) {\chemfig{@{D1}-[@{Db1}]@{D2}-[@{Db2}]@{D3}-[@{Db3}]@{D4}}};
+            \node at (0,4) {\chemfig{@{C1}-[@{Cb1}]@{C2}-[@{Cb2}]@{C3}-[@{Cb3}]@{C4}}};
+            \node at (0,2) {\chemfig{@{B1}-[@{Bb1}]@{B2}-[@{Bb2}]@{B3}-[@{Bb3}]@{B4}}};
+            \node          {\chemfig{@{A1}-[@{Ab1}]@{A2}-[@{Ab2}]@{A3}-[@{Ab3}]@{A4}}};
+    
+            \node at (10,4) {\chemfig{@{F1}-[@{Fb1}]@{F2}}};
+            \node at (10,2) {\chemfig{@{E1}-[@{Eb1}]@{E2}}};
+    
+            \draw [ultra thick]
+                (3.25,6) -- ++(0.5,0)
+                (3.25,4) -- ++(0.5,0)
+                (3.25,2) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} node[below=2mm,align=center]{HOMO\\(diene)} ++(0.5,0)
+                (3.25,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+            ;
+            \draw [ultra thick,xshift=3.5cm]
+                (3.25,4) -- node[below=2mm,align=center]{LUMO\\(dienophile)} ++(0.5,0)
+                (3.25,2) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+            ;
+    
+            % \draw [curved arrow={8pt}{4pt},-{Stealth[round,scale=1.1,inset'=0pt 0.55]}] (3.5,2) to[out=60,in=120] (7,4);
+            \draw [|-|] (5.25,2) -- node[fill=white,inner sep=1mm]{$\Delta E$} (5.25,4);
+        \end{tikzpicture}
+        \chemmove{
+            \draw [-,dashed] ([yshift=-7mm]Db3.center) -- ([yshift=7mm]Db3.center);
+            \draw [-,dashed] ([yshift=-7mm]Db2.center) -- ([yshift=7mm]Db2.center);
+            \draw [-,dashed] ([yshift=-7mm]Db1.center) -- ([yshift=7mm]Db1.center);
+            \draw [-,dashed] ([yshift=-7mm]Cb3.center) -- ([yshift=7mm]Cb3.center);
+            \draw [-,dashed] ([yshift=-7mm]Cb1.center) -- ([yshift=7mm]Cb1.center);
+            \draw [-,dashed] ([yshift=-7mm]Bb2.center) -- ([yshift=7mm]Bb2.center);
+            % 
+            \draw [-,dashed] ([yshift=-7mm]Fb1.center) -- ([yshift=7mm]Fb1.center);
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(A1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(A2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(A3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(A4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(A4)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(A4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(A4)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(B1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(B2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(B3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(B4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B4)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(B4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B4)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(D1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(D1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(D1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(D1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(D2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(D2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(D2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(D2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(D3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(D3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(D3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(D3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(D4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(D4)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(D4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(D4)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(E1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(E1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(E1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(E1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(E2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(E2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(E2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(E2)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(F1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(F1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(F1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(F1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(F2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(F2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(F2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(F2)+(-0.0018,0)$) -- cycle;
+        }
+        \caption{Reactive molecular orbitals in a Diels-Alder.}
+        \label{fig:DAMO}
+    \end{figure}
+    \begin{itemize}
+        \item Recall our diene MOs from last lecture (Figure \ref{fig:dieneMO}).\footnote{Prof. Elkin reviews the three rules for drawing the MOs of conjugated systems; remember these!!}
+        \begin{itemize}
+            \item Specifically, recall that our HOMO has the orbital picture of the second energy level. Since we have said that the diene reacts with its HOMO, this is the important orbital to watch.
+        \end{itemize}
+        \item Recall also our dienophile MOs from last lecture (Figure \ref{fig:piMO}).
+        \begin{itemize}
+            \item The olefin has two electrons, so its LUMO is the second energy level. Since we have said that the dienophile reacts with its LUMO, this is the important orbital to watch.
+        \end{itemize}
+        \item Initially, we have a poor energy match between HOMO and LUMO ($\Delta E$ is large). Therefore, if we want to improve the reaction, we should strive to bring their energies closer together.
+        \item Two main things to accomplish this goal of bringing HOMO and LUMO energies closer together.
+        \begin{enumerate}
+            \item Raise the HOMO by adding EDGs to the diene.
+            \item Lower the LUMO by adding EWGs to the dienophile.
+        \end{enumerate}
+    \end{itemize}
+    \item Example: A Diels-Alder reaction that does work well.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \draw [xscale=2,rotate=-23]
+                    (90:1.1) node[above right=-2pt]{\ce{OMe}} -- (90:0.6) coordinate (B1) -- (150:0.6) coordinate (B2) -- (210:0.6) coordinate (B3) -- (270:0.6) coordinate (B4)
+                    (90:0.53) -- (150:0.53) (210:0.53) -- (270:0.53)
+                ;
+                \draw [xshift=2mm,yshift=-1.5cm,xscale=2,rotate=-23]
+                    (0,-0.5) coordinate (F1) -- (0,0.5) coordinate (F2) -- ++(30:0.4) node[right]{\ce{CO2Me}}
+                    (0.06,-0.5) -- (0.06,0.45)
+                ;
+                \draw [dashed]
+                    (B1) -- (F2)
+                    (B4) -- (F1)
+                ;
+    
+                \draw [thick,opacity=0] ($(F1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(F1)+(-0.0018,0)$) -- cycle;
+            \end{tikzpicture}
+            \caption{Reactants.}
+            \label{fig:DAorb3Da}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \draw [xscale=2,rotate=-23]
+                    (90:1.1) node[above right=-2pt]{\ce{OMe}} -- (90:0.6) coordinate (B1) -- (150:0.6) coordinate (B2) -- (210:0.6) coordinate (B3) -- (270:0.6) coordinate (B4)
+                ;
+                \draw [xshift=2mm,yshift=-1.5cm,xscale=2,rotate=-23]
+                    (0,-0.5) coordinate (F1) -- (0,0.5) coordinate (F2) -- ++(30:0.4) node[right]{\ce{CO2Me}}
+                ;
+    
+                \filldraw [thick,draw=orx,fill=ory] ($(B1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(B1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(B2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(B2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(B3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(B3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(B4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(B4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B4)+(-0.0018,0)$) -- cycle;
+    
+                \filldraw [thick,draw=orx,fill=ory] ($(F1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(F1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(F1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(F1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(F2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(F2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(F2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(F2)+(-0.0018,0)$) -- cycle;
+    
+                \draw [cyan,thick] ([xshift=-1mm,yshift=-6mm]B4) to[bend right=20] ([xshift=-2mm,yshift=4mm]F1);
+                \draw [cyan,thick] ([xshift=1.5mm,yshift=-5mm]B1) to[bend left=20] ([xshift=1mm,yshift=6mm]F2);
+            \end{tikzpicture}
+            \caption{Reactant orbitals.}
+            \label{fig:DAorb3Db}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \draw [xscale=2,rotate=-23]
+                    (90:1.1) node[above right=-2pt]{\ce{OMe}} -- (90:0.6) coordinate (B1) -- (150:0.6) coordinate (B2) -- (210:0.6) coordinate (B3) -- (270:0.6) coordinate (B4)
+                ;
+                \draw [xshift=0mm,yshift=-1cm,xscale=2,rotate=-23]
+                    (0,-0.6) coordinate (F1) -- (0,0.6) coordinate (F2) -- ++(30:0.4) node[right]{\ce{CO2Me}}
+                ;
+    
+                \filldraw [thick,draw=orx,fill=ory] ($(B1)+(0.0018,0)$) to[bend right=130,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(B4)+(0.0018,0)$) to[bend right=130,looseness=600] ($(B4)+(-0.0018,0)$) -- cycle;
+    
+                \draw [thick,orx] ($(F1)+(0.0018,0)$) to[bend left=130,looseness=600] ($(F1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(F2)+(0.0018,0)$) to[bend left=130,looseness=600] ($(F2)+(-0.0018,0)$) -- cycle;
+    
+                \filldraw [thick,draw=orx,fill=ory] ($(B4)!0.5!(F1)$) ellipse (1.8mm and 5mm);
+                \draw [thick,orx] ($(B1)!0.5!(F2)$) ellipse (1.8mm and 5mm);
+    
+                \path (0,0) -- (0,-2.4);
+            \end{tikzpicture}
+            \caption{Product orbitals.}
+            \label{fig:DAorb3Dc}
+        \end{subfigure}
+        \caption{Diels-Alder orbitals in 3D space.}
+        \label{fig:DAorb3D}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item Let's analyze the new reactants we've drawn (Figure \ref{fig:DAorb3Da}).
+        \begin{itemize}
+            \item The methoxy-substituted diene is a better nucleophile than 1,3-butadiene because methoxy groups are electron-donating.
+            \item The ester-substituted dienophile is a better electrophile than ethylene because ester groups are electron-withdrawing.
+            \item Recall electrophilic aromatic substitution reactions, which tell you what substitutents are electron donating vs. withdrawing. Review this 5.12 content!!
+        \end{itemize}
+        \item Now let's look at their orbitals (Figure \ref{fig:DAorb3Db}).
+        \begin{itemize}
+            \item We draw a "perspective picture" of the HOMO and LUMO.
+            \item Observe that the phases of the HOMO and LUMO match!
+            \begin{itemize}
+                \item Specifically, we mean that the lobes connected by the blue lines have the same shading.
+            \end{itemize}
+            \item A note on shading.
+            \begin{itemize}
+                \item The \emph{relative} shading between reacting molecules \emph{does} matter because we've got to see overlap between pairs of shaded lobes and pairs of unshaded lobes when we're forming bonds.
+                \item Thus, while we could invert the shading of every $p$-orbital in Figure \ref{fig:DAorb3Db} and be fine, we \emph{could not} invert the shading of just the diene and leave the dienophile unchanged (or vice versa).
+            \end{itemize}
+        \end{itemize}
+        \item We now redraw the molecules, but after they've formed $\sigma$-bonds (Figure \ref{fig:DAorb3Dc}).
+        \begin{itemize}
+            \item As the $\pi$-orbitals come together, the middle lobes fuse and become $\sigma$-bonds.
+            \item Implication: You have to have a top-to-bottom approach so that the $p$-orbitals interact and mix. A side-to-side overlap would not form $\sigma$-bonds from $p$-orbitals.
+        \end{itemize}
+    \end{itemize}
+    \item Accelerating Diels-Alder reactions.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \setchemfig{fixed length=false}
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemname{
+                    \chemfig{*6([:-120]=-=)}
+                }{1}
+                \arrow(.base east--.base west){0}[,0.3]
+                \chemname{
+                    \chemfig{*6([:-120]=(-MeO)-=)}
+                }{\hspace{1cm}10}
+                \arrow(.base east--.base west){0}[,1]
+                \chemname{
+                    \chemfig{*6([:-120](-OMe)=-=)}
+                }{32\hspace{5.3mm}}
+            \schemestop
+            \chemnameinit{}
+            \caption{Various dienes (electronic effects).}
+            \label{fig:DAratea}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \chemnameinit{\chemfig{*6(-(=O)-=-(=O)-=)}}
+            \schemestart
+                \chemname{
+                    \chemfig{=[2]}
+                }{\num{e-5}}
+                \arrow(.base east--.base west){0}[,0.8]
+                \chemname{
+                    \chemfig{=_[2]-[:30]CN}
+                }{1}
+                \arrow(.base east--.base west){0}[,0.5]
+                \chemname{
+                    \chemfig{=_[2]-[:30](=[2]O)-[:-30]H}
+                }{10}
+                \arrow(.base east--.base west){0}[,0.5]
+                \chemname{
+                    \chemfig{(-[:-30]CN)=_[2]-[:30]CN}
+                }{90}
+                \arrow(.base east--.base west){0}[,0.5]
+                \chemname{
+                    \chemfig{*6(-(=O)-=-(=O)-=)}
+                }{900}
+                \arrow(.base east--.base west){0}[,0.5]
+                \chemname{
+                    \chemfig{(-[:-30]CN)(-[:-150]NC)=_[2](-[:150]NC)-[:30]CN}
+                }{\num{4e7}}
+                \arrow(.base east--.base west){0}[,0.4]
+                \chemname{
+                    \chemfig{*5([:72](=O)-N(-Ph)-(=O)-N=N-)}
+                }{"record holder"}
+            \schemestop
+            \chemnameinit{}
+            \caption{Various dienophiles.}
+            \label{fig:DArateb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \chemnameinit{\tiny\chemfig[atom sep=2.4em]{*6([:-120](-[,0.5]H)(-[:-30,0.6]H)=-=(-[,0.5]H)(-[:30,0.6]H))}}
+            \schemestart
+                \chemname{
+                    \chemfig{*6([:-120]---=-(=)-)}
+                }{NR}
+                \arrow(.base east--.base west){0}[,0.6]
+                \chemname{
+                    \chemfig{*6([:-120](-[:-30]Me)=-=-Me)}
+                }{\num{e-4}}
+                \arrow(.base east--.base west){0}[,0.7]
+                \chemname{
+                    \tiny\chemfig[atom sep=2.4em]{*6([:-120](-[,0.5]H)(-[:-30,0.6]H)=-=(-[,0.5]H)(-[:30,0.6]H))}
+                }{1}
+                \arrow(.base east--.base west){0}[,0.7]
+                \chemname{
+                    \chemfig{*6([:-120](-Me)=-=)}
+                }{3}
+                \arrow(.base east--.base west){0}[,0.7]
+                \chemname{
+                    \chemfig{*5([:-144]=-=--)}
+                }{\num{e3}}
+            \schemestop
+            \chemnameinit{}
+            \caption{Various dienes (steric effects).}
+            \label{fig:DAratec}
+        \end{subfigure}
+        \caption{The relative rate of reaction of different Diels-Alder substrates.}
+        \label{fig:DArate}
+    \end{figure}
+    \begin{enumerate}
+        \item Raise the HOMO by putting EDGs on the diene (Figure \ref{fig:DAratea}).
+        \begin{itemize}
+            \item Adding a methoxy substituent (an EDG) will increase the rate regardless of the position to which you add it.
+            \item However, interestingly enough, it will increase the rate \emph{more} when added to some positions over other positions.
+            \item This is because of the difference between \textbf{cross-conjugation} and regular conjugation.
+        \end{itemize}
+        \item Lower the LUMO by putting EWGs on the dienophile (Figure \ref{fig:DArateb}).
+        \begin{itemize}
+            \item From left to right, the names of these seven compounds are: ethylene, acrylonitrile, propenal, \emph{cis}-1,2-dicyanoethene, \emph{para}-quinone, tetracyanoethene, and 4-\underline{p}henyl-1,2,4-\underline{t}ri\underline{a}zole-3,5-\underline{d}ione (PTAD\footnote{According to \textcite{bib:PTAD}, PTAD is approximately \num{e5} times faster than tetracyanoethene. This means that it is approximately \num{4e12} times faster than acrylonitrile!}).
+        \end{itemize}
+        \item Enforce the \textbf{s-\emph{cis}} configuration (Figure \ref{fig:DAratec}).
+        \begin{itemize}
+            \item The leftmost compound is locked in the \textbf{s-\emph{trans}} conformation.
+            \item The next one has a big steric clash between methyl groups, so it's much more stable in the s-\emph{trans} configuration.
+            \item Buta-1,3-diene likes to be s-\emph{trans} because it still has sterics from the hydrogens.
+            \item Penta-1,3-diene has the same mild steric preference for s-\emph{trans} as buta-1,3-diene.
+            \begin{itemize}
+                \item However, certain stereoelectronic effects (which you'll work out on PSet 4!) promote its reactivity.
+                \item Essentially, methyl groups are slightly electron-donating.
+            \end{itemize}
+            \item Cyclopentadiene is locked in an s-\emph{cis} conformation.
+        \end{itemize}
+    \end{enumerate}
+    \item \textbf{Cross-conjugated} (molecule): A molecule containing multiple olefins that --- despite being arranged in a row --- do not delocalize efficiently.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \schemestart
+                \chemleft{[}\subscheme{
+                    \chemfig{*6([:-120]@{C}=[@{2}](-[@{1}]Me@{O}\charge{90=\:}{O})-=)}
+                    \arrow{<->}
+                    \chemfig{*6([:-120]\charge{[extra sep=5pt]90=$\ominus$}{}-(=Me@{O2}\charge{[extra sep=5pt]90=$\oplus$}{O}-[2,0.4,,,opacity=0])-=)}
+                }\chemright{]}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={5pt}{2pt}] (O) to[out=90,in=60,looseness=3] (1);
+                \draw [curved arrow={4pt}{3pt}] (2) to[bend right=90,looseness=4] (C);
+            }
+            \caption{Cross-conjugation.}
+            \label{fig:crossRegConja}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \schemestart
+                \chemleft{[}\subscheme{
+                    \chemfig{*6([:-120](-[@{1}]@{O}\charge{180=\:}{O}Me)=[@{2}]-[@{3}]=[@{4}]@{C})}
+                    \arrow{<->}
+                    \chemfig{*6([:-120](=^\charge{[extra sep=5pt]180=$\oplus$}{O}Me)-=-\charge{[extra sep=5pt]0=$\ominus$}{})}
+                }\chemright{]}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={5pt}{2pt}] (O) to[out=180,in=180,looseness=3] (1);
+                \draw [curved arrow={4pt}{2pt}] (2) to[bend left=60,looseness=1.5] (3);
+                \draw [curved arrow={4pt}{3pt}] (4) to[bend left=90,looseness=4] (C);
+            }
+            \caption{Regular conjugation.}
+            \label{fig:crossRegConjb}
+        \end{subfigure}
+        \caption{Cross-conjugation vs. regular conjugation.}
+        \label{fig:crossRegConj}
+    \end{figure}
+    \begin{itemize}
+        \item Notice that for the molecule in Figure \ref{fig:crossRegConja}, we cannot draw a resonance structure that engages the bottom $\pi$-bond.
+        \item In contrast, regular conjugation (Figure \ref{fig:crossRegConjb}) disperses the oxygen's electron density across the entire $\pi$-system.
+    \end{itemize}
+    \item \textbf{s-\emph{cis}} (conformer): The rotational isomer of a diene in which the alkenes are \emph{cis} relative to the $\sigma$-bond.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{*6([:-120]=-=)}
+        \caption{s-\emph{cis} diene.}
+        \label{fig:sCisDiene}
+    \end{figure}
+    \pagebreak
+    \item \textbf{s-\emph{trans}} (conformer): The rotational isomer of a diene in which the alkenes are \emph{trans} relative to the $\sigma$-bond.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{=^[:30]-[2]=_[:30]}
+        \caption{s-\emph{trans} diene.}
+        \label{fig:sTransDiene}
+    \end{figure}
+    \item Essentially, olefins can be \emph{cis} or \emph{trans}.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([:-120]=-=)}
+                \+{,,-2.1em}
+                \chemfig{*6([:-120]CN-=-CN)}
+                \arrow
+                \chemfig{*6(--(<CN)-(<CN)--=)}
+            \schemestop
+            \caption{\emph{cis} olefins.}
+            \label{fig:DAcisTransa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([:-120]=-=)}
+                \+{,,-2.1em}
+                \chemfig{CN-[:-150]=_[6]-[:-150]NC}
+                \arrow
+                \chemfig{*6(--(<:CN)-(<CN)--=)}
+            \schemestop
+            \caption{\emph{trans} olefins.}
+            \label{fig:DAcisTransb}
+        \end{subfigure}
+        \caption{Reacting \emph{cis} and \emph{trans} olefins in the Diels-Alder.}
+        \label{fig:DAcisTrans}
+    \end{figure}
+    \begin{itemize}
+        \item When you react the \emph{cis}-olefin in a Diels-Alder, you get (exclusively) the \emph{cis}-product.
+        \item When you react the \emph{trans}-olefin in a Diels-Alder, you get (exclusively) the \emph{trans}-product.
+        \item This means that the Diels-Alder is \textbf{stereospecific}.\footnote{Next lecture, you will learn how the Diels-Alder is \textbf{stereoselective} but still not \textbf{stereoretentive}.}
+    \end{itemize}
+    \item On the other hand, dienes can be s-\emph{cis} or s-\emph{trans}.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6([:-120]=-[@{1}]=)}
+            \arrow{<=>}
+            \chemfig{=^[:30]-[2]=_[:30]}
+        \schemestop
+        \chemmove{
+            \path ([xshift=2mm]1) arc[start angle=0,end angle=75,x radius=2mm,y radius=1mm] coordinate (2);
+            \draw [grx,thick] (2) arc[start angle=75,end angle=-255,x radius=2mm,y radius=1mm];
+        }
+        \caption{s-\emph{cis} and s-\emph{trans} conformers rapidly interconvert.}
+        \label{fig:sCisTransInterconvert}
+    \end{figure}
+    \begin{itemize}
+        \item The "s" stands for "\underline{s}igma bond."
+        \item These two diene conformers are not discrete species; rather, they interconvert like the gauche, anti, staggered, etc. conformers of ethane.
+        \item Only s-\emph{cis} dienes react in Diels-Alders, so enforcing that geometry accelerates the reaction.
+    \end{itemize}
+    \item \textbf{Stereospecific} (reaction): A reaction in which the stereochemistry of the reactants translates directly into a single stereochemical product.
+    \item \textbf{Stereoselective} (reaction): A reaction in which when a certain stereochemical product is favored, but a mixture is still produced and the stereochemistry of the reactants doesn't exert excessive influence.
+    \item \textbf{Stereoretentive} (reaction): A reaction in which the exact stereocenters present in the starting material are conserved in the product.
+    \item Does the rightmost diene in Figure \ref{fig:DAratea} have to be \emph{trans} at the upper alkene?
+    \begin{itemize}
+        \item Yes; we'll talk about that more next lecture.
+    \end{itemize}
+    \item Can you lower the LUMO so much that the Diels-Alder reaction no longer proceeds?
+    \begin{itemize}
+        \item Yes! This is related to \textbf{inverse electron-demand} Diels-Alder reactions, discussed next Monday.
+    \end{itemize}
+    \item Can you have a photochemical Diels-Alder?
+    \begin{itemize}
+        \item They're quite rare, but you can do similar things.
+        \item Note: Lewis acid acceleration of Diels-Alders will also be discussed next Monday.
+    \end{itemize}
+    \pagebreak
+    \item Regioselectivity.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([:-120]=(-MeO)-=)}
+                \arrow{0}[,0.1]\+{,,-1.1em}
+                \chemfig[fixed length=false]{CHO-[:-150]=^[6]}
+                \arrow
+                \chemfig{*6(---(-CHO)--(-MeO)=)}
+            \schemestop
+            \caption{\emph{meta}-product.}
+            \label{fig:DAregioa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([:-120]=(-MeO)-=)}
+                \arrow(--.160){0}[,0.1]\+{,,-0.8em}
+                \chemfig[fixed length=false]{=^[6]-[:-30]CHO}
+                \arrow(.20--)
+                \chemfig{*6(--(-CHO)---(-MeO)=)}
+            \schemestop
+            \caption{\emph{para}-product.}
+            \label{fig:DAregiob}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \schemestart
+                \chemleft{[}\subscheme{
+                    \chemfig{*6([:-120]@{C}=[@{2}](-[@{1}]Me@{O}\charge{90=\:}{O})-=)}
+                    \arrow{<->}
+                    \chemfig{*6([:-120]\charge{[extra sep=5pt]0=$\ominus$}{}(-[0,0.4,,,opacity=0])-(=Me@{O2}\charge{[extra sep=5pt]90=$\oplus$}{O}-[2,0.4,,,opacity=0])-=)}
+                }\chemright{]}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={5pt}{2pt}] (O) to[out=90,in=60,looseness=3] (1);
+                \draw [curved arrow={4pt}{3pt}] (2) to[bend right=90,looseness=4] (C);
+            }
+            \caption{Diene (resonance).}
+            \label{fig:DAregioc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \schemestart
+                \chemleft{[}\subscheme{
+                    \chemfig{=_[@{1}2]-[@{2}:30](=[@{3}2]@{O}O)-[:-30]H}
+                    \arrow{<->}
+                    \chemfig{\charge{[extra sep=5pt]180=$\oplus$}{}-[2]=_[:30](-[2]\charge{[extra sep=5pt]0=$\ominus$}{O})-[:-30]H}
+                }\chemright{]}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={4pt}{2pt}] (1) to[bend right=60,looseness=1.5] (2);
+                \draw [curved arrow={3pt}{2pt}] (3) to[bend right=80,looseness=2.5] (O);
+            }
+            \caption{Dienophile (resonance).}
+            \label{fig:DAregiod}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \chemfig{*6([:-120]@{C1}=@{C2}(-Me@{O}O)-@{C3}=@{C4})}
+            \chemmove{
+                \node [above,grx] at (O.north) {${}^{\color{white}-}\delta^-$};
+                \node [above,grx] at (C2.north) {${}^{\color{white}+}\delta^+$};
+                \node [right=1mm,grx,circle,draw,inner sep=1pt] at (C1.east) {$\delta^-$};
+                \node [below left=-2pt,grx] at (C3) {${}^{\color{white}-}\delta^-$};
+                \node [right=1mm,grx,circle,draw,inner sep=1pt] at (C4.east) {$\delta^+$};
+            }
+            \vspace{2mm}
+            \caption{Diene (hyperconjugation).}
+            \label{fig:DAregioe}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \chemfig{@{C1}=_[2]@{C2}-[:30]@{C3}(=[2]@{O}O)-[:-30]H}
+            \chemmove{
+                \node [above,grx] at (O.north) {${}^{\color{white}-}\delta^-$};
+                \node [above right,grx] at (C3) {$\delta^+$};
+                \node [above left=1mm,grx,circle,draw,inner sep=1pt] at (C2.west) {$\delta^-$};
+                \node [below left=1mm,grx,circle,draw,inner sep=1pt] at (C1.west) {$\delta^+$};
+            }
+            \vspace{5mm}
+            \caption{Dienophile (hyperconjugation).}
+            \label{fig:DAregiof}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \setcharge{extra sep=5pt}
+            \chemfig{*6(=-[,,,,dashed](=(-[6]\charge{0=$\ominus$}{O})-[:30]H)-\charge{30=$\oplus$}{}-[,,,,dashed]\charge{90=$\ominus$}{}-(=Me@{O}\charge{90=$\oplus$}{O})-)}
+            \caption{Resonance matching.}
+            \label{fig:DAregiog}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \chemfig{*6(=@{C1}-[,,,,dashed]@{C2}(-(=[6]O)-[:30]H)=@{C3}-[,,,,dashed]@{C4}=(-MeO)-)}
+            \chemmove{
+                \node [below,grx] at (C1) {${}^{\color{white}+}\delta^+$};
+                \node [above right=-2pt,grx] at (C2) {$\delta^-$};
+                \node [above,grx] at (C3) {${}^{\color{white}+}\delta^+$};
+                \node [above,grx] at (C4) {${}^{\color{white}-}\delta^-$};
+            }
+            \caption{Hyperconjugation matching.}
+            \label{fig:DAregioh}
+        \end{subfigure}
+        \caption{Diels-Alder regioselectivity.}
+        \label{fig:DAregio}
+    \end{figure}
+    \begin{itemize}
+        \item Observation: Depending on how the diene and dienophile are oriented when they react, we could conceivably form two different products (Figures \ref{fig:DAregioa}-\ref{fig:DAregiob}).
+        \begin{itemize}
+            \item These two products are called the \textbf{\emph{meta}-product} and the \textbf{\emph{para}-product}.
+        \end{itemize}
+        \pagebreak
+        \item So which product do we actually get?
+        \begin{itemize}
+            \item We will determine this by using either \emph{resonance} or \emph{hyperconjugation}/\emph{partial negative charges} to identify and match the electron-rich and electron-poor sites on our diene and dienophile.\footnote{Note that there is also a secret third method: MO theory! See \textcite[890]{bib:Clayden} for how to do this. As we would expect, the predictions we get by both resonance and hyperconjugation match the predictions of MO theory. (Note also that you are not required to learn the MO theory method because it was not covered in class; this comment is purely to point out an interesting connection :)}
+            \item You may use whichever method your prefer since they give the same result, but you should learn both!!
+        \end{itemize}
+        \item The resonance analysis (Figures \ref{fig:DAregioc}-\ref{fig:DAregiod}).
+        \begin{itemize}
+            \item As in Figure \ref{fig:crossRegConj}, push arrows as far as we can to get the reactive resonance structure.
+        \end{itemize}
+        \item The hyperconjugation analysis (Figures \ref{fig:DAregioe}-\ref{fig:DAregiof}).
+        \begin{itemize}
+            \item Begin with an atom that we \emph{know} will have a partial positive ($\delta^+$) or partial negative ($\delta^-$) charge.
+            \begin{itemize}
+                \item For example, we know that oxygen will be $\delta^-$ because it is the most electronegative atom in both structures.
+                \item Thus, we can label it first in both Figures \ref{fig:DAregioe} and \ref{fig:DAregiof}.
+            \end{itemize}
+            \item Then expand out over the rest of the conjugated system, alternating $\delta^+$ or $\delta^-$ atom-to-atom.
+            \begin{itemize}
+                \item So since oxygen is $\delta^-$, the carbon $\alpha$ to it should be $\delta^+$, the carbon(s) $\beta$ to it should be $\delta^-$, the carbon(s) $\gamma$ to it should be $\delta^+$, etc.
+            \end{itemize}
+            \item Keep track of the partial charges on the termini of the diene and dienophile (i.e., the reactive sites). These are circled in Figures \ref{fig:DAregioe}-\ref{fig:DAregiof}.
+        \end{itemize}
+        \item Notice the agreement/consistency between the two methods!
+        \begin{itemize}
+            \item Indeed, the carbanion in Figure \ref{fig:DAregioc} corresponds to a $\delta^-$ carbon in Figure \ref{fig:DAregioe}, and the carbocation in Figure \ref{fig:DAregiod} corresponds to a $\delta^+$ carbon in Figure \ref{fig:DAregiof}.
+        \end{itemize}
+        \item Once we have performed either analysis, matching up the negatives on the diene to the positives on the dienophile and vice versa predicts our product!
+        \begin{itemize}
+            \item Thus, by both analyses, the \emph{para}-product is favored!
+            \item This matching of positive and negative charges is indicative of the maxim that "organic chemistry is just magnets everywhere."
+        \end{itemize}
+        \item Exercise: Try drawing the meta-product, which will force you to put positive near positive and negative near negative.
+        \begin{itemize}
+            \item "That's not fun, that's not how magnets work."
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{\emph{meta}-product}: The product of a Diels-Alder reaction in which the substituents would be oriented \emph{meta} to each other on the six-membered ring, if the six-membered ring were aromatic.
+    \item \textbf{\emph{para}-product}: The product of a Diels-Alder reaction in which the substituents would be oriented \emph{para} to each other on the six-membered ring, if the six-membered ring were aromatic.
+    \item Prof. Elkin has many more examples, but will go through them on Monday.
+\end{itemize}
 
 
 
