@@ -2646,5 +2646,853 @@
 
 
 
+\section{Cycloadditions}
+\begin{itemize}
+    \item \marginnote{10/9:}An update on who won this year's Nobel Prize in Chemistry!
+    \begin{itemize}
+        \item Awarded for: The computational design and prediction of protein structures.
+        \item \sfrac{1}{2} share: David Baker (University of Washington-Seattle).
+        \begin{itemize}
+            \item For artificial protein design and synthesis.
+            \item One of the things he did was design and synthesize a protein to catalyze Diels-Alder reactions, called Diels-Alderase! You can read more about it in \textcite{bib:DielsAlderase}.
+            \begin{itemize}
+                \item Diels-Alderases were hypothesized to exist ever since the discovery of the Diels-Alder reaction, but they were not found in nature until 20 years ago when we isolated the first natural Diels-Alderase from a mango tree.
+            \end{itemize}
+        \end{itemize}
+        \item \sfrac{1}{4} share, each: Dennis Hassabis and John Jumper (both from Google DeepMind).
+        \begin{itemize}
+            \item For building a computer program called AlphaFold.
+            \begin{itemize}
+                \item AlphaFold predicts protein structures from their amino acid sequences.
+                \item This largely solves the \textbf{protein folding problem}.
+                \item Hassabis and Jumper used basically poured all of Google's computational resources into this endeavor and combined it with a lot of machine learning to create a true tour de force of engineering.
+                \item When the dust settled, AlphaFold worked pretty well, and it's now used all over the world.
+                \item AlphaFold still needs some future development, though.
+            \end{itemize}
+            \item Prof. Elkin is especially interested in this topic because she \emph{researches} the intersection of machine learning and chemistry.
+            \begin{itemize}
+                \item She will give a "special topics" lecture on it later this semester!
+                \item If you are curious about machine learning and chemistry, too, come talk to her!!
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Protein folding problem}: Given a sequence of amino acids, predict the structure of the protein.
+    \pagebreak
+    \item Lecture 14 recap: A cheat sheet for Diels-Alder reactions.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([:-120](-[,0.8]EDG)=-=(<:[:-70,,,,opacity=0]\phantom{out}))}
+                \arrow(.base east--.base west){0}[,0.6]
+                \chemfig{*6([:-120]=(-[,0.8]EDG)-=)}
+            \schemestop
+            \caption{\emph{o}- and \emph{p}-selective dienes.}
+            \label{fig:DAcheata}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([:-120](-[,0.8]o@{}ut)(-[:-30,0.8]in)=-=(-[,0.8]o@{}ut)(-[:30,0.8]in))}
+                \arrow{0}[,0.1]\+{,,1.5em}
+                \chemfig{=_[2]-[:30]EWG}
+                \arrow
+                \chemfig{*6(-(<[:-110]i@{}n)(<:[:-70]o@{}ut)--(<:EWG)-(<:[:70]o@{}ut)(<[:110]i@{}n)-=)}
+            \schemestop
+            \caption{Stereochemistry.}
+            \label{fig:DAcheatb}
+        \end{subfigure}
+        \caption{Diels-Alder cheat sheet.}
+        \label{fig:DAcheat}
+    \end{figure}
+    \begin{itemize}
+        \item Reactivity.
+        \begin{itemize}
+            \item Normal electron-demand Diels-Alder reactions are accelerated by\dots
+            \begin{itemize}
+                \item EDGs on the diene;
+                \item EWGs on the dienophile;
+                \item Promoting the s-\emph{cis} conformation of the diene;
+                \item Lewis acid catalysts.
+            \end{itemize}
+            \item Inverse electron-demand Diels-Alder reactions are also accelerated by all of these things, except you switch EDGs to the dienophile and EWGs to the diene.
+        \end{itemize}
+        \item Regiochemistry (Figure \ref{fig:DAcheata}).
+        \begin{itemize}
+            \item \emph{ortho}- and \emph{para}-products are preferred.
+            \item A diene with an EDG on the 1-position (left diene in Figure \ref{fig:DAcheata}) favors the \emph{ortho}-product.
+            \item A diene with an EDG on the 2-position (right diene in Figure \ref{fig:DAcheata}) favors the \emph{para}-product.
+        \end{itemize}
+        \item Stereochemistry (Figure \ref{fig:DAcheatb}).
+        \begin{itemize}
+            \item The dienophile's stereochemistry matters.
+            \begin{itemize}
+                \item A \emph{cis}-dienophile implies a \emph{cis}-product, and a \emph{trans}-dienophile implies a \emph{trans}-product.
+                \item See Figure \ref{fig:DAcisTrans}.
+            \end{itemize}
+            \item The \emph{endo} transition state is preferred.
+            \begin{itemize}
+                \item This means that we usually form the sterochemistry shown in Figure \ref{fig:DAcheatb}.
+                \item In particular, the EWG should be \emph{cis} to the "out" substituents.
+            \end{itemize}
+        \end{itemize}
+        \item You \emph{will} need to know the reasons behind all these things and be able to derive them with orbitals on the exam.
+        \begin{itemize}
+            \item However, these shortcuts can help us on "predict the product"-type questions.
+        \end{itemize}
+    \end{itemize}
+    \item Today: Cycloadditions.
+    \item Lecture outline.
+    \begin{itemize}
+        \item Dipolar cycloadditions.
+        \begin{itemize}
+            \item Examples of dipoles.
+            \item Example reactions.
+            \item The molecular orbital picture.
+            \item Azide as a dipole: Click reactions.
+            \item Ozone as a dipole: Ozonolysis and ozonide trapping.
+        \end{itemize}
+        \item $[2+2]$ cycloadditions.
+    \end{itemize}
+    \pagebreak
+    \item \textbf{Dipolar} (cycloaddition): A (usually $[3+2]$) cycloaddition between a \textbf{dipole} and a \textbf{dipolarophile}.
+    \begin{itemize}
+        \item These are nice because they make 5-membered rings the same way Diels-Alder reactions make 6-membered rings!
+    \end{itemize}
+    \item \textbf{Dipole}: A molecule with the following general form. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=5pt}
+        \chemfig{A=[:30]\charge{90=$\oplus$}{B}(-[2,0.4,,,opacity=0])-[:-30]\charge{90=$\ominus$}{C}}
+        \caption{Dipole.}
+        \label{fig:dipole}
+    \end{figure}
+    \begin{itemize}
+        \item \ce{A}, \ce{B}, and \ce{C} are atoms.
+        \begin{itemize}
+            \item Depending on the specific atoms involved, the double bond may be a triple bond or the single bond may be a double bond.
+            \item The zwitterion (adjacent positive and negative formal charges) is always present, though; this is the actual dipole within the dipole molecule!
+        \end{itemize}
+        \item Tip from Prof. Elkin: Now is probably a good time to review how to draw Lewis structures, resonance forms, etc. from Gen Chem or 5.12; this content is relevant to how to draw dipoles.
+    \end{itemize}
+    \item \textbf{Dipolarophile}: The species that reacts with the dipole. \emph{Etymology} from Latin "lover of dipoles."
+    \begin{itemize}
+        \item This is usually an alkene or alkyne.
+    \end{itemize}
+    \item Mechanism.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=5pt}
+        \schemestart
+            \chemfig{A=[:-120]\charge{180=$\oplus$}{B}-[:-60]\charge{0=$\ominus$}{C}}
+            \arrow{0}[,0.1]\+{,1em,0.7em}
+            \chemfig{=[2]}
+            \arrow
+            \chemfig{@{A}A=[@{2}:-126]@{B}\charge{180=$\oplus$}{B}(-[4,0.4,,,opacity=0])-[:-54]@{C}\charge{0=$\ominus$}{C}}
+            \arrow{0}[,0.5]
+            \chemfig{@{D}=[@{1}2]}
+            \arrow
+            \chemfig{*5([:108]=-A-B-C-)}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={9pt}{2pt}] (C) to[out=0,in=-120] (D);
+            \draw [curved arrow={3pt}{2pt}] (1) to[out=180,in=-72] (A);
+            \draw [curved arrow={3pt}{1pt}] (2) to[out=-36,in=0,looseness=2] (B);
+        }
+        \caption{Dipolar cycloaddition.}
+        \label{fig:dipolarCyc}
+    \end{figure}
+    \begin{itemize}
+        \item Prof. Elkin likes to draw circle arrows starting from the center of electron density.
+    \end{itemize}
+    \item Examples of dipoles.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=5pt}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{O=[:30]\charge{90=$\oplus$}{O}(-[2,0.4,,,opacity=0])-[:-30]\charge{90=$\ominus$}{O}}
+            \caption{Ozone.}
+            \label{fig:dipoleExa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{R-[:-60]N=\charge{90=$\oplus$}{N}(-[2,0.4,,,opacity=0])=\charge{90=$\ominus$}{N}}
+            \caption{Azide.}
+            \label{fig:dipoleExb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{R-C~\charge{90=$\oplus$}{N}(-[2,0.4,,,opacity=0])-\charge{90=$\ominus$}{O}}
+            \caption{Nitrile oxide.}
+            \label{fig:dipoleExc}
+        \end{subfigure}
+        \caption{Examples of dipoles.}
+        \label{fig:dipoleEx}
+    \end{figure}
+    \begin{enumerate}
+        \item \textbf{Ozone}.
+        \item \textbf{Azide}.
+        \item \textbf{Nitrile oxide}.
+    \end{enumerate}
+    \item \textbf{Ozone}: The \ce{O3} molecule. \emph{Structure} (see Figure \ref{fig:dipoleExa}.)
+    \item \textbf{Azide}: The \ce{N3-} functional group. \emph{Structure} (see Figure \ref{fig:dipoleExb}.)
+    \item \textbf{Nitrile oxide}: The \ce{CNO-} functional group. \emph{Structure} (see Figure \ref{fig:dipoleExc}.)
+    \pagebreak
+    \item Examples of dipolar cycloadditions.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=5pt}
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-C~\charge{90=$\oplus$}{N}(-[2,0.4,,,opacity=0])-\charge{90=$\ominus$}{O}}
+                \arrow{0}[,0.1]\+{,,1.4em}
+                \chemfig{-[:60](-[:120])=(-[:60])-[:-60]}
+                \arrow{->[$\Delta$]}
+                \chemfig{*5([:18](-[:-146,0.8])(-[:-106,0.8])-(-[:-74,0.8])(-[:-34,0.8])-O-N=(-R)-)}
+            \schemestop
+            \caption{Reacting a nitrile oxide.}
+            \label{fig:dipolarCycExa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemleft{[}\subscheme{
+                    \chemfig{R-[:-60]N=\charge{90=$\oplus$}{N}(-[2,0.4,,,opacity=0])=\charge{90=$\ominus$}{N}}
+                    \arrow{<->}[-90]
+                    \chemfig{R-[:-60]\charge{60=$\ominus$}{N}-\charge{90=$\oplus$}{N}(-[2,0.4,,,opacity=0])~N}
+                }\chemright{]}
+                \arrow{0}[,0.1]\+{,,-0.2em}
+                \chemfig{-~-}
+                \arrow(.-1--){->[$\Delta$]}
+                \chemfig{*5([:18](-[,0.8])=(-[,0.8])-N=N-N(-R)-)}
+            \schemestop
+            \caption{Reacting an azide.}
+            \label{fig:dipolarCycExb}
+        \end{subfigure}
+        \caption{Examples of dipolar cycloadditions.}
+        \label{fig:dipolarCycEx}
+    \end{figure}
+    \begin{itemize}
+        \item Reacting a nitrile oxide with an alkene (Figure \ref{fig:dipolarCycExa}).
+        \begin{itemize}
+            \item Forms the 5-membered ring you'd expect by drawing arrows as in Figure \ref{fig:dipolarCyc}.
+        \end{itemize}
+        \item Reacting an azide with an alkyne (Figure \ref{fig:dipolarCycExb}).
+        \begin{itemize}
+            \item Note that \emph{both} resonance structures can react with the alkyne.
+            \begin{itemize}
+                \item You will have to draw different arrows, but if you start from the negatively charged atom on the dipole (as Prof. Elkin likes to), you'll get the same product.
+                \item Draw both mechanisms out as practice!!
+            \end{itemize}
+            \item Product is aromatic, so this is a very thermodynamically downhill (i.e., favorable) reaction.
+            \item This is our first example of a \textbf{click reaction}.
+        \end{itemize}
+    \end{itemize}
+    \item Let's now look at the orbitals involved in a dipolar cycloaddition.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig[atom sep=3em]{R-[:-60]@{N1}-[,0.9]@{N2}(-[6,1.6,,,opacity=0](-[,0.7]@{C2}-)(-[4,0.7]@{C1}(-[6,0.5,,,opacity=0])-[4]))-[,0.9]@{N3}}
+        \chemmove{
+            \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory] ($(N1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(N1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(N1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(N1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(N2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(N2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(N2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(N2)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(N3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(N3)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(N3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(N3)+(-0.0018,0)$) -- cycle;
+            % 
+            \draw [cyan,thick,-] ([xshift=-1mm,yshift=-6mm]N1.center) to[bend right=20] ([xshift=-2mm,yshift=4mm]C1.center);
+            \draw [cyan,thick,-] ([xshift=1mm,yshift=-6mm]N3.center) to[bend left=20] ([xshift=2mm,yshift=4mm]C2.center);
+        }
+        \caption{Dipolar cycloaddition orbitals in 3D space.}
+        \label{fig:dipolarOrb3D}
+    \end{figure}
+    \begin{itemize}
+        \item As a reference, we can think of the orbitals that would be involved in the azide reaction from Figure \ref{fig:dipolarCycExb}, but it will be the same orbitals in any dipolar cycloaddition.
+        \item Something that's new with dipolar cycloadditions vs. the Diels-Alder reaction: It is hard to tell which reactant (dipole or dipolarophile) reacts with its HOMO, and which one reacts with its LUMO.
+        \begin{itemize}
+            \item In fact, the choice to draw the HOMO for one and the LUMO for the other is arbitrary!
+            \item The shading will work out either way, as long as you're reacting a HOMO on one species and a LUMO on the other.
+        \end{itemize}
+        \item So, without loss of generality, let's suppose our dipole reacts with its LUMO.
+        \begin{itemize}
+            \item Per Figure \ref{fig:dipoleExb}, the Lewis structure for the azide has two $\pi$-bonds (which naturally contain four total electrons) along the three-atom-long dipole.
+            \item Thus, when we're making molecular orbitals, we should consider the case of 3 $p$-orbitals with 4 electrons. But this setup is isoelectronic to our allyl MOs (Figure \ref{fig:allylMO}) from a few lectures ago!
+            \item Therefore, the LUMO of the dipole will look like the third energy level of Figure \ref{fig:allylMO}. Indeed, that's what we've drawn in Figure \ref{fig:dipolarOrb3D}!
+        \end{itemize}
+        \item If our dipole reacts with its LUMO, then our dipolarophile must react with its HOMO.
+        \begin{itemize}
+            \item This time, we recognize a two-atom, two-electron system in each alkyne $\pi$-bond.
+            \item However, the alkyne will only react with one of its $\pi$-bonds. Thus, our MOs should align with the case of 2 $p$-orbitals with 2 electrons, which is analogous to Figure \ref{fig:piMO}.
+            \item Therefore, the HOMO of the dipolarophile will look like the first energy level of Figure \ref{fig:piMO}. Indeed, that's what we've drawn in Figure \ref{fig:dipolarOrb3D}!
+        \end{itemize}
+        \item With our MOs drawn, we can see that the phases do indeed match between our LUMO and HOMO!
+        \begin{itemize}
+            \item Thus, the reaction proceeds and new $\sigma$-bonds to begin to form.
+        \end{itemize}
+        \item To reiterate: We could alternatively draw the HOMO of the dipole and the LUMO of the dipolarophile, and the phasing would still work out!
+        \begin{itemize}
+            \item Try this yourself for practice!!
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Click} (reaction): A reaction that joins two molecules quickly and irreversibly.
+    \begin{itemize}
+        \item History of click reactions.
+        \begin{itemize}
+            \item Etymology: These reactions "click" molecules together like Legos.
+            \item It's fun that we're talking about them on Nobel Prize day of this year because these reactions won the 2022 Nobel Prize in Chemistry!
+        \end{itemize}
+        \item Defining characteristics.
+        \begin{itemize}
+            \item Click reactions have to be very \textbf{chemoselective}.
+            \item Highly reactive (i.e., with a fast rate). We obtain this especially with some modifications.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Chemoselective} (reaction): A reaction between molecules that only react with each other, even in the presence of related functional groups.
+    \begin{itemize}
+        \item Chemoselective reactions are essential for certain biological applications.
+        \begin{itemize}
+            \item Imagine you have two molecules in a cell that you want to join together, e.g., you've got a protein and you want to track where it goes by attaching a fluorescent dye to it.
+            \item To do this, you attach one reactant (e.g., an azide) to the protein and the other (e.g., an alkyne) to the fluorescent dye.
+            \item Then, once in the cell, the azide and alkyne will react with each other but nothing else in the cell because they're \emph{chemoselective} for each other.
+        \end{itemize}
+        \item Azide-alkyne cycloadditions were great when they were developed because there's not a lot of azides or alkynes in cells, so once you put them in a cell, they'll click together very easily.
+    \end{itemize}
+    \item The initial azide-alkyne cycloaddition was good, but it needed improvement in two main areas in order to be biocompatible.
+    \begin{enumerate}
+        \item It needed to be able to be run at room temperature, so that it could work at body temperature inside a living cell.
+        \item It needed to have nontoxic reactants, so that the reactants wouldn't damage anything else inside a living cell.
+    \end{enumerate}
+    \item For the reaction to be able to be run at room temperature, we needed to make the reaction even more highly reactive. There are two approaches that met this goal.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \begin{tikzpicture}[scale=2]
+                \small
+                \path
+                    (0.6,0) -- ++(1,0)
+                    (0.6,0) -- ++(-1,0)
+                ;
+                \draw (0,1) -- node[left]{$E$} (0,0) -- node[below]{Rxn coord $\to$} (1.2,0);
+    
+                \footnotesize
+                \draw [grx,thick] (0.25,0.3)
+                    to[out=0,in=180,in looseness=0.8] (0.6,0.9)
+                    to[out=0,in=180,out looseness=0.8] (1,0.2)
+                ;
+                \draw [grx,thick,dashed] (0.25,0.3)
+                    to[out=0,in=180,in looseness=0.8] (0.6,0.5)
+                    to[out=0,in=180,out looseness=0.8] (1,0.2)
+                ;
+    
+                \draw [very thick] (0.1,0.3) -- node[below]{SM} ++(0.3,0);
+                \draw [very thick] (0.85,0.2) -- node[below]{Pdt} ++(0.3,0);
+    
+                \node (N) at (1.1,0.8) {w/ \ce{Cu}}
+                    (N.west) edge[out=180,in=70,white,line width=2pt] (0.6,0.5)
+                    (N.west) edge[out=180,in=70,->,shorten >=2pt] (0.6,0.5)
+                ;
+            \end{tikzpicture}
+            \caption{Copper-catalyzed energy diagram.}
+            \label{fig:clickAcceleratea}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \begin{tikzpicture}[scale=2]
+                \small
+                \path [draw]
+                    (0.6,0) -- ++(1,0)
+                    (0.6,0) -- ++(-1,0)
+                ;
+                \draw (0,1) -- node[left]{$E$} (0,0) -- node[below]{Rxn coord $\to$} (1.2,0);
+    
+                \footnotesize
+                \draw [grx,thick] (0.25,0.3)
+                    to[out=0,in=180,in looseness=0.8] (0.6,0.9)
+                    to[out=0,in=180,out looseness=0.8] (1,0.2)
+                ;
+                \draw [grx,thick,dashed] (0.25,0.7)
+                    to[out=0,in=180,in looseness=0.8] (0.6,0.9)
+                ;
+    
+                \draw [very thick] (0.1,0.3) -- node[below]{SM} ++(0.3,0);
+                \draw [very thick] (0.85,0.2) -- node[below]{Pdt} ++(0.3,0);
+                \draw [very thick] (0.1,0.7) -- node[below,align=center]{new\\[-2pt]SM} ++(0.3,0);
+            \end{tikzpicture}
+            \caption{Cyclooctyne energy diagram.}
+            \label{fig:clickAccelerateb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \footnotesize
+            \schemestart
+                \chemleft{[}\subscheme{
+                    \chemfig{R-~-Cu}
+                    \arrow{<->}
+                    \chemfig{R-~\charge{[extra sep=5pt]0=$\ominus$}{}-[,,,,opacity=0]\charge{45=$\oplus$}{Cu}-[,0.4,,,opacity=0]}
+                }\chemright{]}
+            \schemestop
+            \caption{Copper catalysis.}
+            \label{fig:clickAcceleratec}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \footnotesize
+            \chemfig{R-[:60]?-[,0.9]-[:30,0.85]-[:88]-[:160,0.95]~[4,0.8]-[:-160,0.95]-[:-88]?}
+            \caption{Cyclooctyne reactant.}
+            \label{fig:clickAccelerated}
+        \end{subfigure}
+        \caption{Accelerating click reactions.}
+        \label{fig:clickAccelerate}
+    \end{figure}
+    \begin{enumerate}
+        \item Copper catalysis.
+        \begin{itemize}
+            \item Approach.
+            \begin{itemize}
+                \item When you add copper into solution, it adds into the end of the alkyne (Figure \ref{fig:clickAcceleratec}).
+                \item This pushes more electron density into the alkyne via resonance, raising our HOMO.
+                \item This is exactly the same phenomenon as putting an EDG on the diene in a Diels-Alder reaction!
+            \end{itemize}
+            \item Benefits.
+            \begin{itemize}
+                \item This was great because now the reaction proceeds at room temperature!
+                \item Copper did this by lowering activation energy/transition state barrier (Figure \ref{fig:clickAcceleratea}).
+            \end{itemize}
+            \item Drawbacks.
+            \begin{itemize}
+                \item \ce{Cu} is toxic, so this accelerated reaction can't be run in cells.
+                \item Our second approach has to overcome the "copper kills everything in a cell" problem.
+            \end{itemize}
+        \end{itemize}
+        \item Strain release with cyclooctyne.
+        \begin{itemize}
+            \item Approach.
+            \begin{itemize}
+                \item Incorporate our alkyne into an 8-membered ring; this yields a very strained molecule (Figure \ref{fig:clickAccelerated}).
+                \item But when you go from an alkyne to an alkene in the course of the reaction (see Figure \ref{fig:dipolarCycExb}), you release that strain because an alkene has appropriate bond angles to exist in an 8-membered ring.
+                \item Essentially, we've added an additional thermodynamic driving force: Strain is released when the reaction occurs, so it is more downhill.
+                \item This is an approach called \textbf{ground state destabilization}.
+                \item Here's how it looks on an energy diagram (Figure \ref{fig:clickAccelerateb}): We've lowered the transition state energy \emph{relative} to the starting material by putting more energy into the reactants, specifically energy in the form of potential energy trapped in the strained ring.
+            \end{itemize}
+            \item Benefits.
+            \begin{itemize}
+                \item Proceeds at room temperature.
+                \item No toxic copper.
+            \end{itemize}
+            \item Drawbacks.
+            \begin{itemize}
+                \item None!
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+    \item So to recap: Two strategies for accelerating a reaction are lowering the transition state barrier and raising the energy of the starting materials.
+    \item Why don't you put an alkyne in a 6-membered ring? Wouldn't that be even more strained and hence better?
+    \begin{itemize}
+        \item You can't have your reactant be so strained that it can't even be made; indeed, a six-membered ring with an alkyne is too strained to be synthesized.
+        \item An 8-membered ring is the "sweet spot" because it is strained enough to react at room temperature but not so strained that it can't be synthesized.\footnote{If you want to learn more about this type of chemistry, Georgia (one of the TFs) is happy to chat! She studied it in her undergrad research, except that her approach was photochemically synthesizing strained \emph{trans}-cyclooctenes.}
+    \end{itemize}
+    \item We now return to ozonolysis, a reaction that you may be familiar with from 5.12. The mechanism of ozonolysis actually involves a dipolar cycloaddition!
+    \item General form.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:60]=_-[:-60]R'}
+            \arrow{->[1) \ce{O3}\hspace{5pt}\color{white}h][2) \ce{Me2S}]}[,1.3]
+            \chemfig{R-[:30](=[2]O)-[:-30]H}
+            \+{,,1.8em}
+            \chemfig{R'-[:30](=[2]O)-[:-30]H}
+        \schemestop
+        \caption{Ozonolysis.}
+        \label{fig:ozonolysis}
+    \end{figure}
+    \begin{itemize}
+        \item Fun facts about ozone.
+        \begin{itemize}
+            \item It's sky blue; there's a lot of it in the sky!
+            \item It's also very toxic and explosive; when we work with it in the lab, we do so very carefully.
+            \item Once upon a time: Chlorofluorocarbons (CFCs) were tearing a huge hole in the atmospheric ozone layer, MIT chemist Dr. Susan Solomon figured out how CFCs did this, the world banned CFCs, and the ozone layer healed! So there was a time when we did solve a climate change issue :)
+        \end{itemize}
+        \item Fun facts about \ce{Me2S}.
+        \begin{itemize}
+            \item It smells like farts; it's not fun when your labmate is running the reaction.
+            \item But if your reaction works, the fart smell goes away as the reaction proceeds!
+        \end{itemize}
+    \end{itemize}
+    \item Mechanism.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=5pt}
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \subscheme{
+                    \chemfig{R-[:60]@{1C}=_[@{11}]-[:-60]R'}
+                    \arrow{0}[90,0.6]
+                    \chemfig{@{2O3}O=[@{22}:144]@{2O2}\charge{90=$\oplus$}{O}(-[4,0.4,,,opacity=0])-[:-144]@{2O1}\charge{-90=$\ominus$}{O}}
+                }
+                \arrow{->[$[3+2]$]}[,1.1]
+                \chemname{
+                    \chemfig{*5([:18](-[,0.8]R)-[@{31}](-[,0.8]R')-[@{32}]@{3O3}\charge{[extra sep=3pt]0=\:}{O}-@{3O2}O-[@{34}]O-[@{35,0.3}])}
+                }{Molozonide}
+                \arrow{->[\tikz{\node[align=center]{retro-\\$[3+2]$};}]}[,1.1]
+                \subscheme{
+                    \chemfig{R-[:54]=_[:108]O}
+                    \arrow(.-20--){0}[,0.2]
+                    \chemname[-1.5em]{
+                        \chemfig{R'-[:126]=^[:72]\charge{0=$\oplus$}{O}-[:144]\charge{180=$\ominus$}{O}}
+                    }{Criegee\\intermediate}
+                }
+                \arrow{->[flip]}[,1.1]
+                \subscheme{
+                    \chemfig{@{6O}O=_[@{61}:108]@{6C}-[:162]R}
+                    \arrow(.-15--){0}[,0.3]
+                    \chemfig{R'-[:126]@{7C}=^[@{71}:72]@{7O2}\charge{0=$\oplus$}{O}-[:144]@{7O1}\charge{180=$\ominus$}{O}}
+                }
+                \arrow{->[$[3+2]$]}[,1.1]
+                \chemname{
+                    \chemfig{*5([2](-[,0.8]R')-O-O-(-[,0.8]R)-O-)}
+                }{Ozonide}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={9pt}{2pt}] (2O1) to[out=-90,in=150] (1C);
+                \draw [curved arrow={3pt}{2pt}] (11) to[out=90,in=-162] (2O3);
+                \draw [curved arrow={3pt}{1pt}] (22) to[out=-126,in=-90,looseness=2] (2O2);
+                % 
+                \draw [curved arrow={5pt}{2pt}] (3O3) to[out=0,in=-18,out looseness=2.5,in looseness=4] (32);
+                \draw [curved arrow={2pt}{2pt}] (31) to[out=90,in=18,looseness=1.6] (35);
+                \draw [curved arrow={2pt}{1pt}] (34) to[bend left=90,looseness=3] (3O2);
+                % 
+                \draw [curved arrow={9pt}{2pt}] (7O1) to[out=180,in=90,looseness=1.2] (6C);
+                \draw [curved arrow={4pt}{2pt}] (61) to[out=18,in=90,looseness=1.2] ($(6O)!0.5!(7C)$);
+                \draw [curved arrow={4pt}{1pt}] (71) to[out=162,in=180,looseness=3] (7O2);
+            }
+            \chemnameinit{}
+            \caption{First step.}
+            \label{fig:mechOzonolysisa}
+        \end{subfigure}\\[3em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*5([2](-[,0.8]R')-@{1O1}O-[@{11}]@{1O2}O-(-[,0.8]R)-O-)}
+                \arrow{->[\chemfig{Me_2@{2S}\charge{[extra sep=3pt]90=\:}{S}}]}
+                \chemfig{*5([2](-[,0.8]R')-[@{32}]O(-[@{3bS},0.8]\charge{90=$\oplus$}{S}Me_2)-[,,,,opacity=0]@{3O2}\charge{90=$\ominus$}{O}-[@{34}](-[,0.8]R)-[@{35}]O-[@{31}])}
+                \arrow
+                \chemfig{*5([2](-[,0.8]R')-[,,,,opacity=0]O(=[,0.8]SMe_2)-[,,,,opacity=0]O=(-[,0.8]R)-[,,,,opacity=0]O=)}
+                % \arrow{->[rewrite]}
+                % \chemfig[atom sep=1.6em,fixed length=false]{R-[:30](=[2]O)-[:-30]H}
+                % \+{,,0.6em}
+                % \chemfig[atom sep=1.6em,fixed length=false]{R'-[:30](=[2]O)-[:-30]H}
+                % \+
+                % \chemname{
+                %     \chemfig[atom sep=1.6em,fixed length=false]{-[:30]S(=[2]O)-[:-30]}
+                % }{DMSO}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={5pt}{1pt}] (2S) to[out=90,in=30,looseness=1.1] (1O1);
+                \draw [curved arrow={2pt}{1pt}] (11) to[bend right=90,looseness=3] (1O2);
+                % 
+                \draw [curved arrow={9pt}{2pt}] (3O2) to[out=90,in=126,out looseness=3.5,in looseness=5] (34);
+                \draw [curved arrow={2pt}{2pt}] (35) to[out=18,in=90,looseness=1.2] (31);
+                \draw [curved arrow={2pt}{2pt}] (32) to[out=-18,in=-72,looseness=1.2] (3bS);
+            }
+            \chemnameinit{}
+            \caption{Second step.}
+            \label{fig:mechOzonolysisb}
+        \end{subfigure}
+        \caption{Ozonolysis mechanism.}
+        \label{fig:mechOzonolysis}
+    \end{figure}
+    \begin{itemize}
+        \item First step.
+        \begin{itemize}
+            \item The alkene reactant does a dipolar $[3+2]$ cycloaddition with ozone to form a \textbf{molozonide}.
+            \item The molozonide does a retro-$[3+2]$, yielding an aldehyde and a \textbf{carbonyl oxide} (also known as a \textbf{Criegee intermediate}).
+            \item The aldehyde and Criegee intermediate then rearrange in space.
+            \item This rearrangement puts partial negative charges near partial positive charges, giving us the right regioselectivity for a \emph{second} dipolar $[3+2]$ cycloaddition. This step yields an \textbf{ozonide}.
+        \end{itemize}
+        \item The ozonide is the product of the first step; if you don't add \ce{Me2S}, you'll isolate the ozonide.
+        \item Second step.
+        \begin{itemize}
+            \item We introduce a mild reducing agent (\ce{Me2S}), which attacks the ozonide.
+            \item The last step is a final rearrangement splitting.
+        \end{itemize}
+        \item After the second step, we obtain three products: Two aldehydes, and \textbf{DMSO}.
+        \item Note that while we've drawn Figure \ref{fig:mechOzonolysis} out with a reactant that gives us as aldehydes as products, we could equally well run this reaction with a geminal-, tri-, or tetra-substituted alkene to get some ketones as products!
+    \end{itemize}
+    \item \textbf{Dimethylsulfoxide}: A common laboratory solvent, which essentially acts like "less polar water" and does not smell like farts. \emph{Also known as} \textbf{DMSO}.
+    \item Once we form the ozonide, we don't \emph{have} to break it into ketones/aldehydes with \ce{Me2S}.
+    \begin{itemize}
+        \item Something else we coud do, for example, is react it with another reagent to get different products!
+    \end{itemize}
+    \item Alternate second steps.
+    \begin{enumerate}
+        \item Add \ce{H2O2}.
+        \begin{itemize}
+            \item This yields carboxylic acids instead of ketones/aldehydes.
+        \end{itemize}
+        \item Add \ce{NaBH4}.
+        \begin{itemize}
+            \item This yields alcohols instead of ketones/aldehydes.
+        \end{itemize}
+    \end{enumerate}
+    \item Example of an alternate second step: Cyclohexene to a ring-opened diacid.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6([:30]---=--)}
+            \arrow{->[1) \ce{O3}\hspace{6pt}\color{white}h][2) \ce{H2O2}]}[,1.3]
+            \chemfig{HO-[:60](=[:120]O)--[:-60]--[:60]-(=[:60]O)-[:-60]OH}
+        \schemestop
+        \caption{An alternate ozonide reaction.}
+        \label{fig:ozonideAcid}
+    \end{figure}
+    \begin{itemize}
+        \item Sanity check: Count the carbons in the starting material and product to confirm that there is the same number of carbons in each. Indeed, this chemical reaction only adds oxygens!
+    \end{itemize}
+    \item Would adding hydrazone as a second reagent allow us to form the diamide?
+    \begin{itemize}
+        \item If we wanted to synthesize an amide or ester, we'd typically form the acid and then do a separate, subsequent amidation.
+        \item That being said, there are other possible second steps that Prof. Elkin hasn't listed.
+    \end{itemize}
+    \item $[2+2]$ cycloadditions.
+    \begin{itemize}
+        \item Often photochemical.
+        \item If we react these with heat, we get no reaction.
+        \item Just like with dipolar cycloadditions, the stereochemistry of a $[2+2]$ mirrors the Diels-Alder: \emph{cis}-alkenes give \emph{cis}-products, and \emph{trans}-alkenes give \emph{trans}-products.
+    \end{itemize}
+    \item General form.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]=^[2]-[:150]R}
+            \arrow(.45--){0}[,0.1]\+{,,0.8em}
+            \chemfig{*6(----(=O)-=)}
+            \arrow(c1--c23.158){0}[,1.5]
+            \subscheme{
+                \chemfig{NR}
+                \arrow(c2--c3.125){0}[-90,0.5]
+                \chemfig{*4((<[,0.8]R)-(<:[6,0.8]H)(*6(----(=O)-))-(<:[2,0.8]H)-(<[,0.8]R)-)}
+            }
+        \schemestop
+        \chemmove{
+            \draw ([xshift=9pt]c1.east) -- ($(c1)!0.6!(c23.158)$) coordinate (c25) -- (c25 |- c2) -- node[above]{$\Delta$} ([xshift=-9pt]c2.west);
+            \draw (c25) -- (c25 |- c3.190) -- node[above]{$h\nu$} ([xshift=-9pt]c3.190);
+        }
+        \caption{$[2+2]$ cycloaddition.}
+        \label{fig:22Cyclo}
+    \end{figure}
+    \item Why $[2+2]$ cycloadditions \emph{must} be photochemical instead of thermal: MO theory!
+    \begin{figure}[h!]
+        \centering
+        \vspace{1em}
+        \footnotesize
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \node at (0,2) {\chemfig{@{C3}-@{C4}}};
+                \node          {\chemfig{@{C1}-@{C2}}};
+                \draw [ultra thick]
+                    (0.75,2) -- ++(0.5,0)
+                    (0.75,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} node[below=2mm]{HOMO} ++(0.5,0)
+                ;
+                
+                \node at (4,2) {\chemfig{@{C7}-@{C8}}};
+                \node at (4,0)  {\chemfig{@{C5}-@{C6}}};
+                \draw [ultra thick]
+                    (2.75,2) -- node[below=2mm]{LUMO} ++(0.5,0)
+                    (2.75,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+                ;
+            \end{tikzpicture}
+            \chemmove{
+                \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \filldraw [thick,draw=orx,fill=ory] ($(C5)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C5)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C5)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C5)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C6)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C6)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C6)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C6)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C7)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C7)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C7)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C7)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C8)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C8)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C8)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C8)+(-0.0018,0)$) -- cycle;
+            }
+            \caption{Thermal $[2+2]$ MOs.}
+            \label{fig:22Orba}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \begin{tikzpicture}
+                \node at (0,2) {\chemfig{@{C3}-@{C4}}};
+                \node          {\chemfig{@{C1}-@{C2}}};
+                \draw [ultra thick]
+                    (0.75,2) -- node{\Large$\downharpoonright$} node[below=2mm,align=center]{new\\HOMO} ++(0.5,0)
+                    (0.75,0) -- node{\Large$\upharpoonleft$} node[below=2mm]{\phantom{HOMO}} ++(0.5,0)
+                ;
+                
+                \node at (4,2) {\chemfig{@{C7}-@{C8}}};
+                \node at (4,0)  {\chemfig{@{C5}-@{C6}}};
+                \draw [ultra thick]
+                    (2.75,2) -- node[below=2mm]{LUMO} ++(0.5,0)
+                    (2.75,0) -- node{\Large$\upharpoonleft\hspace{-1mm}\downharpoonright$} ++(0.5,0)
+                ;
+            \end{tikzpicture}
+            \chemmove{
+                \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \filldraw [thick,draw=orx,fill=ory] ($(C5)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C5)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C5)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C5)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C6)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C6)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C6)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C6)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C7)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C7)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C7)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C7)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C8)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C8)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C8)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C8)+(-0.0018,0)$) -- cycle;
+            }
+            \caption{Photochemical $[2+2]$ MOs.}
+            \label{fig:22Orbb}
+        \end{subfigure}\\[4em]
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \chemfig{@{C3}-[,0.5](-[6,2.5,,,opacity=0](-[4,0.5]@{C1})(-[,0.5]@{C2}))-[,0.5]@{C4}}
+            \chemmove{
+                \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \node [right=2mm] at (C4) {LUMO};
+                \node [right=2mm] at (C2) {HOMO};
+                % 
+                \draw [rex,thick,-] ([xshift=-1.5mm,yshift=-5mm]C3.center) to[bend right=20] node[left]{X} ([xshift=-1.5mm,yshift=5mm]C1.center);
+                \draw [cyan,thick,-] ([xshift=1.5mm,yshift=-5mm]C4.center) to[bend left=20] node[right]{$\checkmark$} ([xshift=1.5mm,yshift=5mm]C2.center);
+            }
+            \vspace{2em}
+            \caption{Thermal orbitals in 3D space.}
+            \label{fig:22Orbc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \chemfig{@{C3}-[,0.5](-[6,2.5,,,opacity=0](-[4,0.5]@{C1})(-[,0.5]@{C2}))-[,0.5]@{C4}}
+            \chemmove{
+                \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \node [right=2mm] at (C4) {LUMO};
+                \node [right=2mm] at (C2) {new HOMO};
+                % 
+                \draw [cyan,thick,-] ([xshift=-1.5mm,yshift=-5mm]C3.center) to[bend right=20] node[left]{$\checkmark$} ([xshift=-1.5mm,yshift=5mm]C1.center);
+                \draw [cyan,thick,-] ([xshift=1.5mm,yshift=-5mm]C4.center) to[bend left=20] node[right]{$\checkmark$} ([xshift=1.5mm,yshift=5mm]C2.center);
+            }
+            \vspace{2em}
+            \caption{Photochemical orbitals in 3D space.}
+            \label{fig:22Orbd}
+        \end{subfigure}
+        \caption{$[2+2]$ cycloaddition orbitals.}
+        \label{fig:22Orb}
+    \end{figure}
+    \begin{itemize}
+        \item Let's consider a $[2+2]$ cycloaddition between ethylene and itself.
+        \item Since the reactants are identical, we may choose (arbitrarily and without loss of generality) which molecule reacts with its HOMO. It will then follow that the other molecule reacts with its LUMO.
+        \begin{itemize}
+            \item Thus, let the left (Figures \ref{fig:22Orba}-\ref{fig:22Orbb}) and bottom (Figures \ref{fig:22Orbc}-\ref{fig:22Orbd}) molecules react with their HOMO, and let the right/top molecules react with their LUMO.
+        \end{itemize}
+        \item In the thermal case, the HOMO and LUMO don't overlap well (Figure \ref{fig:22Orbc}).
+        \begin{itemize}
+            \item The phasings match on one side, but not on the other.
+        \end{itemize}
+        \item However, in a \emph{photochemical} reaction, we excite an electron up one energy level (Figure \ref{fig:22Orbb}).
+        \begin{itemize}
+            \item Recall that we briefly discussed this phenomenon in Figure \ref{fig:thermPhot}.
+            \item This excitation gives us a new HOMO.
+        \end{itemize}
+        \item The new HOMO can react with the LUMO (same as thermal) because the phasing now matches!
+    \end{itemize}
+    \item In Figure \ref{fig:22Orb}, we could choose the HOMO and LUMO arbitrarily because the reactants were identical.
+    \begin{itemize}
+        \item But in Figure \ref{fig:22Cyclo}, the reactants are \emph{not} identical.
+        \item Moreover, it turns out that there \emph{is} a preference for which of these two species absorbs the photon!
+    \end{itemize}
+    \pagebreak
+    \item The species that can form the more stable diradical will absorb the light.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6(@{C2}----(=O)-@{C1}=[@{1}])}
+            \arrow{->[$h\nu$]}
+            \chemleft{[}\subscheme{
+                \chemfig{*6(\charge{180=\.}{}----(=O)-\charge{180=\.}{}(-[4,0.2,,,opacity=0])-)}
+                \arrow{<->}
+                \chemfig{*6(\charge{180=\.}{}----(-\charge{0=\.}{O})=-)}
+            }\chemright{]}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={2pt}{2pt},-{Stealth[round,scale=1.1,inset'=0pt 0.55,harpoon]}] (1) to[bend left=85,looseness=3] (C1);
+            \draw [curved arrow={2pt}{2pt},-{Stealth[round,scale=1.1,inset'=0pt 0.55,harpoon,swap]}] (1) to[bend right=85,looseness=3] (C2);
+        }
+        \caption{Systems with more stable excited states preferentially absorb light.}
+        \label{fig:photoStable}
+    \end{figure}
+    \begin{itemize}
+        \item In the context of Figure \ref{fig:22Cyclo}, the enone will absorb the photon because its diradical is resonance-stabilized.
+        \item Thus, the enone will react with its (new) HOMO.
+        \begin{itemize}
+            \item Note that this new HOMO is also a SOMO!
+            \item Per Figure \ref{fig:22Orbb}, the photoexcited species will actually have \emph{two} SOMOs.
+        \end{itemize}
+        \item For more context, check out \textcite{bib:Clayden}: The textbook actually does an excellent job covering this photochemistry stuff!!
+    \end{itemize}
+    \item Looking ahead (Friday).
+    \begin{itemize}
+        \item We will begin with a bit more content on cycloadditions that we could not get to today.
+        \item After that, we will cover electrocyclizations.
+        \item It's going to be a long lecture, but you'll have the weekend to digest it.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
