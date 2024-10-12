@@ -2267,14 +2267,13 @@
                     (90:1.1) coordinate (OMe) node[above right=-2pt]{\ce{OMe}}
                     (90:0.6) coordinate (B1) -- (150:0.6) coordinate (B2) -- (210:0.6) coordinate (B3) -- (270:0.6) coordinate (B4)
                     (B1) ++(30:0.4) coordinate (Hdi) node[right]{\ce{H}}
-                    (90:0.47) -- ($(150:0.47)+(-150:0.05)$) (210:0.5) -- (270:0.5)
+                    ($(150:0.47)+(-150:0.05)$) -- (210:0.5)
                 ;
                 \draw [xshift=2mm,yshift=-1.3cm,yscale=0.7,xscale=2,rotate=-20]
                     (0,-0.5) coordinate (F1) -- (0,0.5) coordinate (F2) -- ++(30:0.6) coordinate (C) -- ++(-30:0.6) node[right]{\ce{OMe}}
                     ($(C)+(-30:0.035)$) -- ++(90:0.6) ++(180:0.035) coordinate (O) node[above right=-1pt,xshift=-2pt]{\ce{O}}
                     ($(C)+(-150:0.035)$) -- ++(90:0.6)
                     (F2) ++(125:0.6) coordinate (Hdp) node[above left]{\ce{H}}
-                    (0.06,-0.5) -- (0.06,0.45)
                 ;
                 \draw
                     (B1) -- (F2)
@@ -2321,14 +2320,13 @@
                     (90:1.1) coordinate (OMe) node[above right=-2pt]{\ce{OMe}}
                     (90:0.6) coordinate (B1) -- (150:0.6) coordinate (B2) -- (210:0.6) coordinate (B3) -- (270:0.6) coordinate (B4)
                     (B1) ++(30:0.4) coordinate (Hdi) node[right]{\ce{H}}
-                    (90:0.47) -- ($(150:0.47)+(-150:0.05)$) (210:0.5) -- (270:0.5)
+                    ($(150:0.47)+(-150:0.05)$) -- (210:0.5)
                 ;
                 \draw [xshift=2mm,yshift=-1.3cm,yscale=0.7,xscale=2,rotate=-20]
                     (0,-0.5) coordinate (F1) -- (0,0.5) coordinate (F2) ++(150:0.7) coordinate (C) -- ++(-150:0.5) node[left]{\ce{MeO}}
                     ($(C)+(-30:0.035)$) -- ++(90:0.5) ++(180:0.035) coordinate (O) node[above right=-1pt,xshift=-2pt]{\ce{O}}
                     ($(C)+(-150:0.035)$) -- ++(90:0.5)
                     (F2) ++(30:0.4) coordinate (Hdp) node[right]{\ce{H}}
-                    (0.06,-0.5) -- (0.06,0.45)
                 ;
                 \draw
                     (B1) -- (F2)
@@ -2665,7 +2663,7 @@
             \begin{itemize}
                 \item AlphaFold predicts protein structures from their amino acid sequences.
                 \item This largely solves the \textbf{protein folding problem}.
-                \item Hassabis and Jumper used basically poured all of Google's computational resources into this endeavor and combined it with a lot of machine learning to create a true tour de force of engineering.
+                \item Hassabis and Jumper basically poured all of Google's computational resources into this endeavor and combined it with a lot of machine learning to create a true tour de force of engineering.
                 \item When the dust settled, AlphaFold worked pretty well, and it's now used all over the world.
                 \item AlphaFold still needs some future development, though.
             \end{itemize}
@@ -2738,7 +2736,7 @@
                 \item In particular, the EWG should be \emph{cis} to the "out" substituents.
             \end{itemize}
         \end{itemize}
-        \item You \emph{will} need to know the reasons behind all these things and be able to derive them with orbitals on the exam.
+        \item You \emph{will} need to know the reasons behind all of these reaction characteristics, i.e., you may be asked to derive them with orbital pictures on the exam.
         \begin{itemize}
             \item However, these shortcuts can help us on "predict the product"-type questions.
         \end{itemize}
@@ -2773,10 +2771,11 @@
     \begin{itemize}
         \item \ce{A}, \ce{B}, and \ce{C} are atoms.
         \begin{itemize}
-            \item Depending on the specific atoms involved, the double bond may be a triple bond or the single bond may be a double bond.
+            \item Depending on the specific atoms involved, the double bond above may be a triple bond or the single bond above may be a double bond.
+            \item The dipole can stand alone, or it may be bonded to an \ce{R} group through one of its atoms.
             \item The zwitterion (adjacent positive and negative formal charges) is always present, though; this is the actual dipole within the dipole molecule!
         \end{itemize}
-        \item Tip from Prof. Elkin: Now is probably a good time to review how to draw Lewis structures, resonance forms, etc. from Gen Chem or 5.12; this content is relevant to how to draw dipoles.
+        \item Tip from Prof. Elkin: Now is probably a good time to review how to draw Lewis structures, resonance forms, etc. from Gen Chem or 5.12; this content is relevant to how to draw dipoles!!
     \end{itemize}
     \item \textbf{Dipolarophile}: The species that reacts with the dipole. \emph{Etymology} from Latin "lover of dipoles."
     \begin{itemize}
@@ -2807,7 +2806,7 @@
         \label{fig:dipolarCyc}
     \end{figure}
     \begin{itemize}
-        \item Prof. Elkin likes to draw circle arrows starting from the center of electron density.
+        \item Prof. Elkin likes to draw circle arrows starting from the region of highest electron density (i.e., the negative charge on atom \ce{C}).
     \end{itemize}
     \item Examples of dipoles.
     \begin{figure}[h!]
@@ -2843,9 +2842,8 @@
     \item \textbf{Ozone}: The \ce{O3} molecule. \emph{Structure} (see Figure \ref{fig:dipoleExa}.)
     \item \textbf{Azide}: The \ce{N3-} functional group. \emph{Structure} (see Figure \ref{fig:dipoleExb}.)
     \item \textbf{Nitrile oxide}: The \ce{CNO-} functional group. \emph{Structure} (see Figure \ref{fig:dipoleExc}.)
-    \pagebreak
     \item Examples of dipolar cycloadditions.
-    \begin{figure}[h!]
+    \begin{figure}[H]
         \centering
         \footnotesize
         \setcharge{extra sep=5pt}
@@ -2889,7 +2887,7 @@
         \begin{itemize}
             \item Note that \emph{both} resonance structures can react with the alkyne.
             \begin{itemize}
-                \item You will have to draw different arrows, but if you start from the negatively charged atom on the dipole (as Prof. Elkin likes to), you'll get the same product.
+                \item You will have to draw different arrows, but if you start from the negatively charged atom on the dipole (as Prof. Elkin likes to) both times, you'll get the same product.
                 \item Draw both mechanisms out as practice!!
             \end{itemize}
             \item Product is aromatic, so this is a very thermodynamically downhill (i.e., favorable) reaction.
@@ -2927,6 +2925,7 @@
             \item In fact, the choice to draw the HOMO for one and the LUMO for the other is arbitrary!
             \item The shading will work out either way, as long as you're reacting a HOMO on one species and a LUMO on the other.
         \end{itemize}
+        \pagebreak
         \item So, without loss of generality, let's suppose our dipole reacts with its LUMO.
         \begin{itemize}
             \item Per Figure \ref{fig:dipoleExb}, the Lewis structure for the azide has two $\pi$-bonds (which naturally contain four total electrons) along the three-atom-long dipole.
@@ -3071,7 +3070,7 @@
             \item Benefits.
             \begin{itemize}
                 \item This was great because now the reaction proceeds at room temperature!
-                \item Copper did this by lowering activation energy/transition state barrier (Figure \ref{fig:clickAcceleratea}).
+                \item Copper did this by lowering the activation energy/transition state barrier (Figure \ref{fig:clickAcceleratea}).
             \end{itemize}
             \item Drawbacks.
             \begin{itemize}
@@ -3087,7 +3086,7 @@
                 \item But when you go from an alkyne to an alkene in the course of the reaction (see Figure \ref{fig:dipolarCycExb}), you release that strain because an alkene has appropriate bond angles to exist in an 8-membered ring.
                 \item Essentially, we've added an additional thermodynamic driving force: Strain is released when the reaction occurs, so it is more downhill.
                 \item This is an approach called \textbf{ground state destabilization}.
-                \item Here's how it looks on an energy diagram (Figure \ref{fig:clickAccelerateb}): We've lowered the transition state energy \emph{relative} to the starting material by putting more energy into the reactants, specifically energy in the form of potential energy trapped in the strained ring.
+                \item Here's how it looks on an energy diagram (Figure \ref{fig:clickAccelerateb}): We've lowered the transition state energy \emph{relative} to the starting materials by putting more energy into the reactants, specifically energy in the form of potential energy trapped in the strained ring.
             \end{itemize}
             \item Benefits.
             \begin{itemize}
@@ -3106,7 +3105,7 @@
         \item You can't have your reactant be so strained that it can't even be made; indeed, a six-membered ring with an alkyne is too strained to be synthesized.
         \item An 8-membered ring is the "sweet spot" because it is strained enough to react at room temperature but not so strained that it can't be synthesized.\footnote{If you want to learn more about this type of chemistry, Georgia (one of the TFs) is happy to chat! She studied it in her undergrad research, except that her approach was photochemically synthesizing strained \emph{trans}-cyclooctenes.}
     \end{itemize}
-    \item We now return to ozonolysis, a reaction that you may be familiar with from 5.12. The mechanism of ozonolysis actually involves a dipolar cycloaddition!
+    \item We now return to ozonolysis, a reaction with which you may be familiar from 5.12. The mechanism of ozonolysis actually involves a dipolar cycloaddition!
     \item General form.
     \begin{figure}[h!]
         \centering
@@ -3239,7 +3238,7 @@
     \item \textbf{Dimethylsulfoxide}: A common laboratory solvent, which essentially acts like "less polar water" and does not smell like farts. \emph{Also known as} \textbf{DMSO}.
     \item Once we form the ozonide, we don't \emph{have} to break it into ketones/aldehydes with \ce{Me2S}.
     \begin{itemize}
-        \item Something else we coud do, for example, is react it with another reagent to get different products!
+        \item Something else we could do is react it with another reagent to get different products!
     \end{itemize}
     \item Alternate second steps.
     \begin{enumerate}
@@ -3249,7 +3248,7 @@
         \end{itemize}
         \item Add \ce{NaBH4}.
         \begin{itemize}
-            \item This yields alcohols instead of ketones/aldehydes.
+            \item This yields secondary/primary alcohols instead of ketones/aldehydes.
         \end{itemize}
     \end{enumerate}
     \item Example of an alternate second step: Cyclohexene to a ring-opened diacid.
@@ -3451,8 +3450,7 @@
     \end{itemize}
     \item In Figure \ref{fig:22Orb}, we could choose the HOMO and LUMO arbitrarily because the reactants were identical.
     \begin{itemize}
-        \item But in Figure \ref{fig:22Cyclo}, the reactants are \emph{not} identical.
-        \item Moreover, it turns out that there \emph{is} a preference for which of these two species absorbs the photon!
+        \item But in Figure \ref{fig:22Cyclo}, the reactants are \emph{not} identical, and it turns out that there \emph{is} a preference for which of these two species absorbs the photon!
     \end{itemize}
     \pagebreak
     \item The species that can form the more stable diradical will absorb the light.
@@ -3489,6 +3487,814 @@
         \item We will begin with a bit more content on cycloadditions that we could not get to today.
         \item After that, we will cover electrocyclizations.
         \item It's going to be a long lecture, but you'll have the weekend to digest it.
+    \end{itemize}
+\end{itemize}
+
+
+
+\section{Electrocyclizations}
+\begin{itemize}
+    \item \marginnote{10/11:}Lecture 15 recap.
+    \begin{itemize}
+        \item Dipolar $[3+2]$ cycloadditions.
+        \begin{itemize}
+            \item General form (Figure \ref{fig:dipolarCyc}).
+            \begin{itemize}
+                \item Recall that these are reactions between a dipole (Figure \ref{fig:dipole}) and a dipolarophile.
+            \end{itemize}
+            \item Example: Ozonolysis (Figure \ref{fig:ozonolysis}).
+            \begin{itemize}
+                \item Yields aldehydes or ketones with \ce{Me2S} as a second reagent.
+                \item Multiple products are accessible with alternate second reagents (e.g., \ce{H2O2} or \ce{NaBH4}).
+            \end{itemize}
+            \item Example: Azide-alkyne click reactions (Figure \ref{fig:dipolarCycExb}).
+            \item Remember that there are more dipoles (e.g., Figure \ref{fig:dipoleExc}) than the two we mainly talked about.
+            \begin{itemize}
+                \item See \textcite{bib:Clayden} as well for more dipoles.
+            \end{itemize}
+            \item Reactions proceed when the HOMO and LUMO phases match (Figure \ref{fig:dipolarOrb3D}).
+        \end{itemize}
+        \item $[2+2]$ cycloadditions.
+        \begin{itemize}
+            \item General form (Figure \ref{fig:22Cyclo}).
+            \item Usually photochemical; this way, the HOMO and LUMO match (Figure \ref{fig:22Orb})!
+            \item \emph{exo} product preferred.
+            \item The regiochemistry for this photoactivated ($h\nu$) reaction is opposite of what we usually get with a thermally activated ($\Delta$) reaction.
+            \item To learn more about the thermal $[2+2]$ cycloaddition, read \textcite[898]{bib:Clayden}!!
+        \end{itemize}
+    \end{itemize}
+    \item Announcements.
+    \begin{itemize}
+        \item This will be a long lecture.
+        \item As such, Prof. Elkin will ask most questions to be held to the end in case we have extra time.
+    \end{itemize}
+    \pagebreak
+    \item Lecture 15 (continued).
+    \item Stereochemistry of the $[2+2]$ cycloaddition.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*4(-=--)}
+                \+{,,0.8em}
+                \chemfig{*6(-(=[6,,,,opacity=0]\phantom{O})---(=O)-=)}
+                \arrow{->[$h\nu$]}
+                \chemfig{*4(-(-[6,0.8,,,wvbnd]H)(*4(-(-[6,0.8,,,wvbnd]H)(*6(-(=[6,,,,opacity=0]\phantom{O})---(=O)-))-(-[2,0.8,,,wvbnd]H)-(-[2,0.8,,,wvbnd]H)))---)}
+            \schemestop
+            \vspace{-1em}
+            \caption{A $[2+2]$ cycloaddition.}
+            \label{fig:22stereochema}
+        \end{subfigure}\\[1.5em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{-[,4.3,,,opacity=0]}
+                \arrow
+                \chemfig{-[,4.7,,,opacity=0]}
+                \arrow{0[\small $\equiv$][][-2mm]}
+                \chemfig{*4(-(<[6,0.8]H)(*4(-(<:[6,0.8]H)(*6(-(=[6,,,,opacity=0]\phantom{O})---(=O)-))-(<:[2,0.8]H)-(<[2,0.8]H)))---)}
+            \schemestop
+            \begin{tikzpicture}[scale=0.7,remember picture,overlay,xshift=-13.9cm,yshift=7mm]
+                \draw [yscale=0.7,xscale=2,rotate=-20]
+                    (150:0.6) coordinate (B2) -- (210:0.6) coordinate (B3) -- ++(0.6,0) coordinate (B4) -- ++(0,0.6) coordinate (B1) -- cycle
+                ;
+                \draw [xshift=2mm,yshift=-1.3cm,yscale=0.7,xscale=2,rotate=-20]
+                    (0,-0.3) coordinate (F1) -- (0,0.3) coordinate (F2) -- ++(30:0.6) coordinate (C) -- ++(-30:0.6) -- ++(-90:0.6) -- ++(-150:0.6) -- cycle
+                    ($(C)+(-30:0.035)$) -- ++(90:0.6) ++(180:0.035) node[above right=-1pt,xshift=-2pt]{\ce{O}}
+                    ($(C)+(-150:0.035)$) -- ++(90:0.6)
+                ;
+    
+                \draw [thick,orx] ($(B1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(B1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(B4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(B4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(B4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(B4)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [thick,orx] ($(F1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(F1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(F1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(F1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(F2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(F2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(F2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(F2)+(-0.0018,0)$) -- cycle;
+            \end{tikzpicture}
+            \begin{tikzpicture}[scale=0.7,remember picture,overlay,xshift=-7.85cm,yshift=7mm]
+                \draw [yscale=0.7,xscale=2,rotate=-20]
+                    (150:0.6) coordinate (B2) -- (210:0.6) coordinate (B3) -- ++(0.6,0) coordinate (B4) -- ++(0,0.6) coordinate (B1) -- cycle
+                    (B1) ++(45:0.6) coordinate (H1) node[right,yshift=1pt]{\ce{H}}
+                    (B4) ++(-45:0.6) coordinate (H2) node[right,yshift=-2pt]{\ce{H}}
+                ;
+                \draw [xshift=2mm,yshift=-1.3cm,yscale=0.7,xscale=2,rotate=-20]
+                    (0,-0.3) coordinate (F1) -- (0,0.3) coordinate (F2) -- ++(30:0.6) coordinate (C) -- ++(-30:0.6) -- ++(-90:0.6) -- ++(-150:0.6) -- cycle
+                    ($(C)+(-30:0.035)$) -- ++(90:0.6) ++(180:0.035) node[above right=-1pt,xshift=-2pt]{\ce{O}}
+                    ($(C)+(-150:0.035)$) -- ++(90:0.6)
+                    (F1) ++(-150:0.6) coordinate (H3) node[left]{\ce{H}}
+                    (F2) ++(150:0.6) coordinate (H4) node[left]{\ce{H}}
+                ;
+                
+                \draw
+                    (B1) -- (F2)
+                    (B4) -- (F1)
+                ;
+    
+                \fill [yscale=0.7,xscale=2,rotate=-20] (B1) -- ($(H1)+(90:0.1)$) -- ++(0,-0.2) -- cycle;
+                \fill [yscale=0.7,xscale=2,rotate=-20,white] (B4) -- ($(H2)+(83:0.15)$) -- ++(0,-0.35) -- cycle;
+                \fill [yscale=0.7,xscale=2,rotate=-20] (B4) -- ($(H2)+(90:0.1)$) -- ++(0,-0.2) -- cycle;
+                \draw [thick,decorate,decoration={expanding waves,angle=5,segment length=2pt}] (F1) -- (H3);
+                \draw [thick,decorate,decoration={expanding waves,angle=5,segment length=2pt}] (F2) -- (H4);
+
+                \draw [ovbnd] ($(B4)!0.2!(F1)$) -- ($(B4)!0.8!(F1)$);
+            \end{tikzpicture}
+            \vspace{-1em}
+            \caption{\emph{exo} pathway.}
+            \label{fig:22stereochemb}
+        \end{subfigure}
+        \caption{$[2+2]$ cycloaddition stereochemistry.}
+        \label{fig:22stereochem}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the $[2+2]$ cycloaddition in Figure \ref{fig:22stereochema}.
+        \begin{itemize}
+            \item Last time, we learned that such a reaction yields the product shown, but we haven't yet discussed the relative stereochemistry of the four hydrogens.
+            \item Note that wavy lines mean "undefined stereochemistry."
+        \end{itemize}
+        \item Unlike $[4+2]$ (Diels-Alder) cycloadditions (in which the \emph{endo} transition state is preferred), $[2+2]$ cycloadditions prefer the \emph{exo} transition state and product.
+        \begin{itemize}
+            \item $[2+2]$ cycloadditions prefer \emph{exo} due to sterics, which prohibit secondary orbital interactions.
+            \item Essentially, the \emph{endo} transition state is \emph{only} for the Diels-Alder reaction!\footnote{Note that we did not talk about the stereochemistry of dipolar cycloadditions because they are \emph{not} stereoselective: A fairly even balance of secondary orbital interactions with sterics makes the stereochemistry of dipolar cycloadditions very hard to predict.}
+        \end{itemize}
+    \end{itemize}
+    \item Regiochemistry of the $[2+2]$ cycloaddition.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{-[:30](=[2])-[:-30]}
+                \+{,,0.8em}
+                \chemfig{*6(-(=[6,,,,opacity=0]\phantom{O})---(=O)-=)}
+                \arrow{->[$h\nu$]}
+                \chemfig{*4((-[:-155,0.8])(-[:-115,0.8])-(<[6]H)(*6(-(=[6,,,,opacity=0]\phantom{O})---(=O)-))-(<[2]H)--)}
+                \arrow{0[\small or][][-2mm]}
+                \chemfig{*4(-(<[6]H)(*6(-(=[6,,,,opacity=0]\phantom{O})---(=O)-))-(<[2]H)-(-[:155,0.8])(-[:115,0.8])-)}
+            \schemestop
+            \vspace{-1em}
+            \caption{Possible products of an asymmetric $[2+2]$ cycloaddition.}
+            \label{fig:22regioa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \schemestart
+                \chemname{
+                    \chemfig{*6(@{1C1}----@{1C3}(=@{1O}O)-@{1C2}=)}
+                }{thermal}
+                \arrow{->[$h\nu$]}
+                \arrow{0}[,0.2]
+                \chemname{
+                    \chemfig{*6(@{2C1}----@{2C3}(=@{2O}O)-@{2C2}=)}
+                }{photochemical}
+                \chemmove{
+                    \node [above left=1pt,grx] at (1O) {$\delta^-$};
+                    \node [above left=1pt,grx] at (1C3) {$\delta^+$};
+                    \node [above left,grx] at (1C2) {$\delta^-$};
+                    \node [below left,grx] at (1C1) {$\delta^+$};
+                    % 
+                    \node [above left=1pt,grx] at (2O) {$\delta^+$};
+                    \node [above left=1pt,grx] at (2C3) {$\delta^-$};
+                    \node [above left,grx] at (2C2) {$\delta^+$};
+                    \node [below left,grx] at (2C1) {$\delta^-$};
+                }
+            \schemestop
+            \chemnameinit{}
+            \caption{Partial charges (enone).}
+            \label{fig:22regiob}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.32\linewidth}
+            \centering
+            \setcharge{extra sep=5pt}
+            \schemestart
+                \chemleft{[}\subscheme{
+                    \chemfig{-[:30](=[@{11}2]@{1C})-[:-30]}
+                    \arrow{<->}
+                    \chemfig{-[:30]\charge{30=$\oplus$}{}(-[2]\charge{0=$\ominus$}{})-[:-30]}
+                }\chemright{]}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={3pt}{3pt}] (11) to[bend left=90,looseness=4] (1C);
+            }
+            \caption{Resonance (alkene).}
+            \label{fig:22regioc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.33\linewidth}
+            \centering
+            \chemfig{*4(@{C1}(-[:-155,0.8])(-[:-115,0.8])-[,,,,dashed]@{C2}(*6(----(=O)-=))-[,,,,opacity=0]@{C3}-[,,,,dashed]@{C4}=)}
+            \chemmove{
+                \node [above left=-2pt,grx] at (C1) {$\delta^+$};
+                \node [below,grx] at (C2) {$\delta^-$};
+                \node [above,grx] at (C3) {$\delta^+$};
+                \node [above left=-2pt,grx] at (C4) {$\delta^-$};
+            }
+            \caption{Matching partial charges.}
+            \label{fig:22regiod}
+        \end{subfigure}
+        \caption{$[2+2]$ cycloaddition regiochemistry.}
+        \label{fig:22regio}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the reaction in Figure \ref{fig:22regioa}, which is our first $[2+2]$ cycloaddition in which \emph{both} reactants are asymmetric. Which product will be observed?
+        \begin{itemize}
+            \item In other words, what will be our regiochemistry?
+            \item Notice that in both possible cases, we obtain the \emph{cis}-product per Figure \ref{fig:22stereochem}.
+        \end{itemize}
+        \item Photochemical regiochemistry is the \emph{opposite} of thermal regiochemistry.
+        \item To see how this change manifests, let's begin by looking at the enone. (Recall that Figure \ref{fig:photoStable} tells us it is the enone, specifically, that gets photoexcited.)
+        \begin{itemize}
+            \item In the thermal case, we draw partial charges starting with a negative on the oxygen, as in Figures \ref{fig:DAregioe}-\ref{fig:DAregiof}.
+            \item However, when a molecule gets hit by light, we get an excited state with the \emph{inverse} polarity (Figure \ref{fig:22regiob})!
+            \begin{itemize}
+                \item This means that we will now start with a \emph{positive} partial charge on the oxygen.
+                \item From here, we alternate the charges as before in Figures \ref{fig:DAregioe}-\ref{fig:DAregiof}.
+            \end{itemize}
+            \item See \textcite{bib:Clayden} for why we get this inverse polarity.
+        \end{itemize}
+        \item The enone then reacts with an alkene (Figure \ref{fig:22regioc}).
+        \begin{itemize}
+            \item The alkene's partial charges can most easily be derived via resonance, wherein we push the negative charge \emph{away} from the two methyl EDGs.
+        \end{itemize}
+        \item Having worked out the partial charges on both reactants, we can pair them up (Figure \ref{fig:22regiod}).
+        \begin{itemize}
+            \item This pairing then tells us that the \emph{left} regioisomer in Figure \ref{fig:22regioa} is observed.
+            \item Notice that we have paired our partial charges exactly as in Figure \ref{fig:DAregioh}.
+        \end{itemize}
+    \end{itemize}
+    \item This concludes Lecture 15 content; we now begin Lecture 16.
+    \item Today: Electrocyclizations.
+    \item Lecture outline.
+    \begin{itemize}
+        \item Conrotatory vs. disrotatory electrocyclizations.
+        \item Woodward-Hoffmann rules.
+        \item Retro-electrocyclizations and the principle of microscopic reversibility.
+        \item Nazarov cyclization.
+        \item Examples.
+    \end{itemize}
+    \item We'll begin by determining the product in a thermal $4\pi$ electrocyclization.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Me-[6,0.8]@{C1}*6(=[@{1}]-[@{2}]=[@{3,0.6}]@{C4}(-[,0.8]Me))}
+                \arrow{->[$\Delta$]}
+                \chemfig{*4(-(-[,,,,wvbnd]Me)-(-[,,,,wvbnd]Me)-=)}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={4pt}{2pt}] (1) to[bend left=60,looseness=1.5] (2);
+                \draw [curved arrow={5pt}{0pt}] (3) to[out=100,in=180] ($(C1)!0.5!(C4)$);
+            }
+            \caption{The reaction without stereochemistry.}
+            \label{fig:electrocyc4pTherma}
+        \end{subfigure}\\[2.8em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig[atom sep=3em]{Me-[,0.8]@{1C1}(-[:-30,0.8]H)-[:60]@{1C2}-@{1C3}-[:-60]@{1C4}(-[,0.8]Me)(-[:-150,0.8]H)}
+                \arrow
+                \chemleft{[}
+                    \chemfig[atom sep=3em]{Me-[:-40,0.8]@{2C1}(-[:-80,0.8]H)-[:70]@{2C2}-@{2C3}-[:-70]@{2C4}(-[:-40,0.8]Me)(-[:100,0.8]H)}
+                \chemright{]^\ddagger}
+                \arrow
+                \chemfig[atom sep=3em]{Me-[:-70,0.8]@{3C1}(-[:-110,0.8]H)-[:80]@{3C2}-@{3C3}-[:-80]@{3C4}(-[:-70,0.8]Me)(-[:70,0.8]H)}
+                \arrow{0[\small$\equiv$][][-2mm]}
+                \chemfig{*4(-(<Me)-(<:Me)-=)}
+            \schemestop
+            \chemmove{
+                \draw [thick,orx] ($(1C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [thick,orx] ($(2C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(2C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=white,rotate=-45] ($(2C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-45] ($(2C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(2C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(2C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-45] ($(2C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=-45] ($(2C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [thick,orx,rotate=-90] ($(3C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(3C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(3C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(3C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(3C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(3C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(3C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(3C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(3C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(3C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(3C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(3C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(3C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(3C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=-90] ($(3C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(3C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [pux,semithick] (1C1) ++(-60:1) arc[start angle=-60,end angle=-120,radius=1cm];
+                \draw [pux,semithick] (1C4) ++(-60:1) arc[start angle=-60,end angle=-120,radius=1cm];
+                \draw [pux,semithick] (2C1) ++(-60:1) arc[start angle=-60,end angle=-120,radius=1cm];
+                \draw [pux,semithick] (2C4) ++(-60:1) arc[start angle=-60,end angle=-120,radius=1cm];
+            }
+            \caption{Conrotatory pathway.}
+            \label{fig:electrocyc4pThermb}
+        \end{subfigure}
+        \caption{Thermal $4\pi$ electrocyclization.}
+        \label{fig:electrocyc4pTherm}
+    \end{figure}
+    \begin{itemize}
+        \item Recall that an electrocyclization proceeds with the general form of Figure \ref{fig:electrocyc6p}.
+        \begin{itemize}
+            \item Thus, in Figure \ref{fig:electrocyc4pTherma}, we get a ring-closed product with one fewer $\pi$-bond.
+            \item But we still need to discuss the stereochemistry of the methyl groups.
+        \end{itemize}
+        \item Just like in Diels-Alder reactions (Figure \ref{fig:DAstereochemb}) and $[2+2]$ cycloaddition reactions (Figure \ref{fig:22stereochemb}), the stereochemistry in an electrocyclization is set by the transition state.
+        \item Thus, let's start by describing the transition state.
+        \begin{itemize}
+            \item Begin by considering the HOMO, which is the reactive orbital in an electrocyclization.
+            \begin{itemize}
+                \item The HOMO of the reactant in Figure \ref{fig:electrocyc4pTherma} will be the second energy level of Figure \ref{fig:dieneMO}, which we may draw on our reactant (left molecule in Figure \ref{fig:electrocyc4pThermb}).
+            \end{itemize}
+            \item To form the new $\sigma$-bond, we must rotate the ends of the $\pi$-system so that the phases match.
+            \begin{itemize}
+                \item Indeed, if we rotate both terminal $p$-orbitals clockwise, the unshaded lobes begin to come together (transition state in Figure \ref{fig:electrocyc4pThermb}).
+                \item We could also rotate both terminal $p$-orbitals \emph{counterclockwise} to pair the \emph{shaded} lobes.\footnote{In an asymmetric molecule, rotating one way or the other gives two different enantiomers! We will discuss an example later this lecture (a retro-electrocyclization) wherein there \emph{is} a preference for one direction of rotation over another.}
+                \item However, we could \emph{not} rotate them in different directions as this would pair a shaded lobe with an unshaded lobe.
+            \end{itemize}
+            \item Rotating the terminal $p$-orbitals enough forms the new $\sigma$-bond (right molecule in Figure \ref{fig:electrocyc4pThermb}).
+        \end{itemize}
+        \item Let's now discuss the implications of the transition state.
+        \begin{itemize}
+            \item As we rotated the terminal $p$-orbitals, notice that we had to rotate the methyl and hydrogen substituents along with them!
+            \item Thus, in the course of the rotation, the left methyl group rotated upwards and the right methyl group rotated downwards.
+            \item Therefore, a thermal $4\pi$ electrocyclization (exclusively) yields the \emph{trans}-product!
+        \end{itemize}
+        \item This rotation of both $\pi$-bonds in the same direction (both clockwise or both counterclockwise) is called \textbf{conrotatory} rotation.
+    \end{itemize}
+    \item \textbf{Conrotatory} (electrocyclization): An electrocyclization in which the termini of the $\pi$-systems rotate in the same direction.
+    \item \textbf{Disrotatory} (electrocyclization): An electrocyclization in which the termini of the $\pi$-systems rotate in opposite directions.
+    \item Let's now look at a \emph{disrotatory} electrocyclization, which occurs under light instead of heat.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Me-[6,0.8]@{C1}*6(=[@{1}]-[@{2}]=[@{3,0.6}]@{C4}(-[,0.8]Me))}
+                \arrow{->[$h\nu$]}
+                \chemfig{*4(-(-[,,,,wvbnd]Me)-(-[,,,,wvbnd]Me)-=)}
+            \schemestop
+            \caption{The reaction without stereochemistry.}
+            \label{fig:electrocyc4pPhotoa}
+        \end{subfigure}\\[2.8em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig[atom sep=3em]{Me-[,0.8]@{1C1}(-[:-30,0.8]H)-[:60]@{1C2}-@{1C3}-[:-60]@{1C4}(-[,0.8]Me)(-[:-150,0.8]H)}
+                \arrow
+                \chemleft{[}
+                    \chemfig[atom sep=3em]{Me-[:-40,0.8]@{2C1}(-[:-80,0.8]H)-[:70]@{2C2}-@{2C3}-[:-70]@{2C4}(-[:40,0.8]Me)(-[:-100,0.8]H)}
+                \chemright{]^\ddagger}
+                \arrow
+                \chemfig[atom sep=3em]{Me-[:-70,0.8]@{3C1}(-[:-110,0.8]H)-[:80]@{3C2}-@{3C3}-[:-80]@{3C4}(-[:70,0.8]Me)(-[:-70,0.8]H)}
+                \arrow{0[\small$\equiv$][][-2mm]}
+                \chemfig{*4(-(<Me)-(<Me)-=)}
+            \schemestop
+            \chemmove{
+                \filldraw [thick,draw=orx,fill=ory] ($(1C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [thick,orx] ($(2C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(2C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-45] ($(2C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=white,rotate=-45] ($(2C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(2C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(2C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=45] ($(2C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=45] ($(2C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(3C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(3C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=-90] ($(3C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(3C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(3C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(3C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(3C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(3C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(3C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(3C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(3C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(3C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=-90] ($(3C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(3C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(3C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(3C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [pux,semithick] (1C1) ++(-60:1) arc[start angle=-60,end angle=-120,radius=1cm];
+                \draw [pux,semithick] (1C4) ++(-120:1) arc[start angle=-120,end angle=-60,radius=1cm];
+                \draw [pux,semithick] (2C1) ++(-60:1) arc[start angle=-60,end angle=-120,radius=1cm];
+                \draw [pux,semithick] (2C4) ++(-120:1) arc[start angle=-120,end angle=-60,radius=1cm];
+            }
+            \caption{Disrotatory pathway.}
+            \label{fig:electrocyc4pPhotob}
+        \end{subfigure}
+        \caption{Photochemical $4\pi$ electrocyclization.}
+        \label{fig:electrocyc4pPhoto}
+    \end{figure}
+    \begin{itemize}
+        \item As with Figure \ref{fig:electrocyc4pTherm}, let's start by describing the transition state.
+        \begin{itemize}
+            \item Once again, we'll begin by considering the HOMO.
+            \item However, since this is a \emph{photochemical} reaction, the reactive orbital will be the "new HOMO" created by photoexcitation.
+            \begin{itemize}
+                \item Per Figure \ref{fig:thermPhot}, this new HOMO will be the third energy level of \ref{fig:dieneMO}, which we may draw on our reactant (left molecule in Figure \ref{fig:electrocyc4pPhotob}).
+            \end{itemize}
+            \item Then as before, in order to form the new $\sigma$-bond, we must rotate the ends of the $\pi$-system so that the phases match.
+            \begin{itemize}
+                \item If we want to bring the shaded lobes of the \emph{new} HOMO together, we can still have the left terminal $p$-orbital rotate clockwise, but then we need the right terminal $p$-orbital to rotate counterclockwise!
+            \end{itemize}
+            \item Continuing this rotation to completion forms our new $\sigma$-bond again.
+        \end{itemize}
+        \item The implication of this "disrotatory" rotation is that --- through rotating the methyl and hydrogen substituents along with our terminal $p$-orbitals --- we produce (exclusively) the \emph{cis}-product!
+        \item So to recap: The ends of the $\pi$-system rotated in different directions (disrotatory) to align like-shaded lobes and afford our product.
+    \end{itemize}
+    \item A shortcut for remembering all this conrotatotory/disrotatory electrocyclization stuff: The Woodward-Hoffmann rules.
+    \begin{table}[h!]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{c|c|c}
+            \textbf{\#\,e\textsuperscript{$\bm{-}$}} & $\bm{\Delta}$ & $\bm{h\nu}$\\
+            \hline
+            $4n$ & con & dis\\
+            $4n+2$ & dis & con\\
+        \end{tabular}
+        \caption{Woodward-Hoffmann rules.}
+        \label{tab:WHrules}
+    \end{table}
+    \begin{itemize}
+        \item Aside (chemis-tea): Who was R. B. Woodward?
+        \begin{itemize}
+            \item R. B. Woodward was an MIT alum, even though he failed out after his freshman year.
+            \item He was readmitted though, and after graduating, he went on to become our most famous synthetic organic chemist.
+            \item He won a Nobel Prize and would have won a second, but he died too soon.
+            \item You probably talked about him in 5.12; he's great.
+        \end{itemize}
+        \item The Woodward-Hoffmann rules were the original solution to the "no mechanism" debacle that we talked about in Lecture 12.
+    \end{itemize}
+    \item How to derive the Woodward-Hoffmann rules.
+    \begin{itemize}
+        \item On the exam, you will need to be able to both apply the shortcuts in Table \ref{tab:WHrules} and derive these shortcuts with MOs as in Figures \ref{fig:electrocyc4pTherm}-\ref{fig:electrocyc4pPhoto}!!
+        \item To reiterate, the general workflow to derive a Woodward-Hoffman rule is as follows.
+        \begin{enumerate}
+            \item Draw the $\pi$-system and all substituents at the ends of it.
+            \item Identify the HOMO and shade in orbitals appropriately.
+            \item Decide what kind of rotation will give you good overlap and hence a $\sigma$-bond.
+            \item Use your hands/head/body to visualize this rotation (if you're a kinesthetic learner).
+            \item Draw intermediates, and then draw the final product.
+        \end{enumerate}
+        \item Practice doing this!!
+    \end{itemize}
+    \pagebreak
+    \item Example: Quickly solving two different $6\pi$ electrocyclizations with the Woodward-Hoffmann rules.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{-[:-150]*6(=-=-=(-))}
+                \arrow{->[$\Delta$ or $h\nu$]}[,1.3]
+                \chemfig{*6(=-(-[,,,,wvbnd]Me)-(-[,,,,wvbnd]Me)-=-)}
+            \schemestop
+            \caption{The reaction without stereochemistry.}
+            \label{fig:electrocyc6pThermPhotoa}
+        \end{subfigure}\\[3em]
+        \begin{subfigure}[b]{0.5\linewidth}
+            \centering
+            \schemestart
+                \chemfig[atom sep=2.5em]{Me-[:30]@{1C1}-[:120]@{1C2}-[:30]@{1C3}-@{1C4}-[:-30]@{1C5}-[:-120]@{1C6}-[:-30]Me}
+                \arrow{->[dis]}
+                \chemfig[atom sep=2.5em]{Me-[2,0.7]@{2C1}-[:150]-[:30]--[:-30]-[:-150]@{2C6}(-[6,0.7]Me)-[4]}
+            \schemestop
+            \chemmove{
+                \filldraw [thick,draw=orx,fill=ory] ($(1C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C5)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C5)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C5)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C5)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C6)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C6)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C6)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C6)+(-0.0018,0)$) -- cycle;
+                % 
+                \filldraw [thick,draw=orx,fill=ory,rotate=90] ($(2C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=90] ($(2C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(2C6)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C6)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=-90] ($(2C6)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C6)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [pux,semithick] (1C1) ++(-120:1) arc[start angle=-120,end angle=-60,radius=1cm];
+                \draw [pux,semithick] (1C6) ++(-60:1) arc[start angle=-60,end angle=-120,radius=1cm];
+            }
+            \vspace{1.5em}
+            \caption{Thermal product (disrotatory).}
+            \label{fig:electrocyc6pThermPhotob}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig[atom sep=2.5em]{Me-[:30]@{1C1}-[:120]@{1C2}-[:30]@{1C3}-@{1C4}-[:-30]@{1C5}-[:-120]@{1C6}-[:-30]Me}
+                \arrow{->[con]}
+                \chemfig[atom sep=2.5em]{Me-[2,0.7]@{2C1}-[:150]-[:30]--[:-30]-[:-150]@{2C6}(-[2,0.7]Me)-[4]}
+            \schemestop
+            \chemmove{
+                \filldraw [thick,draw=orx,fill=ory] ($(1C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C3)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C3)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C5)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C5)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C5)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C5)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(1C6)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C6)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(1C6)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C6)+(-0.0018,0)$) -- cycle;
+                % 
+                \filldraw [thick,draw=orx,fill=ory,rotate=90] ($(2C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=90] ($(2C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(2C6)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C6)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=-90] ($(2C6)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C6)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [pux,semithick] (1C1) ++(-120:1) arc[start angle=-120,end angle=-60,radius=1cm];
+                \draw [pux,semithick] (1C6) ++(-120:1) arc[start angle=-120,end angle=-60,radius=1cm];
+            }
+            \vspace{1.5em}
+            \caption{Photochemical product (conrotatory).}
+            \label{fig:electrocyc6pThermPhotoc}
+        \end{subfigure}
+        \caption{Thermal and photochemical $6\pi$ electrocyclizations.}
+        \label{fig:electrocyc6pThermPhoto}
+    \end{figure}
+    \begin{itemize}
+        \item Let's first address the thermal case (Figure \ref{fig:electrocyc6pThermPhotob}).
+        \begin{enumerate}
+            \item As in Figures \ref{fig:electrocyc4pTherm}-\ref{fig:electrocyc4pPhoto}, our first step is \emph{always} redrawing the starting material in a perspective from which we can see the rotation.
+            \begin{itemize}
+                \item The perspective from which we view the left molecule in Figure \ref{fig:electrocyc6pThermPhotob} is indeed one in which we can see the substituents rotate.
+            \end{itemize}
+            \item Then we need to figure out what the HOMO is.
+            \begin{itemize}
+                \item There are 6 atoms and 6 electrons in the $\pi$-system, so per the three rules from Lecture 12, there will be six MOs and the lowest three will be filled.
+                \begin{itemize}
+                    \item For the exam, be sure to practice drawing molecular orbitals like this!! For reference, you can look back at the examples in Figures \ref{fig:dieneMO} and \ref{fig:allylMO}.
+                \end{itemize}
+                \item Thus, the HOMO is the 3rd energy level, so it will have 2 (symmetric) nodes.
+                \item This is why we draw 6 $p$-orbitals on the left molecule in Figure \ref{fig:electrocyc6pThermPhotob} and put nodes between the second and third $p$-orbitals and also between the fourth and fifth $p$-orbitals.
+            \end{itemize}
+            \item As we have drawn our HOMO, a disrotatory pathway will unite lobes with like shadings.
+            \item Thus, both methyl groups will rotate down (or up!).
+            \item This yields the \emph{cis}-product.
+        \end{enumerate}
+        \item Now we'll address the photochemical case (Figure \ref{fig:electrocyc6pThermPhotoc}).
+        \begin{enumerate}
+            \item We redraw the starting material in the same perspective as in Figure \ref{fig:electrocyc6pThermPhotob}.
+            \item Because we're photochemical this time around, we have to choose a "new HOMO."
+            \begin{itemize}
+                \item There are still 6 atoms and 6 electrons in the $\pi$-system, so as before, there will be six MOs.
+                \item However, now the lowest \emph{four} will be filled.
+                \item Thus, the HOMO is the 4th energy level, so it will have 3 (symmetric) nodes.
+                \item This is why we draw 6 $p$-orbitals on the left molecule in Figure \ref{fig:electrocyc6pThermPhotoc} and put nodes between the first and second; third and fourth; and fifth and sixth $p$-orbitals.
+            \end{itemize}
+            \item As we have drawn our HOMO, a conrotatory pathway will unite lobes with like shadings.
+            \item Thus, one methyl group rotates both ways.
+            \item This yields the \emph{trans}-product.
+        \end{enumerate}
+        \item To reiterate: Even though we only drew one enantiomer in Figures \ref{fig:electrocyc6pThermPhotob}-\ref{fig:electrocyc6pThermPhotoc}, both can form because it does not matter whether the unshaded or shaded lobes come together.
+        \begin{itemize}
+            \item However, up next is an example of where the direction of rotation \emph{does} matter!
+        \end{itemize}
+    \end{itemize}
+    \item Example: Retro-$4\pi$ electrocyclization.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+            \chemfig{*4([2](<Me)-(<Me)-=-)}
+                \arrow(c1--c23){0}[,1.5]
+                \subscheme{
+                    \chemfig[atom sep=3em]{Me-[:-70,0.8]@{2C1}(-[:-110,0.8]H)-[:80]--[:-80]@{2C4}(-[:70,0.8]Me)(-[:-70,0.8]H)}
+                    \arrow(c2--){->[dis]}
+                    \chemfig{Me-[4]*6(=-=(-Me))}
+                    \arrow(@c2--c4){0}[-90,0.5]
+                    \chemfig[atom sep=3em]{Me-[:-70,0.8]@{4C1}(-[:-110,0.8]H)-[:80]--[:-80]@{4C4}(-[:70,0.8]Me)(-[:-70,0.8]H)}
+                    \arrow{->[dis]}
+                    \chemfig{*6([2]Me-=-=(-[,,,,opacity=0]\phantom{Me})-Me)}
+                }
+            \schemestop
+            \chemmove{
+                \draw ([xshift=9pt]c1.east) -- node[above]{$h\nu$} ($(c1)!0.3!(c23)$) coordinate (c25) -- (c25 |- c2) -- ([xshift=-9pt]c2.west);
+                \draw (c25) -- (c25 |- c4) -- ([xshift=-9pt]c4.west);
+                % 
+                \draw [thick,orx,rotate=-90] ($(2C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(2C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(2C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=-90] ($(2C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [thick,orx,rotate=-90] ($(4C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(4C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(4C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(4C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(4C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(4C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx,rotate=-90] ($(4C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(4C4)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [pux,semithick] (2C1) ++(-120:1.1) arc[start angle=-120,end angle=-60,radius=1.1cm];
+                \draw [pux,semithick] (2C4) ++(-60:1.1) arc[start angle=-60,end angle=-120,radius=1.1cm];
+                \draw [pux,semithick] (4C1) ++(-60:1.1) arc[start angle=-60,end angle=-120,radius=1.1cm];
+                \draw [pux,semithick] (4C4) ++(-120:1.1) arc[start angle=-120,end angle=-60,radius=1.1cm];
+            }
+            \vspace{1em}
+            \caption{Possible products of a retro-$4\pi$ electrocyclization.}
+            \label{fig:electrocyc4pRetroa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Me-[4]*6(=-=(-Me))}
+                \arrow{->[$h\nu$]}
+                \chemfig{*4((<Me)-(<Me)-=-)}
+            \schemestop
+            \caption{Feasible "reverse" electrocyclization.}
+            \label{fig:electrocyc4pRetrob}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([2]Me-=-=-Me)}
+                \arrow{->[$h\nu$]}
+                \chemfig{*4((<Me)-(<Me)-=-)}
+            \schemestop
+            \caption{Infeasible "reverse" electrocyclization.}
+            \label{fig:electrocyc4pRetroc}
+        \end{subfigure}
+        \caption{Retro-$4\pi$ electrocyclization.}
+        \label{fig:electrocyc4pRetro}
+    \end{figure}
+    \begin{itemize}
+        \item Imagine you begin with the product of Figure \ref{fig:electrocyc4pPhotob} and expose it to light, inducing a retro-$4\pi$ electrocyclization (Figure \ref{fig:electrocyc4pRetroa})
+        \begin{itemize}
+            \item Because this is a photochemical $4\pi$-electrocyclization, the Woodward-Hoffmann rules (Table \ref{tab:WHrules}) tell us that we will follow a disrotatory pathway.
+            \begin{itemize}
+                \item Note that the direction of reaction (forward or backward) doesn't matter for the Woodward-Hoffmann rules! All that matters is the number of electrons, and photochemical or thermal.
+            \end{itemize}
+            \item However, as the $\sigma$-bond breaks and the $\pi$-bonds reform, the $\sigma$-bond's orbitals can either both rotate "in" (top of Figure \ref{fig:electrocyc4pRetroa}) or both rotate "out" (bottom of Figure \ref{fig:electrocyc4pRetroa}).
+            \item This produces two geometric isomers as possible products. Which one will be observed?
+        \end{itemize}
+        \item To answer this question, we need the \textbf{principle of microscopic reversibility}.
+        \begin{itemize}
+            \item This tells us that if the starting material in Figure \ref{fig:electrocyc4pRetroa} converts to the top (or bottom) product in Figure \ref{fig:electrocyc4pRetroa} via a retro-electrocyclization mechanism, that product had better convert back to the starting material via a forward electrocyclization mechanism.
+        \end{itemize}
+        \item So let's consider these two "reverse" reactions (Figures \ref{fig:electrocyc4pRetrob}-\ref{fig:electrocyc4pRetroc}).
+        \begin{itemize}
+            \item The reaction in Figure \ref{fig:electrocyc4pRetrob} looks like an electrocyclization that would happily proceed.
+            \item The reaction in Figure \ref{fig:electrocyc4pRetroc} does not: Just like in Figure \ref{fig:DAratec}, steric clashing will significantly disfavor the s-\emph{cis} conformation necessary for an electrocyclization. Thus, this reaction cannot easily proceed via an electrocyclization mechanism.
+        \end{itemize}
+        \item Therefore, by the principle of microscopic reversibility, the fact that Figure \ref{fig:electrocyc4pRetrob}'s reverse reaction is so unfavorable means that the original retro-$4\pi$ electrocyclization will \emph{not} create this product.
+        \begin{itemize}
+            \item It follows that the retro-$4\pi$ electrocyclization will \emph{exclusively} follow the top pathway in Figure \ref{fig:electrocyc4pRetroa} and \emph{exclusively} produce the corresponding doubly \emph{trans}-alkene.
+            \item In other words, the disrotatory motion only happens "in" --- not "out" --- in this case.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Principle of microscopic reversibility}: The reaction mechanism that gets you from starting material to product has to be the same (but in reverse) as the reaction mechanism that gets you from the product back to the starting material.
+    % \item How would the $6\pi$-photo work?
+    % \begin{itemize}
+    %     \item New HOMO again, that changes which way we can rotate again!
+    % \end{itemize}
+    \item \textbf{Nazarov cyclization}: A very neat reaction that goes by an electrocyclization mechanism.
+    \item General form.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]=_[2]-[:30](=[2]O)-[:-30]=_[6]-[:-30]R}
+            \arrow{->[\ce{H+} or LA]}[,1.5]
+            \chemfig{*5([:18](-[,0.8]R)-(-[,0.8]R)=-(=O)--)}
+        \schemestop
+        \caption{Nazarov cyclization.}
+        \label{fig:nazarov}
+    \end{figure}
+    \begin{itemize}
+        \item Either Br\o nsted acid catalyzed (\ce{H+}) or Lewis acid catalyzed (LA).
+    \end{itemize}
+    \item Mechanism.
+    \begin{figure}[h!]
+        \centering
+        \vspace{1em}
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]=_[2]-[:30](=[2]@{1O}\charge{[extra sep=2pt]45=\:}{O})-[:-30]=_[6]-[:-30]R}
+            \arrow{-U>[\chemfig[atom sep=1em,bond offset=2pt]{Ac@{2O}O-[@{21}]@{2H}H}][\chemfig{Ac\charge{45=$\ominus$}{O}}]}[,1.5]
+            \chemleft{[}\subscheme{
+                \chemfig{R-[:30]=_[2]-[:30](=[2]\charge{[extra sep=5pt]180=$\oplus$}{O}H)-[:-30]=_[6]-[:-30]R}
+                \arrow{<->}
+                \chemfig{R-[:30]@{5C1}=_[@{51}2]-[@{52}:30]\charge{[extra sep=6pt]-90=$\oplus$}{}(-[2]OH)-[:-30]=_[@{53}6]@{5C2}-[:-30]R}
+            }\chemright{]}
+            \arrow{->[$4\pi$][electrocyc.]}[,1.5]
+            \chemfig{*5([:18](-[,0.8]R)-(-[:-74,0.8]R)(-[@{61}:-34,0.8]@{6H}H)-[@{62}]\charge{[extra sep=5pt]18=$\oplus$}{}-(-OH)=-)}
+            \arrow{-U>[*{0}\chemfig{Ac@{7O}\charge{45=$\ominus$}{O}}][*{0}\chemfig{AcOH}]}[-90,1.5]
+            \chemfig{*5([:18](-[,0.8]R)-(-[,0.8]R)=-(-OH)=-)}
+            \arrow{->[tautomerize]}[180,1.5]
+            \chemfig{*5([:18](-[,0.8]R)-(-[,0.8]R)=-(=O)--)}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={5pt}{1pt}] (1O) to[out=45,in=90] (2H);
+            \draw [curved arrow={2pt}{1pt}] (21) to[bend right=90,looseness=4] (2O);
+            \draw [curved arrow={4pt}{2pt}] (51) to[out=0,in=-60,looseness=1.6] (52);
+            \draw [curved arrow={4pt}{2pt}] (53) to[out=180,in=90,looseness=1.4] ($(5C1)!0.5!(5C2)$);
+            \draw [curved arrow={9pt}{1pt}] (7O) to[out=45,in=0,looseness=2] (6H);
+            \draw [curved arrow={2pt}{2pt}] (61) to[bend right=60,looseness=1.6] (62);
+        }
+        \caption{Nazarov cyclization mechanism.}
+        \label{fig:mechNazarov}
+    \end{figure}
+    \begin{itemize}
+        \item To begin, the acid catalyst protonates the carbonyl.
+        \item The protonated intermediate has a resonance form with an empty $p$-orbital (i.e., a carbocation) in between the two $\pi$-systems.
+        \begin{itemize}
+            \item This empty $p$-orbital in effect \emph{bridges} the two $\pi$-systems, enabling a rearrangement of electrons that we call a "cationic $4\pi$ electrocyclization."
+        \end{itemize}
+        \item The cyclization step still leaves a carbocation behind, but we can quickly eliminate a nearby proton to form a double bond.
+        \item After the elimination, a final keto-enol tautomerization affords a more stable final product.
+    \end{itemize}
+    \item Stereochemistry of the Nazarov cyclization.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig[atom sep=2.5em]{R-[:30]@{1C1}-[:120]@{1C2}-[:30]@{1C3}-[:-30]@{1C4}-[:-120]@{1C5}-[:-30]R}
+            \arrow{->[con]}
+            \chemfig[atom sep=2.5em]{R-[6,0.7]@{2C1}-[:120]-[:30]-[:-30]-[:-120]@{2C5}-[6,0.7]R}
+        \schemestop
+        \chemmove{
+            \filldraw [thick,draw=orx,fill=ory] ($(1C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(1C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(1C2)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(1C2)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C2)+(-0.0018,0)$) -- cycle;
+            \draw [dashed,-] ([yshift=-5mm]1C3.center) -- ++(0,1);
+            \draw [thick,orx] ($(1C4)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(1C4)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C4)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx] ($(1C5)+(0.0018,0)$) to[bend right=120,looseness=600] ($(1C5)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory] ($(1C5)+(0.0018,0)$) to[bend left=120,looseness=600] ($(1C5)+(-0.0018,0)$) -- cycle;
+            % 
+            \filldraw [thick,draw=orx,fill=ory,rotate=-90] ($(2C1)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx,rotate=-90] ($(2C1)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C1)+(-0.0018,0)$) -- cycle;
+            \filldraw [thick,draw=orx,fill=ory,rotate=90] ($(2C5)+(0.0018,0)$) to[bend right=120,looseness=600] ($(2C5)+(-0.0018,0)$) -- cycle;
+            \draw [thick,orx,rotate=90] ($(2C5)+(0.0018,0)$) to[bend left=120,looseness=600] ($(2C5)+(-0.0018,0)$) -- cycle;
+            % 
+            \draw [pux,semithick] (1C1) ++(-70:0.7) arc[start angle=-70,end angle=-110,radius=7mm];
+            \draw [pux,semithick] (1C5) ++(-70:0.7) arc[start angle=-70,end angle=-110,radius=7mm];
+        }
+        \caption{Nazarov cyclization stereochemistry.}
+        \label{fig:nazarovStereochem}
+    \end{figure}
+    \begin{itemize}
+        \item We assume that this reaction is thermal (even though there is no $\Delta$ above the arrow) by default.
+        \begin{itemize}
+            \item If we just see acid/reagents and no triangle, assume thermal.
+            \item If we see $h\nu$, \emph{then} we consider the photochemical pathway.
+        \end{itemize}
+        \item There are 5 atoms and 4 electrons in the $\pi$-system, so per the three rules from Lecture 12, there will be five MOs and the lowest two will be filled.
+        \begin{itemize}
+            \item Thus, the HOMO is the 2nd energy level, so it will have 1 (symmetric) node.
+            \item Because this is an odd number of atoms, the middle $p$-orbital gets deleted!
+        \end{itemize}
+        \item As we have drawn our HOMO, a conrotatory pathway will unite lobes with like shadings.
+        \item This yields the \emph{trans}-product.
+    \end{itemize}
+    \item Example: The product of a Nazarov cyclization after an alternate deprotonation.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{*5([:18](<[6,0.8]H)-(<:[6,0.8]H)*6(----=)--(=O)-*6(-----)-)}
+        \caption{Alternate deprotonation sites in Nazarov cyclizations.}
+        \label{fig:nazarovAltDeprot}
+    \end{figure}
+    \begin{itemize}
+        \item If we trace through the mechanism that would form this product, we can see that we just deprotonated the post-$4\pi$ electrocyclization carbocation at a different $\beta$-\ce{H}.
+        \item Under thermal conditions, we would get the \emph{trans}-product (as drawn).
+        \item Under photochemical conditions, we would \emph{not} get the molecule in Figure \ref{fig:nazarovAltDeprot} but would get the \emph{cis}-product instead.
+    \end{itemize}
+    \item There are still a few examples that Prof. Elkin wanted to get through today, but we ran out of time, so they'll be shared in a Canvas announcement.
+    \item Looking ahead.
+    \begin{itemize}
+        \item Spend the weekend resting and catching up.
+        \item Next Wednesday: Sigmatropics.
+        \item Next Friday: Exam review.
     \end{itemize}
 \end{itemize}
 
