@@ -4296,5 +4296,668 @@
 
 
 
+\section{Sigmatropic Rearrangements}
+\begin{itemize}
+    \item \marginnote{10/16:}Lecture 16 recap: Considerations for electrocyclizations.
+    \begin{itemize}
+        \item Woodward-Hoffmann rules.
+        \begin{itemize}
+            \item Prof. Elkin redraws Table \ref{tab:WHrules}.
+        \end{itemize}
+        \item Conrotatory and disrotatory.
+        \begin{itemize}
+            \item To derive this, first draw the HOMO.
+            \item Then make $\sigma$-bonds by rotating the terminal $p$-orbitals so that the phases match.
+        \end{itemize}
+        \item Misc.
+        \begin{itemize}
+            \item Nazarov cyclization (a $4\pi$ electrocyclization, not $5\pi$ as was accidentally written last lecture).
+            \item Principle of microscopic reversibility: This helps you understand which product you get in certain retro-electrocyclizations.
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item Announcements.
+    \begin{itemize}
+        \item Looking ahead: Friday.
+        \begin{itemize}
+            \item A review of Unit 2 material.
+            \item Prof. Elkin will discuss what she believes you should focus on studying!
+        \end{itemize}
+        \item You will learn the most by taking the practice exams timed and closed-book!
+    \end{itemize}
+    \item Today: Sigmatropic rearrangements.
+    \begin{itemize}
+        \item This is the end of the material for Unit 2; sigmatropics are our last pericyclic reaction!
+    \end{itemize}
+    \item Lecture outline.
+    \begin{itemize}
+        \item Cope rearrangement: General form, orbital picture, stereochemistry, special types.
+        \item Claisen rearrangement: General form, examples, stereochemistry.
+        \item Hydrogen atom shifts: Antarafacial example, suprafacial example, photochemical.
+    \end{itemize}
+    \item We'll start with a classic named reaction in the sigmatropic family: The Cope rearrangement.
+    \begin{itemize}
+        \item Cope was an MIT alumnus!
+    \end{itemize}
+    \item General form.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=4pt}
+        \schemestart
+            \chemfig{*6([4]\charge{30={\tiny\color{grx}$3$}}{}=[@{1}]\charge{90={\tiny\color{grx}$2$}}{}-[@{2}]@{1C1}\charge{90={\tiny\color{grx}$1$}}{}(-R)-[@{3}]@{1C1'}\charge{-150={\tiny\color{grx}$1'$}}{}-[@{4}]\charge{-90={\tiny\color{grx}$2'$}}{}=[@{5}]\charge{-30={\tiny\color{grx}$3'$}}{}-[@{6},,,,opacity=0])}
+            \arrow{<=>[\SI{200}{\celsius}]}[,1.2]
+            \chemfig{*6([4]@{2C3}\charge{30={\tiny\color{grx}$3$}}{}-\charge{90={\tiny\color{grx}$2$}}{}=\charge{90={\tiny\color{grx}$1$}}{}(-R)-[,,,,opacity=0]\charge{-150={\tiny\color{grx}$1'$}}{}=\charge{-90={\tiny\color{grx}$2'$}}{}-@{2C3'}\charge{-30={\tiny\color{grx}$3'$}}{}-)}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={4pt}{2pt}] (1) to[bend right=60,looseness=1.5] (6);
+            \draw [curved arrow={2pt}{2pt}] (3) to[bend right=60,looseness=1.5] (2);
+            \draw [curved arrow={4pt}{2pt}] (5) to[bend right=60,looseness=1.5] (4);
+            \draw [blx,-,line width=1.5mm,line cap=round,opacity=0.3] (1C1) -- (1C1');
+            \draw [blx,-,line width=1.5mm,line cap=round,opacity=0.3] (2C3) -- (2C3');
+        }
+        \caption{Cope rearrangement.}
+        \label{fig:copeRearr}
+    \end{figure}
+    \begin{itemize}
+        \item The Cope rearrangement proceeds circle arrows, as in any pericyclic reaction.
+        \item It is reversible.
+        \item It is thermal, typically occuring around \SI{200}{\celsius}.
+        \item It is classified as a \textbf{$\bm{[3,3]}$ sigmatropic rearrangement}.
+    \end{itemize}
+    \item \textbf{$\bm{[3,3]}$ sigmatropic rearrangement}: A sigmatropic rearrangement in which the $\sigma$-bond moves 3 atoms at one end and 3 atoms at the other end.
+    \begin{itemize}
+        \item Numbering our atoms as in Figure \ref{fig:copeRearr}, observe that the $\sigma$-bond moves from atoms 1 and $1'$ to atoms 3 and $3'$!
+        \item This nomenclature is defined another way in \textcite{bib:Clayden}, and another way on Wikipedia and Google, so read a bunch of different definitions and see what sticks :)
+        \item We're not huge sticklers for nomenclature, but you should learn this!!
+    \end{itemize}
+    \item An orbital picture for the Cope rearrangement.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.17\linewidth}
+            \centering
+            \chemleft{[}
+                \chemfig{*6(@{C1}-@{C2}-@{C3}-[,,,,dashed]@{C4}-@{C5}-@{C6}-[,,,,dashed])}
+            \chemright{]^\ddagger}
+            \chemmove{
+                \draw [-,dashed]
+                    ($(C1)+(  30:2.5pt)$) -- ($(C2)+( 90:2.5pt)$)
+                    ($(C2)+(  90:2.5pt)$) -- ($(C3)+(150:2.5pt)$)
+                    ($(C4)+(-150:2.5pt)$) -- ($(C5)+(-90:2.5pt)$)
+                    ($(C5)+( -90:2.5pt)$) -- ($(C6)+(-30:2.5pt)$)
+                ;
+            }
+            \caption{True TS.}
+            \label{fig:Copeorb3Da}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.17\linewidth}
+            \centering
+            \chemleft{[}
+                \chemfig{*6(\charge{90=\.}{}-=-[,,,,opacity=0]=-\charge{-90=\.}{})}
+            \chemright{]^\ddagger}
+            \caption{Radical TS.}
+            \label{fig:Copeorb3Db}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.17\linewidth}
+            \centering
+            \chemfig{?@{C1}-[:90,,,,opacity=0]@{C2}-[:120]-[:-20]@{C3}-[:-90,,,,opacity=0]@{C4}-[:-60]?}
+            \chemmove{
+                \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=300] ($(C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=300] ($(C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=300] ($(C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=300] ($(C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=300] ($(C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=300] ($(C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=300] ($(C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=300] ($(C3)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [cyan,thick,-]
+                    ([xshift=-1mm,yshift=2.5mm]C1.center) to[bend left=20]  ([xshift=-1mm,yshift=-2.5mm]C2.center)
+                    ([xshift=1mm,yshift=2.5mm]C4.center)  to[bend right=20] ([xshift=1mm,yshift=-2.5mm]C3.center)
+                ;
+            }
+            \caption{Chair TS.}
+            \label{fig:Copeorb3Dc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.17\linewidth}
+            \centering
+            \chemfig{?@{C1}-[:90,1.2,,,opacity=0]@{C2}-[:120]-[:-20]@{C3}-[:-90,1.2,,,opacity=0]@{C4}-[:160]?}
+            \chemmove{
+                \draw [thick,orx] ($(C1)+(0.0018,0)$) to[bend right=120,looseness=300] ($(C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C1)+(0.0018,0)$) to[bend left=120,looseness=300] ($(C1)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C4)+(0.0018,0)$) to[bend left=120,looseness=300] ($(C4)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C4)+(0.0018,0)$) to[bend right=120,looseness=300] ($(C4)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C2)+(0.0018,0)$) to[bend left=120,looseness=300] ($(C2)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C2)+(0.0018,0)$) to[bend right=120,looseness=300] ($(C2)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(C3)+(0.0018,0)$) to[bend right=120,looseness=300] ($(C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(C3)+(0.0018,0)$) to[bend left=120,looseness=300] ($(C3)+(-0.0018,0)$) -- cycle;
+                % 
+                \draw [cyan,thick,-]
+                    ([xshift=-1mm,yshift=2.5mm]C1.center) to[bend left=20]  ([xshift=-1mm,yshift=-2.5mm]C2.center)
+                    ([xshift=1mm,yshift=2.5mm]C4.center)  to[bend right=20] ([xshift=1mm,yshift=-2.5mm]C3.center)
+                ;
+            }
+            \vspace{0.4em}
+            \caption{Boat TS.}
+            \label{fig:Copeorb3Dd}
+        \end{subfigure}
+        \caption{Cope rearrangement orbitals in 3D space.}
+        \label{fig:Copeorb3D}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item In a pericyclic transition state, all bonds are forming and breaking at the same time (Figure \ref{fig:Copeorb3Da}).
+        \begin{itemize}
+            \item Notice the similarity between Figure \ref{fig:Copeorb3Da} and the transition state of Figure \ref{fig:dielsAlder}!
+            \item Observe that there is an unchanged "$\sigma$-backbone" on the top and bottom.
+        \end{itemize}
+        \item Thus, the transition state is kind of like two allyl radicals interacting (Figure \ref{fig:Copeorb3Db}).
+        % \footnote{Essentially, we can conceptualize this mechanism as the initial $1$-$1'$ $\sigma$-bond homolytically cleaving into two allyl radicals with their radical electrons at the $1$ and $1'$ positions, these allyl radicals switching to their resonance form with the radical electron at the $3$ and $3'$ positions, and these new resonance forms coupling to make the new $3$-$3'$ $\sigma$-bond.}
+        \begin{itemize}
+            \item Recall the MOs of an allyl radical from Figure \ref{fig:allylMO}.
+            \item These MOs tell us that both allyl radicals will interact with their SOMO.
+        \end{itemize}
+        \item We can then draw out these SOMOs in 3D, interacting through either a \emph{chair} (Figure \ref{fig:Copeorb3Dc}) or a \emph{boat} (Figure \ref{fig:Copeorb3Dd}) transition state.
+        \begin{itemize}
+            \item In each case, we get good overlap at both the bond-breaking and bond-forming positions.
+            \item However, since chair conformations are usually more stable than boat conformations (as you should recall from 5.12), the chair transition state will usually be more stable than the boat transition state.
+            \item Note that we mention the boat transition state at all because even though it's less favorable, it can still happen.\footnote{Specifically, it can lead to some alternate stereoisomers as minor side products; see Figure \ref{fig:Copestereochem}.}
+        \end{itemize}
+        \item These transition states are super important because they're how we predict stereochemistry!
+        \item Note that we can also split the system into a cation and an anion, and we'll still get good orbital overlap and all the same transition-state stereochemistry.
+        \begin{itemize}
+            \item Indeed, splitting into two radicals is more of a convention.
+            \item You can (and should) try drawing this cation/anion scheme out!!
+            \item The fact that it works both ways is yet more evidence that MOs are a good, meaningful model.
+        \end{itemize}
+    \end{itemize}
+    \item Stereochemistry of the Cope rearrangement.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6([4]=-(<:Me)-(<Me)-=)}
+            \arrow{0[\small $\equiv$][][-2mm]}
+            \chemfig{(-[2,0.8]H)(-[:-170])-[@{2}:-20]=_[@{1,0.3}:10]-[@{6}:-130,,,,opacity=0]=_[@{5}:160]-[@{4}:-170](-[:160])(-[6,0.8]H)-[@{3}:50]}
+            \arrow
+            \chemfig{(-[2,0.8]H)(-[:-170])=_[:-20]-[:10]-[:-130]-[:160]=_[:-170](-[:160])(-[6,0.8]H)}
+            \arrow{0[\small $\equiv$][][-2mm]}
+            \chemfig{Me-[:30]*6(=---=(-Me))}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={4pt}{0pt}] (1) to[bend right=50,looseness=1.5] (6);
+            \draw [curved arrow={2pt}{2pt}] (3) to[bend right=10,looseness=1.2] (2);
+            \draw [curved arrow={4pt}{2pt}] (5) to[bend right=50,looseness=1.5] (4);
+        }
+        \caption{Cope rearrangement stereochemistry.}
+        \label{fig:Copestereochem}
+    \end{figure}
+    \begin{itemize}
+        \item The Cope rearrangement is stereospecific.
+        \begin{itemize}
+            \item Indeed, just like the Diels-Alder (see Figure \ref{fig:DAcisTrans}), the stereochemistry of the reactant translates directly into whether the product has \emph{cis}- or \emph{trans}-olefins.
+        \end{itemize}
+        \item To determine the (major\footnote{We will also have some product formed from the boat transition state, but you are not responsible for this!}) product, draw the starting material in the most stable chair conformer.
+        \begin{itemize}
+            \item In this case, the most stable chair is the one in which both methyl groups are equatorial. This minimizes 1,3-diaxial interactions.
+            \item The double bonds also point down and up along the lines of the chair.
+        \end{itemize}
+        \item Then we draw circle arrows to help us move the bonds.
+        \begin{itemize}
+            \item These allow us to draw the product in the chair conformation.
+            \item Then we must "unfold" the chair into a 2D representation.
+        \end{itemize}
+        \item To unfold this structure, first observe that both olefins are \emph{trans}.
+        \begin{itemize}
+            \item Then all we need to do is draw a 2D representation that also has two \emph{trans}-olefins, and we're good to go!
+        \end{itemize}
+        \item If it helps to draw in the hydrogens, you should feel free to.
+    \end{itemize}
+    \pagebreak
+    \item As mentioned in Figure \ref{fig:copeRearr}, the Cope rearrangement is an equilibrium reaction. But for it to be synthetically useful, we need to be able to drive the equilibrium toward starting materials or products. How can we do this?
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([4]=-(*3(--))(<:[2]H)-(<:[6]H)-=)}
+                \arrow{->[\SI{20}{\celsius}]}[,1.2]
+                \chemfig{*7([:-12.857]-=---=-)}
+            \schemestop
+            \caption{Release of ring strain.}
+            \label{fig:CopeEqa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \setchemfig{autoreset cntcycle=false}
+            \schemestart
+                \chemfig{*6(@{1C1a}=@{1C2a}-@{1C3a}=@{1C4a}(-*6(@{1C1b}-@{1C2b}=@{1C3b}-[,,,,opacity=0]@{1C4b}=@{1C5b}-@{1C6b}-))-@{1C5a}=@{1C6a}-)}
+                \arrow{<->>[\SI{170}{\celsius}]}[,1.2]
+                \chemfig{*6(@{2C1a}=@{2C2a}-@{2C3a}=@{2C4a}(-*6(@{2C1b}=@{2C2b}-@{2C3b}-@{2C4b}-@{2C5b}=@{2C6b}))-@{2C5a}=@{2C6a}-)}
+            \schemestop
+            \chemmove{
+                \draw [blx,-,line width=3mm,line cap=round,opacity=0.3] (1C2b) -- (1C3b);
+                \draw [blx,-,line width=3mm,line cap=round,opacity=0.3] (1C4b) -- (1C5b);
+                \draw [blx,-,line width=3mm,line cap=round,line join=round,opacity=0.3]
+                    (1C1a.center) -- (1C2a.center) -- (1C3a.center) -- (1C4a.center) -- (1C5a.center) -- (1C6a.center) -- cycle
+                    -- ($(1C2a)!0.5!(cyclecenter2)$) -- ($(1C3a)!0.5!(cyclecenter2)$) -- ($(1C4a)!0.5!(cyclecenter2)$) -- ($(1C5a)!0.5!(cyclecenter2)$) -- ($(1C6a)!0.5!(cyclecenter2)$) -- ($(1C1a)!0.5!(cyclecenter2)$)
+                    -- (1C4a)
+                ;
+                % 
+                \draw [blx,-,line width=3mm,line cap=round,opacity=0.3] (2C5b) -- (2C6b);
+                \draw [blx,-,line width=3mm,line cap=round,opacity=0.3]
+                    (2C2b) -- (2C1b) -- (2C4a) -- (2C5a) -- (2C6a) -- (2C1a) -- (2C2a) -- (2C3a) -- (2C4a)
+                    -- ($(2C5a)!0.5!(cyclecenter4)$) -- ($(2C6a)!0.5!(cyclecenter4)$) -- ($(2C1a)!0.5!(cyclecenter4)$) -- ($(2C2a)!0.5!(cyclecenter4)$) -- ($(2C3a)!0.5!(cyclecenter4)$) -- ($(2C4a)!0.5!(cyclecenter4)$)
+                    -- (2C1a)
+                ;
+            }
+            \caption{Conjugate a product olefin.}
+            \label{fig:CopeEqb}
+        \end{subfigure}\\[2.5em]
+        \begin{subfigure}[b]{0.54\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([4]=-(-HO)--=)}
+                \arrow{<=>}
+                \chemfig{*6(=---=(-HO))}
+                \arrow{->[taut.]}
+                \chemfig{*6(=----(=_O))}
+            \schemestop
+            \caption{Oxy-Cope rearrangement.}
+            \label{fig:CopeEqc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.45\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6([4]=-(-\charge{[extra sep=5pt]90=$\oplus$}{K}\charge{45=$\ominus$}{O})--=)}
+                \arrow{->[rt]}
+                \chemfig{*6(=----(=_O))}
+            \schemestop
+            \caption{Anionic oxy-Cope rearrangement.}
+            \label{fig:CopeEqd}
+        \end{subfigure}
+        \caption{Methods to drive the equilibrium in a Cope rearrangement.}
+        \label{fig:CopeEq}
+    \end{figure}
+    \begin{enumerate}
+        \item Release ring strain (Figure \ref{fig:CopeEqa}).
+        \begin{itemize}
+            \item If we put a 3-membered ring in our reactant, we get a 7-membered ring in the product that is far more stable.
+            \item The temperature we need to run this reaction is only about \SI{20}{\celsius}!
+        \end{itemize}
+        \item Create a conjugated product (Figure \ref{fig:CopeEqa}).
+        \begin{itemize}
+            \item If you can make your product significantly more stable, you'll drive the equilibrium that way.
+            \item One way to do this is to build a starting material such that one of the new double bonds formed will be conjugated to the \emph{aryl} ring.
+            \begin{itemize}
+                \item Note that the newly conjugated olefin will still \emph{not} be conjugated with respect to the product olefin at the other terminal.
+            \end{itemize}
+            \item This is energetically favorable because it's a reduction of the number of independent alkene systems from 3 to 2.
+            \item The temperature we need to run this reaction is down from the initial \SI{200}{\celsius} (Figure \ref{fig:copeRearr}) to about \SI{170}{\celsius}.
+        \end{itemize}
+        \item Make it an \textbf{oxy-Cope rearrangement} (Figure \ref{fig:CopeEqc}).
+        \begin{itemize}
+            \item To do so, add an alcohol to the 1 or $1'$ carbon.
+            \item This way, the product tautomerizes to a ketone (which is far more stable than the starting material).
+            \item This method is very common and ubiquitous in the chemical literature, hence why it has it's own name.
+        \end{itemize}
+        \item Make it an \textbf{anionic oxy-Cope rearrangement} (Figure \ref{fig:CopeEqd}).
+        \begin{itemize}
+            \item To do so, start with an oxy-Cope substrate and add a base to solution so that we can form the deprotonated alkoxide.
+            \item Then the Cope rearrangement and subsequent keto-enol tautomerization will occur at room temperature (rt).
+            \item Why is this reaction so much faster than the oxy-Cope?
+            \begin{itemize}
+                \item The anionic starting material is higher energy than the neutral starting material, so it takes less \emph{additional} energy for the starting materials to reach the transition state.
+                \item Indeed, this is another example of ground state destabilization! See Figure \ref{fig:clickAccelerateb}.
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+    \pagebreak
+    \item Aside: Drawing 7-membered rings.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig[chemfig style={grx}]{*6(------)}
+            \caption{6-membered.}
+            \label{fig:7memberRinga}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{*8(-[,,,,blx]-[,,,,blx]-[,,,,blx](-[2,1.2,,,blx]-[::60,1.4,,,grx]-[::60,1.4,,,grx]-[::60,1.2,,,blx]))}
+            \caption{7-membered.}
+            \label{fig:7memberRingb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig[chemfig style={blx}]{*8(--------)}
+            \caption{8-membered.}
+            \label{fig:7memberRingc}
+        \end{subfigure}
+        \caption{Drawing a 7-membered ring.}
+        \label{fig:7memberRing}
+    \end{figure}
+    \begin{itemize}
+        \item When drawing 7-membered rings on paper, draw an octagon with a hat!
+        \item This is much easier to draw freehand than the exact angles, as in Figure \ref{fig:CopeEqa}.
+        \item Drawing 7-membered rings like this on your exam will make your graders' lives easier!
+    \end{itemize}
+    \item Tip: If it's been a while since you've drawn chairs, practice this!!
+    % \begin{itemize}
+    %     \item You will need these skills to be sharp for predicting the stereochemistry of sigmatropic rearrangements.
+    % \end{itemize}
+    \item This concludes our discussion of the Cope; we now move onto another special sigmatropic.
+    \item The Claisen rearrangement.
+    \begin{itemize}
+        \item This reaction is like the Cope, but with an oxygen in the ring.
+    \end{itemize}
+    \item General form.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6([4]=(-[,0.8]X)-O--=)}
+            \arrow
+            \chemfig{*6(=---(-[,0.8]X)=O)}
+        \schemestop
+        \caption{Claisen rearrangement.}
+        \label{fig:claisenRearr}
+    \end{figure}
+    \begin{itemize}
+        \item The starting material in Figure \ref{fig:claisenRearr} is called an \textbf{allyl vinyl ether}.
+        \item It does a rearrangement to form a carbonyl.
+        \begin{itemize}
+            \item The driving force comes from the fact that carbonyls are more stable than ethers.
+        \end{itemize}
+        \item Like the Cope, this is \emph{also} a $[3,3]$ sigmatropic rearrangement.
+    \end{itemize}
+    \item The Claisen rearrangement can be accelerated by adding different substituents in the \ce{X} position.
+    \begin{table}[h!]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{cc}
+            \textbf{\ce{X}} & \textbf{$\bm{\Delta H}$ (kcal/mol)}\\
+            \hline
+            \ce{H} & $-16$\\
+            \ce{OR} & $-28$\\
+            \ce{NHR} & $-30$\\
+        \end{tabular}
+        \caption{Substituent effects on the Claisen rearrangement.}
+        \label{tab:claisenSub}
+    \end{table}
+    \begin{itemize}
+        \item If $\ce{X}=\ce{H}$, the product is an aldehyde.
+        \item If $\ce{X}=\ce{OR}$, the product is an ester.
+        \item If $\ce{X}=\ce{NHR}$, the product is an amide.
+        \begin{itemize}
+            \item This is the most stable product, so it's the most downhill reaction.
+        \end{itemize}
+        \item Why does stability decrease from amides to esters to aldehydes?
+        \begin{itemize}
+            \item We'll cover this in another Unit later this semester!
+        \end{itemize}
+    \end{itemize}
+    \item Example: Claisen rearrangements in aromatic systems.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemleft{[}\subscheme{
+                \chemfig{*6([:120]=--O-*6(=-=-=-))}
+                \arrow{<->}[,1.2]
+                \chemfig{*6([:60]-[@{6},,,,opacity=0]=[@{1}]-[@{2}]-[@{3,0.7}]O-[@{4,0.3}]*6(-=-=-=[@{5}]))}
+            }\chemright{]}
+            \arrow{->[\SI{200}{\celsius}]}[,1.2]
+            \chemfig{*6(-=-(*6(--=))-(=O)-=)}
+            \arrow{->[taut.]}[,1.2]
+            \chemfig{*6(-=-(--[2]=_)=(-OH)-=)}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={4pt}{2pt}] (1) to[bend right=60,looseness=1.5] (6);
+            \draw [curved arrow={2pt}{2pt}] (3) to[bend right=60,looseness=1.5] (2);
+            \draw [curved arrow={2pt}{2pt}] (5) to[bend right=60,looseness=1.5] (4);
+        }
+        \caption{Claisen rearrangement of allyl phenyl ether.}
+        \label{fig:claisenAllPh}
+    \end{figure}
+    \begin{itemize}
+        \item Claisen rearrangements can occur even with substrates that might not immediately look like they could engage in such reactivity.
+        \item For example, consider the molecule at left in Figure \ref{fig:claisenAllPh}.
+        \begin{itemize}
+            \item This molecule is aromatic.
+            \item Indeed, the "vinyl" group is actually part of an aromatic system here!
+        \end{itemize}
+        \item To make it easier to see which aromatic double bond we should engage, we can redraw the starting material as its resonance structure.
+        \begin{itemize}
+            \item Then we can push arrows in our Claisen rearrangement to yield a nonaromatic intermediate.
+        \end{itemize}
+        \item This intermediate then tautomerizes into an enol.
+        \begin{itemize}
+            \item Enols are usually less stable than ketones, but this enol is aromatic.\footnote{Technically, we call aromatic enols, "phenols."} Therefore, it's favored.
+        \end{itemize}
+        \item This Claisen rearrangement happens at \SI{200}{\celsius} because it's not quite as thermodynamically downhill as some others.
+    \end{itemize}
+    \item Stereochemistry of the Claisen rearrangement.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6((-[,0.8]R)=-@{1C}(-[:-50,0.8]R')(<[:-10,0.8]H)<:O-(-[,0.8]OEt)=)}
+            \arrow{0[\small $\equiv$][][-2mm]}
+            \chemfig[fixed length=false]{(-[2,0.9]OEt)-[@{2,0.7}:-20]O-[@{1}:10]@{2C}(-[2,0.9]H)(-[:-20,0.9]R')-[@{6}:-130]=^[@{5}:160](-[2,0.9,,,ovbnd]H)(-[:-130,0.9]R)-[@{4}:-170,,,,opacity=0]=^[@{3}:50]}
+            \arrow
+            \chemfig[fixed length=false]{(-[2,0.9]OEt)=_[:-20]O-[:10,,,,opacity=0](-[2,0.9]H)(-[:-20,0.9]R')=^[:-130]-[:160]@{3C}(-[2,0.9,,,ovbnd]H)(-[:-130,0.9]R)-[:-170]-[:50]}
+            \arrow{0[\small $\equiv$][][-2mm]}
+            \chemfig{EtO-[:30](=[2]O)-[:-30]-[:30]@{4C}(<[2]R)-[:-30]=_[:30]-[:-30]R'}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={2pt}{2pt}] (1) to[bend right=40,looseness=1.3] (2);
+            \draw [curved arrow={4pt}{2pt}] (3) to[out=160,in=-130,looseness=8] (4);
+            \draw [curved arrow={4pt}{2pt}] (5) to[out=-80,in=-40,looseness=3] (6);
+            % 
+            \fill [blx,opacity=0.3] (1C) circle (1.5mm);
+            \fill [blx,opacity=0.3] (2C) circle (1.5mm);
+            \fill [rex,opacity=0.3] (3C) circle (1.5mm);
+            \fill [rex,opacity=0.3] (4C) circle (1.5mm);
+        }
+        \caption{Claisen rearrangement stereochemistry.}
+        \label{fig:Claisenstereochem}
+    \end{figure}
+    \begin{itemize}
+        \item Like the Cope, the Claisen rearrangement is stereospecific.
+        \begin{itemize}
+            \item As such, the one stereocenter (blue) in the starting material will determine whether the product has a \emph{cis}- or \emph{trans}-olefin.
+        \end{itemize}
+        \item To determine the product stereochemistry, we once again draw a chair-like transition state.
+        \begin{itemize}
+            \item This time, the way to make the most things equatorial is to put the two \ce{R} groups equatorial and leave the ethoxy group axial.
+            \item Drawing in hydrogens can help you figure out the substituent positions at the stereocenter!
+        \end{itemize}
+        \item Then we draw circle arrows to help us move the bonds to the product chair.
+        \item We now unfold the product chair.
+        \begin{itemize}
+            \item The new olefin is \emph{trans}.
+            \item The new stereocenter (red) will be Cahn-Ingold-Prelog (R) if $\ce{R}=\ce{Me}$, for example.
+            \item Therefore, we can draw the product linearly with a \emph{trans}-olefin and "(R)" stereocenter.
+        \end{itemize}
+    \end{itemize}
+    \item This concludes our discussion of the Claisen rearrangement.
+    \item We now move onto sigmatropic hydrogen atom shifts.
+    \begin{itemize}
+        \item Note that chemists refer to these reactions interchangeably as "hydrogen atom shifts," "\ce{H}-atom shifts," "\ce{H} shifts," etc.
+        \item We can also have sigmatropic methyl shifts, though we won't discuss these explicitly this lecture.
+    \end{itemize}
+    \item Example: A $[1,3]$ \ce{H}-atom shift.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Me-[:30](<[@{1}2]H)-[@{2}:-30]=^[@{3}:30]@{C}-[:-30]Et}
+                \arrow{->[$\Delta$]}
+                \chemfig{Me-[:30]=^[:-30]-[:30](-[2,,,,wvbnd]H)-[:-30]Et}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={3pt}{2pt}] (1) to[out=20,in=90] (C);
+                \draw [curved arrow={4pt}{2pt}] (3) to[bend right=60,looseness=1.8] (2);
+            }
+            \caption{A $[1,3]$ \ce{H}-shift.}
+            \label{fig:Hshift13a}
+        \end{subfigure}\\[2.5em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Me-[:30]\charge{90=\.}{}(-[2,,,,opacity=0]\charge{-90=\.}{H})-[:-30]=^[:30](-[6,,,,opacity=0]\phantom{H})-[:-30]Et}
+                \arrow{0[\small $\equiv$][][-2mm]}
+                \chemfig{Me-[:30]@{2C1}(-[2,,,,opacity=0]@{2H}H)-[:-30]-[:30]@{2C3}(-[6,,,,opacity=0]\phantom{H})-[:-30]Et}
+                \arrow
+                \chemfig{Me-[:30]@{3C1}-[:-30]-[:30]@{3C3}(-[6,,,,opacity=0]@{3H}H)(-[2,,,,opacity=0]\phantom{H})-[:-30]Et}
+                \arrow{0[\small $\equiv$][][-2mm]}
+                \chemfig{Me-[:30]=^[:-30]-[:30](<:[2]H)(-[6,,,,opacity=0]\phantom{H})-[:-30]Et}
+            \schemestop
+            \chemmove{
+                \draw [thick,orx] ($(2C1)+(0.0018,0)$) to[bend left=120,looseness=540] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(2C1)+(0.0018,0)$) to[bend right=120,looseness=540] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \node (2Hn) [circle,thick,draw=orx,fill=ory,inner sep=1pt] at (2H) {H};
+                \draw [thick,orx] ($(2C3)+(0.0018,0)$) to[bend right=120,looseness=540] ($(2C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(2C3)+(0.0018,0)$) to[bend left=120,looseness=540] ($(2C3)+(-0.0018,0)$) -- cycle;
+                \draw [cyan,thick,-] ([xshift=-1.5mm,yshift=3mm]2C1.center) to[bend left=50] node[left]{$\checkmark$} ([xshift=-2mm,yshift=-1.5mm]2H.center);
+                \draw [cyan,thick] (2Hn) to[out=-30,in=180] node[above right=-1mm]{$\checkmark$} ([xshift=-1.5mm,yshift=-3mm]2C3.center);
+                \draw [rex,thick] (2Hn) to[out=30,in=120] node[above]{X} ([xshift=-1.5mm,yshift=5mm]2C3.center);
+                % 
+                \draw [thick,orx] ($(3C1)+(0.0018,0)$) to[bend left=120,looseness=540] ($(3C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(3C1)+(0.0018,0)$) to[bend right=120,looseness=540] ($(3C1)+(-0.0018,0)$) -- cycle;
+                \node [circle,thick,draw=orx,fill=ory,inner sep=1pt] at (3H) {H};
+                \draw [thick,orx] ($(3C3)+(0.0018,0)$) to[bend right=120,looseness=540] ($(3C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(3C3)+(0.0018,0)$) to[bend left=120,looseness=540] ($(3C3)+(-0.0018,0)$) -- cycle;
+            }
+            \vspace{0.5em}
+            \caption{Orbital pathway.}
+            \label{fig:Hshift13b}
+        \end{subfigure}
+        \caption{$[1,3]$ hydrogen atom shift.}
+        \label{fig:Hshift13}
+    \end{figure}
+    \begin{itemize}
+        \item This reaction is classified as a \textbf{$\bm{[1,3]}$ sigmatropic rearrangement}.
+        \item The general form involves the migration of a hydrogen through a concerted, pericyclic transition state (Figure \ref{fig:Hshift13a}).
+        \item However, we need orbitals to determine the stereochemistry at the new stereocenter (Figure \ref{fig:Hshift13b}).
+        \begin{itemize}
+            \item Treat the transition state as a diradical, like with the Cope (see Figure \ref{fig:Copeorb3D}).
+            \begin{itemize}
+                \item Breaking bonds, we get one allyl radical again (3 $p$-orbitals and 3 electrons), but we also get a hydrogen radical (1 $s$-orbital and 1 electron).
+                \item Draw the reactive MOs for these two radicals.
+            \end{itemize}
+            \item Now for the hydrogen to move, it has to find another lobe with the right shading.
+            \begin{itemize}
+                \item In particular, the \ce{H} can't just jump to the other top orbital because said top orbital has the wrong shading.
+            \end{itemize}
+        \end{itemize}
+        \item Takeaway: For \ce{H} to move, it has to cross to the other face of the molecule.
+        \begin{itemize}
+            \item This is called \textbf{antarafacial} movement.
+            \begin{itemize}
+                \item This contrasts with \textbf{suprafacial} movement, which we'll discuss in the next example.
+            \end{itemize}
+            \item Practically speaking, antarafacial moves are rare. But they are possible!
+            \begin{itemize}
+                \item See \textcite{bib:Clayden} for movement in larger systems!!
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Antarafacial} (movement): Movement of an atom to a position on the \emph{opposite} face of the molecule.
+    \item \textbf{Suprafacial} (movement): Movement of an atom to another position on the \emph{same} face of the molecule.
+    \item Example: Consider a $[1,5]$ \ce{H}-atom shift.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.35\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(=(--[,0.6,,,opacity=0])-=--H)}
+                \arrow{->[$\Delta$]}
+                \chemfig{*6([:-60]H--(--[,0.6,,,opacity=0])=-=)}
+            \schemestop
+            \caption{A $[1,5]$ \ce{H}-shift.}
+            \label{fig:Hshift15a}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.6\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(=(-)-=-\charge{-150=\.}{}-[,,,,opacity=0]\charge{[extra sep=2pt]30=\.}{H})}
+                \arrow{0[\small $\equiv$][][-2mm]}
+                \chemfig{*5([:-45]@{2C1}-(-)-@{2C3}--@{2C5}(-[2]@{2H}H))}
+                \arrow
+                \chemfig{*5([:-45]@{3C1}(-[2]@{3H}H)-(-)-@{3C3}--@{3C5})}
+                \arrow{0[\small $\equiv$][][-2mm]}
+                \chemfig{*6([:-60]H--(-)=-=)}
+            \schemestop
+            \chemmove{
+                \draw [thick,orx] ($(2C5)+(0.0018,0)$) to[bend left=120,looseness=540] ($(2C5)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(2C5)+(0.0018,0)$) to[bend right=120,looseness=540] ($(2C5)+(-0.0018,0)$) -- cycle;
+                \node (2Hn) [circle,thick,draw=orx,fill=ory,inner sep=1pt] at (2H) {H};
+                \draw [thick,orx] ($(2C1)+(0.0018,0)$) to[bend left=120,looseness=540] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(2C1)+(0.0018,0)$) to[bend right=120,looseness=540] ($(2C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=white] ($(2C3)+(0.0018,0)$) to[bend right=120,looseness=540] ($(2C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(2C3)+(0.0018,0)$) to[bend left=120,looseness=540] ($(2C3)+(-0.0018,0)$) -- cycle;
+                \draw [cyan,thick] (2Hn) to[out=150,in=90] node[above left=-1mm]{$\checkmark$} ([yshift=5mm]2C1.center);
+                % 
+                \draw [thick,orx] ($(3C1)+(0.0018,0)$) to[bend left=120,looseness=540] ($(3C1)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(3C1)+(0.0018,0)$) to[bend right=120,looseness=540] ($(3C1)+(-0.0018,0)$) -- cycle;
+                \node [circle,thick,draw=orx,fill=ory,inner sep=1pt] at (3H) {H};
+                \filldraw [thick,draw=orx,fill=white] ($(3C3)+(0.0018,0)$) to[bend right=120,looseness=540] ($(3C3)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(3C3)+(0.0018,0)$) to[bend left=120,looseness=540] ($(3C3)+(-0.0018,0)$) -- cycle;
+                \draw [thick,orx] ($(3C5)+(0.0018,0)$) to[bend left=120,looseness=540] ($(3C5)+(-0.0018,0)$) -- cycle;
+                \filldraw [thick,draw=orx,fill=ory] ($(3C5)+(0.0018,0)$) to[bend right=120,looseness=540] ($(3C5)+(-0.0018,0)$) -- cycle;
+            }
+            \vspace{0.5em}
+            \caption{Orbital pathway.}
+            \label{fig:Hshift15b}
+        \end{subfigure}
+        \caption{$[1,5]$ hydrogen atom shift.}
+        \label{fig:Hshift15}
+    \end{figure}
+    \begin{itemize}
+        \item This reaction is classified as a \textbf{$\bm{[1,5]}$ sigmatropic rearrangement}.
+        \begin{itemize}
+            \item In fact, it is the same reaction we discussed several lectures ago in Figure \ref{fig:sigmatrop15}!
+        \end{itemize}
+        \item We predict the product stereochemistry by continuing to use the same method as before.
+        \begin{itemize}
+            \item This time, we split into a pentadienyl radical (5 $p$-orbitals and 5 electrons) to complement our hydrogen radical (1 $s$-orbital and 1 electron).
+            \item The HOMO of the pentadienyl radical will be the 3rd energy level, so it will have 2 symmetric nodes.
+            \begin{itemize}
+                \item It may be helpful to draw the HOMO on a straight line first (as in Figure \ref{fig:dieneMO}) and then "wrap it around" onto the intermediate drawn in Figure \ref{fig:Hshift15b}.
+            \end{itemize}
+            \item With the orbitals drawn, we must (once again) move the hydrogen to another lobe with the right shading.
+            \begin{itemize}
+                \item This time, however, the \ce{H} can just jump directly over from shaded to shaded.
+                \item This is suprafacial movement!
+            \end{itemize}
+        \end{itemize}
+        \item Practically speaking, suprafacial moves are common.
+        \begin{itemize}
+            \item $[1,5]$ H-atom shifts happen frequently, whether we like it or not!
+            \item This is a real thing: When we try to make a product in the lab, we often access conditions in which the hydrogen will just dance back and forth.
+            \item Indeed, there are isotopic labeling studies in which a molecule with deuterium (\ce{D}) on one position will engage in $[1,5]$ \ce{H}/\ce{D}-shifts to such an extent that the deuterium will become scrambled (i.e., equally distributed between the two possible positions) over time.
+            \item See \textcite{bib:Clayden} for more.
+        \end{itemize}
+    \end{itemize}
+    \item We can do all of these rearrangements photochemically as well, instead of thermally.
+    \begin{itemize}
+        \item This will lead to the opposite things from before, because we now have a new HOMO.
+        \item Implication: Photochemical $[1,3]$ shifts will be suprafacial and photochemical $[1,5]$ shifts will be antarafacial.
+        \item You should try drawing these new orbitals and arrangements out!!
+    \end{itemize}
+    \item Note: \textcite{bib:Clayden} says that $[1,3]$ suprafacial is thermally forbidden, but practically, there is a small possibility that this will happen.
+\end{itemize}
+
+
+
 
 \end{document}
