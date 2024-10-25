@@ -1,0 +1,66 @@
+\documentclass[../notes.tex]{subfiles}
+
+\pagestyle{main}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ (#1)}{}}
+\setcounter{chapter}{2}
+
+\begin{document}
+
+
+
+
+\chapter{Amines}
+\setcounter{section}{19}
+\section{Special Topics}
+\begin{itemize}
+    \item \marginnote{10/23:}Grade cutoffs on Exam 2.
+    \begin{itemize}
+        \item A-B cutoff: 80.
+        \item B-C cutoff: 60.
+        \item C-D cutoff: 45
+        \item Only F's were people who did not take the exam.
+        \item This was a significantly harder exam; y'all have been crushing it so far.
+        \item Remember that these grades are meant to give you a perspective for what you're on track for; they are \emph{not} binding!
+    \end{itemize}
+    \item Notes on Steve Buchwald.
+    \begin{itemize}
+        \item He's a real big-name chemist: Has his name on a ton of reactions, can make a ton of pharmaceutical drugs, does a lot of consulting for chemical companies, etc.
+        \item But also super kind, humble, and nice.
+        \item Knows a ton, but is very down-to-earth and approachable.
+    \end{itemize}
+    \item The rest of this course will be much more synthesis-heavy.
+    \begin{itemize}
+        \item Feel free to continue to reach out to Prof. Elkin even though she's no longer at the blackboards!
+    \end{itemize}
+    \item Today: We'll have fun and talk about machine learning.
+    \begin{itemize}
+        \item Prof. Elkin will go through \textcite{bib:ML}, a paper about using machine learning to predict the outcome of Diels-Alder reactions.
+    \end{itemize}
+    \item The basic idea of what the authors are saying is that if you encode the substituents, you get good prediction of the outputs!
+    \begin{itemize}
+        \item Your computer doesn't know what a molecule is, so you have to encode your molecule in a way that is meaningful to a computer.
+        \item For example: You should not encode benzene with alternating single- and double bonds; benzene has six equivalent bonds due to resonance!
+    \end{itemize}
+    \item Nowadays, computers can predict biological activities (doesn't work perfectly yet, though great progress), solubility and crystal structures (works fine), NMR spectra (works awesome), etc.
+    \begin{itemize}
+        \item Predicting optimal reaction conditions works awesome.
+    \end{itemize}
+    \item Predicting reaction outcomes or yields can be hit or miss.
+    \item There have been maybe \num{1000000} chemical reactions ever catalogued, but most of them are not that useful.
+    \item The low-data regime of predictive modeling is the final frontier, and the especially important one for chemistry.
+    \item Taking high-level expertise and making it algorithmically applicable can be really difficult.
+    \item "High accuracies are achieved only if the machine is provided some chemical `insight' about the reaction (in particular, information about the reaction's core and key substituents)."
+    \item While ML models cannot provide the generality of quantum mechanics, they work much faster.
+    \item They trained the model with inverse electron-demand Diels-Alder reactions, Diels-Alder reactions that need to be site-selective, etc.
+    \item The website to help you predict Diels-Alders is historical at this point, so don't worry if you can't access it in the paper.
+    \item There are several classes on computational chemistry in both Course 5 and Course 10 if you're interested!
+    \item A problem with Reaxys: All of the reactions in the database are data-scraped from old papers, so a significant number of them are wrong or incomplete (20-30\%, and worse in other databases).
+    \item Predictive modeling really reveals how difficult it is to predict reaction outcomes: Prof. Elkin has published papers where their model can predict yield far better than even chemistry experts.
+    \item Conclusion: ML can be useful in predicting outcomes and can generalize to unseen reactions when descriptors carrying physically relevant information are used, and the machine gets appropriately formatted information.
+    \item Note: None of this is testable material!
+\end{itemize}
+
+
+
+
+\end{document}
