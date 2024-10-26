@@ -62,5 +62,448 @@
 
 
 
+\section{Amines - 1}
+\begin{itemize}
+    \item \marginnote{10/25:}New lecturer for the second half of the course: Prof. Steve Buchwald.
+    \begin{itemize}
+        \item Born in Bloomington, Indiana.
+        \item Undergrad at Brown, PhD at Harvard, Postdoc at Caltech (with Bob Grubbs, a Nobel laureate).
+        \item At MIT for 40 years (since 1984).
+        \item Has two cats :)
+        \item Researches \textbf{organometallic chemistry}, with a focus on the synthesis of fine chemicals like pharmaceuticals.
+        \begin{itemize}
+            \item Most organometallic chemistry is predicated on the development of ligands.
+            \item Many of Prof. Buchwald's ligands are named after his former cats!
+            \item Example: The RuPhos ligand is named after Prof. Buchwald's since-passed cat, Rufus.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Organometallic} (chemistry): A hybrid of organic and inorganic chemistry.
+    \item Prof. Elkin is in Washington, D.C. today advising the federal government!
+    \pagebreak
+    \item Announcements.
+    \begin{itemize}
+        \item The first half of this semester covered analytical techniques and physical chemistry; this half is more synthesis-focused.
+        \item Review your 5.12 reactions!! A list of what you need to know for PSet 5 will be posted on Canvas.
+        \begin{itemize}
+            \item The teaching team will also keep a running list of reactions from this half of the course.
+            \item This will tell you what to know for the exams and PSets.
+        \end{itemize}
+        \item Prof. Buchwald will post "study guides" for each unit, containing all the unit's content.
+        \begin{itemize}
+            \item \textcite{bib:Clayden} doesn't have a specific section on amines. Thus, the study guide lists all the pages spread throughout \textcite{bib:Clayden} where the different reactions can be found.
+            \item If you still have \textcite{bib:Smith} --- your 5.12 textbook --- it's Chapter 23.
+        \end{itemize}
+        \item Plan: This lecture and the following one will cover amines.
+        \begin{itemize}
+            \item Amines have a special place in Prof. Buchwald's heart because they're connected to a lot of his research!
+        \end{itemize}
+        \item Like Prof. Elkin, Prof. Buchwald will continue giving fun facts that relate these topics to the real world.
+    \end{itemize}
+    \item Outline for the next two lectures.
+    \begin{enumerate}[label={\Alph*.}]
+        \item Intro.
+        \item Chirality (or "handedness;" recall from 5.12).
+        \item Br\o nsted basicity.
+        \item Synthesis and reactivity (we'll spend the majority of our time on this topic).
+        \begin{enumerate}[label={\arabic*.}]
+            \item Alkylation of ammonia and alternatives.
+            \item Reductive amination.
+            \item Acylation and reduction.
+            \item Reduction of nitriles (i.e., \ce{R-C#N} functional groups).
+            \item Other miscellaneous methods.
+        \end{enumerate}
+    \end{enumerate}
+    \item Today: We'll cover Topic A through most of Topic C.
+    \item We now begin with Topic A: Introduction.
+    \item \textbf{Amine}: An \ce{R3N} compound, where each \ce{R} may be distinct and \ce{R} is an \ce{H}, alkyl, or aryl group.
+    \item The simplest amine is ammonia (\ce{NH3}).
+    \begin{itemize}
+        \item Notice that ammonia \emph{is} an amine by the definition: All of its \ce{R} groups are identically equal to \ce{H}!
+        \item Fun fact: Ammonia is a necessary ingredient in fertilizer.
+        \begin{itemize}
+            \item It is prepared industrially from \ce{N2} using the Haber-Bosch process.
+            \item One could make a reasonable argument that the industrial production of ammonia is the most important technological advance in the history of the world.
+            \begin{itemize}
+                \item This is because it enabled us to produce far more fertilizer, so that we could produce more food, so that we can feed a population of seven billion people.
+            \end{itemize}
+            \item Before Haber-Bosch, fertilizer came from an island covered in bird feces.
+            \item Two Nobel prizes were awarded in connection with the development of this process.
+            \begin{itemize}
+                \item Haber won the Nobel Prize for his work on this process in 1918 (for the process).
+                \item Bosch won the Nobel Prize for his work on this process in 1931 (for high-pressure chemistry).
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item Examples of amines.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \chemfig{*6(-N=-(>:*5([:18]-N(-Me)----))=-=)}
+            \caption{Nicotine.}
+            \label{fig:amineExa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \chemfig{H_2N-[:30]-[:-30]-[:30]-[:-30]-[:30]-[:-30]NH_2}
+            \caption{Cadaverine.}
+            \label{fig:amineExb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \chemfig{N(-[:120]*6(=-=-=-))(-[:-120]*6(=-=-(-Me)=-))-*6(-=-(-*6(-=-(-N(-[:60]*6(-=-=-=))(-[:-60]*6(=-(-Me)=-=-)))=-=))=-=)}
+            \caption{TPD.}
+            \label{fig:amineExc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \chemfig{Me-[:-30]-[:30](=[2]O)-[:-30]N(-[:30]*6(-=-=-=))-[6]*6(---N(--[:-150]-*6(-=-=-=))---)}
+            \caption{Fentanyl.}
+            \label{fig:amineExd}
+        \end{subfigure}
+        \caption{Amine examples.}
+        \label{fig:amineEx}
+    \end{figure}
+    \begin{itemize}
+        \item The top-selling pharmaceuticals in the world are all amines, at least in part.
+        \begin{itemize}
+            \item Not all of these "pharmaceuticals" are fun, though! Some are illicit drugs.
+        \end{itemize}
+        \item Example: Nicotine (Figure \ref{fig:amineExa}).
+        \begin{itemize}
+            \item It's one of the most difficult habits to break.
+            \item There are drugs that mimic the structure of nicotine but bind to the receptor better and block nicotine from doing its job.
+        \end{itemize}
+        \item Example: Cadaverine (Figure \ref{fig:amineExb}).
+        \begin{itemize}
+            \item Does not smell good.
+            \item When animals die, their flesh putrifies/rots and this is what causes the smell.
+        \end{itemize}
+        \item Example: TPD (Figure \ref{fig:amineExc}).
+        \begin{itemize}
+            \item This is a hole transport agent commonly found in the toner cartriges of laser printers.
+        \end{itemize}
+        \item Example: Fentanyl (Figure \ref{fig:amineExd}).
+        \begin{itemize}
+            \item A synthetic opioid that has caused unbelievable amounts of societal problems.
+        \end{itemize}
+    \end{itemize}
+    \item Classes of amines.
+    \begin{itemize}
+        \item Ammonia (\ce{NH3}).
+        \begin{itemize}
+            \item Good because it helps feed the world.
+            \item Bad because it's a toxic gas and smells horrible.
+        \end{itemize}
+        \item \textbf{Primary amines}.
+        \item \textbf{Secondary amines}.
+        \item \textbf{Tertiary amines}.
+        \item \textbf{Quaternary ammonium salts}: A related family of comounds.
+    \end{itemize}
+    \pagebreak
+    \item \textbf{Primary} (amine): An amine in which we've replaced one of the \ce{H}'s in ammonia with an (alkyl or aryl) \ce{R} group. \emph{Denoted by} $\bm{1^\circ}$. \emph{General form} \ce{RNH2}.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{MeNH2}
+            \caption{Methylamine.}
+            \label{fig:amineEx1a}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{NH_2-[4]*6(=-=-=-)}
+            \caption{Aniline.}
+            \label{fig:amineEx1b}
+        \end{subfigure}
+        \caption{Primary amine examples.}
+        \label{fig:amineEx1}
+    \end{figure}
+    \begin{itemize}
+        \item Example: Methylamine (Figure \ref{fig:amineEx1a}).
+        \begin{itemize}
+            \item A gas like ammonia, but a liquid under pressure.
+            \item It's a controlled substance.
+            \begin{itemize}
+                \item In \emph{Breaking Bad}, this is what Walt, Jessie, and Todd heisted from the train!
+            \end{itemize}
+        \end{itemize}
+        \item Example: Aniline (Figure \ref{fig:amineEx1b}).
+        \begin{itemize}
+            \item Very important historically: Modern chemistry began in the 1800's with aniline-based dyes.
+            \begin{itemize}
+                \item These companies are the precursor to modern-day pharmaceutical companies!
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Secondary} (amine): An amine in which we've replaced two of the \ce{H}'s in ammonia with (alkyl or aryl) \ce{R} groups. \emph{Denoted by} $\bm{2^\circ}$. \emph{General form} \ce{RR$'$NH}.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.2\linewidth}
+            \centering
+            \chemfig{*6(-\chembelow{N}{H}-----)}\\[1em]
+            \caption{Piperidine.}
+            \label{fig:amineEx2a}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.4\linewidth}
+            \centering
+            \schemestart
+                \chemfig{NH(-[:120](-[::60]Me)(-[::-60]Me))(-[:-120](-[::60]Me)(-[::-60]Me))}
+                \arrow
+                \chemfig{NLi(-[:120](-[::60]Me)(-[::-60]Me))(-[:-120](-[::60]Me)(-[::-60]Me))}
+            \schemestop
+            \caption{Diisopropylamine and LDA.}
+            \label{fig:amineEx2b}
+        \end{subfigure}
+        \caption{Secondary amine examples.}
+        \label{fig:amineEx2}
+    \end{figure}
+    \begin{itemize}
+        \item The \ce{R} groups can be separate, or they can be linked together.
+        \item Example of a cyclic secondary amine: Piperidine (Figure \ref{fig:amineEx2a}).
+        \begin{itemize}
+            % \item Notice how the two alkyl groups are linked together to form a ring!
+            \item Piperidine is important in a number of applications, including sequencing DNA.
+        \end{itemize}
+        \item Example of an acyclic secondary amine: Diisopropylamine (Figure \ref{fig:amineEx2b}).
+        \begin{itemize}
+            % \item Notice how the two isopropyl groups are not chemically bonded!
+            \item If you replace the amine hydrogen with lithium, you get \underline{l}ithium \underline{d}iisopropyl\underline{a}mide (LDA).
+            \begin{itemize}
+                \item This is a very strong base that we'll talk more about later in this course.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Tertiary} (amine): An amine in which we've replaced all three of the \ce{H}'s in ammonia with (alkyl or aryl) \ce{R} groups. \emph{Denoted by} $\bm{3^\circ}$. \emph{General form} \ce{RR$'$R$''$N}.
+    \item \textbf{Quaternary ammonium salt}: A nitrogen covalently bonded to four \ce{R} groups (and hence having a positive formal charge), coordinated to a negative counterion. \emph{General form} \ce{R4N+ X-}.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{Me-[:30](=[2]O)-[:-30]O-[:30]-[:-30]-[:30]\charge{[extra sep=5pt]90=$\oplus$}{N}Me_3-[:160,0.7,,,opacity=0]\charge{45=$\ominus$}{X}}
+        \caption{Quaternary ammonium salt example.}
+        \label{fig:amineEx4}
+    \end{figure}
+    \begin{itemize}
+        \item Example: Acetylcholine, an important neurotransmitter (Figure \ref{fig:amineEx4}).
+        % \begin{itemize}
+        %     \item This is an important neurotransmitter.
+        % \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item This concludes our introduction to amines.
+    \item Aside: Prof. Buchwald \emph{strongly} recommends you show up for lecture the day before Halloween :)
+    \item We now move onto Topic B: Chirality.
+    \item Recall from 5.12 that some compounds are \emph{chiral}, i.e., they can have enantiomers.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{(-[2]R_4)(-[:-150]R_1)(<[:-60]R_2)(<:[:-20]R_3)}
+        \caption{A chiral compound.}
+        \label{fig:chiralC}
+    \end{figure}
+    \begin{itemize}
+        \item These enantiomers can often be separated.
+        \item They can also have different biological activities.
+        \begin{itemize}
+            \item Fun fact: The FDA now requires all chiral molecules to be prepared in both enantiomers and independently tested, in part because of the thalidomide scandal.
+        \end{itemize}
+    \end{itemize}
+    \item The structure of amines.
+    \begin{figure}[h!]
+        \centering
+        \vspace{2em}
+        \footnotesize
+        \chemfig{@{N}\charge{[extra sep=4.5mm]90=\:}{N}(-[:-150]R_1)(<[:-60]R_2)(<:[:-20]H)}
+        \chemmove{
+            \draw [orx,thick] ($(N)+(-0.0018,0.2)$) to[bend left=120,looseness=600] ($(N)+(0.0018,0.2)$) -- cycle;
+        }
+        \caption{Amine structure.}
+        \label{fig:amineStruc}
+    \end{figure}
+    \begin{itemize}
+        \item Amines are $sp^3$-hybridized with a tetrahedral electron pair arrangement.
+        \begin{itemize}
+            \item 3 bonding orbitals and 1 lone pair (lp).
+        \end{itemize}
+        \item The lp is responsible for the Br\o nsted basicity of amines.
+        \item If one of the \ce{R} groups is hydrogen, then the amine can participate in hydrogen bonding (a very important interaction you should recall from Gen Chem).
+    \end{itemize}
+    \item Is pyridine a tertiary amine?
+    \begin{itemize}
+        \item Technically, yes; we'll discuss pyridine next lecture.
+    \end{itemize}
+    \item Amines have two enantiomers as well.
+    \begin{figure}[h!]
+        \centering
+        \vspace{2em}
+        \footnotesize
+        \schemestart
+            \chemfig{@{1N}\charge{[extra sep=4.5mm]90=\:}{N}(-[:-150]R_1)(<[:-60]R_2)(<:[:-20]R_3)}
+            \arrow{<=>}
+            \chemfig{@{2N}\charge{[extra sep=4.5mm]-90=\:}{N}(-[:150]R_1)(<[:20]R_2)(<:[:60]R_3)}
+        \schemestop
+        \chemmove{
+            \draw [orx,thick] ($(1N)+(-0.0018,0.2)$) to[bend left=120,looseness=600] ($(1N)+(0.0018,0.2)$) -- cycle;
+            \draw [orx,thick] ($(2N)+(-0.0018,-0.2)$) to[bend right=120,looseness=600] ($(2N)+(0.0018,-0.2)$) -- cycle;
+        }\\[1.5em]
+        \caption{Amine enantiomer interconversion.}
+        \label{fig:amineEnaIntercon}
+    \end{figure}
+    \begin{itemize}
+        \item The energy barrier ($\Delta G^\ddagger$) between the two enantiomers is \kcalr{5}{6}.
+        \item Additionally, note that if $\Delta G^\ddagger\leq\kcal{20}$, the process is fast at room temperature.
+        \item Thus, amine enantiomers rapidly interconvert at room temperature, so we (usually) cannot resolve amines into individual enantiomers.
+        \begin{itemize}
+            \item One time we can resolve amines into enantiomers is in the case of \textbf{aziridines}.
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item \textbf{Aziridine}: A three-membered ring containing one nitrogen and two carbons. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig[fixed length=false]{*3([:-30]--N(-R)-)}
+        \caption{Aziridine.}
+        \label{fig:aziridine}
+    \end{figure}
+    \begin{itemize}
+        \item These are the amine equivalent of an epoxide.
+        \item Like in any other amine, \ce{R} can still be \ce{H}, alkyl, or aryl.
+        \item The $sp^3$-hybridized atoms all want to have \ang{109} bond angles but are strained to \ang{60}.
+    \end{itemize}
+    \item In order for aziridines to undergo \textbf{racemization}, the molecules must go through a transition state with an $sp^2$-nitrogen.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{@{1N}\charge{[extra sep=4mm]54=\:}{N}?(-[:-54,0.7]Cl)-[:160](-[2,0.8]Ph)(-[:-150,0.8]Ph)-[:-120,0.5]?}
+            \arrow
+            \chemleft{[}
+                \chemfig{@{2N}\charge{[extra sep=4.5mm]90=\:}{N}?(-[,0.7]Cl-[6,1.1,,,opacity=0])-[:160](-[2,0.8]Ph)(-[:-150,0.8]Ph)-[:-120,0.5]?}
+            \chemright{]^\ddagger}
+            % \arrow
+            % \chemfig{@{3N}\charge{[extra sep=4mm]-54=\:}{N}?(-[:54,0.7]Cl)-[:160](-[2,0.8]Ph)(-[:-150,0.8]Ph)-[:-120,0.5]?}
+        \schemestop
+        \chemmove{
+            \draw [orx,thick,rotate=-36] ($(1N)+(-0.0018,0.2)$) to[bend left=120,looseness=600] ($(1N)+(0.0018,0.2)$) -- cycle;
+            \draw [orx,thick] ($(2N)+(-0.0018,0.2)$) to[bend left=120,looseness=600] ($(2N)+(0.0018,0.2)$) -- cycle;
+            \filldraw [draw=orx,fill=ory,thick] ($(2N)+(-0.0018,-0.2)$) to[bend right=120,looseness=600] ($(2N)+(0.0018,-0.2)$) -- cycle;
+            % \draw [orx,thick,rotate=36] ($(3N)+(-0.0018,-0.2)$) to[bend right=120,looseness=600] ($(3N)+(0.0018,-0.2)$) -- cycle;
+        }
+        \caption{Aziridine enantiomer interconversion.}
+        \label{fig:aziridineEnaIntercon}
+    \end{figure}
+    \begin{itemize}
+        \item This $sp^2$-nitrogen wants to have \ang{120} bond angles but is still strained down to \ang{60}.
+        \begin{itemize}
+            \item This is even worse than the strain in an $sp^3$-nitrogen!
+        \end{itemize}
+        \item Thus, the energy barrier to aziridine enantionmer interconversion is $\Delta G^\ddagger\approx\kcal{24}$.
+        \item Therefore, (many) aziridines \emph{do not} interconvert at room temperature because $24>20$.
+    \end{itemize}
+    \item \textbf{Racemization}: The interconversion of enantiomers.
+    \item This concludes our discussion of chirality.
+    \item We now move onto Topic C: Br\o nsted basicity.
+    \item Consider the following two protonation reactions.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \ce{MeOH + H+ <=> MeOH2+}
+            \caption{Methanol.}
+            \label{fig:baseMeOHNH2a}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.3\linewidth}
+            \centering
+            \ce{MeNH2 + H+ <=> MeNH3+}
+            \caption{Methylamine.}
+            \label{fig:baseMeOHNH2b}
+        \end{subfigure}
+        \caption{Basicity of methanol vs. methylamine.}
+        \label{fig:baseMeOHNH2}
+    \end{figure}
+    \begin{itemize}
+        \item For \ce{MeOH2+}, $\pKa\approx -2$.
+        \begin{itemize}
+            \item This means that \ce{MeOH2+} is very acidic.
+            \item It follows that \ce{MeOH} is only weakly basic.
+        \end{itemize}
+        \item For \ce{MeNH3+}, $\pKa\approx\numrange{9}{11}$.
+        \begin{itemize}
+            \item Thus, \ce{MeNH2} is \emph{much} more basic than \ce{MeOH}.
+        \end{itemize}
+    \end{itemize}
+    \item Something critical to everyday life: Why do fish smell so bad after they die?
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=5pt}
+        \schemestart
+            \chemfig{Me_3\charge{90=$\oplus$}{N}-[,,,,->]\charge{[extra sep=3pt]45=$\ominus$}{O}}
+            \arrow{->[Enzymes]}[,1.4]
+            \chemfig{Me_3N}
+            \arrow{->[\ce{H+}]}[,1.4]
+            \chemfig{Me_3\charge{90=$\oplus$}{N}H}
+        \schemestop
+        \caption{Amines explain why fish smell, and how to season them!}
+        \label{fig:amineFish}
+    \end{figure}
+    \begin{itemize}
+        \item Not all fish smell to the same degree.
+        \begin{itemize}
+            \item Ocean fish (like cod) smell worse than river fish (like catfish) after they die.
+        \end{itemize}
+        \item Ocean fish smell worse because of trimethylamine oxide.
+        \begin{itemize}
+            \item There's a lot of salt in the ocean, so ocean fish use trimethylamine oxide to balance the salt levels in their cells.
+            \item This compound does not smell very much, but after they die, enzymes from the fish (and from bacteria in the fish) reduce trimethylamine oxide to trimethylamine (which smells horrible).
+        \end{itemize}
+        \item Second important thing: We put lemon juice on fish because the acidity of the lemon juice (coming from citric acid) protonates the trimethylamine, decreasing the smell (and the taste since smell is connected to taste) so that the fish tastes better.
+    \end{itemize}
+    \item Resonance decreases the basicity of amines.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=5pt}
+        \schemestart
+            \chemfig{*6([:-30]=-@{1C}=[@{12}](-[@{11}]@{1N}\charge{[extra sep=3pt]90=\:}{N}H_2)-=-)}
+            \arrow{<->}
+            \chemfig{*6([:-30]@{2C2}=[@{22}]-[@{21}]@{2C1}\charge{-60=$\ominus$}{}-(=\charge{90=$\oplus$}{N}H_2)-=-)}
+            \arrow{<->}
+            \chemfig{-[,0.4,,,opacity=0]*6(@{3C1}\charge{180=$\ominus$}{}-=-(=\charge{90=$\oplus$}{N}H_2)-@{3C2}=[@{32}]-[@{31}])}
+            \arrow{<->}
+            \chemfig{*6([:-30]-=-(=\charge{90=$\oplus$}{N}H_2)-\charge{60=$\ominus$}{}-=)}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={5pt}{2pt}] (1N) to[bend right=90,looseness=3] (11);
+            \draw [curved arrow={4pt}{3pt}] (12) to[bend right=90,looseness=4] (1C);
+            \draw [curved arrow={10pt}{2pt}] (2C1) to[out=-60,in=-90,looseness=5] (21);
+            \draw [curved arrow={4pt}{3pt}] (22) to[bend right=90,looseness=4] (2C2);
+            \draw [curved arrow={10pt}{2pt}] (3C1) to[out=180,in=150,looseness=5] (31);
+            \draw [curved arrow={4pt}{3pt}] (32) to[bend right=90,looseness=4] (3C2);
+        }\\[1.5em]
+        \caption{Basicity of aniline.}
+        \label{fig:baseAniline}
+    \end{figure}
+    \begin{itemize}
+        \item The conjugate base of aniline (\ce{PhNH3+}) has $\pKa\approx 5$, indicating that aniline is much less basic than methylamine ($\pKa\approx\numrange{9}{11}$).
+        \item Why? Two reasons:
+        \begin{enumerate}
+            \item The $sp^2$-carbon adjacent to the nitrogen in aniline is more electoron-donating than the $sp^3$-carbon adjacent to the nitrogen in methylamine.
+            \item Resonance.
+            \begin{itemize}
+                \item Just like in a phenol, we can push the heteroatom electrons into the benzene ring to get three other resonance forms (Figure \ref{fig:baseAniline}).
+                \item Resonance decreases basicity, so aniline is much less basic than the any alkylamine.
+            \end{itemize}
+        \end{enumerate}
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
