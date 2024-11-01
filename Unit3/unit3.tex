@@ -208,7 +208,7 @@
         \footnotesize
         \begin{subfigure}[b]{0.2\linewidth}
             \centering
-            \chemfig{MeNH2}
+            \ce{MeNH2}
             \caption{Methylamine.}
             \label{fig:amineEx1a}
         \end{subfigure}
@@ -501,6 +501,617 @@
             \end{itemize}
         \end{enumerate}
     \end{itemize}
+\end{itemize}
+
+
+
+\section{Amines - 2}
+\begin{itemize}
+    \item \marginnote{10/28:}Lecture 21 recap.
+    \begin{enumerate}[label={\Alph*.}]
+        \item Amines are basic, nitrogen-containing compounds.
+        \begin{itemize}
+            \item Their general form is \ce{R3N}, where $\ce{R}=\ce{H},\text{alkyl},\text{aryl}$.
+            \item Some other types will be discussed at the end of the semester.
+        \end{itemize}
+        \item Types of amines: Ammonia (\ce{NH3}), $1^\circ$, $2^\circ$, or $3^\circ$ depending on the number of hydrogens.
+        \item Amines are often chiral, but rarely resolvable.
+        \item Amines are Br\o nsted bases.
+        \begin{itemize}
+            \item Substituents affect the acidities of the conjugate acids.
+            \item You can compare the basicity of methylamine and aniline by comparing the $\pKa$'s of the conjugate acids.
+            \item Resonance makes amines less basic.
+        \end{itemize}
+    \end{enumerate}
+    \item Today: We'll cover Topic D.
+    \begin{itemize}
+        \item The reading --- \textcite[700-702]{bib:Clayden} --- covers snippets of amine synthesis.
+    \end{itemize}
+    \item We'll begin with Subtopic D.1: Alkylation of amines.
+    \item Specifically, let's look at how we might synthesize a primary amine.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{H_3@{1N}\charge{90=\:}{N}}
+            \arrow{0}[,0.5]
+            \chemfig{-[:-150]@{2C}-[@{21}6]@{2Br}Br}
+            \arrow
+            \chemfig{H_3@{}\charge{[extra sep=5pt]90=$\oplus$}{N}(-[1,,,,opacity=0])(-[7,,,,opacity=0])-[:30]-[:-30]}
+            \arrow(c3--c6){0}
+            \chemfig{H_2@{}\charge{[extra sep=5pt]90=$\oplus$}{N}(-[1]-[::-60])(-[7]-[::60])}
+            \arrow(--c9){0}
+            \chemfig{@{}\charge{[extra sep=5pt]90=$\oplus$}{N}(-[1]-[::-60])(-[7]-[::60])(-[3]-[::60])(-[:-150]H)}
+            \arrow(--c12){0}
+            \chemfig{\charge{[extra sep=5pt]90=$\oplus$}{N}(-[1]-[::-60])(-[7]-[::60])(-[3]-[::60])(-[5]-[::-60])-[,0.5,,,opacity=0]\charge{45=$\ominus$}{Br}}
+            \arrow(@c3--c4){<=>[*{0}\ce{NH3}]}[-90]
+            \chemfig{H_2@{4N}\charge{90=\:}{N}(-[1,,,,opacity=0])(-[7,,,,opacity=0])-[:30]-[:-30]}
+            \arrow{0[\scriptsize\chemfig[atom sep=1.4em]{-[:-150]@{5C}-[@{51}6]@{5Br}Br}]}
+            \arrow(@c6--c7){<=>[*{0}\ce{NH3}]}[-90]
+            \chemfig{H@{7N}\charge{90=\:}{N}(-[1]-[::-60])(-[7]-[::60])}
+            \arrow{0[\scriptsize\chemfig[atom sep=1.4em]{-[:-150]@{8C}-[@{81}6]@{8Br}Br}]}
+            \arrow(@c9--c10){<=>[*{0}\ce{NH3}]}[-90]
+            \chemfig{@{10N}\charge{90=\:}{N}(-[1]-[::-60])(-[7]-[::60])(-[3]-[::60])}
+            \arrow{0[\scriptsize\chemfig[atom sep=1.4em]{-[:-150]@{11C}-[@{111}6]@{11Br}Br}]}
+        \schemestop
+        \chemmove{
+            \draw [shorten <=1em,shorten >=1em] (c4) -- ([xshift=-1.1cm]c4 -| c6) -- (c6);
+            \draw [shorten <=1em,shorten >=1em] (c7) -- ([xshift=-1.5cm]c7 -| c9) -- (c9);
+            \draw [shorten <=1em,shorten >=1em] (c10) -- ([xshift=-1.5cm]c10 -| c12) -- (c12);
+            % 
+            \draw [curved arrow={5pt}{2pt}] (1N) to[out=90,in=120,looseness=1.5] (2C);
+            \draw [curved arrow={2pt}{2pt}] (21) to[bend left=90,looseness=2] (2Br);
+            \draw [curved arrow={5pt}{2pt}] (4N) to[out=90,in=150] (5C);
+            \draw [curved arrow={2pt}{2pt}] (51) to[bend left=90,looseness=2] (5Br);
+            \draw [curved arrow={5pt}{2pt}] (7N) to[out=90,in=150] (8C);
+            \draw [curved arrow={2pt}{2pt}] (81) to[bend left=90,looseness=2] (8Br);
+            \draw [curved arrow={5pt}{2pt}] (10N) to[out=90,in=150] (11C);
+            \draw [curved arrow={2pt}{2pt}] (111) to[bend left=90,looseness=2] (11Br);
+        }
+        \caption{Alkylation of amines from ammonia and an alkyl halide.}
+        \label{fig:amineAlkylationRX}
+    \end{figure}
+    \begin{itemize}
+        \item If we wanted to synthesize ethylamine (\ce{EtNH2}), we might first think to react ammonia with bromoethane via an S\textsubscript{N}2 mechanism.
+        \item Would this work? Sort of.
+        \begin{itemize}
+            \item When we carry out this reaction, we obtain a primary ammonium cation that is easily (and reversibly) deprotonated to ethylamine by other basic ammonia molecules floating around.
+            \item This frees up the ethylamine product to react again! In fact, even though ethylamine is sterically more hindered, it is electronically more activated.
+            \item It follows that the ethylamine we've created will react \emph{even faster} than ammonia, forming a secondary ammonium cation.
+        \end{itemize}
+        \item After a few more successive cycles of S\textsubscript{N}2's and deprotonations --- creating iteratively more substituted and hence more electronically activated amines --- we obtain a quaternary ammonium salt\footnote{Note that at the board, Prof. Buchwald uses parentheses and numerical subscripts to indicate groups that are repeated multiple times.} as our major product.
+        \item Therefore, the major product is tetraethylammonium, a quaternary ammonium salt.
+    \end{itemize}
+    \item Aside: When we do synthesis, we do \emph{not} want to form a mixture of products.
+    \begin{itemize}
+        \item Mixtures decrease our efficiency and require separation.
+        \item We have all sorts ways to separate things, but separation techniques are inelegant, time consuming, and expensive.
+    \end{itemize}
+    \item As such, if we do want to use ammonia and an alkyl halide, we must use a \emph{large excess} of ammonia. However, this is not a great fix because\dots
+    \begin{itemize}
+        \item Ammonia is toxic and smells horrible;
+        \item Ammonia is also a gas, and hence harder to control in the lab than a liquid.
+    \end{itemize}
+    \item So we need an alternate method to synthesize primary amines. In fact, we'll discuss two!
+    \item Alternative \#1: Gabriel synthesis.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6(=-(*5(-(=O)-NH-(=O)-))=-=-)}
+            \arrow{->[\ce{KOH}]}
+            \chemfig{*6(=-(*5(-(=O)-@{2N}\charge{45=$\ominus$}{N}(-[,0.5,,,opacity=0]\charge{45=$\oplus$}{K})-(=O)-))=-=-)}
+            \arrow{->[\scriptsize\chemfig[atom sep=1.4em]{-[:-150]@{3C}-[@{31}6]@{3Br}Br}]}
+            \chemfig{*6(=-(*5(-(=O)-N(-[:30]-[:-30])-(=O)-))=-=-)}
+            \arrow{-U>[\scriptsize\ce{H2N-NH2}][\scriptsize\chemfig[atom sep=1.4em]{H_2N-[:30]-[:-30]}][][0.4][80]}[,1.5]
+            \chemfig{*6(=-(*6(-(=O)-NH-NH-(=O)-))=-=-)}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={10pt}{2pt}] (2N) to[out=45,in=150] (3C);
+            \draw [curved arrow={2pt}{2pt}] (31) to[bend left=90,looseness=2] (3Br);
+        }
+        \caption{Gabriel synthesis.}
+        \label{fig:gabrielSynthesis}
+    \end{figure}
+    \begin{itemize}
+        \item This method can be used to synthesize primary amines.
+        \item The molecule we begin with is called phthalimide.
+        \begin{itemize}
+            \item Phthalimide has $\pKa\approx 8$.
+            \item For comparison, \ce{NH3} has $\pKa\approx\numrange{33}{35}$.
+        \end{itemize}
+        \item First step: Put phthalimide in the presence of \ce{KOH} to yield the potassium salt.
+        \item Second step: The potassium salt can do an S\textsubscript{N}2 reaction to monoalkylate.
+        \begin{itemize}
+            \item Importantly, this monoalkylated intermediate cannot react further! This is because its nitrogen lone pair is tied up in conjugation with the carbonyls.
+        \end{itemize}
+        \item Third step: We need to release the product, which we can do by adding hydrazine.
+        \begin{itemize}
+            \item This releases our desired ethylamine product and forms a byproduct.
+            \item Aside: Hydrazine is also used as rocket fuel! It's an extremely high energy molecule.
+        \end{itemize}
+    \end{itemize}
+    \item Alternative \#2: Reduction of azides.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setcharge{extra sep=5pt}
+        \vspace{2.7em}
+        \schemestart
+            \chemfig{@{1R}R-[@{11}]@{1X}X}
+            \arrow{->[\chemfig{\charge{90=$\oplus$}{Na}@{2N}\charge{90=$\ominus$}{N}_3}]}
+            \chemfig{RN_3}
+            \arrow{->[{[H]}]}
+            \chemfig{RNH_2}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={10pt}{2pt}] (2N) to[out=90,in=180,looseness=2] (1R);
+            \draw [curved arrow={2pt}{2pt}] (11) to[bend left=90,looseness=3] (1X);
+        }
+        \caption{Reduction of azides.}
+        \label{fig:azideReduce}
+    \end{figure}
+    \begin{itemize}
+        \item This method can be used to synthesize primary \emph{or} secondary amines.
+        \item We begin with an alkyl halide (\ce{RX}), where \ce{R} is primary or secondary.
+        \begin{itemize}
+            \item Importantly, \ce{R} \emph{cannot} be tertiary because the first step proceeds through an S\textsubscript{N}2 mechanism, and S\textsubscript{N}2 cannot happen with tertiary alkyl halides.
+        \end{itemize}
+        \item First step: We react \ce{RX} with sodium azide (\ce{NaN3}).
+        \begin{itemize}
+            \item Sodium azide is a source of azide (\ce{N3-}), a fantastic nucleophile.
+            \item This will give us an \ce{RN3} intermediate.
+        \end{itemize}
+        \item Second step: We reduce the azide to the amine. There are two different ways to do this.\footnote{"\ce{[H]}" is a general way of denoting a reduction. It is useful in Figure \ref{fig:azideReduce} because there are two possible reducing agents we can use, discussed next.}
+        \begin{itemize}
+            \item Use lithium aluminum hydride (\ce{LiAlH4} \emph{or} LAH) followed by a water workup.
+            \begin{itemize}
+                \item Note: Whenever we use LAH, we need a water workup.
+            \end{itemize}
+            \item Use hydrogen gas (\ce{H2}) and palladium on carbon (Pd/C).
+            \begin{itemize}
+                \item Downside of these reagents: \ce{H2} is explosive, and it's a gas (recall from our discussion of ammonia earlier today that gases are harder to control).
+            \end{itemize}
+        \end{itemize}
+        \item Downside of this method: \ce{RN3} is explosive, so it is too dangerous to run this process industrially.
+        \begin{itemize}
+            \item However, it's fine in small, controlled research settings when you know what you're doing.
+        \end{itemize}
+        \item Relevant reading: \textcite[354]{bib:Clayden}.
+    \end{itemize}
+    \item We now move onto Subtopic D.2: Reductive amination.
+    \begin{itemize}
+        \item Reductive amination is super useful!
+        \begin{itemize}
+            \item It is always in the \emph{Journal of Medicinal Chemistry}'s decadal list of the top 5 most common reactions used in their papers.
+            \item Aside: Amide-bond formation is always (by far) the number 1 reaction, and a subject of Prof. Buchwald's research! It's not a perfectly solved problem, but we've gotten much better.
+        \end{itemize}
+        \item Relevant reading: \textcite[234-235]{bib:Clayden}.
+    \end{itemize}
+    \pagebreak
+    \item Using reductive amination to convert secondary amines into tertiary amines.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemname[1.5em]{
+                \chemfig{R-[:30](=[2]O)-[:-30]R'}
+            }{carbonyl SM}
+            \arrow(.20--){0}[,0]\+{,,-0.7em}
+            \chemfig{R-[:-30]\chembelow{N}{H}-[:30]R}
+            \arrow(--.173){->[\ce{Na(CN)BH3}][\ce{H+}]}[,1.7]
+            \chemname{
+                \chemleft{[}
+                    \chemfig{R-[:30]@{3C}(=[@{31}2]@{3N}\charge{[extra sep=5pt]90=$\oplus$}{N}(-[:150]R)(-[:30]R))-[:-30]R'}
+                \chemright{]}
+            }{iminium ion}
+            \arrow(.7--){->[\chemfig{@{4H}\charge{45=$\ominus$}{H}}]}[,1.7]
+            \chemfig{R-[:30](-[2]N(-[:150]R)(-[:30]R))-[:-30]R'}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={10pt}{3pt}] (4H) to[out=45,in=30,in looseness=2.5] (3C);
+            \draw [curved arrow={3pt}{2pt}] (31) to[bend left=90,looseness=3] (3N);
+        }
+        \chemnameinit{}
+        \caption{Reductive amination: $2^\circ\to 3^\circ$.}
+        \label{fig:redAmin23}
+    \end{figure}
+    \begin{itemize}
+        \item We begin with an aldehyde or a ketone (i.e., $\ce{R$'$}=\ce{H},\text{alkyl},\text{aryl}$).
+        \item Single step: Use sodium cyanoborohydride (\ce{Na(CN)BH3}) in acidic medium.
+        \item \ce{Na(CN)BH3} is a much milder, nicer reducing agent than sodium borohydride (\ce{NaBH4}).
+        \begin{itemize}
+            \item It selectively reduces \textbf{iminium ions} instead of the carbonyl starting material.
+            \begin{itemize}
+                \item This is important because if the carbonyl gets reduced to an alkane, it can no longer react with the secondary amine!
+            \end{itemize}
+            \item It is also stable under moderately acidic conditions.
+            \begin{itemize}
+                \item This is important because we don't want the acid to just neutralize our reducing agent.
+            \end{itemize}
+        \end{itemize}
+        \item After the iminium ion is formed, hydride from \ce{Na(CN)BH3} attacks it. This yields the product.
+        \item To reiterate: This is an incredibly powerful transformation.
+    \end{itemize}
+    \item Using reductive amination to convert primary amines into secondary amines.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]R'}
+                \arrow{0}[,0.1]\+
+                \chemfig{RNH_2}
+                \arrow(--.173){->[\ce{Na(CN)BH3}][\ce{H+}]}[,1.7]
+                \chemfig{R-[:30](-[2]N(-[:150]R)(-[:30]H))(-[:-65]H)-[:-30]R'}
+                \arrow{0}[90,0.8]
+                \chemfig{R-[:30](=[2]O)-[:-30]R'}
+                \merge>[\ce{Na(CN)BH3}][\ce{H+}](c3)(c4)--(.-163)[0.5,1.5,1]
+                \chemfig{R-[:30](-[2]N(-[:150]R)(-[:30](-[:-30]R)(-[:55]H)-[2]R'))(-[:-65]H)-[:-30]R'}
+            \schemestop
+            \caption{Concurrent iminium formation and reduction.}
+            \label{fig:redAmin12a}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]H}
+                \arrow{0}[,0.1]\+
+                \chemfig{RNH_2}
+                \arrow{->[\ce{H+}]}[,1.2]
+                \chemname{
+                    \chemfig{R-[:30](=[2]N-[:30]R')-[:-30]H}
+                }{imine\hspace{5pt}}
+                \arrow{->[{1. [H]\hspace{2mm}\ }][2. \ce{H2O}]}[,1.2]
+                \chemfig{R-[:30](-[2,,,2]HN-[:30]R')-[:-30]H}
+            \schemestop
+            \chemnameinit{}
+            \caption{Separate imine formation and reduction.}
+            \label{fig:redAmin12b}
+        \end{subfigure}
+        \caption{Reductive amination: $1^\circ\to 2^\circ$.}
+        \label{fig:redAmin12}
+    \end{figure}
+    \begin{itemize}
+        \item Let's first try using the same conditions as in Figure \ref{fig:redAmin23}.
+        \begin{itemize}
+            \item If we do this, we run into the same problem as in Figure \ref{fig:amineAlkylationRX}.
+            \item In particular, the product of the first reductive amination in Figure \ref{fig:redAmin12a} is a secondary amine and hence can react again to yield the rightmost product in Figure \ref{fig:redAmin12a}.
+            \item Thus, if we did this, we'd have a mixture of products, and \emph{we do not like mixtures}!
+        \end{itemize}
+        \item Solution: Back off and run the reaction in two steps (Figure \ref{fig:redAmin12b}).
+        \begin{itemize}
+            \item First step: React an aldehyde with an amine to form an \textbf{imine}.
+            \item Second step: Reduce the imine with either \ce{NaBH4} or \ce{LiAlH4}, followed by a water workup.
+        \end{itemize}
+        \item Aside: \ce{NaBH4} vs. \ce{LiAlH4}.
+        \begin{itemize}
+            \item Since \ce{NaBH4} is milder, we almost always prefer to use it over \ce{LiAlH4} when we can.
+        \end{itemize}
+        \item Aside: Why can't we use \ce{Na(CN)BH3}?
+        \begin{itemize}
+            \item Worse at reducing imines.
+            \item More expensive than \ce{NaBH4}.
+            \item Toxic (cyanide exposure).
+        \end{itemize}
+    \end{itemize}
+    \item Using reductive amination to make a branched primary amine.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]R'}
+                \arrow{0}[,0.1]\+
+                \chemfig{NH_3}
+                \arrow{->[\ce{Na(CN)BH3}][\ce{H+}]}[,1.7]
+                \chemleft{[}
+                    \chemfig{R-[:30](=[2]NH)-[:-30]R'}
+                \chemright{]}
+                \arrow[,1.7]
+                \chemfig{R-[:30](-[2]NH_2)-[:-30]R'}
+            \schemestop
+            \caption{Concurrent iminium formation and reduction.}
+            \label{fig:redAmin01a}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]R'}
+                \arrow{->[\ce{H3NOH^+ Cl^-}]}[,1.7]
+                \chemname{
+                    \chemfig{R-[:30](=[2]N-[:30]OH)-[:-30]R'}
+                }{oxime\hspace{2mm}\ }
+                \arrow{->[1. \ce{LiAlH4}][2. \ce{H2O}\hspace{3.6mm}\ ]}[,1.7]
+                \chemfig{R-[:30](-[2]NH_2)-[:-30]R'}
+            \schemestop
+            \chemnameinit{}
+            \caption{Oxime formation and reduction.}
+            \label{fig:redAmin01b}
+        \end{subfigure}
+        \caption{Reductive amination: Forming $1^\circ$.}
+        \label{fig:redAmin01}
+    \end{figure}
+    \begin{itemize}
+        \item Let's first try using the same conditions as in Figures \ref{fig:redAmin23} \& \ref{fig:redAmin12a}.
+        \begin{itemize}
+            \item If we do this, the bracketed imine intermediate proposed in Figure \ref{fig:redAmin01a} would be unstable.
+            \item As such, we would need to resort to using a large excess of ammonia if we really want to make this work, even though such volumes are not ideal.
+        \end{itemize}
+        \item But what if you work in a place that doesn't allow you to handle gases?
+        \item Solution: The two-step reaction in Figure \ref{fig:redAmin01b}.
+        \begin{itemize}
+            \item First step: Take your ketone or aldehyde and treat it with hydroxylamine hydrochloride (\ce{H3NOH^+ Cl^-}) to form an \textbf{oxime}.
+            \begin{itemize}
+                \item Unlike the proposed imine intermediate in Figure \ref{fig:redAmin01a}, oximes are \emph{really, really, really} stable.
+            \end{itemize}
+            \item Second step: Take the oxime and treat it with \ce{LiAlH4} followed by a water workup.
+            \begin{itemize}
+                \item Because oximes are so stable, we \emph{need} a really strong reducing agent like \ce{LiAlH4} to get the job done.
+                \item More ways to reduce oximes are listed on \textcite[702,762,902]{bib:Clayden}.
+            \end{itemize}
+        \end{itemize}
+        \item Thus, we obtain a gas-free synthetic route to branched primary amines.
+    \end{itemize}
+    \item We now move onto Subtopic D.3: Acylation and reduction.
+    \begin{itemize}
+        \item Acylation/reduction does monoalkylation, that is, the addition of one alkyl group to an amine.
+        \begin{itemize}
+            \item This may be $\ce{NH3}\to 1^\circ$, $1^\circ\to 2^\circ$, or $2^\circ\to 3^\circ$!
+        \end{itemize}
+        \item Reading on the acylation of amines, including the mechanism: \textcite[202-203]{bib:Clayden}.
+        \item Reading on the reduction of amides: \textcite[531]{bib:Clayden}.
+    \end{itemize}
+    \item Example: Using acylation/reduction to convert primary amines to secondary amines.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{RNH_2}
+            \+
+            \chemfig{Cl-[:30](=[2]O)-[:-30]R'}
+            \arrow{->[Base]}[,1.4]
+            \chemfig{RHN-[:30](=[2]O)-[:-30]R'}
+            \arrow{->[1. \ce{LiAlH4}][2. \ce{H2O}\hspace{3.6mm}\ ]}[,1.4]
+            \chemfig{RHN-[:30]-[:-30]R'}
+        \schemestop
+        \caption{Monoalkylation by acylation and reduction.}
+        \label{fig:acylReduce}
+    \end{figure}
+    \begin{itemize}
+        \item We begin with an acid chloride and a primary amine.
+        \item First step: Mix the starting materials with a base (such as \ce{Et3N}).
+        \begin{itemize}
+            \item This will form an amide.
+            \item As in the Gabriel synthesis (see Figure \ref{fig:gabrielSynthesis}), this secondary amide does not react further because its nitrogen lone pair is tied up in conjugation with the carbonyl.
+        \end{itemize}
+        \item Second step: Reduce the amide with \ce{LiAlH4}, followed by a water workup.
+        \begin{itemize}
+            \item This affords the secondary amine product.
+        \end{itemize}
+    \end{itemize}
+    \item Aside: Why do we need so many methods of making amines?
+    \begin{itemize}
+        \item Textbook chemistry (what we're doing) always works.
+        \item In the lab, molecules have many properties that might get in the way of one method working, so we need alternatives to try.
+        \begin{itemize}
+            \item Example: Methods 1-26 might not work, but perhaps method 27 does.
+        \end{itemize}
+        \item This is the really exciting thing about Prof. Elkin's research: Prof. Elkin is using data science to avoid doing the first 26 bad reactions and make it so that the first time we try to do the reaction, it has a better chance of working.
+    \end{itemize}
+    \item We now move onto Subtopic D.4: Reduction of nitriles.
+    \item The general form of this reaction is as follows.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-C~N}
+            \arrow{->[{[H]}]}
+            \chemfig{RCH_2NH_2}
+        \schemestop
+        \caption{Reduction of nitriles.}
+        \label{fig:nitrileReduc}
+    \end{figure}
+    \begin{itemize}
+        \item The reducing agent can be \ce{LiAlH4}, or hydrogen and a nickel catalyst (\ce{H2}/Ni cat).
+    \end{itemize}
+    \item This reaction is pretty straightforward, but where did we get the nitrile from?
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \vspace{1.5em}
+        \schemestart
+            \chemfig{@{1R}R-[@{11}]@{1X}X}
+            \arrow{->[\chemfig{@{2C}\charge{135=$\ominus$}{C}N}]}
+            \chemfig{RCN}
+            \arrow{->[{[H]}]}
+            \chemfig{RCH_2NH_2}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={10pt}{2pt}] (2C) to[out=135,in=180,looseness=2] (1R);
+            \draw [curved arrow={2pt}{2pt}] (11) to[bend left=90,looseness=3] (1X);
+        }
+        \caption{Reduction of nitriles: Alkyl halide starting material.}
+        \label{fig:nitrileReducX}
+    \end{figure}
+    \begin{itemize}
+        \item Nitriles are often synthesized from (primary or secondary) alkyl halides through an S\textsubscript{N}2 reaction in which \ce{CN-} is the nucleophile.
+        \begin{itemize}
+            \item Once we have the nitrile, we can reduce it as in Figure \ref{fig:nitrileReduc}.
+        \end{itemize}
+        \item Therefore, the overall reaction in Figure \ref{fig:nitrileReducX} takes an alkyl halide to an amine with one additional \textbf{methylene} (\ce{CH2}) interspersed.
+        \begin{itemize}
+            \item This is called a \textbf{homologation} reaction, though you don't have to know that.
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item Using the reduction of nitriles to synthesize 1,2-aminoalcohols.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*5([:18]---(=O)--)}
+            \arrow{->[\ce{HCN}]}
+            \chemfig{*5([:18]---(-[:70]CN)(-[:110]HO)--)}
+            \arrow(--.-161){->[1. \ce{LiAlH4}][2. \ce{H2O}\hspace{3.6mm}\ ]}[,1.4]
+            \chemfig{*5([:18]---(-[:60]-[:120]H_2N)(-[:120]HO)--)}
+        \schemestop
+        \caption{Reduction of nitriles: 1,2-aminoalcohol formation.}
+        \label{fig:nitrileReduc12CNOH}
+    \end{figure}
+    \begin{itemize}
+        \item We begin with a ketone.
+        \item First step: Add \ce{HCN} to reduce the ketone to a \textbf{cyanohydrin}, a quasi-stable intermediate..
+        \item Second step: Reduce the nitrile to afford the 1,2-aminoalcohol product.
+        \item Why do we care about 1,2-aminoalcohols?
+        \begin{itemize}
+            \item Aside: Always ask why we care! Is it fundamentally interesting? Is there a practical application?
+            \item In this case, 1,2-aminoalcohols are critical to a number of pharmaceuticals, so that's why we care about being able to synthesize them.
+        \end{itemize}
+        \item Reading on cyanohydrin formation: \textcite[127-29]{bib:Clayden}.
+    \end{itemize}
+    \item We now move onto Subtopic D.5: Miscellaneous reactions.
+    \item The Hofmann rearrangement.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30]@{C}(=[2]@{O}O)-[:-30]NH_2}
+                \arrow{->[\ce{NaOH}, \ce{H2O}][\ce{Cl2} or \ce{Br2}]}[,1.6]
+                \chemfig{R-NH_2}
+            \schemestop
+            \chemmove{
+                \draw [blx,-,line width=5mm,line cap=round,opacity=0.3] (C) -- (O.center);
+            }
+            \caption{General form.}
+            \label{fig:HofmannRearra}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \setcharge{extra sep=5pt}
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]@{1N}N(-[6]H)-[@{11}:30]@{1H}H}
+                \arrow{<=>[\chemfig{@{2O}\charge{90=$\ominus$}{O}H}]}[,1.3]
+                \chemfig{R-[:30](=[2]O)-[:-30]@{3N}\charge{90=$\ominus$}{N}(-[6]H)}
+                \arrow{->[\chemfig[atom sep=1.4em]{@{4Cl}Cl-[@{41}]@{4O}OH}]}[,1.3]
+                \chemfig{R-[@{53}:30](=[2]O)-[@{52}:-30]@{5N}N(-[@{51}6]@{5H}H)-[@{54}:30]@{5Cl}Cl}
+                \arrow{->[*{0}\chemfig{@{6O}\charge{90=$\ominus$}{O}H}]}[-90]
+                \chemname{
+                    \chemfig{R-[:-30]N=[:30]@{7C}C=[:30]O}
+                }{isocyanate}
+                \arrow{->[\chemfig{@{8O}\charge{90=$\ominus$}{O}H}]}[180]
+                \chemname{
+                    \chemfig{R-[:-30]N-[:30](=[2]O)-[:-30]OH}
+                }{carbamic acid}
+                \arrow{-U>[][\ce{CO2}]}[180]
+                \chemfig{R-NH_2}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={9pt}{2pt}] (2O) to[bend right=90,looseness=2] (1H);
+                \draw [curved arrow={2pt}{2pt}] (11) to[bend right=70,looseness=2] (1N);
+                \draw [curved arrow={9pt}{1pt}] (3N) to[bend left=60,looseness=2] (4Cl);
+                \draw [curved arrow={2pt}{2pt}] (41) to[bend left=80,looseness=2.5] (4O);
+                \draw [curved arrow={9pt}{2pt}] (6O) to[out=90,in=-30,looseness=2] (5H);
+                \draw [curved arrow={2pt}{2pt}] (51) to[out=30,in=30,looseness=2.2] (52);
+                \draw [curved arrow={2pt}{2pt}] (53) to[bend right=40,looseness=1.2] (5N);
+                \draw [curved arrow={2pt}{2pt}] (54) to[bend left=90,looseness=3] (5Cl);
+                \draw [curved arrow={10pt}{2pt}] (8O) to[out=90,in=150] (7C);
+            }
+            \chemnameinit{}
+            \caption{Mechanism.}
+            \label{fig:HofmannRearrb}
+        \end{subfigure}
+        \caption{Hofmann rearrangement.}
+        \label{fig:HofmannRearr}
+    \end{figure}
+    \begin{itemize}
+        \item Figure \ref{fig:HofmannRearra} shows a very different kind of reaction from what we've seen.
+        \begin{itemize}
+            \item This reaction starts with a primary amide and involves reduction to a primary amine, excising the \ce{CO} highlighted in blue.
+            \item \emph{Hint}: This reaction is related to the polymer problem on PSet 5!!
+        \end{itemize}
+        \item Reading: \textcite[1022]{bib:Clayden}.
+        \item Let's now discuss the partial mechanism (Figure \ref{fig:HofmannRearrb}).
+        \item First step: The base attacks an amide proton.
+        \item Second step: The amide anion grabs a halogen from a hypohalous acid.
+        \begin{itemize}
+            \item Note that either hypochlorous acid (\ce{HOCl}) or hypobromous acid (\ce{HOBr}) will be formed \emph{in situ} from the reaction of the hydroxide base with \ce{Cl2} or \ce{Br2}, respectively.
+            \item The acid function as an \ce{X+} equivalent, attracting the amide anion and leading to the formation of an \emph{N}-chloroamide intermediate.
+            \item The amide halogen functions as an EWG, making the amide's remaining proton even more acidic than in the starting compound!
+        \end{itemize}
+        \item Third step: The extra-acidified \emph{N}-chloroamide proton get attacked by an equivalent of base, leading to a significant rearrangement step.
+        \begin{itemize}
+            \item This rearrangement produces an \textbf{isocyanate} intermediate.
+        \end{itemize}
+        \item Fourth step: The $sp$-hybridized carbon in the isocyanate reacts very rapidly to form a \textbf{carbamic acid} intermediate.
+        \begin{itemize}
+            \item As with "homologation" reactions, we won't ask you to name "carbamic acids" on an exam!!
+        \end{itemize}
+        \item Fifth step: The carbamic acid spontaneously loses \ce{CO2} to afford the amine.
+    \end{itemize}
+    \item Forming an aryl diazonium salt (\ce{ArN2^+ Cl^-}).
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{ArNH_2}
+                \arrow{->[\ce{NaNO2}][\ce{HCl}]}[,1.2]
+                \chemfig{Ar\charge{45=$\oplus$}{N}_2-[,0.4,,,opacity=0]\charge{45=$\ominus$}{Cl}}
+            \schemestop
+            \caption{General form.}
+            \label{fig:diazoniumForma}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{NaNO_2}
+                \+
+                \chemfig{HCl}
+                \arrow
+                \chemname{
+                    \chemfig{HO-[:-30]N=[:30]O}
+                }{HONO}
+                \arrow(--.163){-U>[][\ce{H2O}][][0.3][80]}
+                \chemname[-0.8em]{
+                    \chemfig{N~\charge{45=$\oplus$}{O}}
+                }{nitrosonium ion}
+                \arrow(.17--){-U>[\ce{ArNH2}][][][0.3][80]}
+                \chemfig{Ar\charge{45=$\oplus$}{N}_2-[,0.4,,,opacity=0]\charge{45=$\ominus$}{Cl}}
+            \schemestop
+            \caption{Mechanism.}
+            \label{fig:diazoniumFormb}
+        \end{subfigure}
+        \caption{Aryl diazonium salt formation.}
+        \label{fig:diazoniumForm}
+    \end{figure}
+    \begin{itemize}
+        \item Reading: \textcite[520-23]{bib:Clayden}.
+        \item First step: Sodium nitrite (\ce{NaNO2}) and \ce{HCl} form \textbf{HONO} \emph{in situ}.
+        \item Second step: HONO loses water and forms the \textbf{nitrosonium ion} \emph{in situ}.
+        \item Third step: The nitrosonium ion then reacts with aniline to do the nitration.
+    \end{itemize}
+    \item Next time (preview): A key reaction with aryl diazonium salts, related to the formation of an aryl diazonium salt from benzene.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6(-=-=-=)}
+            \arrow{->[\ce{HNO3}]}[,1.1]
+            \chemfig{*6(-=-(-NO_2)=-=)}
+            \arrow{->[\ce{H2}][\ce{Pd/C}]}[,1.1]
+            \chemfig{*6(-=-(-NH_2)=-=)}
+            \arrow{->[HONO]}[,1.1]
+            \chemfig{*6(-=-(-\charge{45=$\oplus$}{N}_2-[0,0.4,,,opacity=0]\charge{45=$\ominus$}{Cl})=-=)}
+        \schemestop
+        \caption{Synthesizing an aryl diazonium salt from benzene.}
+        \label{fig:diazoniumBenz}
+    \end{figure}
 \end{itemize}
 
 
