@@ -7,6 +7,7 @@
 \usepackage[bottom]{footmisc}
 \usepackage{siunitx}
 \usepackage[style=apa]{biblatex}
+\usepackage{xr}
 \usepackage{tikz}
 \usepackage{pdfpages}
 \usepackage{float,subcaption}
@@ -48,7 +49,7 @@
 \addbibresource{\subfix{main.bib}}
 \DefineBibliographyStrings{english}{bibliography={References}}
 
-\usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing,calc,bending,fpu,angles}
+\usetikzlibrary{decorations.pathmorphing,decorations.pathreplacing,calc,bending,fpu,angles,positioning}
 \tikzset{
     digit/.style={circle,draw,inner sep=1pt,text height=1.5ex},
     curved arrow/.style 2 args={magenta,semithick,-{Stealth[round,scale=1.1,inset'=0pt 0.55]},shorten <=#1,shorten >=#2},
@@ -81,6 +82,7 @@
     {\tikz{\node[inner sep=0pt,label={[below=6.5pt,circle,fill,inner sep=0.1pt]},label={[below=7pt,circle,inner sep=0.06pt]}]{\scriptsize +};}}
 }
 
-\newcommand{\pKa}{\textup{p}K_\textup{a}}
+\newcommand{\Ka}{K_\textup{a}}
+\newcommand{\pKa}{\textup{p}\Ka}
 \newcommand{\kcal}[1]{\SI[per-mode=symbol]{#1}{\kilo\calorie\per\mole}}
 \newcommand{\kcalr}[2]{\SIrange[per-mode=symbol]{#1}{#2}{\kilo\calorie\per\mole}}

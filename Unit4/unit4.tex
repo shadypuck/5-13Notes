@@ -1,0 +1,579 @@
+\documentclass[../notes.tex]{subfiles}
+
+\pagestyle{main}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter\ (#1)}{}}
+\setcounter{chapter}{3}
+
+\begin{document}
+
+
+
+
+\chapter{Carboxylic Acids and Derivatives}
+\setcounter{section}{22}
+\section{Carboxylic Acids Intro}
+\begin{itemize}
+    \item \marginnote{10/30:}Lecture 22 recap.
+    \begin{enumerate}[label={\Alph*.}]
+        \item Amine synthesis by direct S\textsubscript{N}2 (of, for example, \ce{NH3}) leads to mixtures unless you use a very large excess of ammonia (Figure \ref{fig:amineAlkylationRX}).
+        \begin{itemize}
+            \item Alternative: Gabriel synthesis (Figure \ref{fig:gabrielSynthesis}).
+            \item Alternative: Conversion of a primary or secondary alkyl halide to an azide and subsequent reduction (Figure \ref{fig:azideReduce}).
+        \end{itemize}
+        \item Reductive amination is an incredibly powerful technique (Figures \ref{fig:redAmin23}, \ref{fig:redAmin12}, \& \ref{fig:redAmin01}).
+        \begin{itemize}
+            \item It can build primary, secondary, and tertiary amines.
+            \item Be intimately familiar with this process for Exam 3!!
+        \end{itemize}
+        \item Acylation/reduction is also a great method (Figure \ref{fig:acylReduce}).
+        \begin{itemize}
+            \item Acylate the amine to give an amide intermediate, reduce with LAH, and quench with water.
+        \end{itemize}
+        \item Primary and secondary alkyl bromides, iodides, and tosylates can be substituted to the nitrile and reduced to an amine (Figure \ref{fig:nitrileReducX}).
+        \begin{itemize}
+            \item This is a 1-carbon homologation.
+        \end{itemize}
+        \item HONO (generated from \ce{NaNO2 + HCl}) converts aniline to an aryl diazonium salt (Figure \ref{fig:diazoniumForm}).
+    \end{enumerate}
+    \item Announcement: The notes taken by the TFs are posted on Canvas (that's these!).
+    \begin{itemize}
+        \item Consider referring to these even over the ones that Prof. Buchwald provides.
+    \end{itemize}
+    \item Lecture 22 continued.
+    \item Using the sequence of reaction in Figure \ref{fig:diazoniumBenz}, you can form an aryl diazonium salt.
+    \begin{itemize}
+        \item Treating it with \ce{KI} yields an aryl iodide.
+        \item Treating it with \ce{H2O} yields a phenol.
+        \item Treating it with hypophosphorus acid (\ce{H3PO2}) yields benzene again.
+        \begin{itemize}
+            \item Once again, you are not responsible for the name "hypophosphorus acid."
+        \end{itemize}
+        \item Treating it with \ce{CuX} (where $\ce{X}=\ce{Cl},\ce{Br},\ce{CN}$) yields \ce{PhX}.
+    \end{itemize}
+    \item This is a great example of what we do with synthesis!
+    \begin{itemize}
+        % \item Example: \emph{para}-bromoanisole maybe came from HONO followed by the aryl diazonium salt??
+        \item Synthesis is all about connecting compounds with transformations.
+        \item Breaking down the example in such a way is called \textbf{retrosynthetic analysis}.
+    \end{itemize}
+    \item Recall from last time that azides are reduced to amines by \ce{LiAlH4} and a subsequent water workup (Figure \ref{fig:azideReduce}). Here's a further note on this.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6(--(*3(<O>))----)}
+            \arrow(c1--c23){0}[,2]
+            \subscheme{
+                \chemfig{*6(--(<OH)-(<:N_3)---)}
+                \arrow(c2--c3){->[{[H]}]}[,1.4]
+                \chemfig{*6(--(<OH)-(<:NH_2)---)}
+                \arrow(@c2--c4){0}[-90,0.5]
+                \chemfig{*6(--(<OH)-(<:CN)---)}
+                \arrow(--c5){->[1. \ce{LiAlH4}][2. \ce{H2O}\hspace{3.6mm}\ ]}[,1.4]
+                \chemfig{*6(--(<OH)-(<:-[:-30]NH_2)---)}
+            }
+        \schemestop
+        \chemmove{
+            \draw ([xshift=9pt]c1.east) -- ($(c1)!0.3!(c23)$) coordinate (c25) -- (c25 |- c2) -- node[above]{1. \ce{NaN3}} node[below]{2. \ce{H+}\hspace{3mm}\ } ([xshift=-9pt]c2.west);
+            \draw (c25) -- (c25 |- c4) -- node[above]{1. \ce{NaCN}} node[below]{2. \ce{H+}\hspace{4mm}\ } ([xshift=-9pt]c4.west);
+        }
+        \caption{Aminoalcohol synthesis from epoxides.}
+        \label{fig:aminoalcoholEpox}
+    \end{figure}
+    \begin{itemize}
+        \item Recall from 5.12 that \textbf{epoxides} are essentialy just reactive ethers, due to their ring strain.
+        \item Therefore, if we treat an epoxide with \ce{NaN3}, we'll get a backside attack that yields a certain intermediate.
+        \item Then upon reduction, we get a \emph{trans}-1,2-aminoalcohol.
+        \begin{itemize}
+            \item This is an important functional group for $\beta$-blockers in biology!
+        \end{itemize}
+        \item Alternatively, we can treat epoxides with \ce{CN-}, yielding the cyanoalcohol.
+        \begin{itemize}
+            \item We can then reduce this to the 1,3-aminoalcohol.
+        \end{itemize}
+    \end{itemize}
+    \item This concludes our discussion of amines.
+    \item Today: Introduction to carboxylic acids and their derivatives.
+    \begin{itemize}
+        \item Reading: Chapter 10 of \textcite{bib:Clayden}.
+    \end{itemize}
+    \item Lecture outline.
+    \begin{enumerate}
+        \item Introduction.
+        \item Synthesis of carboxylic acids.
+        \begin{enumerate}[label={\alph*.}]
+            \item Oxidation of alcohols and aldehydes.
+            \item Carboxylation of Grignard reagents.
+            \item Hydrolysis of nitriles.
+            \item Types of carboxylic acid derivatives.
+        \end{enumerate}
+        \item Acyl transfer reactions.
+        \begin{enumerate}[label={\alph*.}]
+            \item Background.
+        \end{enumerate}
+    \end{enumerate}
+    \item We'll begin with Topic 1: Introduction.
+    \item \textbf{Carboxylic acid derivative}: A compound of the following form, where $\ce{X}\neq\ce{H},\ce{R}$. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{R-[:30](=[2]O)-[:-30]X}
+        \caption{Carboxylic acid derivative.}
+        \label{fig:carbDeriv}
+    \end{figure}
+    \begin{itemize}
+        \item Since \ce{X} is \emph{not} equal to \ce{H} or \ce{R}, we're not considering aldehydes or ketones.
+    \end{itemize}
+    \pagebreak
+    \item \textbf{Carboxylic acid}: A carboxylic acid derivative for which $\ce{X}=\ce{OH}$. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+            \arrow{<=>[][\ce{H+}]}
+            \chemleft{[}\subscheme{
+                \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}
+                \arrow{<->}
+                \chemfig{R-[:30](=[:-30]O)-[2]\charge{45=$\ominus$}{O}}
+            }\chemright{]}
+            \arrow{0[\small$\equiv$][][-2mm]}
+            \chemfig{R-[:30]\charge{[extra sep=8pt]30=$\ominus$}{}(-[2]@{Ot}O)-[:-30]@{Ob}O}
+        \schemestop
+        \chemmove{
+            \draw [densely dashed,-,shorten <=7pt,shorten >=7pt] ($(Ot)+(30:0.05)$) to[bend right=30,looseness=1.2] ($(Ob)+(30:0.05)$);
+        }
+        \caption{Carboxylic acid.}
+        \label{fig:carbAcid}
+    \end{figure}
+    \begin{itemize}
+        \item $\pKa\approx 5$.
+        \begin{itemize}
+            \item By comparison, $\pKa\approx 16$ for an alcohol.
+            \item Therefore, carboylic acids are \emph{eleven orders of magnitude} more acidic than alcohols.
+        \end{itemize}
+        \item Deprotonation gives us a resonance-stabilized \textbf{carboxylate}, which can be drawn either as resonance forms or as a delocalized anion.
+    \end{itemize}
+    \item One of the simplest carboxylic acids is \textbf{acetic acid}.
+    \item \textbf{Acetic acid}: The carboxylic acid for which $\ce{R}=\ce{Me}$. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{H_3C-[:30](=[2]O)-[:-30]OH}
+        \caption{Acetic acid.}
+        \label{fig:aceticAcid}
+    \end{figure}
+    \begin{itemize}
+        \item Acetic acid is in vinegar! In fact, vinegar is about 4-5\% acetic acid in water.
+        \item Acetic acid is also used as an industrial solvent (in the 100\% pure form, which is quite caustic).
+        \item How is acetic acid made?
+        \begin{equation*}
+            \ce{MeOH ->[CO][cat] CH3COOH}
+        \end{equation*}
+        \begin{itemize}
+            \item Acetic acid is produced industrially via the Monsanto acetic acid process, which carries out the carbonylation of methanol using a rhodium catalyst.
+        \end{itemize}
+    \end{itemize}
+    \item The first several biscarboxylic acids.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \chemfig{HO_2C-CO_2H}
+            \caption{Oxalic acid.}
+            \label{fig:biscarboxylica}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \chemfig{HO_2C-[:30]-[:-30]CO_2H}
+            \caption{Malonic acid.}
+            \label{fig:biscarboxylicb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \chemfig{HO_2C-[:60]--[:-60]CO_2H}
+            \caption{Succinic acid.}
+            \label{fig:biscarboxylicc}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \chemfig{HO_2C-[2,,3]-[:30]-[:-30]-[6]CO_2H}
+            \caption{Glutaric acid.}
+            \label{fig:biscarboxylicd}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \chemfig{HO_2C-[:120,,3]-[::-60]-[::-60]-[::-60]-[::-60,,,1]CO_2H}
+            \caption{Adipic acid.}
+            \label{fig:biscarboxylice}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.25\linewidth}
+            \centering
+            \chemfig{HO_2C-[3,,3]-[2,1.2]-[::-60,1.4]-[::-60,1.4]-[::-60,1.2]-[5,,,1]CO_2H}
+            \caption{Pimelic acid.}
+            \label{fig:biscarboxylicf}
+        \end{subfigure}
+        \caption{Biscarboxylic acids.}
+        \label{fig:biscarboxylic}
+    \end{figure}
+    \begin{itemize}
+        \item \textbf{Oxalic}, \textbf{malonic}, \textbf{succinic}, \textbf{glutaric}, \textbf{adipic}, and \textbf{pimelic} acids.
+        \item Aside: Adipic acid is really important because it's involved in the manufacture of nylon.
+        \item How do you remember all these names? There's a neumonic: OMSGAP or "Oh My, Such Good Apple Pie."
+    \end{itemize}
+    \item We now move onto Topic 2: Synthesis of carboxylic acids.
+    \item Aside: A new definition of \textbf{oxidation} and \textbf{reduction}.
+    \begin{itemize}
+        \item Notice that in a carboxylic acid (e.g., see Figure \ref{fig:aceticAcid}), the central carbon has 3 bonds to oxygen.
+        \item In contrast, a primary alcohol's central carbon has 1 bond to oxygen.
+        \begin{itemize}
+            \item Thus, we need to do a 4-electron oxidation to turn an alcohol into a carboxylic acid.
+        \end{itemize}
+        \item An aldehyde's central carbon has 2 bonds to oxygen.
+        \begin{itemize}
+            \item Thus, we need to do a 2-electron oxidation to turn an aldehyde into a carboxylic acid.
+        \end{itemize}
+        \item \ce{CO2}'s central carbon has 4 bonds to oxygen.
+        \begin{itemize}
+            \item Thus, we need to do a 2-electron reduction to turn \ce{CO2} into a carboxylic acid.
+        \end{itemize}
+        \item This array of related compounds motivates the following two definitions.
+    \end{itemize}
+    \item \textbf{Oxidation}: A chemical reaction that increases the number of carbon-oxygen bonds.
+    \item \textbf{Reduction}: A chemical reaction that decreases the number of carbon-oxygen bonds.
+    \item We now discuss Subtopic 2.a{}: Oxidation of alcohols and aldehydes.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.57\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30]-[:-30]OH}
+                \arrow{->[\ce{H2SO4}][\ce{CrO3}]}[,1.2]
+                \chemleft{[}
+                    \chemfig{R-[:30](=[2]O)-[:-30]H}
+                \chemright{]}
+                \arrow[,1.2]
+                \chemfig{R-[:30](=[2]O)-[:-30]OH}
+            \schemestop
+            \caption{Primary alcohol or aldehyde to carboxylic acid.}
+            \label{fig:OxAlcAlda}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.42\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30]-[:-30]OH}
+                \arrow{->[PCC]}[,1.2]
+                \chemfig{R-[:30](=[2]O)-[:-30]H}
+            \schemestop
+            \caption{Primary alcohol to aldehyde.}
+            \label{fig:OxAlcAldb}
+        \end{subfigure}
+        \caption{Oxidation of alcohols and aldehydes.}
+        \label{fig:OxAlcAld}
+    \end{figure}
+    \begin{itemize}
+        \item Suppose you have a primary alcohol.
+        \begin{itemize}
+            \item To convert it into a carboxylic acid, treat it with \textbf{Jones reagent}.
+            \begin{itemize}
+                \item The mechanism proceeds through the aldehyde.
+                \item However, it can't stop, so it goes all the way to carboylic acid.
+            \end{itemize}
+            \item To stop the oxidation at the aldehyde, use PCC!
+        \end{itemize}
+        \item Now suppose you're starting at the aldehyde.
+        \begin{itemize}
+            \item To convert it to the carboxylic acid, just subject it to Jones reagent conditions! This is like picking up in the middle of the Figure \ref{fig:OxAlcAlda} mechanism.
+        \end{itemize}
+        \item Relevant reading: \textcite[194-196]{bib:Clayden}.
+    \end{itemize}
+    \item \textbf{Jones reagent}: The combination of excess \ce{H2SO4} and \ce{CrO3}.
+    \item We now discuss Subtopic 2.b{}: Carboxylation of Grignard\footnote{"GRIN-yurd"} reagents.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-Br}
+            \arrow{->[\ce{Mg}]}
+            \chemfig{R-MgBr}
+            \arrow{->[\ce{CO2}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}
+            \arrow{->[\ce{H+}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+        \schemestop
+        \caption{Carboxylation of Grignard reagents.}
+        \label{fig:GrignardCO2}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item To make a Grignard reagent, react an alkyl bromide with magnesium.
+        \begin{itemize}
+            \item Aside (chemis-tea): Victor Grignard won the Nobel Prize for Grignard reagents, even though his mentor invented them!
+            \item Note that Grignard reagents are very reactive! They are strong bases and strong nucleophiles, so if there's an acidic hydrogen in solution, it will get deprotonated.
+            \begin{itemize}
+                \item Essentially, we have to consider the functional group tolerance of a method.
+            \end{itemize}
+            \item These reactions are fun to do in the lab!
+        \end{itemize}
+        \item Once you make the Grignard reagent, just throw dry ice (a source of \ce{CO2}) into the flask. There will be a bunch of bubbling, and we'll get our carboxylic acid.
+    \end{itemize}
+    \item We now discuss Subtopic 2.c{}: Hydrolysis of nitriles.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-CN}
+            \arrow{->[{[O]}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+        \schemestop
+        \caption{Nitrile hydrolysis.}
+        \label{fig:nitrileHydro}
+    \end{figure}
+    \begin{itemize}
+        \item Two ways to do this.
+        \begin{itemize}
+            \item Acid (\ce{H3O+}) and heat ($\Delta$).
+            \item Base (\ce{HO-}), water (\ce{H2O}), and heat ($\Delta$) followed by subsequent quenching with acid and heat.
+        \end{itemize}
+        \item Nitriles are \emph{really, really, really} good intermediates (hint for Exam 3!!).
+    \end{itemize}
+    \item We'll now look at how nitriles may come up in a typical test question.
+    \item Typical test question (TTQ): Provide two ways to convert benzyl bromide into phenylacetic acid.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{Ph-[:30]-[:-30]Br}
+            \arrow(c1--){->[*{0}\ce{Mg}]}[-45]
+            \chemfig{Ph-[:30]-[:-30]MgBr}
+            \arrow{->[1. \ce{CO2}][2. \ce{H+}\hspace{1.5mm}\ ]}[,1.4]
+            \chemfig{Ph-[:30]-[:-30]CO_2H}
+            \arrow(@c1--){->[*{0.0}\ce{NC-}]}[-135]
+            \chemfig{Ph-[:30]-[:-30]CN}
+            \arrow{->[Hydrolyse]}[180,1.4]
+            \chemfig{Ph-[:30]-[:-30]CO_2H}
+        \schemestop
+        \caption{Typical test question: Multiple synthetic paths.}
+        \label{fig:TTQmultSynth}
+    \end{figure}
+    \begin{itemize}
+        \item First way: Make the Grignard and add \ce{CO2}.
+        \item Second way: Do an S\textsubscript{N}2 with \ce{CN-}, and then hydrolyze the nitrile.
+        \item Note that Prof. Buchwald uses checkmarks to denote the product on the board.
+    \end{itemize}
+    \item If we're answering a test question like this, will you want two separate arrows, or is one arrow with "1. \emph{reagent}" above and "2. \emph{reagent}" below?
+    \begin{itemize}
+        \item Either is good.
+    \end{itemize}
+    \item We now discuss Subtopic 2.d{}: Types of carboxylic acid derivatives.
+    \item \textbf{Acid chloride}: A carboxylic acid derivative for which $\ce{X}=\ce{Cl}$. \emph{Structure}
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \chemfig{R-[:30](=[2]O)-[:-30]Cl}
+        \caption{Acid chloride.}
+        \label{fig:carbAcidCl}
+    \end{figure}
+    \begin{itemize}
+        \item These are far more common than acid bromides or acid iodides.\footnote{Coincidentally, acid iodides are used in the Monsanto acetic acid process!}
+        \item To convert a carboxylic acid into an acid chloride, use \ce{SOCl2} and pyridine.\footnote{See the 5.12 equation review sheet!!}
+        \item Mechanism: \textcite[214-215]{bib:Clayden}.
+    \end{itemize}
+    \item \textbf{Acid anhydride}: A carboxylic acid derivative for which $\ce{X}=\ce{RCO2}$. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{R-[:30](=[2]O)-[:-30]O-[:30](=[2]O)-[:-30]R}
+        \caption{Acid anhydride.}
+        \label{fig:carbAcidAnh}
+    \end{figure}
+    \begin{itemize}
+        \item Synthesize these from two carboylic acids that combine and release water.
+    \end{itemize}
+    \item Example of an acid anhydride: Phthalic anhydride.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{*6(-=(*5(-(=O)-O-(=O)-))-=-=)}
+        \caption{Phthalic anhydride.}
+        \label{fig:phthalicAnhydride}
+    \end{figure}
+    \item \textbf{Ester}: A carboxylic acid derivative for which $\ce{X}=\ce{OR$'$}$. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+        \caption{Ester.}
+        \label{fig:carbEster}
+    \end{figure}
+    \begin{itemize}
+        \item Esters are common in scents and smells.
+    \end{itemize}
+    \item Example of an ester: Isoamyl acetate.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{-[:30](-[2])-[:-30]-[:30]-[:-30]O-[:30](=[2]O)-[:-30]}
+        \caption{Isoamyl acetate.}
+        \label{fig:isoamylAcetate}
+    \end{figure}
+    \begin{itemize}
+        \item This is the odor of banana oil! The infinite corridor smells like this because of the Banana Lounge.
+        \item There are easy ways to make this chemical that can legally be described as natural, even if it did not come from a banana.
+    \end{itemize}
+    \pagebreak
+    \item \textbf{Lactone}: A cyclic ester. \emph{Example}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{*5([:18]---(=O)-O-)}
+        \caption{$\gamma$-butyrolactone.}
+        \label{fig:carbLactone}
+    \end{figure}
+    \item \textbf{Amide}: A carboxylic acid derivative for which $\ce{X}=\ce{NR$'$R$''$}$. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{R-[:30](=[2]O)-[:-30]NR'R''}
+        \caption{Amide.}
+        \label{fig:carbAmide}
+    \end{figure}
+    \item Example of a (poly)amide: Nylon.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{-[@{1,0.25}:30]\chemabove{N}{H}-[:-30]-[:30]-[:-30]-[:30]-[:-30]-[:30]-[:-30]\chembelow{N}{H}-[:30](=[2]O)-[:-30]-[:30]-[:-30]-[:30]-[:-30](=[6]O)-[@{2,0.75}:30]}
+        \polymerdelim[delimiters={[]},height=9mm,depth=9mm]{1}{2}
+        \caption{Nylon.}
+        \label{fig:nylon}
+    \end{figure}
+    \item \textbf{Lactam}: A cyclic amide. \emph{Example}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{*5([:18]---(=O)-HN-)}
+        \caption{2-Pyrrolidone.}
+        \label{fig:carbLactam}
+    \end{figure}
+    \begin{itemize}
+        \item Lactams are incredibly imporant; many of us are only alive because of lactams.
+    \end{itemize}
+    \item Examples of lactams: The penicillins, a class of molecules that changed the world.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{*4((=O)-N(*5(-(<:CO_2H)-(-[:20]Me)(-[:-20]Me)-S-))-(<:[2]H)-(<\chemabove{N}{H}-[::60](=[::60]O)-[::-60]R)-)}
+        \caption{Penicillin core structure.}
+        \label{fig:penicillin}
+    \end{figure}
+    \begin{itemize}
+        \item Varying \ce{R} yields different penicillins; all penicillins share the core motif above, though.
+        \item Penicillins were discovered by Alexander Flemming and changed the course of the world wars.
+        \item Penicillin and amoxycillin are both $\beta$-lactam antibiotics.
+    \end{itemize}
+    \item We now move onto Topic 3: Acyl transfer reactions.
+    \item Subtopic 3.a{}: Background.
+    \item For each \ce{X} group in a carboxylic acid derivatives, let's see how good of a leaving group it is.
+    \begin{table}[h!]
+        \centering
+        \small
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{r|ccccc}
+            \textbf{\ce{X}} & \ce{Cl} & \ce{RCO2} & \ce{OR} & \ce{NR2} & \ce{O-}\\
+            \textbf{$\bm{\textbf{p}K_\textbf{a}}$ (\ce{HX})} & $-7$ & $5$ & $16$ & $\approx 35$ & VERY HIGH\\
+        \end{tabular}
+        \caption{Leaving groups in carboxylic acid derivatives.}
+        \label{tab:carbLG}
+    \end{table}
+    \begin{itemize}
+        \item To be clear, we're measuring the $\pKa$'s of the following reactions.
+        \begin{equation*}
+            \ce{HX + H2O <=> X- + H3O+}\tag*{$\Ka=?$}
+        \end{equation*}
+        \begin{itemize}
+            \item Example: \ce{HCl + H2O <=> Cl- + H3O+}.
+            \item Example: \ce{HO- + H2O <=> O^2- + H3O+}.
+        \end{itemize}
+        \item $\pKa$ --- a theromodynamic parameter --- is a good measure of how good of a leaving group something is.
+        \begin{itemize}
+            \item Important because acyl transfer reactions involve an \ce{X} group from Table \ref{tab:carbLG} departing.
+            \item Thus, knowing how stable the \ce{X} group is after leaving as a conjugate base in an acid reaction can help us predict how stable it will be as a departed nucleophile in an acyl transfer reaction, and hence how likely a proposed acyl transfer reaction is to proceed.
+        \end{itemize}
+    \end{itemize}
+    \item Let's now investigate the resonance stabilization of each of our carboxylic acid derivatives.
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}
+            \footnotesize
+            \node (a) {
+                \schemestart
+                    \chemfig{R-[:30](=[2]O)-[:-30]Cl}
+                    \arrow{<->}[-90]
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})=[:-30]\charge{45=$\oplus$}{Cl}}
+                \schemestop
+            };
+            \node (b) [right=5mm of a] {
+                \schemestart
+                    \chemfig{R-[:30](=[2]O)-[:-30]O-[:30](=[2]O)-[:-30]R}
+                    \arrow{<->}[-90]
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})=[:-30]\charge{[extra sep=5pt]90=$\oplus$}{O}-[:30](=[2]O)-[:-30]R}
+                \schemestop
+            };
+            \node (c) [right=5mm of b] {
+                \schemestart
+                    \chemfig{R-[:30](=[2]O)-[:-30]OR}
+                    \arrow{<->}[-90]
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})=[:-30]\charge{[extra sep=5pt]90=$\oplus$}{O}R}
+                \schemestop
+            };
+            \node (d) [right=5mm of c] {
+                \schemestart
+                    \chemfig{R-[:30](=[2]O)-[:-30]NR_2}
+                    \arrow{<->}[-90]
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})=[:-30]\charge{[extra sep=5pt]90=$\oplus$}{N}R_2}
+                \schemestop
+            };
+            \node (e) [right=5mm of d] {
+                \schemestart
+                    \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}
+                    \arrow{<->}[-90]
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})=[:-30]O}
+                \schemestop
+            };
+    
+            \node (res) [below left=4.2426mm of a] {Resonance:};
+            \node [below=3mm of a] {very bad};
+            \node [below=3mm of b] {bad};
+            \node [below=3mm of c] {ok};
+            \node [below=3mm of d] {very good};
+            \node [below=3mm of e] {awesome};
+    
+            \node (stab) [below=6mm of res.east,anchor=east] {Stabilization:};
+            \node (l1)   [below=9mm of a] {low};
+            \node (h1)   [below=9mm of e] {high}
+                edge [<->] (l1)
+            ;
+    
+            \node (react) [below=6mm of stab.east,anchor=east] {Reactivity:};
+            \node (h2)   [below=15mm of a] {high};
+            \node (l2)   [below=15mm of e] {low}
+                edge [<->] (h2)
+            ;
+        \end{tikzpicture}
+        \caption{Resonance stabilization of carboxylic acid derivatives.}
+        \label{fig:carbResonance}
+    \end{figure}
+    \begin{itemize}
+        \item The lone pairs on chlorine are high energy, so we can get some degree of resonance, but the resonance structure is very bad.\footnote{Think about MOs! Big energy difference means bad mixing and hence poor conjugation}
+        \item Keep in mind that we have "awesome" resonance \emph{only} for the deprotonated, carboxylate form of a carboxylic acid; carboxylic acids, themselves, aren't nearly as stabilized.
+        \item Stability and reactivity are clearly inversely related; it should make sense that the less stable something is, the more reactive it is!
+    \end{itemize}
+    \item From Table \ref{tab:carbLG} and Figure \ref{fig:carbResonance}, we can see that the better leaving groups form more reactive carboxylic acid derivatives, and vice versa!
+\end{itemize}
+
+
+
+
+\end{document}
