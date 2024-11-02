@@ -570,7 +570,756 @@
         \item Keep in mind that we have "awesome" resonance \emph{only} for the deprotonated, carboxylate form of a carboxylic acid; carboxylic acids, themselves, aren't nearly as stabilized.
         \item Stability and reactivity are clearly inversely related; it should make sense that the less stable something is, the more reactive it is!
     \end{itemize}
-    \item From Table \ref{tab:carbLG} and Figure \ref{fig:carbResonance}, we can see that the better leaving groups form more reactive carboxylic acid derivatives, and vice versa!
+    \item From Table \ref{tab:carbLG} and Figure \ref{fig:carbResonance}, we can see that the better leaving groups tend to form more reactive carboxylic acid derivatives, and vice versa!
+\end{itemize}
+
+
+
+\section{Acyl Transfer Reactions - 1}
+\begin{itemize}
+    \item \marginnote{11/1:}Lecture 24 recap.
+    \begin{enumerate}
+        \item Carboxyic acid derivatives.
+        \begin{itemize}
+            \item Substances of the form in Figure \ref{fig:carbDeriv}, where $\ce{X}\neq\ce{H},\ce{R}$.
+        \end{itemize}
+        \item Synthesis of \ce{RCO2H}.
+        \begin{itemize}
+            \item Carboxylic acids (Figure \ref{fig:carbAcid}): $\pKa\approx 5$.
+            \item Oxidation of (primary) alcohols and aldehydes (Figure \ref{fig:OxAlcAld}).
+            \item Carboxylation of Grignard reagents (Figure \ref{fig:GrignardCO2}).
+            \item Hydrolysis of nitriles (Figure \ref{fig:nitrileHydro}).
+        \end{itemize}
+        \item Acyl transfer reaction.
+        \begin{itemize}
+            \item Reactivity decreases from acid chlorides $>$ acid anhydrides $>$ esters $>$ amides $>$ carboxylates.
+            \begin{itemize}
+                \item Remember that carboxylates are anions.
+                \item See Table \ref{tab:carbLG} and Figure \ref{fig:carbResonance}.
+            \end{itemize}
+        \end{itemize}
+    \end{enumerate}
+    \item Before we begin in earnest, let's build a bit more off of this idea of reactivity differences in carboxylic acid derivatives.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]Cl}
+                \arrow{0}[,0.1]\+
+                \chemfig{R'OH}
+                \arrow{<->>}
+                \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+                \arrow{0}[,0.1]\+
+                \chemfig{HCl}
+            \schemestop
+            \caption{Reactivity of an acid chloride.}
+            \label{fig:carbReacta}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}
+                \arrow{0}[,0.1]\+
+                \chemfig{R'OH}
+                \arrow{<<->}
+                \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+                \arrow{0}[,0.1]\+
+                \chemfig{H\charge{45=$\ominus$}{O}}
+            \schemestop
+            \caption{Reactivity of a carboxylate.}
+            \label{fig:carbReactb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]OH}
+                \arrow{0}[,0.1]\+
+                \chemfig{R'OH}
+                \arrow{<=>}
+                \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+                \arrow{0}[,0.1]\+
+                \chemfig{H_2O}
+            \schemestop
+            \caption{Reactivity of a carboxylic acid.}
+            \label{fig:carbReactc}
+        \end{subfigure}
+        \caption{Reactivity of carboxylic acid derivatives toward esterification.}
+        \label{fig:carbReact}
+    \end{figure}
+    \begin{itemize}
+        \item Measures of reactivity tell us if a given acyl transfer reactions will be thermodynamically favorable, thermodynamically unfavorable, or thermoneutral.
+        \begin{itemize}
+            \item Like any thermodynamically favorable reaction, thermodynamically favorable acyl transfer reactions are characterized by high energy reactants becoming low energy products and vice versa for a thermodynamically unfavorable reaction.
+            \item In a thermoneutral reaction ($\Keq\approx 1$), the reactants and products have similar energies.
+        \end{itemize}
+        \item Examples.
+        \begin{itemize}
+            \item Figure \ref{fig:carbReacta}: Very favorable because acid chlorides are much more reactive than esters.
+            \item Figure \ref{fig:carbReactb}: Very unfavorable because carboxylates are much more stable.
+            \item Figure \ref{fig:carbReactc}: Thermoneutral because carboxylic acids and esters have similar reactivity.
+        \end{itemize}
+    \end{itemize}
+    \item Today: Types of acyl transfer reactions.
+    \pagebreak
+    \item Lecture outline.
+    \begin{enumerate}[start=3]
+        \item Acyl transfer reactions.
+        \begin{enumerate}[label={\alph*.}]
+            \item Background.
+            \item Reactions of acid chlorides.
+            \item Reactions of esters.
+            \begin{enumerate}
+                \item Hydrolysis.
+                \item Transesterification.
+                \item Amide formation.
+            \end{enumerate}
+            \item Reactions of carboxylic acids.
+            \begin{enumerate}
+                \item Fischer esterification.
+                \item Basic esterification (not possible).
+                \item Formation of acid chlorides.
+            \end{enumerate}
+            \item Reactions of amides.
+            \begin{enumerate}
+                \item Acid-catalyzed hydrolysis.
+                \item Base-catalyzed hydrolysis.
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+    \item We begin by resuming Subtopic 3.{a}: Background.
+    \item The mechanism of an acyl transfer reaction.
+    \begin{figure}[h!]
+        \centering
+        \vspace{1.5em}
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]@{1C}(=[@{11}2]@{1O}O)-[:-30]X}
+            \arrow(--.150){->[\chemfig{@{2Nuc}\charge{28=$\ominus$}{Nuc}}]["addition"]}[,1.7]
+            \chemname{
+                \chemfig{R-[:30](-[@{31}2]@{3O}\charge{45=$\ominus$}{O})(-[:-70]Nuc)-[@{32}:-30]@{3X}X}
+            }{\tikz{\node[inner sep=0pt,align=center]{tetrahedral\\intermediate};}}
+            \arrow(.30--){->[]["elimination"]}[,1.7]
+            \chemfig{R-[:30](=[2]O)-[:-30]Nuc}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={12pt}{3pt}] (2Nuc) to[out=32,in=30,in looseness=3] (1C);
+            \draw [curved arrow={3pt}{2pt}] (11) to[bend left=80,looseness=2.5] (1O);
+            \draw [curved arrow={10pt}{2pt}] (3O) to[out=50,in=180,out looseness=6,in looseness=7] (31);
+            \draw [curved arrow={2pt}{2pt}] (32) to[bend left=80,looseness=2.5] (3X);
+        }
+        \chemnameinit{}
+        \caption{Mechanism of a (neutral) acyl transfer reaction.}
+        \label{fig:acylTmech}
+    \end{figure}
+    \begin{itemize}
+        \item Almost always addition-elimination, not direct displacement.\footnote{Think about the molecular orbital reasons for why! Nucleophile donation into the \ce{C=O} $\pi^*$-orbital (at the B\"{u}rgi-Dunitz angle) \emph{forces} the \ce{C=O} $\pi$-bond to break as the new \ce{C-Nuc} $\sigma$-bond is formed, with the former \ce{C=O} $\pi$-electrons migrating to become a lone pair on the more electronegative atom (oxygen).}
+        \item First step: Addition.
+        \begin{itemize}
+            \item The nucleophile adds in to the electrophylic site.
+            \item This gives us a \textbf{tetrahedral intermediate}, so named because of its tetrahedral carbon.
+        \end{itemize}
+        \item Second step: Elimination.
+        \begin{itemize}
+            \item The best leaving group leaves.
+            \item There can be equilibriums between which group leaves, but we won't consider those details right now.
+        \end{itemize}
+    \end{itemize}
+    \item We now move onto subtopic 3.b{}: Reactions of acid chlorides.
+    \begin{figure}[H]
+        \centering
+        \vspace{1.5em}
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]@{1C}(=[@{11}2]@{1O}O)-[:-30]Cl}
+            \arrow{->[\chemfig{@{2Nuc}\charge{28=$\ominus$}{Nuc}}][\emph{fast}]}[,1.7]
+            \chemfig{R-[:30](-[@{31}2]@{3O}\charge{45=$\ominus$}{O})(-[:-70]Nuc)-[@{32}:-30]@{3X}Cl}
+            \arrow{->[][\emph{fast}]}[,1.7]
+            \chemfig{R-[:30](=[2]O)-[:-30]Nuc}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={12pt}{3pt}] (2Nuc) to[out=32,in=30,in looseness=3] (1C);
+            \draw [curved arrow={3pt}{2pt}] (11) to[bend left=80,looseness=2.5] (1O);
+            \draw [curved arrow={10pt}{2pt}] (3O) to[out=50,in=180,out looseness=6,in looseness=7] (31);
+            \draw [curved arrow={2pt}{2pt}] (32) to[bend left=80,looseness=2.5] (3X);
+        }
+        \caption{Mechanism of an acyl transfer reaction with an acid chloride.}
+        \label{fig:acylTCl}
+    \end{figure}
+    \begin{itemize}
+        \item The addition step is fast in this case because the acid chloride is the least resonance stabilized of the carboxylic acid derivatives we've considered.
+        \begin{itemize}
+            \item This is because the chlorine atom is a really bad $\pi$-donor; there is a large energy mismatch between the $n_{\ce{Cl}}$ and $\pi^*_{\ce{CO}}$ MOs.
+        \end{itemize}
+        \item The elimination step is also fast because \ce{Cl-} is a great leaving group.
+        \begin{itemize}
+            \item We know that \ce{Cl-} is a great leaving group because $\pKa(\ce{HCl})=-7$ (see Table \ref{tab:carbLG}), meaning that the conjugate base (\ce{Cl-}) is weak.
+            \item When the conjugate base is weaker, it's a better leaving group.
+        \end{itemize}
+        \item Thus, overall, acid chlorides are very reactive and no catalyst is needed for their acyl transfer reactions.
+    \end{itemize}
+    \item Aside: Like acid chlorides, acid anhydrides are very reactive and also don't need a catalyst to participate in an acyl transfer reaction.
+    \item Example acyl transfer reaction of an acid chloride: Forming an ester.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]Cl}
+            \arrow{0}[,0.1]\+
+            \chemfig{MeOH}
+            \arrow{->[base]}
+            \chemfig{R-[:30](=[2]O)-[:-30]OMe}
+            \arrow{0}[,0.1]\+
+            \chemfig{HCl}
+        \schemestop
+        \caption{Acyl transfer: Acid chloride to ester.}
+        \label{fig:acylTClEster}
+    \end{figure}
+    \begin{itemize}
+        \item This is a very vigorous reaction: Lots of bubbling, flask gets really hot, releases a white cloud of caustic gas (\ce{HCl}).
+        \item As such, you usually add a base to solution.
+        \begin{itemize}
+            \item The base is not necessary for the reaction to work, but rather for us to be alive.
+            \item Indeed, the base neutralizes the acid as it's formed, making a salt: \ce{B + HCl -> HB+ Cl-}.
+        \end{itemize}
+        \item Typical bases: \ce{Et3N} or pyridine.
+    \end{itemize}
+    \item Example acyl transfer reaction of an acid chloride: Forming an amide.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]Cl}
+            \arrow{0}[,0.1]\+
+            \chemfig{2\ HNMe_2}
+            \arrow
+            \chemfig{R-[:30](=[2]O)-[:-30]NME_2}
+            \arrow{0}[,0.1]\+
+            \chemfig{H_2\charge{[extra sep=5pt]90=$\oplus$}{N}Me_2\ \charge{[extra sep=4pt]45=$\ominus$}{Cl}}
+        \schemestop
+        \caption{Acyl transfer: Acid chloride to amide.}
+        \label{fig:acylTClAmide}
+    \end{figure}
+    \begin{itemize}
+        \item This reaction forms an amide.
+        \begin{itemize}
+            \item Recall from Figure \ref{fig:carbResonance} that amides are very stable.
+        \end{itemize}
+        \item We do not need an additional base this time because the amine already acts as one!
+        \begin{itemize}
+            \item Indeed, a \emph{second} equivalent of the amine forms a salt at the end of the reaction, again preventing us from dying.
+        \end{itemize}
+    \end{itemize}
+    \item Do we need two equivalents of \ce{HNMe2}?
+    \begin{itemize}
+        \item If you have a valuable amine, maybe add in \ce{Et3N} as a second base because it will do basically the same thing.
+    \end{itemize}
+    \item We now move onto Subtopic 3.c{}: Reactions of esters.
+    \begin{itemize}
+        \item Three ester reactions to consider: \textbf{Hydrolysis}, \textbf{transesterification}, and \textbf{amide formation}.
+    \end{itemize}
+    \item We now discuss Subtopic 3.c.i{}: Hydrolysis of esters.
+    \item Let's first consider the energetics of the overall reaction.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+            \arrow{0}[,0.1]\+
+            \chemfig{H_2O}
+            \arrow{<=>}
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+            \arrow{0}[,0.1]\+
+            \chemfig{R'OH}
+        \schemestop
+        \caption{Acyl transfer: Ester hydrolysis.}
+        \label{fig:acylTesterHydro}
+    \end{figure}
+    \begin{itemize}
+        \item Esters are not great electrophiles, and water is not a great nucleophile.
+        \begin{itemize}
+            \item Thus, the general addition-elimination mechanism (Figure \ref{fig:acylTmech}) will proceed very slowly here.
+        \end{itemize}
+        \item Additionally, the reaction is thermoneutral overall ($\Keq\approx 1$), so we'll get a $50:50$ mixture of reactants and products under many experimental setups.
+    \end{itemize}
+    \item So how do we get the reaction to proceed? Two ways:
+    \begin{itemize}
+        \item Use an acid to make the ester a better electrophile.
+        \item Use a base to make water a better nucleophile.
+    \end{itemize}
+    \item Acid-catalyzed mechanism.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]@{1O}O)-[:-30]OR'}
+            \arrow{<<->[\chemfig{@{2H}\charge{45=$\oplus$}{H}}]}
+            \chemfig{R-[:30]@{3C}(=[@{31}2]@{3O}\charge{135=$\oplus$}{O}-[:30]H)-[:-30]OR'}
+            \arrow{<=>[\chemfig{H_2@{4O}\charge{90=\:}{O}}]}
+            \chemfig{R-[:30](-[2]OH)(-[:-70]\charge{[extra sep=4pt]180=$\oplus$}{O}H_2)-[:-30]OR'}
+            \arrow{<=>[*{0}"PT"]}[-90]
+            \chemfig{R-[:30](-[@{61}2]@{6O}\charge{180=\:}{O}H)(-[:-70,,,2]HO)-[@{62}:-30]@{6X}\charge{[extra sep=5pt]-90=$\oplus$}{O}HR'}
+            \arrow{<=>[\ce{R$'$OH}]}[180]
+            \chemfig{R-[:30](=[2]\charge{135=$\oplus$}{O}-[:30]H)-[:-30]OH}
+            \arrow{<->>[\chemfig{\charge{45=$\oplus$}{H}}]}[180]
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+        \schemestop
+        \chemmove{
+            % \draw [curved arrow={5pt}{2pt}] (1O) to[out=45,in=135] (2H);
+            \draw [curved arrow={5pt}{3pt}] (4O) to[out=90,in=30] (3C);
+            \draw [curved arrow={3pt}{2pt}] (31) to[bend left=80,looseness=2.5] (3O);
+            \draw [curved arrow={5pt}{2pt}] (6O) to[out=180,in=180,looseness=2.5] (61);
+            \draw [curved arrow={2pt}{2pt}] (62) to[bend left=80,looseness=2.5] (6X);
+        }
+        \caption{Ester hydrolysis mechanism (acid-catalyzed).}
+        \label{fig:esterHydroAcid}
+    \end{figure}
+    \begin{itemize}
+        \item First step: We get a small quantity of protonated, activated ester that is a much better electrophile.
+        \item Second step: Now that we have a much better electrophile, water can add in.
+        \item Third step: Proton transfer (PT), likely intermolecular and possibly stepwise.
+        \item Fourth step: Elimination.
+        \item Fifth step: Deprotonation.
+        \item Observe that we have only drawn positively charged intermediates.
+        \begin{itemize}
+            \item If we're in acidic solution, we should not draw any anionic intermediates!
+            \item This is because anions will immediately be protonated, stopping the reaction there.
+        \end{itemize}
+        \item Since acid adds in at the beginning and leaves at the end, this mechanism is \emph{catalytic} in acid.
+    \end{itemize}
+    \item Basic mechanism.
+    \begin{figure}[H]
+        \centering
+        \vspace{1.5em}
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]@{1C}(=[@{11}2]@{1O}O)-[:-30]OR'}
+            \arrow{->[\chemfig{@{2O}\charge{135=$\ominus$}{O}H}]}
+            \chemfig{R-[:30](-[@{31}2]@{3O1}\charge{45=$\ominus$}{O})(-[:-70]OH)-[@{32}:-30]OR'-[@{33}:60,,1,,dotted]H-[@{34}]@{3O2}OH}
+            \arrow{->[][\tikz{\node[inner sep=0pt,align=center]{-\ce{HO-}\\-\ce{R$'$OH}};}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+            \arrow{->[\ce{HO-}][-\ce{H2O}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={9pt}{3pt}] (2O) to[out=135,in=45] (1C);
+            \draw [curved arrow={3pt}{2pt}] (11) to[bend left=80,looseness=2.5] (1O);
+            \draw [curved arrow={10pt}{2pt}] (3O1) to[out=50,in=180,out looseness=6,in looseness=7] (31);
+            \draw [curved arrow={2pt}{2pt}] (32) to[bend left=45,looseness=1.2] (33);
+            \draw [curved arrow={2pt}{2pt}] (34) to[bend left=80,looseness=2.5] (3O2);
+        }
+        \caption{Ester hydrolysis mechanism (basic).}
+        \label{fig:esterHydroBase}
+    \end{figure}
+    \begin{itemize}
+        \item This is much more similar to the general mechanism (Figure \ref{fig:acylTmech}): The starting material undergoes addition by hydroxide, followed by subsequent elimination.\footnote{A good way of introducting hydroxide base is with \ce{NaOH}.}
+        \begin{itemize}
+            \item However, a final deprotonation step will make the \emph{carboxylate} the major product, not the carboxylic acid.
+            \item If we want the carboxylic acid, we can recover that with a water workup.
+        \end{itemize}
+        \item Problem: \ce{RO-} is a bad leaving group (see Table \ref{tab:carbLG}).
+        \begin{itemize}
+            \item Solution: In aqueous media, \ce{RO-} will be a slightly better leaving group due to hydrogen bonding with water.
+            \item This spreads out and stabilizes its negative charge, and also provides a nearby proton donor.
+        \end{itemize}
+        \item Since carboxylates are the most stable carboxylic acid derivative we've considered (see Figure \ref{fig:carbResonance}), this \emph{is} a thermodynamically favorable pathway.
+        \item Observe that analogously to Figure \ref{fig:esterHydroAcid}, we have only drawn \emph{negatively} charged intermediates.
+        \begin{itemize}
+            \item This is again because cations should not be formed in basic solution.
+        \end{itemize}
+        \item Since one equivalent of base is used in this mechanism, it is \emph{not} catalytic in base.
+        \begin{itemize}
+            \item We may think of this pathway as base-\emph{accelerated} if we prefer.
+        \end{itemize}
+    \end{itemize}
+    \item We now discuss Subtopic 3.c.ii{}: Transesterification.
+    \item Let's first consider the energetics of the overall reaction.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+            \arrow{0}[,0.1]\+
+            \chemfig{R''OH}
+            \arrow{<=>}
+            \chemfig{R-[:30](=[2]O)-[:-30]OR''}
+            \arrow{0}[,0.1]\+
+            \chemfig{R'OH}
+        \schemestop
+        \caption{Acyl transfer: Transesterification.}
+        \label{fig:acylTtransester}
+    \end{figure}
+    \begin{itemize}
+        \item This reaction involves taking one ester and going to another ester.
+        \item Usually, $\Keq\approx 1$ and the reaction is not very fast, so we use catalysis again.
+    \end{itemize}
+    \item Acid-catalyzed mechanism.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]@{1O}O)-[:-30]OR'}
+            \arrow{<<->[\chemfig{@{2H}\charge{45=$\oplus$}{H}}]}
+            \chemfig{R-[:30]@{3C}(=[@{31}2]@{3O}\charge{135=$\oplus$}{O}-[:30]H)-[:-30]OR'}
+            \arrow(--.172){<=>[\chemfig{R''@{4O}\charge{90=\:}{O}H}]}
+            \chemfig{R-[:30](-[2]OH)(-[:-70,,,2]R''@{}\charge{[extra sep=5pt]-90=$\oplus$}{O}H(-[6,0.4,2,,opacity=0]))-[:-30]OR'}
+            \arrow{<=>[*{0}"PT"]}[-90]
+            \chemfig{R-[:30](-[@{61}2]@{6O}\charge{180=\:}{O}H)(-[:-70,,,2]R''@{}O)-[@{62}:-30]@{6X}\charge{[extra sep=5pt]-90=$\oplus$}{O}HR'}
+            \arrow{<=>[\ce{R$'$OH}]}[180]
+            \chemfig{R-[:30](=[2]\charge{135=$\oplus$}{O}-[:30]H)-[:-30]OR''}
+            \arrow{<->>[\chemfig{\charge{45=$\oplus$}{H}}]}[180]
+            \chemfig{R-[:30](=[2]O)-[:-30]OR''}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={5pt}{3pt}] (4O) to[out=90,in=30] (3C);
+            \draw [curved arrow={3pt}{2pt}] (31) to[bend left=80,looseness=2.5] (3O);
+            \draw [curved arrow={5pt}{2pt}] (6O) to[out=180,in=180,looseness=2.5] (61);
+            \draw [curved arrow={2pt}{2pt}] (62) to[bend left=80,looseness=2.5] (6X);
+        }
+        \caption{Transesterification mechanism (acid-catalyzed).}
+        \label{fig:transesterAcid}
+    \end{figure}
+    \begin{itemize}
+        \item Mostly the same as Figure \ref{fig:esterHydroAcid}.
+        \item Proton transfer is thermoneutral, so we'll get a mixture of the final product and the pre-PT intermediate.
+        % \item Keep in mind that the positive charge hangs out until we deprotonate something.
+    \end{itemize}
+    \pagebreak
+    \item Two methods to drive the acid-catalyzed mechanism in the forward direction.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \footnotesize
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]OEt}
+                \arrow{<=>[\ce{H+}][\ce{MeOH}]}[,1.1]
+                \chemfig{R-[:30](=[2]O)-[:-30]OMe}
+            \schemestop
+            \caption{Excess nucleophile.}
+            \label{fig:transesterEqa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \footnotesize
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]O-[:30]*6(-=-=-=)}
+                \arrow{<=>[\ce{H+}][\ce{MeOH}]}[,1.1]
+                \chemfig{R-[:30](=[2]O)-[:-30]OMe}
+                \arrow(--.173){0}[,0.1]\+{,,0.8em}
+                \chemname{
+                    \chemfig{*6(-=-(-OH)=-=)}
+                }{phenol\hspace{9mm}\ }
+            \schemestop
+            \chemnameinit{}
+            \caption{Ground state destabilization and product stabilization.}
+            \label{fig:transesterEqb}
+        \end{subfigure}
+        \caption{Driving the transesterification equilibrium.}
+        \label{fig:transesterEq}
+    \end{figure}
+    \begin{itemize}
+        \item Use \ce{R$''$OH} as the solvent.
+        \begin{itemize}
+            \item Example: If we want to change an ethyl ester into a methyl ester, use methanol (\ce{MeOH}) as the solvent instead of just as the nucleophile (Figure \ref{fig:transesterEqa}).
+        \end{itemize}
+        \item Destabilize the reactants and stabilize the products.
+        \begin{itemize}
+            \item Example: Use a phenyl ester (Figure \ref{fig:transesterEqb}).
+            \begin{itemize}
+                \item The phenyl ester is more electrophilic than, for example, a methyl ester. This is because the $n_{\ce{O}}$ lone pair can now donate into the aromatic ring as well, lowering its electron density near the carbonyl carbon.
+                \item Additionally, phenol is a very stable byproduct (again, due to resonance delocalization of its lone pair).
+            \end{itemize}
+            \item Phenol was the horrible smell of paste used in nursery schools.
+        \end{itemize}
+    \end{itemize}
+    \item Base-accelerated conditions.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+            \arrow{<=>[\ce{R$''$O-}][\ce{R$''$OH}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]OR''}
+            \arrow{0}[,0.1]\+
+            \chemfig{R'OH}
+        \schemestop
+        \caption{Transesterification (basic).}
+        \label{fig:transesterBase}
+    \end{figure}
+    \begin{itemize}
+        \item The mechanism is analogous to Figure \ref{fig:esterHydroBase}.\footnote{A good way of introducing alkoxide base is with \ce{NaOR}.}
+    \end{itemize}
+    \item We now discuss Subtopic 3.c.iii{}: Amide formation from esters.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+            \arrow{<=>[\ce{HNR$''$2}]}[,1.2]
+            \chemfig{R-[:30](=[2]O)-[:-30]NR''_2}
+            \arrow{0}[,0.1]
+        \schemestop
+        \caption{Acyl transfer: Ester to amide.}
+        \label{fig:acylTEsterAmide}
+    \end{figure}
+    \begin{itemize}
+        \item The mechanism is also analogous to Figure \ref{fig:esterHydroBase}, and we don't need base because \ce{HNR2} is one!
+        \item This reaction is driven forward by the greater resonance stabilization of amides relative to esters (see Figure \ref{fig:carbResonance}).
+    \end{itemize}
+    \pagebreak
+    \item We now move onto Subtopic 3.d{}: Reactions of carboxylic acids.
+    \item We'll begin with Subtopic 3.d.i{}: The Fischer esterification.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+            \arrow{0}[,0.1]\+
+            \chemfig{R'OH}
+            \arrow{<=>[\ce{H+}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+            \arrow{0}[,0.1]\+
+            \chemfig{H_2O}
+        \schemestop
+        \caption{Fischer esterification.}
+        \label{fig:acylTFischer}
+    \end{figure}
+    \begin{itemize}
+        \item Combine a carboxylic acid and an alcohol under acidic conditions.
+        \item Again, $\Keq\approx 1$.
+        \item However, we can drive the reaction forward by removal of water (either by distillation or drying agents).
+    \end{itemize}
+    \item We now discuss Subtopic 3.d.ii{}: Why basic esterification isn't possible.
+    \item Under basic conditions, the first thing that happens will be an acid-base reaction between the carboxylic acid and whatever base we've added to solution.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]@{1O}O-[@{11}:30]@{1H}H}
+            \arrow{0}[,0.1]\+
+            \chemfig{R'OH}
+            \arrow{->[\chemfig{@{2O}\charge{135=$\ominus$}{O}H}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={9pt}{2pt}] (2O) to[out=135,in=45] (1H);
+            \draw [curved arrow={2pt}{2pt}] (11) to[bend right=80,looseness=2.5] (1O);
+        }
+        \caption{Side reaction under "basic esterification" conditions.}
+        \label{fig:esterificationBase}
+    \end{figure}
+    \begin{itemize}
+        \item This will produce a carboxylate, which (recall from Figure \ref{fig:carbResonance}) is a \emph{terrible} electrophile with a \emph{terrible} leaving group.
+    \end{itemize}
+    \item As such, we \emph{cannot} do basic esterification of carboxlic acids!
+    \item So what do we do if we want to convert a carboxylic acid into an ester but can't use acidic conditions, perhaps because there are other functional groups in our molecule that would react with acid?
+    \item The answer lies in Subtopic 3.d.iii{}: Formation of acid chlorides.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+            \arrow{->[\ce{SOCl2}][Py]}[,1.1]
+            \chemfig{R-[:30](=[2]O)-[:-30]Cl}
+            \arrow{->[\ce{R$'$OH}][\ce{NEt3}]}[,1.1]
+            \chemfig{R-[:30](=[2]O)-[:-30]OR'}
+        \schemestop
+        \caption{Acyl transfer: Carboxylic acid to ester.}
+        \label{fig:acylTacidEster}
+    \end{figure}
+    \begin{itemize}
+        \item Essentially, we back off and run the reaction in two steps: A review reaction from 5.12 followed by Figure \ref{fig:acylTClEster}.
+        \item Note that Py stands for pyridine.
+    \end{itemize}
+    \item We now move onto Subtopic 3.e{}: Reactions of amides.
+    \item Recall that amide-bond formation is an incredibly useful driving force in other reactions (e.g., see Figures \ref{fig:acylTClAmide} \& \ref{fig:acylTEsterAmide}).
+    \begin{itemize}
+        \item As such, amides are very stable, and we might not expect them to do much.
+        \item Regardless, however, they hydrolyse to the carboxylic acid under acidic conditions.
+    \end{itemize}
+    \pagebreak
+    \item Let's first consider the energetics of the overall reaction.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]NR'_2}
+            \arrow{0}[,0.1]\+
+            \chemfig{H_2O}
+            \arrow{<<->}
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+            \arrow{0}[,0.1]\+
+            \chemfig{HNR'_2}
+            \arrow
+            \chemfig{R-[:150](=[2]O)-[:-150]\charge{135=$\ominus$}{O}-[:100,0.8,,,opacity=0]H_2\charge{[extra sep=5pt]90=$\oplus$}{N}R'_2}
+        \schemestop
+        \caption{Acyl transfer: Amide hydrolysis.}
+        \label{fig:acylTamideHydro}
+    \end{figure}
+    \begin{itemize}
+        \item As stated above, it seems unlikely that a stable SM would become a less stable product.
+        \begin{itemize}
+            \item Indeed, the first step has $\Keq<1$.
+        \end{itemize}
+        \item However, we get a subsequent acid-base reaction between the carboxylic acid and amine base.
+        \begin{itemize}
+            \item This forms \ce{H2NR2+ RCOO-} (a salt), taking the reaction to near completion.
+        \end{itemize}
+        \item This process is called \textbf{linking} steps!
+    \end{itemize}
+    \item \textbf{Linked} (steps): A phenomena in which a disfavored reaction step is coupled to an irreversible reaction step to drive product formation.
+    \item We now discuss Subtopic 3.e.i{}: Acid-catalyzed hydrolysis.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]@{1O}O)-[:-30]NR'_2}
+            \arrow{<<->[\chemfig{@{2H}\charge{45=$\oplus$}{H}}]}[,1.2]
+            \chemfig{R-[:30]@{3C}(=[@{31}2]@{3O}\charge{135=$\oplus$}{O}-[:30]H)-[:-30]NR'_2}
+            \arrow{<=>[\chemfig{H_2@{4O}\charge{90=\:}{O}}]}[,1.2]
+            \chemfig{R-[:30](-[2]OH)(-[:-70]\charge{[extra sep=4pt]180=$\oplus$}{O}H_2)-[:-30]NR'_2}
+            \arrow{<=>[*{0}"PT"]}[-90]
+            \chemfig{R-[:30](-[@{61}2]@{6O}\charge{180=\:}{O}H)(-[:-70,,,2]HO)-[@{62}:-30]@{6X}\charge{[extra sep=5pt]-90=$\oplus$}{N}HR'_2}
+            \arrow{<=>[\ce{HNR$'$2}]}[180,1.2]
+            \chemfig{R-[:30](=[2]\charge{135=$\oplus$}{O}-[:30]H)-[:-30]OH}
+            \arrow{<->>[\chemfig{\charge{45=$\oplus$}{H}}]}[180,1.2]
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={5pt}{3pt}] (4O) to[out=90,in=30] (3C);
+            \draw [curved arrow={3pt}{2pt}] (31) to[bend left=80,looseness=2.5] (3O);
+            \draw [curved arrow={5pt}{2pt}] (6O) to[out=180,in=180,looseness=2.5] (61);
+            \draw [curved arrow={2pt}{2pt}] (62) to[bend left=80,looseness=2.5] (6X);
+        }
+        \caption{Amide hydrolysis mechanism (acid-catalyzed).}
+        \label{fig:amideHydroAcid}
+    \end{figure}
+    \begin{itemize}
+        \item Acid catalyis is needed because, per Figure \ref{fig:carbResonance}, amides are very poor electrophiles.
+        \begin{itemize}
+            \item Indeed, there is excellent $n_{\ce{N}}\to\pi^*_{\ce{CO}}$ resonance.
+        \end{itemize}
+        \item We protonate the carbonyl instead of the amide because the carbonyl has lone pairs not currently in resonance; if we protonate the amide nitrogen, the result no longer has resonance stabilization.
+        \item Once we protonate/activate the carbonyl, the rest of the mechanism is analogous to Figure \ref{fig:esterHydroAcid}.
+    \end{itemize}
+    \item We now discuss Subtopic 3.e.ii{}: Basic hydrolysis.
+    \begin{figure}[H]
+        \centering
+        \vspace{1.5em}
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]@{1C}(=[@{11}2]@{1O}O)-[:-30]NR'_2}
+            \arrow{->[\chemfig{@{2O}\charge{135=$\ominus$}{O}H}]}
+            \chemfig{R-[:30](-[@{31}2]@{3O1}\charge{45=$\ominus$}{O})(-[:-70]OH)-[@{32}:-30]NR'_2-[@{33}:60,,1,,dotted]H-[@{34}]@{3O2}OH}
+            \arrow{->[][\tikz{\node[inner sep=0pt,align=center]{-\ce{HO-}\\-\ce{HNR$'$2}};}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]OH}
+            \arrow{->[\ce{HO-}][-\ce{H2O}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={9pt}{3pt}] (2O) to[out=135,in=45] (1C);
+            \draw [curved arrow={3pt}{2pt}] (11) to[bend left=80,looseness=2.5] (1O);
+            \draw [curved arrow={10pt}{2pt}] (3O1) to[out=50,in=180,out looseness=6,in looseness=7] (31);
+            \draw [curved arrow={2pt}{2pt}] (32) to[bend left=45,looseness=1.2] (33);
+            \draw [curved arrow={2pt}{2pt}] (34) to[bend left=80,looseness=2.5] (3O2);
+        }
+        \caption{Amide hydrolysis mechanism (basic).}
+        \label{fig:amideHydroBase}
+    \end{figure}
+    \begin{itemize}
+        \item Conundrum: Like with basic ester hydrolysis (see Figure \ref{fig:esterHydroBase}), \ce{NR2-} is a poor leaving group.
+        \begin{itemize}
+            \item However, we can once again solve this issue with a hydrogen bond to water
+        \end{itemize}
+        \item Under basic conditions, we can't form the salt in Figure \ref{fig:acylTamideHydro}, but we are still thermodynamically driven toward the more stable carboxylate (see Figure \ref{fig:carbResonance}).
+    \end{itemize}
+    \pagebreak
+    \item Application to real-world cheimstry: Wine.
+    \item Carboxylic acids in wine.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.24\linewidth}
+            \centering
+            \ce{HCO2H}
+            \caption{Formic acid.}
+            \label{fig:wineAcida}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.24\linewidth}
+            \centering
+            \chemfig{HO_2C-[:60]-(-[:60]OH)-[:-60]CO_2H}
+            \caption{Malic acid.}
+            \label{fig:wineAcidb}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.24\linewidth}
+            \centering
+            \chemfig{-[:30]-[:-30]-[:30]CO_2H}
+            \caption{Butyric acid.}
+            \label{fig:wineAcidc}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.24\linewidth}
+            \centering
+            \chemfig{HO_2C-[:60](<:[:120]OH)-(<[:60]OH)-[:-60]CO_2H}
+            \caption{Tartaric acid.}
+            \label{fig:wineAcidd}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemname{
+                    \chemfig{*6(-=-(-CO_2H)=(-OH)-=)}
+                }{salicylic acid\hspace{12mm}\ }
+                \arrow(.base east--.base west)
+                \chemname{
+                    \chemfig{*6(-=-(-CO_2H)=(-O-[:30](=[2]O)-[:-30]Me)-=)}
+                }{aspirin\hspace{12mm}\ }
+            \schemestop
+            \chemnameinit{}
+            \caption{Salicyclic acid can be made into aspirin.}
+            \label{fig:wineAcide}
+        \end{subfigure}
+        \caption{Wine contains carboxylic acids.}
+        \label{fig:wineAcid}
+    \end{figure}
+    \begin{itemize}
+        \item Formic acid (Figure \ref{fig:wineAcida}): Used in the leather tanning industry.
+        \item Malic acid (Figure \ref{fig:wineAcidb}): An ingredient in dermatology products; a skin exfoliating agent.
+        \item Butyric acid (Figure \ref{fig:wineAcidc}): The smell in dirty gym socks.
+        \item Salicylic acid (Figure \ref{fig:wineAcide}): No real connection to taste or smell, but it's a precursor in the synthesis of the pain medication, aspirin.
+        \item You ever notice the crystalline material at the bottom of a wine glass?
+        \begin{itemize}
+            \item It's just (2\emph{R},3\emph{R})-(+)-tartaric acid (Figure \ref{fig:wineAcidd})!
+            \item The potassium salt of tartaric acid (which contains the carboxylate, tartarate!) is more commonly known as cream of tartar and used in many baking recipes.
+        \end{itemize}
+    \end{itemize}
+    \item Bonus: What does it mean to say that a bad-tasting wine is "corked?"
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemname{
+                \chemfig{*6(-(-Cl)=-(-Cl)=(-OH)-(-Cl)=)}
+            }{trichlorophenol}
+            \arrow(.base east--.base west)
+            \chemname{
+                \chemfig{*6(-(-Cl)=-(-Cl)=(-OMe)-(-Cl)=)}
+            }{trichloroanisole}
+        \schemestop
+        \chemnameinit{}
+        \caption{Wine can be "corked."}
+        \label{fig:wineCork}
+    \end{figure}
+    \begin{itemize}
+        \item It means that the wine has too much trichloroanisole, a compound that smells and tastes bad.
+        \item Trichloroanisole can be transferred to the wine from the cork.
+        \begin{itemize}
+            \item Cork comes from a cork tree.
+            \item Humans spraying synthetic trichlorophenol insecticides onto trees led funghi to evolve and detoxify it by adding a methyl group.
+            \item Trichloroanisole is then good for the funghi, but tastes bad to us.
+        \end{itemize}
+    \end{itemize}
 \end{itemize}
 
 
