@@ -577,7 +577,7 @@
 
 \section{Acyl Transfer Reactions - 1}
 \begin{itemize}
-    \item \marginnote{11/1:}Lecture 24 recap.
+    \item \marginnote{11/1:}Lecture 23 recap.
     \begin{enumerate}
         \item Carboxyic acid derivatives.
         \begin{itemize}
@@ -1320,6 +1320,426 @@
             \item Trichloroanisole is then good for the funghi, but tastes bad to us.
         \end{itemize}
     \end{itemize}
+\end{itemize}
+
+
+
+\section{Acyl Transfer Reactions - 2}
+\begin{itemize}
+    \item \marginnote{11/4:}Lecture 24 recap.
+    \begin{enumerate}
+        \item Mechanism of acyl transfer (Figure \ref{fig:acylTmech}).
+        \begin{itemize}
+            \item Proceeds via a two-step addition-elimination process and a tetrahedral intermediate.
+        \end{itemize}
+        \item Acid chlorides (Figure \ref{fig:carbAcidCl}) and acid anhydrides (Figure \ref{fig:carbAcidAnh}) are very reactive, so no catalyst is needed for their acyl transfer reactions.
+        \item Esters have three important reactions: Hydrolysis (Figure \ref{fig:acylTesterHydro}), transesterification (Figure \ref{fig:acylTtransester}), and amide formation (Figure \ref{fig:acylTEsterAmide}).
+        \begin{itemize}
+            \item Esters are \emph{not} great electrophiles, so we need an acid or base catalyst to promote their reactions.
+            \item We can make an amide from an ester by heating the amine and ester. The amine acts as both the nucleophile and the base in this case.
+        \end{itemize}
+        \item Acid catalyzed esterification: Fischer esterification (Figure \ref{fig:acylTFischer}).
+        \begin{itemize}
+            \item Driven by excess alcohol or removal of water.
+            \item Under basic conditions, we form an unreactive carboxylate (Figure \ref{fig:esterificationBase}).
+        \end{itemize}
+        \item Amide hydrolysis (Figure \ref{fig:acylTamideHydro}).
+        \begin{itemize}
+            \item Driving force under acidic conditions: The formation of a (very stable) salt.
+            \item Driving force under basic conditions (Figure \ref{fig:amideHydroBase}): The formation of a (very stable) carboxylate.
+        \end{itemize}
+    \end{enumerate}
+    \item Feedback: Prof. Buchwald has heard that there's a lot of anxiety about synthesis questions, so he'll go over one example problem today, another on Wednesday, and many on Friday!
+    \begin{itemize}
+        \item Source of anxiety around synthesis: There's no one right answer.
+        \item Positive outlook: There is more than one thing you can write down for 100\% credit!
+    \end{itemize}
+    \item Example: How can we make \emph{n}-butyl amine (\ce{{}^{\emph{n}}BuNH2}) from \emph{n}-propyl bromide (\ce{{}^{\emph{n}}PrBr}) and any 1-carbon compound?
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \vspace{2.5em}
+            \schemestart
+                \chemfig{CH_3CH_2CH_2CH_2NH_2}
+                \arrow(c1--c2){=retro>}
+                \chemfig{CH_3CH_2CH_2CN}
+            \schemestop
+            \chemmove{
+                \draw ([yshift=5mm]c2.west) -- node[above]{1. \ce{LiAlH4}} node[below]{2. \ce{H2O}\hspace{3.4mm}\ } ([yshift=5mm]c1.east);
+            }
+            \caption{Pathway through the nitrile.}
+            \label{fig:TTQnBuNH2nPrBra}
+        \end{subfigure}\\[3em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{CH_3CH_2CH_2CH_2NH_2}
+                \arrow(c1--c2){=retro>}
+                \chemfig{CH_3CH_2CH_2-[:30](=[2]O)-[:-30]NH_2}
+                \arrow(--c3){=retro>}
+                \chemfig{CH_3CH_2CH_2-[:30](=[2]O)-[:-30]Cl}
+                \arrow(--c4){=retro>}[-90]
+                \chemfig{CH_3CH_2CH_2-[:30](=[2]O)-[:-30]OH}
+                \arrow(--c5){=retro>}[180]
+                \chemfig{CH_3CH_2CH_2MgBr}
+                \arrow(--c6){=retro>}[180]
+                \chemfig{CH_3CH_2CH_2Br}
+            \schemestop
+            \chemmove{
+                \draw ([yshift=5mm]c2.west) -- node[above]{1. \ce{LiAlH4}} node[below]{2. \ce{H2O}\hspace{3.4mm}\ } ([yshift=5mm]c1.east);
+                \draw ([yshift=5mm]c3.west) -- node[above]{XS \ce{NH3}} ([yshift=5mm]c2.east);
+                \draw [shorten <=3pt,shorten >=3pt] ([xshift=5mm]c4.north) -- node[right]{\ce{SOCl2} / Py} ([xshift=5mm]c3.south);
+                \draw ([yshift=5mm]c5.east) -- node[above]{1. \ce{CO2}} node[below]{2. \ce{H+}\hspace{1.5mm}\ } ([yshift=5mm]c4.west);
+                \draw ([yshift=5mm]c6.east) -- node[above]{\ce{Mg}} ([yshift=5mm]c5.west);
+            }
+            \caption{Pathway through the amide.}
+            \label{fig:TTQnBuNH2nPrBrb}
+        \end{subfigure}
+        \caption{TTQ: Synthesis of \emph{n}-butyl amine from \emph{n}-propyl bromide.}
+        \label{fig:TTQnBuNH2nPrBr}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item This is a medium-difficulty question.
+        \item We'll start with a retrosynthetic analysis.\footnote{Note that the double-lined arrows are called "retrosynthetic arrows." It is common nomenclature to see retrosynthetic arrows in the reverse direction, overset by forward arrows and conditions.}
+        \begin{itemize}
+            \item You may want to start by identifying the number of carbons in the starting material and product.
+            \item This tells us that we need to attach a \ce{CH2NH2} to the starting material. How can we do this?
+        \end{itemize}
+        \item We don't know too many reactions yet, but here are two possibilities.
+        \begin{itemize}
+            \item Transform \ce{{}^{\emph{n}}BuNH2} to butyronitrile (\ce{{}^{\emph{n}}PrCN}).\footnote{Although it was not covered in class, we could then transform butyronitrile to \emph{n}-propyl bromide with \ce{CN-} (see Figure \ref{fig:nitrileReducX}). This would be a highly efficient synthesis!}
+            \begin{itemize}
+                \item In the forward direction, we'd use \ce{LiAlH4} and then \ce{H2O} (a water workup).
+            \end{itemize}
+            \item Transform \ce{{}^{\emph{n}}BuNH2} to butyramide (\ce{{}^{\emph{n}}PrCONH2}).
+            \begin{itemize}
+                \item In the forward direction, we'd use \ce{LiAlH4} and then \ce{H2O}, as well.
+                \item Next step: Transform butyramide to the acid chloride via excess (XS) ammonia.
+                \item Next step: Transform the acid chloride to the carboxylic acid via \ce{SOCl2} / \ce{Py}.
+                \item Next step: The carboxylic acid could have come from the primary alcohol via Jones reagent. However, this route would require a 4-carbon primary alcohol starting material, which would be difficult to access from \emph{n}-propyl bromide. More simply, transform the carboxylic acid to a Grignard reagent via carboxylation with \ce{CO2}.
+                \item Final step: Transform the Grignard reagent to the original \emph{n}-propyl bromide via magnesium metal.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item Aside (connection to real-world chemistry): In real-life synthesis problems, chemists work to make compounds as inexpensively as possible.
+    \begin{itemize}
+        \item However, cost is not a consideration in 5.13.
+    \end{itemize}
+    \item Prof. Buchwald's advice on 5.13-level synthesis problems: The more practice problems you do, the more you'll see how things work retrosynthetically.
+    \item This concludes today's synthesis example; we now return to acyl transfer reactions.
+    \item Lecture outline.
+    \begin{enumerate}[start=4]
+        \item Evidence for a tetrahedral intermediate.
+        \begin{enumerate}[label={\alph*.}]
+            \item Ester hydrolysis.
+            \item Amide hydrolysis (basic).
+            \item Amide hydrolysis (acidic) --- deferred to recitation.
+        \end{enumerate}
+        \item Reactions with \ce{NaBH4}, \ce{LiAlH4}, \ce{RMgBr}, and \ce{RLi}.
+    \end{enumerate}
+    \item We'll begin with Topic 4: Evidence for a tetrahedral intermediate.
+    \item According to Prof. Buchwald, every acyl transfer reaction goes through a tetrahedral intermediate.
+    \begin{itemize}
+        \item But Prof. Buchwald just told us this; why should we believe it's true?
+        \item Here's some evidence that this happens.
+    \end{itemize}
+    \item Recall the general addition-elimination mechanism from last lecture (Figure \ref{fig:acylTmech}).
+    \begin{itemize}
+        \item Why couldn't we have the S\textsubscript{N}2-like mechanism instead?
+    \end{itemize}
+    \pagebreak
+    \item We can differentiate these two mechanisms via an isotopic labeling study. 
+    \begin{itemize}
+        \item Most naturally occurring oxygen is \ce{{}^16O}.\footnote{"oh sixteen."} However, we can also use molecules containing heavy oxygen, which is interchangeably denoted as \ce{{}^18O}, \ce{{}^18\fO}, or just \ce{\fO}.\footnote{All pronounced "oh eighteen;" these notes will use these symbols interchangeably, as well, so that you get practice looking at all of the forms.}
+        \item In particular, we could run an ester hydrolysis reaction using \ce{H\fO-} as the nucleophile and \ce{H2{}^18\fO} as the solvent!
+        \begin{itemize}
+            \item Such a reaction would yield \ce{RCO\fO H} as the product instead of \ce{RCOOH}.
+            \item We can then use mass spec to measure how much \ce{{}^18O} has been incorporated, for example by looking at the ratio of the heights of the parent peak (\ce{RCOOH}) and the $\cnc{M$+2$}\rc$ peak (\ce{RCO\fO H}).
+        \end{itemize}
+        \item In this particular experimental setup, we will stop the ester hydrolysis process at partial conversion for reasons that will become clear shortly.
+        \begin{itemize}
+            \item We can then look for \ce{{}^{18}\fO} in the acid \emph{and} in the starting material.
+        \end{itemize}
+    \end{itemize}
+    \item We now discuss Subtopic 4.a{}: Evidence for a tetrahedral intermediate in the ester hydrolysis reaction.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=1.4em,arrow coeff=0.8}
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]OR}
+                \arrow{0}[,0.1]\+
+                \chemfig{\charge{135=$\ominus$}{\fO}H-[4,0.4,,,opacity=0]}
+                \arrow(--c2){<=>[][$k_1$]}
+                \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})(<[:-70]\fO H)-[:-30]OR}
+                \arrow(--c3){<=>[PT]}[,1]
+                \chemfig{R-[:30](-[2]OH)(<[:-70]\charge{[extra sep=4pt]0=$\ominus$}{\fO})-[:-30]OR}
+                \arrow{<=>[$k_4$]}
+                \chemfig{R-[:30](=[2]\fO)-[:-30]OR}
+                \arrow{0}[,0.1]\+
+                \chemfig{\charge{135=$\ominus$}{O}H-[4,0.4,,,opacity=0]}
+                \arrow(@c2--){<=>[*{0}$k_2$]}[-90]
+                \subscheme{
+                    \chemfig{R-[:30](=[2]O)-[:-30]\fO H}
+                    \arrow{0}[,0]
+                    \chemfig{\charge{135=$\ominus$}{O}R-[4,0.4,,,opacity=0]}
+                }
+                \arrow{-U>[][\ce{ROH}][][0.25][90]}[180]
+                \chemleft{[}\subscheme{
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O}-[2,0.4,,,opacity=0])=[:-30]\fO}
+                    \arrow{<->}
+                    \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{\fO}-[,0.4,,,opacity=0]}
+                }\chemright{]}
+                \arrow(@c3--){<=>[*{0}$k_3$]}[-90]
+                \subscheme{
+                    \chemfig{R-[:30](=[2]\fO)-[:-30]OH}
+                    \arrow{0}[,0]
+                    \chemfig{\charge{135=$\ominus$}{O}R-[4,0.4,,,opacity=0]}
+                }
+                \arrow{-U>[][\ce{ROH}][][0.25][90]}
+                \chemleft{[}\subscheme{
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{\fO}-[2,0.4,,,opacity=0])=[:-30]O}
+                    \arrow{<->}
+                    \chemfig{R-[:30](=[2]\fO)-[:-30]\charge{45=$\ominus$}{O}-[,0.4,,,opacity=0]}
+                }\chemright{]}
+            \schemestop
+            \caption{The kinetic network for the addition-elimination mechanism.}
+            \label{fig:isotopeEsterHydroa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]OR}
+                \arrow{0}[,0.1]\+
+                \chemfig{\charge{135=$\ominus$}{\fO}H-[4,0.4,,,opacity=0]}
+                \arrow{<=>}
+                \chemfig{R-[:30](=[2]O)-[:-30]\fO H}
+                \arrow{0}[,0.1]\+
+                \chemfig{\charge{135=$\ominus$}{O}R}
+                \arrow{-U>[][\ce{ROH}][][0.3][80]}
+                \chemleft{[}\subscheme{
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O}-[2,0.4,,,opacity=0])=[:-30]\fO}
+                    \arrow{<->}
+                    \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{\fO}-[,0.4,,,opacity=0]}
+                }\chemright{]}
+            \schemestop
+            \caption{The kinetic network for the S\textsubscript{N}2 mechanism.}
+            \label{fig:isotopeEsterHydrob}
+        \end{subfigure}
+        \caption{Isotopic labeling to prove a tetrahedral intermediate: Ester hydrolysis.}
+        \label{fig:isotopeEsterHydro}
+    \end{figure}
+    \begin{itemize}
+        \item Figure \ref{fig:isotopeEsterHydroa} displays the full kinetic network of the addition-elimination mechanism.
+        \begin{itemize}
+            \item All of the little $k$'s indicate kinetic rate constants.
+            \item This is the ugliness of reality: It's a very complicated kinetic network.
+        \end{itemize}
+        \item Here's a rough explanation of the network.
+        \begin{itemize}
+            \item We begin in the upper-left corner, with our ester and isotopically labeled \ce{H\fO-} nucleophile.
+            \item \ce{H\fO-} can add into the ester, yielding the tetrahedral intermediate.
+            \item Now we have three options: Go backwards and eliminate \ce{H\fO-}, go down and eliminate \ce{RO-}, go right and do proton transfer followed by eliminating \ce{HO-}.
+            \begin{itemize}
+                \item Going backwards occurs with rate constant $k_1$ from the tetrahedral intermediate.
+                \item Going down occurs with rate constant $k_2$ from the tetrahedral intermediate.
+                \item Going right occurs with rate constant $k_4$ from the tetrahedral intermediate.
+            \end{itemize}
+            \item The last option is that we could do proton transfer, and then eliminate \ce{RO-}. This process occurs with rate constant $k_3$.
+            \item Note that any time we eliminate \ce{RO-} ($k_2$ or $k_3$), the resultant carboxylic acid will be irreversibly deprotonated under the present basic conditions.
+        \end{itemize}
+        \item \ce{HO-} and \ce{RO-} are comparable leaving groups (i.e., comparably good at leaving).
+        \begin{itemize}
+            \item Thus, we should have $k_1\approx k_2\approx k_3\approx k_4$.
+            \item So if this scheme is correct, we expect to get some \ce{{}^18O} in the recovered ester, via the $k_4$ pathway!
+        \end{itemize}
+        \item Now let's consider the other possibility: Figure \ref{fig:isotopeEsterHydrob} displays the full kinetic network for the S\textsubscript{N}2 mechanism.
+        \item If we do an S\textsubscript{N}2 reaction, we should get a stable carboxylate that does not participate in a back reaction.
+        \begin{itemize}
+            \item Therefore, we should see no \ce{{}^18O} in the recovered ester SM at 50\% conversion.
+        \end{itemize}
+        \item Experimentally, what we find is that there \emph{is} \ce{{}^18O} in the recovered ester.
+        \begin{itemize}
+            \item Therefore, the tetrahedral intermediate does exist!
+        \end{itemize}
+        \item If this experimental setup isn't making sense right now, go home, meditate, relax, and then look at this again under calmer circumstances.
+    \end{itemize}
+    \item This concludes our discussion of how an isotopic labeling study provides evidence for the existence of the tetrahedral intermediate over an S\textsubscript{N}2 pathway.
+    \item We now move onto an isotopic labeling study of amide hydrolysis, with the goal of showing how a mechanism that proceeds through a tetrahedral intermediate can explain the following two experimental results.
+    \begin{itemize}
+        \item Under basic amide hydrolysis conditions (which we stop at 50\% conversion), we get lots of \ce{{}^18O} in the recovered amide.
+        \item Under acidic amide hydrolysis conditions (which we stop at 50\% conversion), we get much less \ce{{}^18O} in the recovered amide.
+    \end{itemize}
+    \item We now dive more deeply into the mechanism under basic conditions, which is Subtopic 4.b.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=1.4em,arrow coeff=0.8}
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]NR_2}
+                \arrow{0}[,0.1]\+
+                \chemfig{\charge{135=$\ominus$}{\fO}H-[4,0.4,,,opacity=0]}
+                \arrow(--c2){<=>[][$k_1$]}
+                \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})(<[:-70]\fO H)-[:-30]NR_2}
+                \arrow(--c3){<=>[PT]}[,1]
+                \chemfig{R-[:30](-[2]OH)(<[:-70]\charge{[extra sep=4pt]0=$\ominus$}{\fO})-[:-30]NR_2}
+                \arrow{<=>[$k_4$]}
+                \chemfig{R-[:30](=[2]\fO)-[:-30]NR_2}
+                \arrow{0}[,0.1]\+
+                \chemfig{\charge{135=$\ominus$}{O}H-[4,0.4,,,opacity=0]}
+                \arrow(@c2--){<=>[*{0}$k_2$]}[-90]
+                \subscheme{
+                    \chemfig{R-[:30](=[2]O)-[:-30]\fO H}
+                    \arrow{0}[,0]
+                    \chemfig{\charge{135=$\ominus$}{N}R_2-[4,0.4,,,opacity=0]}
+                }
+                \arrow{-U>[][\ce{HNR2}][][0.22][90]}[180]
+                \chemleft{[}\subscheme{
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O}-[2,0.4,,,opacity=0])=[:-30]\fO}
+                    \arrow{<->}
+                    \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{\fO}-[,0.4,,,opacity=0]}
+                }\chemright{]}
+                \arrow(@c3--){<=>[*{0}$k_3$]}[-90]
+                \subscheme{
+                    \chemfig{R-[:30](=[2]\fO)-[:-30]OH}
+                    \arrow{0}[,0]
+                    \chemfig{\charge{135=$\ominus$}{N}R_2-[4,0.4,,,opacity=0]}
+                }
+                \arrow{-U>[][\ce{HNR2}][][0.22][90]}
+                \chemleft{[}\subscheme{
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{\fO}-[2,0.4,,,opacity=0])=[:-30]O}
+                    \arrow{<->}
+                    \chemfig{R-[:30](=[2]\fO)-[:-30]\charge{45=$\ominus$}{O}-[,0.4,,,opacity=0]}
+                }\chemright{]}
+            \schemestop
+            \caption{The kinetic network for the addition-elimination mechanism.}
+            \label{fig:isotopeAmideHydroa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]NR_2}
+                \arrow{0}[,0.1]\+
+                \chemfig{\charge{135=$\ominus$}{\fO}H-[4,0.4,,,opacity=0]}
+                \arrow{<=>[fast]}
+                \chemfig{R-[:30](=[2]\fO)-[:-30]NR_2}
+                \arrow{->[\chemfig{\charge{135=$\ominus$}{\fO}H}]}
+                \chemleft{[}\subscheme{
+                    \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{\fO}-[2,0.4,,,opacity=0])=[:-30]\fO}
+                    \arrow{<->}
+                    \chemfig{R-[:30](=[2]\fO)-[:-30]\charge{45=$\ominus$}{\fO}-[,0.4,,,opacity=0]}
+                }\chemright{]}
+            \schemestop
+            \caption{The overall reaction.}
+            \label{fig:isotopeAmideHydrob}
+        \end{subfigure}
+        \caption{Isotopic labeling to prove a tetrahedral intermediate: Amide hydrolysis.}
+        \label{fig:isotopeAmideHydro}
+    \end{figure}
+    \begin{itemize}
+        \item The overall scheme (Figure \ref{fig:isotopeAmideHydroa}) bears a great resemblence to Figure \ref{fig:isotopeEsterHydroa}. However, there is one key difference.
+        \begin{itemize}
+            \item \ce{H2O} has a much lower $\pKa$ than \ce{HNR2} (see Table \ref{tab:carbLG}), which means that \ce{HO-} (the conjugate base of \ce{H2O}) is a \emph{much} better leaving group than \ce{R2N-} (the conjugate base of \ce{HNR2}).
+            \item This means that while $k_1\approx k_4$ and $k_2\approx k_3$, we have that $k_1\gg k_2$.
+        \end{itemize}
+        \item This implies that under basic conditions, the initial amide equilibrates fast with the isotopically labeled amide (Figure \ref{fig:isotopeAmideHydrob}).
+        \begin{itemize}
+            \item It follows that we'll often observe a carboxylate product with two \ce{{}^18O}'s!
+            \item To reiterate, this is because the first gets incorporated fast, and the second happens more slowly. So by the time we do amide hydrolysis, some \ce{{}^18O} will have already been incorporated!
+        \end{itemize}
+    \end{itemize}
+    \item A deep dive into the mechanism under acidic conditions will be covered in recitation by the TFs.
+    \item We now move onto Topic 5: Reactions with \ce{NaBH4}, \ce{LiAlH4}, \ce{RMgBr}, and \ce{RLi}.
+    \item Per a conversation this morning between Prof. Buchwald and Dr. Wendlandt --- the chemistry professor currently teaching 5.12 --- this should be review.
+    \item Let's consider how our carboxylic acid derivatives react with the above four reagents.
+    \begin{table}[h!]
+        \centering
+        \footnotesize
+        \setchemfig{atom sep=1.4em,bond offset=1pt,fixed length=false}
+        \renewcommand{\arraystretch}{1.8}
+        \setlength{\tabcolsep}{4mm}
+        \begin{tabular}{c|ccccc}
+             & 
+                \chemfig{R-[:30](=[2]O)-[:-30]Cl} &
+                \chemfig{R-[:30](=[2]O)-[:-30]O-[:30](=[2]O)-[:-30]R} &
+                \chemfig{R-[:30](=[2]O)-[:-30]OR} &
+                \chemfig{R-[:30](=[2]O)-[:-30]NR_2} &
+                \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}\\
+            \hline
+            \small\ce{NaBH4} &
+                \chemfig{R-[:30]-[:-30]OH} &
+                \chemfig{R-[:30]-[:-30]OH} &
+                NR &
+                NR &
+                NR\\
+            \small\ce{LiAlH4} &
+                \chemfig{R-[:30]-[:-30]OH} &
+                \chemfig{R-[:30]-[:-30]OH} &
+                \chemfig{R-[:30]-[:-30]OH} &
+                \chemfig{R-[:30]-[:-30]NR_2} &
+                \chemfig{R-[:30]-[:-30]OH}\\
+            \small\ce{R$'$MgBr} &
+                \chemfig{R-[:30](-[:65]R')(-[:115]R')-[:-30]OH} &
+                \chemfig{R-[:30](-[:65]R')(-[:115]R')-[:-30]OH} &
+                \chemfig{R-[:30](-[:65]R')(-[:115]R')-[:-30]OH} &
+                \chemfig{R-[:30](=[2]O)-[:-30]R'} &
+                NR\\
+            \small\ce{R$'$Li} &
+                \chemfig{R-[:30](-[:65]R')(-[:115]R')-[:-30]OH} &
+                \chemfig{R-[:30](-[:65]R')(-[:115]R')-[:-30]OH} &
+                \chemfig{R-[:30](-[:65]R')(-[:115]R')-[:-30]OH} &
+                \chemfig{R-[:30](=[2]O)-[:-30]R'} &
+                \chemfig{R-[:30](=[2]O)-[:-30]R'}\\
+        \end{tabular}
+        \caption{Reactions of carboxylic acid derivatives with \ce{NaBH4}, \ce{LiAlH4}, \ce{RMgBr}, \ce{RLi}.}
+        \label{tab:carbNaLiMgLi}
+    \end{table}
+    \begin{itemize}
+        \item Recall from Figure \ref{fig:carbResonance} that our carboxylic acid derivatives can be partitioned into\dots
+        \begin{itemize}
+            \item More reactive compounds (acid chlorides and acid anhydrides);
+            \item Mid-range compounds (esters);
+            \item More stable compounds (amides);
+            \item By the far least reactive compounds (carboxylates).
+        \end{itemize}
+        \item Our reagents also vary in strength.
+        \begin{itemize}
+            \item \ce{NaBH4} is weaker. This can be good because it's more selective!
+            \item \ce{LiAlH4}, in contrast, is stronger and less selective.
+        \end{itemize}
+        \item It follows that \ce{NaBH4} will reduce acid chlorides, acid anhydrides, and ketones to primary alcohols, but it will \emph{not} reduce esters, amides, or carboxylates.
+        \begin{itemize}
+            \item Aside: This fact is useful in \textbf{chemoselective} syntheses!
+            \item For example, you could put an ester and acid anhydride in the same molecule and know that only the acid anhydride will react with \ce{NaBH4}!
+            \item Chemoselectivity is one of the big trends in modern synthesis.
+        \end{itemize}
+        \item \ce{LiAlH4} reduces everything to alcohols.
+        \pagebreak
+        \item The Grignard reagent adds twice to carboxylic acid derivatives, yielding a tertiary alcohol.
+        \begin{itemize}
+            \item This happens to acid chlorides, acid anhydrides, and esters.
+            \item Amides turn into the ketone (this is a special case!).
+            \item Carboxylates do not react.
+        \end{itemize}
+        \item Organolithium reagents (more potent than Grignards) react exactly the same as Grignards, except that they will \emph{also} turn carboxylates into ketones!
+        \begin{itemize}
+            \item This is a very surprising result, since we've talked about how unreactive carboxylates are.
+        \end{itemize}
+    \end{itemize}
+    \item Where do ketones and aldehydes fit into the picture?
+    \begin{itemize}
+        \item Ketones and aldehydes are between anhyrides and esters, and aldehydes are more reactive than ketones.
+        \item \ce{NaBH4} will reduce ketones and aldehydes to the primary alcohol.
+        \item We'll talk about this more later.
+    \end{itemize}
+    \item Next time: A mechanistic explanation for Table \ref{tab:carbNaLiMgLi}.
 \end{itemize}
 
 

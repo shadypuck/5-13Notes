@@ -75,12 +75,24 @@
 \setchemfig{atom sep=2em,fixed length=true,bond offset=3pt,cram width=3pt}
 \setcharge{extra sep=3pt}
 \definesubmol{wave}{-[::180,0.2,,,opacity=0]-[::90,0.5,,,opacity=0]-[::180,,,,wv]}
+\catcode`\_=11
+\definearrow3{=retro>}{%
+    \CF_arrowshiftnodes{#3}%
+    \draw[double distance=2pt, -Implies] (\CF_arrowstartnode)--(\CF_arrowendnode);
+    \expandafter[\CF_arrowcurrentstyle](\CF_arrowstartnode)--(\CF_arrowendnode);%
+    \CF_arrowdisplaylabel{#1}{0.5}+\CF_arrowstartnode{#2}{0.5}-\CF_arrowendnode
+}
+\catcode`\_=8
 
 \newcommand{\cnc}[1]{[\ce{#1}]}
 \newcommand{\e}[1][]{\textup{e}^{#1}}
 \newcommand{\rc}{
     {\tikz{\node[inner sep=0pt,label={[below=6.5pt,circle,fill,inner sep=0.1pt]},label={[below=7pt,circle,inner sep=0.06pt]}]{\scriptsize +};}}
 }
+\newcommand{\fO}{\tikz[inner sep=0pt]{
+    \node (O) {O};
+    \fill (O) circle (3pt and 3.5pt);
+}}
 
 \newcommand{\Keq}{K_\textup{eq}}
 \newcommand{\Ka}{K_\textup{a}}
