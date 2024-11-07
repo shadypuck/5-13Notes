@@ -335,7 +335,7 @@
         \item Two ways to do this.
         \begin{itemize}
             \item Acid (\ce{H3O+}) and heat ($\Delta$).
-            \item Base (\ce{HO-}), water (\ce{H2O}), and heat ($\Delta$) followed by subsequent quenching with acid and heat.
+            \item Base (\ce{HO-}), water (\ce{H2O}), and heat ($\Delta$) followed by quenching with acid and heat.
         \end{itemize}
         \item Nitriles are \emph{really, really, really} good intermediates (hint for Exam 3!!).
     \end{itemize}
@@ -361,7 +361,7 @@
     \begin{itemize}
         \item First way: Make the Grignard and add \ce{CO2}.
         \item Second way: Do an S\textsubscript{N}2 with \ce{CN-}, and then hydrolyze the nitrile.
-        \item Note that Prof. Buchwald uses checkmarks to denote the product on the board.
+        \item Note that Prof. Buchwald uses checkmarks to denote the product on the board.\footnote{For an example of how this might look, see Figure \ref{fig:TTQnitrileKetoneb}.}
     \end{itemize}
     \item If we're answering a test question like this, will you want two separate arrows, or is one arrow with "1. \emph{reagent}" above and "2. \emph{reagent}" below?
     \begin{itemize}
@@ -1354,7 +1354,7 @@
         \item Source of anxiety around synthesis: There's no one right answer.
         \item Positive outlook: There is more than one thing you can write down for 100\% credit!
     \end{itemize}
-    \item Example: How can we make \emph{n}-butyl amine (\ce{{}^{\emph{n}}BuNH2}) from \emph{n}-propyl bromide (\ce{{}^{\emph{n}}PrBr}) and any 1-carbon compound?
+    \item TTQ: How can we make \emph{n}-butyl amine (\ce{{}^{\emph{n}}BuNH2}) from \emph{n}-propyl bromide (\ce{{}^{\emph{n}}PrBr}) and any 1-carbon compound?
     \begin{figure}[h!]
         \centering
         \footnotesize
@@ -1403,7 +1403,7 @@
     \pagebreak
     \begin{itemize}
         \item This is a medium-difficulty question.
-        \item We'll start with a retrosynthetic analysis.\footnote{Note that the double-lined arrows are called "retrosynthetic arrows." It is common nomenclature to see retrosynthetic arrows in the reverse direction, overset by forward arrows and conditions.}
+        \item We'll start with a retrosynthetic analysis.\footnote{Note that the backwards double-lined arrows are called "retrosynthetic arrows." It is common nomenclature to see retrosynthetic arrows in the reverse direction, overset by forward arrows and conditions.}
         \begin{itemize}
             \item You may want to start by identifying the number of carbons in the starting material and product.
             \item This tells us that we need to attach a \ce{CH2NH2} to the starting material. How can we do this?
@@ -1740,6 +1740,546 @@
         \item We'll talk about this more later.
     \end{itemize}
     \item Next time: A mechanistic explanation for Table \ref{tab:carbNaLiMgLi}.
+\end{itemize}
+
+
+
+\section{Acyl Transfer Reactions - 3 / Nitriles}
+\begin{itemize}
+    \item \marginnote{11/6:}Announcements.
+    \begin{itemize}
+        \item Exam 3 is one week from today!
+        \item Lots of time today and Friday doing practice synthesis problems.
+        \begin{itemize}
+            \item Friday's review will \emph{not} involve a summary of the Unit 3-4 material; instead, Prof. Buchwald will send a synopsis in advance.
+        \end{itemize}
+        \item The more problems you work, the easier synthesis will become!!
+        \item Take advantage of the fact that we don't know \emph{too} many reactions yet!
+    \end{itemize}
+    \item Lecture 25 recap.
+    \begin{itemize}
+        \item Evidence for a tetrahedral intermediate in acyl transfer reactions: Isotopic labeling studies.
+        \item Recall Table \ref{tab:carbNaLiMgLi}.
+        \begin{itemize}
+            \item This gets back to what is key for synthesis: \textbf{Chemoselectivity}.
+            \begin{itemize}
+                \item Example: Consider a molecule with an aldehyde and an amide. We can selectively reduce the aldehyde to the alcohol and not touch the amide if we reduce with \ce{NaBH4}.
+                \item This can be important in fancy molecules if we want to play with the \textbf{pharmacokinetics}.
+            \end{itemize}
+            \item Acid chlorides and anhydrides are \emph{super} reactive.
+            \item Aldehydes and ketones get reduced by \ce{NaBH4}, too!
+            \item \ce{NaBH4} is mild, while \ce{LiAlH4} is \emph{violent}. If you throw LAH into water, you'll get a \emph{violent} reaction.
+            \item Similarly, Grignards are more mild than alkyllithium reagents.
+            \begin{itemize}
+                \item Amides and carboxylates can become asymmetric ketones!
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Chemoselectivity}: Selectivity for certain functional groups in the presence of other functional groups.
+    \item \textbf{Pharmacokinetics}: The speed with which a drug moves into, through, and out of the body.
+    \begin{itemize}
+        \item We don't want drugs to go straight through our bodies; we want them to hang around for a bit and do their thing (e.g., reduce our headache, soothe our cough, etc.).
+        \item We don't want to have to take it 5 times per day, so we modify functional groups with chemoselective reactions to slow the pharmacokinetics.
+    \end{itemize}
+    \item TTQ: Synthesize the molecule at left in Figure \ref{fig:TTQepilepsya} --- a simplified version of a recently proposed candidate for treating epilepsy --- from the provided starting materials.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(-[,,,,rex]=[,,,,rex]-[,,,,rex]=[,,,,rex]-[,,,,rex]*6(-[,,,,rex](--[:30]NH-*6(-[,,,,blx]-[,,,,blx]-[,,,,blx]\textcolor{blx}{N}(-[,,,,blx]\textcolor{blx}{Me})-[,,,,blx]-[,,,,blx]-[,,,,blx]))=[,,,,rex]-[,,,,rex]=[,,,,rex]-[,,,,rex])=[,,,,rex])}
+                \arrow{=retro>}
+                \chemfig{*6(-[,,,,rex]=[,,,,rex]-[,,,,rex]=[,,,,rex]-[,,,,rex]*6(-[,,,,rex](-NO_2)=[,,,,rex]-[,,,,rex]=[,,,,rex]-[,,,,rex])=[,,,,rex])}
+                \+{,,0.8em}
+                \chemfig{*6(-[,,,,blx](=O)-[,,,,blx]-[,,,,blx]-[,,,,blx]\textcolor{blx}{N}(-[,,,,blx]\textcolor{blx}{Me})-[,,,,blx]-[,,,,blx])}
+            \schemestop
+            \caption{The desired molecule and starting materials.}
+            \label{fig:TTQepilepsya}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(-=-=-*6(-(--[:30]NH-*6(---N(-Me)---))=-=-)=)}
+                \arrow(c1--c2){=retro>}[-90]
+                \chemfig{*6(-=-=-*6(-(--[:30]N=*6(---N(-Me)---))=-=-)=)}
+                \arrow(.-53--c3.-177){=retro>}
+                \chemfig{*6(-=-=-*6(-(--[:30]NH_2)=-=-)=)}
+                \arrow(--c4){=retro>}
+                \chemfig{*6(-=-=-*6(-(-CN)=-=-)=)}
+                \arrow(--c5){=retro>}
+                \chemfig{*6(-=-=-*6(-(-\charge{45=$\oplus$}{N}_2-[0,0.5,,,opacity=0]\charge{45=$\ominus$}{Cl})=-=-)=)}
+                \arrow(--c6){=retro>}[90]
+                \chemfig{*6(-=-=-*6(-(-NH_2)=-=-)=)}
+                \arrow(--c7){=retro>}[90]
+                \chemfig{*6(-=-=-*6(-(-NO_2)=-=-)=)}
+            \schemestop
+            \chemmove{
+                \draw ([xshift=5mm,yshift=1mm]c2.north) -- node[right]{[H]} ([xshift=5mm,yshift=-1mm]c1.south);
+                \draw ([yshift=5mm]c3.west) coordinate (c) -- node[above]{\chemfig[atom sep=1.4em,chemfig style={-}]{*6(-(=O)---N(-Me)--)}} node[below]{\ce{H+}} (c2.east |- c);
+                \draw ([yshift=5mm]c4.west) coordinate (c) -- node[above]{LAH; \ce{H2O}} (c3.east |- c);
+                \draw ([yshift=5mm]c5.west) coordinate (c) -- node[above]{\ce{CuCN}} (c4.east |- c);
+                \draw ([xshift=5mm,yshift=-1mm]c6.south) -- node[right]{HONO} ([xshift=5mm,yshift=1mm]c5.north);
+                \draw ([xshift=5mm,yshift=-1mm]c7.south) -- node[right]{[H]} ([xshift=5mm,yshift=1mm]c6.north);
+            }
+            \caption{Retrosynthetic pathway.}
+            \label{fig:TTQepilepsyb}
+        \end{subfigure}
+        \caption{TTQ: Synthesis of a drug molecule.}
+        \label{fig:TTQepilepsy}
+    \end{figure}
+    \begin{itemize}
+        \item Like last time (see Figure \ref{fig:TTQnBuNH2nPrBr}), let's start by mapping out the carbons.
+        \begin{itemize}
+            \item Using color coding, we can identify which carbons in the starting materials become carbons in the products (Figure \ref{fig:TTQepilepsya}).
+        \end{itemize}
+        \pagebreak
+        \item It then becomes clear that what we need to add is a carbon-nitrogen linkage.
+        \begin{itemize}
+            \item This could come from a cyano group!
+            \item Carbon-nitrogen doesn't \emph{always} mean we need a cyano group, but it often does.
+        \end{itemize}
+        \item So thinking backwards, the desired molecule could have come from an imine.
+        \begin{itemize}
+            \item In the forward direction, we'd use a reducing agent (\ce{NaBH4} or \ce{LiAlH4} and a water workup) to reduce the imine to the amine.
+            \item Next step: Transform the imine to an amine via reducitve amination.
+            \item Next step: Transform the amine to the nitrile via LAH and a water workup.
+            \item Next step: Transform the cyano group to an aryl diazonium salt via a \textbf{Sandmeyer reaction} (i.e., with \ce{CuCN}).
+            \item Next step: Transform the aryl diazonium salt to the amine via HONO.
+            \item Final step: Transform the amine to the nitro group via reduction with \ce{H2} / Pt, \ce{H2} / Pd/C, or \ce{H2} / Ni. LAH and \ce{H2O} are not ideal here.
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Sandmeyer reaction}: Any method of displacing an aryl diazonium salt with a nucleophile in the presence of catalytic copper (I) salts.
+    \item Takeaway: A general strategy for synthesis problems.
+    \begin{enumerate}
+        \item Identify matching fragments (mostly carbon fragments).
+        \item Look for functional groups and disconnections.
+    \end{enumerate}
+    \item This concludes today's synthesis example; we now return to the chemistry of carboxylic acid derivatives.
+    \item Lecture outline.
+    \begin{enumerate}[start=5]
+        \item Reactions with \ce{NaBH4}, \ce{LiAlH4}, \ce{RMgBr}, and \ce{RLi}.
+        \item Chemistry of nitriles.
+        \begin{enumerate}[label={\alph*.}]
+            \item Formation.
+            \item Reactions.
+        \end{enumerate}
+    \end{enumerate}
+    \item We begin by resuming Topic 5: Reactions with \ce{NaBH4}, \ce{LiAlH4}, \ce{RMgBr}, and \ce{RLi}.
+    \begin{itemize}
+        \item Specifically, we'll give the mechanistic explanation for Table \ref{tab:carbNaLiMgLi} promised at the end of last lecture.
+    \end{itemize}
+    \item Let's first consider why an acid chloride would react with hydride so quickly.
+    \begin{figure}[h!]
+        \centering
+        \vspace{1.5em}
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]@{1C}(=[@{11}2]@{1O}O)-[:-30]Cl}
+            \arrow{->[\chemfig{@{2Nuc}\charge{45=$\ominus$}{H}}]}
+            \chemfig{R-[:30](-[@{31}2]@{3O}\charge{45=$\ominus$}{O})(-[:-70]H)-[@{32}:-30]@{3X}Cl}
+            \arrow
+            \chemleft{[}
+                \chemfig{R-[:30](=[2]O)-[:-30]H}
+            \chemright{]}
+            \arrow{->[\chemfig{\charge{45=$\ominus$}{H}}]}
+            \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})(-[:-70]H)-[:-30]H}
+            \arrow{->[\ce{H2O}]}
+            \chemfig{R-[:30]-[2]OH}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={9pt}{3pt}] (2Nuc) to[out=45,in=30,in looseness=3] (1C);
+            \draw [curved arrow={3pt}{2pt}] (11) to[bend left=80,looseness=2.5] (1O);
+            \draw [curved arrow={10pt}{2pt}] (3O) to[out=50,in=180,out looseness=6,in looseness=7] (31);
+            \draw [curved arrow={2pt}{2pt}] (32) to[bend left=80,looseness=2.5] (3X);
+        }
+        \caption{Reduction of acid chlorides mechanism.}
+        \label{fig:mechRedCl}
+    \end{figure}
+    \begin{itemize}
+        \item For the same reasons as with Figure \ref{fig:acylTCl}, both addition to and elimination from an acid chloride is fast --- it makes no difference that our nucleophile is a hydride!
+        % \begin{itemize}
+        %     \item To reiterate, the hydride adds fast because acid chlorides are not very resonance-stabilized (see Figure \ref{fig:carbResonance}).
+        %     \item Similarly, \ce{Cl-} leaves fast (see Table \ref{tab:carbLG}).
+        % \end{itemize}
+        \item The first equivalent of hydride yields the aldehyde.
+        \begin{itemize}
+            \item But we can't stop here!
+            \item Aldehydes are still reactive, so another equivalent of hydride will add in.
+            \item Then after a workup, we'll get the alcohol.
+        \end{itemize}
+        \item Aside: Reagents exist that \emph{can} convert an acid chloride to an aldehyde and stop there.
+    \end{itemize}
+    \item Let's now look at the addition of a Grignard to an acid anhydride.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]@{1C}(=[@{11}2]@{1O}O)-[:-30]O-[:30](=[2]O)-[:-30]R}
+            \arrow{->[\chemfig{@{2Nuc}\charge{45=$\ominus$}{R'}}]}
+            \chemfig{R-[:30](-[@{31}2]@{3O}\charge{45=$\ominus$}{O})(-[:-70]R')-[@{32}:-30]@{3X}O-[:30](=[2]O)-[:-30]R}
+            \arrow{-U>[][\chemfig[atom sep=1.4em]{R-[:30]@{c1}(=[2]O)-[:-30]\charge{45=$\ominus$}{O}}][][0.4][110]}
+            \chemleft{[}
+                \chemfig{R-[:30](=[2]O)-[:-30]R'}
+            \chemright{]}
+            \arrow{->[\chemfig{\charge{45=$\ominus$}{R'}}]}
+            \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})(-[:-70]R')-[:-30]R'}
+            \arrow(--c2){->[\ce{H2O}]}
+            \chemfig{R-[:30](-[2]OH)(-[:-70]R')-[:-30]R'}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={9pt}{3pt}] (2Nuc) to[out=45,in=45,in looseness=2.5] (1C);
+            \draw [curved arrow={3pt}{2pt}] (11) to[bend left=80,looseness=2.5] (1O);
+            \draw [curved arrow={10pt}{2pt}] (3O) to[out=50,in=180,out looseness=6,in looseness=7] (31);
+            \draw [curved arrow={2pt}{2pt}] (32) to[bend left=80,looseness=2.5] (3X);
+            % 
+            \draw (c1.center) ++(-0.61,-0.43) rectangle ++(1.43,1.1);
+            \draw (c2.center) ++(-0.82,-0.85) rectangle ++(1.64,1.7);
+        }
+        \caption{Grignard addition to acid anhydrides mechanism.}
+        \label{fig:mechAddAnh}
+    \end{figure}
+    \begin{itemize}
+        \item The Grignard (\ce{R$'$-MgBr}) adds fast because acid anhydrides are not very resonance-stabilized either.
+        \begin{itemize}
+            \item Then a good leaving group leaves to give a ketone.
+            \item Then the ketone reacts again to give us the tertiary alcohol.
+        \end{itemize}
+        \item But the carboxylate is still hanging around.
+        \begin{itemize}
+            \item It will \emph{not} react with a Grignard.
+            \item Thus, we get 50\% of $3^\circ$ alcohol and 50\% carboxylate, so this is \emph{not} an elegant reaction.
+        \end{itemize}
+    \end{itemize}
+    \item If we use \ce{R$'$Li} instead of \ce{R$'$MgBr}, this gives us 100\% of the $3^\circ$ alcohol, so this \emph{is} a good reaction.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]O-[:30](=[2]O)-[:-30]R}
+            \arrow{->[\ce{R$'$Li} (2 equivalents)][$\Delta$]}[,2.3]
+            2
+            \arrow{0}[,0.1]
+            \chemfig{R-[:30](-[2]OH)(-[:-70]R')-[:-30]R'}
+        \schemestop
+        \caption{Alkyllithium addition to acid anhydrides.}
+        \label{fig:AddAnhLi}
+    \end{figure}
+    \begin{itemize}
+        \item \ce{R$'$Li} is necessary because alkyllithium reagents are strong enough to reduce carboxylates, too (see Table \ref{tab:carbNaLiMgLi}).
+        \item Note that this reaction only proceeds with heating.
+        \item This reaction will \emph{not} be tested!!
+    \end{itemize}
+    \item With alkyllithium reagents, we can stop the reaction at the dianion and then quench.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}
+            \arrow{->[\ce{R$'$Li}]}[,1.2]
+            \chemleft{[}
+                \chemfig{R-[:30](-[:110]\charge{135=$\ominus$}{O})(-[:70]\charge{45=$\ominus$}{O}-[2,0.4,,,opacity=0])-[:-30]R'}
+            \chemright{]}
+            \arrow(--.161){->[Quench]}[,1.2]
+            \chemname{
+                \chemfig{R-[:30](-[:110]HO)(-[:70]OH)-[:-30]R'}
+            }{ketone hydrate}
+            \arrow(.19--){->[workup]}[,1.2]
+            \chemfig{R-[:30](=[2]O)-[:-30]R'}
+            \arrow{0}[,0.1]\+
+            \chemfig{H_2O}
+        \schemestop
+        \caption{Alkyllithium addition to carboxylates.}
+        \label{fig:LiCarboxylate}
+    \end{figure}
+    \begin{itemize}
+        \item To quench, use either water or \ce{H3O+}.
+        \begin{itemize}
+            \item You should write one of these two reagents above the arrow on a test, not "quench."
+        \end{itemize}
+        \item This gives us the ketone hydrate.
+        \begin{itemize}
+            \item But ketone hydrates are not stable, so under workup, we'll lose \ce{H2O} and obtain the ketone.
+        \end{itemize}
+        \item This is the money reaction, and very much could be tested!!
+    \end{itemize}
+    \pagebreak
+    \item TTQ: How would you make a ketone from \ce{RLi} and \ce{R$'$Li}?
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]R'}
+            \arrow(c1--c2){=retro>}[180]
+            \chemfig{R-[:30](=[2]O)-[:-30]\charge{45=$\ominus$}{O}}
+            \arrow(--c3){=retro>}[180]
+            \chemfig{RLi}
+        \schemestop
+        \chemmove{
+            \draw ([yshift=5mm]c2.east) -- node[above]{\ce{R$'$Li}} ([yshift=5mm]c1.west) coordinate (c);
+            \draw (c3.east |- c) -- node[above]{\ce{CO2}} ([yshift=5mm]c2.west);
+        }
+        \caption{TTQ: Applying the addition of alkyllithium reagents to carboxylates.}
+        \label{fig:TTQLiCarboxylate}
+    \end{figure}
+    \begin{itemize}
+        \item First step: Transform the ketone into the carboxylate and \ce{R$'$Li} via the reaction in Figure \ref{fig:LiCarboxylate}.
+        \item Second step: Transform the carboxylate into \ce{RLi} via \ce{CO2} carboxylation.
+    \end{itemize}
+    \item Both LAH and \ce{R$'$M} ($\ce{M}=\ce{MgBr},\ce{Li}$) can do add twice to esters.
+    \begin{figure}[h!]
+        \centering
+        \vspace{1.5em}
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30]@{1C}(=[@{11}2]@{1O}O)-[:-30]OMe}
+            \arrow{->[\chemfig{@{2Nuc}\charge{45=$\ominus$}{R'}}]}
+            \chemfig{R-[:30](-[@{31}2]@{3O}\charge{45=$\ominus$}{O})(-[:-70]R')-[@{32}:-30]@{3X}OMe}
+            \arrow
+            \chemleft{[}
+                \chemfig{R-[:30](=[2]O)-[:-30]R'}
+            \chemright{]}
+            \arrow{->[\chemfig{\charge{45=$\ominus$}{R'}}]}
+            \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O})(-[:-70]R')-[:-30]R'}
+            \arrow{->[\ce{H2O}]}
+            \chemfig{R-[:30](-[2]OH)(-[:-70]R')-[:-30]R'}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={9pt}{3pt}] (2Nuc) to[out=45,in=30,in looseness=3] (1C);
+            \draw [curved arrow={3pt}{2pt}] (11) to[bend left=80,looseness=2.5] (1O);
+            \draw [curved arrow={10pt}{2pt}] (3O) to[out=50,in=180,out looseness=6,in looseness=7] (31);
+            \draw [curved arrow={2pt}{2pt}] (32) to[bend left=80,looseness=2.5] (3X);
+        }
+        \caption{Organometallic addition to esters mechanism.}
+        \label{fig:mechAddEster}
+    \end{figure}
+    \begin{itemize}
+        \item As we've seen before, the first step is addition to an electrophilic carbon center.
+        \begin{itemize}
+            \item The resultant alkoxide anion is so powerful it can even push out a methoxide.
+            \item Then you get another addition to form the tertiary alcohol, after workup.
+        \end{itemize}
+        \item Takeaway: If you see a tertiary alcohol with two like substituents, get used to thinking that it might come from the reaction of two equivalents of a Grignard (or alkyllithium reagent) with an ester!
+    \end{itemize}
+    \item We now discuss two other reactions to make ketones.
+    \begin{itemize}
+        \item These take acyl derivatives --- "acyl X" --- to ketones.
+    \end{itemize}
+    \item Reaction \#1: Beginning with an acid chloride.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]Cl}
+            \arrow{->[\ce{Me2CuLi}]}[,1.3]
+            \chemfig{R-[:30](=[2]O)-[:-30]Me}
+        \schemestop
+        \caption{Monoaddition to acid chlorides with dimethylcopper lithium.}
+        \label{fig:AddClCu}
+    \end{figure}
+    \begin{itemize}
+        \item If we introduce a Grignard or alkyllithium reagent, the reaction will proceed all the way to the tertiary alcohol.
+        \begin{itemize}
+            \item Thus, we need a gentler, more selective version of a Grignard or alkyllithium.
+            \item An example of such a reagent is \textbf{dimethylcopper lithium}.
+        \end{itemize}
+        \item TTQ: Given the reaction above (except for the starting material, reagent, or product), fill in the missing compound.
+    \end{itemize}
+    \pagebreak
+    \item \textbf{Dimethylcopper lithium}: A reagent composed of an anionic copper atom covalently bonded to two methyl groups and ionically bonded to a lithium cation. \emph{Also known as} \textbf{Gilman reagent}, \textbf{organocuprate}. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{Me-[:-60]\charge{[extra sep=4pt]0=$\ominus$}{Cu}(-[,0.8,,,opacity=0]\charge{45=$\oplus$}{Li})-[:-120]Me}
+        \caption{Dimethylcopper lithium.}
+        \label{fig:Me2CuLi}
+    \end{figure}
+    \begin{itemize}
+        \item History: Invented by Henry Gilman, an organic chemist at Iowa State University.
+        \item Aside: This compound is really good at 1,4-addition, also known as conjugate addition. We'll cover such this class of reactions in Unit 5.
+        \item Synthesis (not testable material): \ce{2MeLi + CuX -> Me2CuLi}
+    \end{itemize}
+    \item Reaction \#2: Beginning with a \textbf{Weinreb amide}.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-[:30](=[2]O)-[:-30]N(-[6]Me)-[:30]OMe}
+            \arrow{->[\ce{R$'$M}]}
+            \chemfig{R-[:30](-[2]\charge{45=$\ominus$}{O}?)(-[:-70]R')-[:-30]N(-[6]Me)-[:30]\charge{90=\:}{O}Me-[:120,1.1,,,dotted]M?[,,dotted]}
+            \arrow{->[\ce{HCl}][\ce{H2O}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]R'}
+        \schemestop
+        \caption{Weinreb ketone synthesis.}
+        \label{fig:weinrebKetoneSynth}
+    \end{figure}
+    \begin{itemize}
+        \item This reaction works with either Grignards or alkyllithium reagents.
+        \item After addition to the carbonyl, the metal coordinates to both the \emph{N}-oxygen's lone pair and the alkoxy anion.
+        \begin{itemize}
+            \item This is a quasi-stable species.
+        \end{itemize}
+        \item Water-workup then gets you the ketone.
+    \end{itemize}
+    \item \textbf{Weinreb amide}: An amide with an \emph{N}-methyl and \emph{N}-methoxy group. \emph{Structure}
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \chemfig{R-[:30](=[2]O)-[:-30]N(-[6]Me)-[:30]O-[:-30]Me}
+        \caption{Weinreb amide.}
+        \label{fig:weinrebAmide}
+    \end{figure}
+    \item We now move onto Topic 6: The chemistry of nitriles.
+    \item We'll begin with Subtopic 6.a{}: Formation of nitriles.
+    \begin{itemize}
+        \item We'll start with three reactions you already know: S\textsubscript{N}2 displacement, cyanohydrin formation, and the Sandmeyer reaction.
+        \item Then we'll cover one new method.
+    \end{itemize}
+    \item S\textsubscript{N}2 displacement (see Figure \ref{fig:nitrileReducX}).
+    \begin{itemize}
+        \item The \ce{X} group can be \ce{Br}, \ce{I}, or \ce{OTs}.
+    \end{itemize}
+    \item Cyanohydrin formation (see Figure \ref{fig:nitrileReduc12CNOH}).
+    \begin{itemize}
+        \item This reaction should be familiar from 5.12.
+        \item Note that the base catalyst usually has $\pKa\approx 9.5$.
+    \end{itemize}
+    \item Sandmeyer reaction (see Figure \ref{fig:TTQepilepsyb}).
+    \item One new method: Dehydration of amides.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[2]O)-[:-30]NH_2}
+                \arrow{->[\chemfig[atom sep=1.4em]{Cl-[:30]P(-[6]Cl)(=[2]O)-[:-30]Cl}]}[,1.6]
+                \chemfig{R-C~N}
+            \schemestop
+            \caption{The reaction.}
+            \label{fig:amideDehydrationa}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R-[:30](=[@{12}2]O-[@{13}:30,,,,dotted]P(=[:100]O)(-[:-70]Cl)(-[:-30]Cl)(-[@{14}0]@{1Cl}Cl))-[@{11}:-30]@{1N}\charge{-90=\:}{N}H_2}
+                \arrow{-U>[][\ce{H+}]}
+                \chemfig{R-[:30](-[@{22}2]O-[@{23}:30]P(=[:100]O)(-[:-70]Cl)(-[@{24}:-30]@{2Cl}Cl))=[@{21}:-30]@{2N}\charge{-90=\:}{N}H}
+                \arrow{-U>[][\chemfig[atom sep=1.4em]{P(=[:30]O)(=[:150]O)-[6]Cl}]}
+                \chemfig{R-C~\charge{[extra sep=5pt]90=$\oplus$}{N}-H}
+                \arrow{-U>[][\ce{H+}]}
+                \chemfig{R-C~N}
+            \schemestop
+            \chemmove{
+                \draw [curved arrow={5pt}{2pt}] (1N) to[out=-90,in=-120,looseness=3] (11);
+                \draw [curved arrow={3pt}{2pt}] (12) to[bend right=60,looseness=1.5] (13);
+                \draw [curved arrow={2pt}{2pt}] (14) to[bend left=80,looseness=2.5] (1Cl);
+                % 
+                \draw [curved arrow={5pt}{3pt}] (2N) to[out=-90,in=-120,looseness=3] (21);
+                \draw [curved arrow={2pt}{2pt}] (22) to[bend right=60,looseness=1.5] (23);
+                \draw [curved arrow={2pt}{2pt}] (24) to[bend left=80,looseness=2.5] (2Cl);
+            }
+            \vspace{1em}
+            \caption{A partial mechanism.}
+            \label{fig:amideDehydrationb}
+        \end{subfigure}
+        \caption{Nitrile synthesis: Dehydration of amides.}
+        \label{fig:amideDehydration}
+    \end{figure}
+    \begin{itemize}
+        \item We add \ce{POCl3} (the triacid chloride of phosphorous acid) to our amide (Figure \ref{fig:amideDehydration}).
+        \begin{itemize}
+            \item \ce{POCl3} is a very strong Lewis acid.
+            \item It rips out an equivalent of \ce{H2O} from our amide in a process known as dehydration.
+        \end{itemize}
+        \item Approximate mechanism (Figure \ref{fig:amideDehydrationb}).
+        \begin{itemize}
+            \item \ce{POCl3} is a strong Lewis acid, so it will head straight for one of the carbonyl lone pairs. The amide lone pair can then kick up to allow proper \ce{O-P} bond formation, and kick out a \ce{Cl-}.
+            \item Following deprotonation of the amide, we obtain an intermediate with a great leaving group. The new nitrogen lone pair can then kick out this leaving group, which will also lose another \ce{Cl-} to enable \ce{O=P} bond formation.
+            \item A final deprotonation gives us our nitrile.
+        \end{itemize}
+    \end{itemize}
+    \item We now move onto Subtopic 6.b{}: Reactions of nitriles.
+    \item Nitrile hydrolysis (see Figure \ref{fig:nitrileHydro}).
+    \begin{itemize}
+        \item Adding a harsh acid or base gets you all the way to the carboxylic acid.
+        \item Adding a mild acid or base gets you the amide.
+        \item We will not ask you either set of conditions on an exam!!
+    \end{itemize}
+    \item Converting nitriles to ketones.
+    \begin{figure}[H]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{R-@{1C}~[@{11}]@{1O}N}
+            \arrow{->[\chemfig{@{2Nuc}\charge{45=$\ominus$}{R'}}]}
+            \chemleft{[}
+                \chemfig{R-[:30](=[2]\charge{45=$\ominus$}{N}-[2,0.4,,,opacity=0])-[:-30]R'}
+            \chemright{]}
+            \arrow{->[\ce{HCl}][\ce{H2O}]}
+            \chemfig{R-[:30](=[2]O)-[:-30]R'}
+        \schemestop
+        \chemmove{
+            \draw [curved arrow={9pt}{4pt}] (2Nuc) to[out=45,in=90,in looseness=2] (1C);
+            \draw [curved arrow={3pt}{2pt}] (11) to[bend left=80,looseness=2.5] (1O);
+        }
+        \caption{Organometallic addition to nitriles mechanism.}
+        \label{fig:mechAddNitrile}
+    \end{figure}
+    \begin{itemize}
+        \item Use an alkyllithium reagent or Grignard followed by an acidic workup.
+        \item Implication: When you see a ketone in a molecule you're trying to synthesize, you can now think about whether it would be helpful if this retrosynthetically came from a nitrile and organometallic reagent, too!
+    \end{itemize}
+    \item TTQ: Synthesize the molecule at left in Figure \ref{fig:TTQnitrileKetonea} from the provided starting materials.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Me-[:-30](-[6]Me)-[:30](=[2]O)-[:-30]*6(------)}
+                \arrow{=retro>}
+                \chemfig{Me-[:-30](-[6]Me)-[:30](=[2]O)-[:-30]NH_2}
+                \arrow{0}[,0.1]\+{,,0.7em}
+                \chemfig{*6(------)}
+            \schemestop
+            \caption{The desired molecule and starting materials.}
+            \label{fig:TTQnitrileKetonea}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \subscheme{
+                    \subscheme{
+                        \chemfig{Me-[:-30](-[6]Me)-[:30](=[2]O)-[:-30]NH_2}
+                        \arrow{->[\ce{POCl3}]}
+                        \chemfig{Me-[:60](-[:120]Me)-C~N}
+                    }
+                    \arrow(cs1.south east--cs2.north east){0}[-90,0.5]
+                    \subscheme{
+                        \chemfig{*6(------)}
+                        \arrow{->[\ce{Br2}][$h\nu$]}
+                        \chemfig{*6((-[,,,,opacity=0]\phantom{Br})-----(-Br)-)}
+                        \arrow{->[Mg]}
+                        \chemfig{*6((-[,,,,opacity=0]\phantom{MgBr})-----(-BrMg)-)}
+                    }
+                }
+                \merge>(cs1)(cs2)--()
+                \arrow{->[\ce{H3O+}]}
+                \chemfig{\checkmark}
+            \schemestop
+            \vspace{-0.5em}
+            \caption{Solution.}
+            \label{fig:TTQnitrileKetoneb}
+        \end{subfigure}
+        \caption{TTQ: Applying nitrile addition chemistry.}
+        \label{fig:TTQnitrileKetone}
+    \end{figure}
+    \begin{itemize}
+        \item The cyclohexane to cyclohexyl bromide to Grignard reaction sequence in Figure \ref{fig:TTQnitrileKetoneb} should be familiar from 5.12.
+        \item Amide goes to nitrile with dehydration conditions (\ce{POCl3}).
+        \item Then the nitrile plus the Grignard makes the product.
+    \end{itemize}
 \end{itemize}
 
 
