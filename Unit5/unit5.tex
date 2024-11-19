@@ -47,7 +47,7 @@
         \item $\alpha$-halogenation of ketones.
         \begin{itemize}
             \item Base-promoted mechanism (and complications).
-            \item The haloform reaction.
+            \item The iodoform reaction.
             \item Acid-catalyzed mechanism.
         \end{itemize}
         \item $\alpha$-alkylation.
@@ -388,6 +388,238 @@
     \begin{itemize}
         \item This silyl protecting group could then be removed with \ce{MeLi}, regenerating the enolate and yielding tetramethylsilane (\ce{SiMe4}) as a byproduct.
         \item In the deprotection step, the methyl anion attacks the silicon atom in the TMS group, engaging in an S\textsubscript{N}2 displacement.
+    \end{itemize}
+\end{itemize}
+
+
+
+\section{Enolate Alkylation}
+\begin{itemize}
+    \item \marginnote{11/18:}We will not begin with a line-by-line review of last lecture; rather, we will clarify some things.
+    \item Lecture 29 recap.
+    \begin{itemize}
+        \item Recall kinetic vs. thermodynamic enolates (Figures \ref{fig:enolateKinetic} \& \ref{fig:enolateThermodynamic}).
+        \item When we use a strong, hindered base (like \ce{LDA}), we abstract the unhindered proton to form the kinetic enolate.
+        \begin{itemize}
+            \item This process is irreversible, and yields 100\% of the kinetic enolate.
+            \item The process is irreversible because $\pKa\approx 35$ for the conjugate acid of LDA (lithium diisopropylamine), so this conjugate acid cannot react backwards.
+        \end{itemize}
+        \item Use of a somewhat strong, somewhat bulky base (like \ce{KO{}^{\emph{t}}Bu} in \ce{{}^{\emph{t}}BuOH}).
+        \begin{itemize}
+            \item This process is highly reversible, so we'll abstract the unhindered proton first. But then the enolate can react backwards with \ce{{}^{\emph{t}}BuOH} to reform the ketone!
+            \item This process is highly reversible because $\pKa\approx 19$ for \ce{{}^{\emph{t}}BuOH}, so this conjugate acid \emph{can} react backwards.
+            \item However, when we eventually deprotonate the hindered proton, we form a more stable enolate that is \emph{less likely} to react backwards.
+            \item Thus, the net result is that we form the \emph{thermodynamic} enolate under these conditions.
+        \end{itemize}
+        \item Both of these enolates can then be trapped with \ce{MeI} into the corresponding $\alpha$-alkylation product.
+    \end{itemize}
+    \pagebreak
+    \item Lecture outline.
+    \begin{enumerate}[label={\Alph*.},start=3]
+        \item $\alpha$-alkylation.
+        \begin{itemize}
+            \item Enolate-forming bases.
+            \item Enolates from esters (hard to form) and aldehydes (don't form).
+            \item Enolate-alkylation electrophiles.
+            \item Synthesis of $\alpha$-substituted acetic acid derivatives.
+            \item Synthesis of $\alpha$-substituted 1,3-diols.
+        \end{itemize}
+    \end{enumerate}
+    \item We return to Topic C: $\alpha$-alkylation.
+    \item Let's consider the properties of several strong bases.
+    \begin{table}[h!]
+        \centering
+        \includegraphics[width=0.6\linewidth]{enolateBase.png}
+        \caption{$\pKa$'s of typical enolate-forming bases.}
+        \label{tab:enolateBase}
+    \end{table}
+    \begin{itemize}
+        \item The left column shows a base and the solvent in which you use it, not necessarily the base and it's conjugate acid!
+        \item It follows from the table that \ce{NaOEt} and \ce{KO{}^{\emph{t}}Bu} are reversible bases, and LDA is an irreversible base.
+        \item The difference between the first two is that \ce{KO{}^{\emph{t}}Bu} is bulkier and less nucleophilic.
+        \begin{itemize}
+            \item So if we're worried about nucleophilic attack as a side reaction, use this!
+        \end{itemize}
+        \item Otherwise, \ce{NaOEt} is cheaper and more pleasant to work with.
+    \end{itemize}
+    \item So what happens when we do enolate formation with different bases?
+    \begin{itemize}
+        \item Suppose that the conjugate acid \ce{B1H} has $\pKa>22$.
+        \begin{itemize}
+            \item Then the reaction is irreversible.
+            \item Example: LDA!
+        \end{itemize}
+        \item Suppose that the conjugate acid \ce{B2H} has $16<\pKa<22$.
+        \begin{itemize}
+            \item This reaction is reversible.
+            \item Examples: \ce{NaOEt} and \ce{KO{}^{\emph{t}}Bu}!
+        \end{itemize}
+        \item Suppose that the conjugate acid \ce{B3H} has $\pKa<16$.
+        \begin{itemize}
+            \item Nothing happens! The base isn't strong enough.
+        \end{itemize}
+        \item Note: We'll read in \textcite{bib:Clayden} that we can use bases with $\pKa<16$ \emph{if} we pair it with a Lewis acid.
+        \begin{itemize}
+            \item Example: \underline{T}ri\underline{m}ethyl\underline{s}ilyl chloride (\ce{TMSCl}) and \ce{NEt3}.
+        \end{itemize}
+        \item Generalizing this.
+        \begin{itemize}
+            \item Consider the $\pKa$ of our $\alpha$-proton.
+            \item If the base is 3 $\pKa$ units weaker or stronger, we get reversible enolate formation.
+            \item If the base is more than 3 $\pKa$ units stronger, we get irreversible enolate formation.
+            \item If the base is more than 3 $\pKa$ units weaker, no reaction occurs because the base is too weak.
+        \end{itemize}
+    \end{itemize}
+    \item Example: Consider methyl isopropyl ketone.
+    \begin{itemize}
+        \item Use LDA to deprotonate at the methyl group and form the kinetic enolate.
+        \item Use \ce{KO{}^{\emph{t}}Bu} in \ce{{}^{\emph{t}}BuOH} to form the thermodynamic enolate.
+    \end{itemize}
+    \item How about forming enolates from esters?
+    \begin{itemize}
+        \item We need LDA because $\pKa\approx 25$ for the ester's $\alpha$-proton.
+        \item Indeed, esters have significantly less acidic $\alpha$-protons than ketones.
+        \item We also need low temperatures to prevent self-condensation.
+    \end{itemize}
+    \item How about forming enolates from aldehydes?
+    \begin{itemize}
+        \item For the purposes of this class, we'll say that aldehyde enolates don't exist.
+        \item In reality, aldehyde enolates \emph{do} exist, but they are \emph{so} reactive that even at low temperatures, there is lots of competitive self-condensation.
+    \end{itemize}
+    \item We now return to alkylations of enolates in more depth.
+    \begin{itemize}
+        \item There are parallels to S\textsubscript{N}2 reactivity here.
+        \item Enolates are more hindered than, for example, cyanide nucleophiles (\ce{CN-}), azide nucleophiles (\ce{N3-}), etc.
+        \begin{itemize}
+            \item They are also more basic.
+        \end{itemize}
+        \item For the purposes of 5.13\dots
+        \begin{itemize}
+            \item We'll say that primary alkyl, methyl, benzyl, and allyl halides react with enolates to do $\alpha$-alkylation.
+            \begin{itemize}
+                \item The TFs will discuss in recitation why benzyl and allyl halides are "activated!!"
+            \end{itemize}
+            \item We'll also say that secondary alkyl halides do not react with enolates.
+            \begin{itemize}
+                \item This is because it's more hindered, so we get more competitive elimination.
+            \end{itemize}
+        \end{itemize}
+        \item Tertiary, vinyl, phenyl, and neopentyl halides \emph{never} react with enolates.
+        \begin{itemize}
+            \item Note that neopentyl is bad (even though it's primary) because it's \emph{super} bulky.
+        \end{itemize}
+    \end{itemize}
+    \item We now discuss the synthesis of $\alpha$-substituted malonate esters.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\linewidth]{malEsterSynth.png}
+        \caption{Malonate ester synthesis.}
+        \label{fig:malEsterSynth}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item Recall malonate esters from last class (see Figure \ref{fig:alphaAlkMalEstera}).
+        \item Since these compounds have $\pKa\approx 13$ at their $\alpha$-protons, \ce{NaOMe} can do 100\% deprotonation.
+        \begin{itemize}
+            \item Note that we match the base to the ester: Dimethyl malonate should be paired with \ce{NaOMe} in \ce{MeOH} and diethyl malonate should be paired with \ce{NaOEt} in \ce{EtOH}.
+            \item This is because we'll have competitive transesterification (see Figure \ref{fig:transesterBase}), so matching the base ensures that we don't get a mixture of products.
+        \end{itemize}
+        \item Our deprotonated malonate ester can then attack some \ce{C-X} bond, alkylating the $\alpha$-position.
+        \item But we're still in basic solution, so our species will be deprotonated until water workup.
+        \begin{itemize}
+            \item Do assume that we will \emph{not} get competitive dialkylation.
+            \item However, alternatively, we could add more base and another \ce{C-X} species to yield a dialkylated species.
+        \end{itemize}
+        \item These reactions are collectively known as the \textbf{malonate ester synthesis}.
+    \end{itemize}
+    \item TTQ: Given propane-1,3-diol, \ce{MeI}, and \ce{EtI}, make the product shown in Figure ??a.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.4\linewidth]{TTQalpha13diola.png}
+            \caption{The desired molecule and starting materials.}
+            \label{fig:TTQalpha13diola}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.65\linewidth]{TTQalpha13diolb.png}
+            \caption{Retrosynthetic pathway.}
+            \label{fig:TTQalpha13diolb}
+        \end{subfigure}
+        \caption{TTQ: Synthesis of an $\alpha$-substituted 1,3-diol.}
+        \label{fig:TTQalpha13diol}
+    \end{figure}
+    \begin{itemize}
+        \item You might get greedy and start thinking about how to deprotonate the middle carbon directly, but we can't do that; we have to go back to something more reasonable first.
+        \item Indeed, we can do a malonate ester synthesis with sequential alkylations followed by LAH reduction to the diol!
+        \item Tip: Whenever you see a 1,3-diol, you should ask yourself if a malonate ester can be used!
+        \item Note that we make the malonate ester from the 1,3-diol via Jones oxidation (see Figure \ref{fig:OxAlcAlda}) followed by Fischer esterification (see Figure \ref{fig:acylTFischer}).
+    \end{itemize}
+    \item We now discuss a related process called the \textbf{acetoacetate synthesis}.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.15\linewidth]{EtOacac.png}
+        \caption{Ethyl acetoacetate.}
+        \label{fig:EtOacac}
+    \end{figure}
+    \begin{itemize}
+        \item Here, we have a \emph{ketone} next to an ester group.
+        \begin{itemize}
+            \item The reason that one is an ethyl ester and the other is a methyl ester is historical; we are totally fine to use ethyl or methyl esters wherever, as long as we're consistent.
+        \end{itemize}
+        \item $\pKa\approx 11$ for ethyl acetoacetate.
+    \end{itemize}
+    \item Let's now begin the synthesis.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{acacSynth.png}
+        \caption{Acetoacetate synthesis.}
+        \label{fig:acacSynth}
+    \end{figure}
+    \begin{itemize}
+        \item Adding 1 equivalent of \ce{EtO-} deprotonates to the enolate.
+        \begin{itemize}
+            \item Note that the resonance will be primarily with the ketone, \emph{not} the ester!
+        \end{itemize}
+        \item Then we can do our alkylation.
+        \begin{itemize}
+            \item We could even do a second alkylation, but we're just not going to show that here.
+        \end{itemize}
+        \item Next step: We heat our intermediate in acid, which first gives ester hydrolysis to the \textbf{$\bm{\beta}$-ketoacid}.
+        \begin{itemize}
+            \item $\beta$-ketoacids are known to undergo decarboxylation to yield enols!
+        \end{itemize}
+        \item However, in acidic solution, our enol will quickly tautomerize to a ketone.
+        \item Takeaway: This reaction is equivalent to enolate alkylation with LDA (see Figure \ref{fig:enolateKinetic}).
+        \begin{itemize}
+            \item However, LDA is pyrophoric and hence nasty to work with.
+            \item The acetoacetate synthesis, however, is \textbf{bucket chemistry} (easy, safe, and scalable).
+        \end{itemize}
+    \end{itemize}
+    \item TTQ: Make 2-methylhexa-1,5-diene from ethyl acetoacetate, allyl bromide, any other reagent we want with two or fewer carbons, and any other non-carbon reagent.
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.75\linewidth]{TTQacaca.png}
+            \caption{The desired molecule and starting materials.}
+            \label{fig:TTQacaca}
+        \end{subfigure}\\[1em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.65\linewidth]{TTQacacb.png}
+            \caption{Retrosynthetic pathway.}
+            \label{fig:TTQacacb}
+        \end{subfigure}
+        \caption{TTQ: Using the acetoacetate synthesis.}
+        \label{fig:TTQacac}
+    \end{figure}
+    \begin{itemize}
+        \item Match up the carbons as we've done previously.
+        \item A Wittig would yield the product.
+        \item Next step: We can go back to the acetoacetate.
+        \item Next step: Do alkylation from the starting materials.
     \end{itemize}
 \end{itemize}
 
