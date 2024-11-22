@@ -625,5 +625,329 @@
 
 
 
+\section{Aldol and Claisen Reactions}
+\begin{itemize}
+    \item \marginnote{11/20:}Announcements.
+    \begin{itemize}
+        \item PSet 7 is due before Thanksgiving so that you don't have to spend the break thinking about it! However, you should feel free to turn it in the Saturday of Thanksgiving by noon if it's too hard to get it in before the break.
+        \item On PSets and exams, please only use reactions covered in 5.12 and 5.13!! Using knowledge from your research only makes grading more difficult for the TFs, and will not score you any more points.
+        \item The practice exams for Exam 4 will go up next Monday.
+        \begin{itemize}
+            \item They will \emph{not} cover material that hasn't been covered in class this time around.
+        \end{itemize}
+    \end{itemize}
+    \item Lecture 30 recap.
+    \begin{itemize}
+        \item Prof. Buchwald redraws Table \ref{tab:enolateBase}, Figure \ref{fig:enolateKinetic}, and Figure \ref{fig:enolateThermodynamic}.
+        \begin{itemize}
+            \item Note that whenever we use LDA, we need \emph{at least} 1 equivalent of it to ensure irreversibility.
+        \end{itemize}
+        \item Good enolate alkylating agent include primary alkyl, methyl, benzyl, and allyl groups.
+        \begin{itemize}
+            \item $\ce{X}=\ce{Br},\ce{I},\ce{OTs}$.
+            \item There are other alkylating agents, but we're just not discussing them.
+        \end{itemize}
+        \item $\beta$-dicarbonyl species are called "soft enolates," because they do less competitive chemistry.
+    \end{itemize}
+    \item Today: Aldol condensations.
+    \begin{itemize}
+        \item Etymology: \underline{Ald}ehyde starting material and alcoh\underline{ol} product.
+        \item We'll discuss more named reactions later on this semester (Diekmann, Michael, Claisen), but this one is not named after a person.
+    \end{itemize}
+    \item Lecture outline.
+    \begin{enumerate}[label={\Alph*.},start=4]
+        \item Aldol condensation.
+        \begin{itemize}
+            \item General form.
+            \item Acid-catalyzed mechanism.
+            \item Base-catalyzed mechanism.
+            \item Dehydration of aldol adducts.
+            \item Complications.
+        \end{itemize}
+    \end{enumerate}
+    \item General form.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemname{
+                \chemfig{Me-[:30](=[2]O)-[:-30]Me}
+            }{\color{white}$\beta$}
+            \arrow{0}[,0.1]\+{,,1.1em}
+            \chemname{
+                \chemfig{Me-[:30](=[2]O)-[:-30]Me}
+            }{\color{white}$\beta$}
+            \arrow{<=>[cat]}[,1.3]
+            \chemname{
+                \chemfig{Me-[:30](=[2]O)-[:-30]-[:30](-[2]OH)(-[:-70]Me)-[:-30]Me}
+            }{$\beta$-hydroxyketone}
+            \arrow{->[cat \ce{H+}][or \ce{HO-}]}[,1.3]
+            \chemname{
+                \chemfig{Me-[:30](=[2]O)-[:-30]=_[:30](-[2]Me)-[:-30]Me}
+            }{$\alpha,\beta$-unsaturated ketone}
+        \schemestop
+        \caption{Aldol condensation.}
+        \label{fig:aldol}
+    \end{figure}
+    \begin{itemize}
+        \item The catalyst is typically an acid or base.
+        \item The first step is a condensation, and the second is a dehydration.
+        \item Tip: If we see a $\beta$-hydroxyaldehyde or $\beta$-hydroxyketone in a synthesis question, think aldol!
+        \begin{itemize}
+            \item If you see an $\alpha,\beta$-unsaturated carbonyl, you should also think aldol.
+        \end{itemize}
+    \end{itemize}
+    \item Review: How does the ketone appear in acidic solution? It exists in a few forms.
+    \begin{figure}[h!]
+        \centering
+        \vspace{0.5em}
+        \footnotesize
+        \schemestart
+            \chemfig{Me-[:30](=[2]\charge{135=$\oplus$}{O}H)-[:-30]Me}
+            \arrow{<->>}
+            \chemfig{Me-[:30](=[2]O)-[:-30]Me}
+            \arrow{<<->}
+            \chemfig{Me-[:30](-[2]OH)=_[:-30]}
+        \schemestop
+        \caption{Forms of a ketone in acidic media.}
+        \label{fig:ketoneFormAcid}
+    \end{figure}
+    \begin{itemize}
+        \item The majority is as the ketone.
+        \item It can also be protonated.
+        \begin{itemize}
+            \item This protonated species is a great electrophile, but there's only a little bit of it.
+            \item It is in equilibrium with the regular ketone.
+        \end{itemize}
+        \item The ketone can also form the enol in very small amount.
+        \begin{itemize}
+            \item This is a moderate nucleophile.
+        \end{itemize}
+        \item Recall that there is \emph{no} enolate in acidic media!
+    \end{itemize}
+    \item Acid-catalyzed mechanism.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\linewidth]{aldolMechAcid.png}
+        \caption{Aldol condensation mechanism (acid-catalyzed).}
+        \label{fig:aldolMechAcid}
+    \end{figure}
+    \begin{itemize}
+        \item In the first step of the mechanism, we protonate the ketone to its protonated form.
+        \item We then deprotonate at the $\alpha$-position to form the enol.
+        \item The enol can then nucleophilically attack another molecule of protonated ketone.
+        \item Finally, we deprotonated to the aldol.
+        \item Important note: Every step is reversible!
+    \end{itemize}
+    \item Review: How does the ketone appear in basic solution? It also exists in a few forms.
+    \begin{figure}[h!]
+        \centering
+        \vspace{0.5em}
+        \footnotesize
+        \schemestart
+            \chemfig{Me-[:30](=[2]O)-[:-30]Me}
+            \arrow{<<->}
+            \chemfig{Me-[:30](=[2]\charge{45=$\ominus$}{O})-[:-30]Me}
+            \arrow{<=>}
+            \chemfig{Me-[:30](-[2]OH)=_[:-30]}
+        \schemestop
+        \caption{Forms of a ketone in basic media.}
+        \label{fig:ketoneFormBase}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item The majority is as the ketone, once again.
+        \item It can exist as the enolate.
+        \begin{itemize}
+            \item This species is a great nucleophile, but there's only a little bit of it.
+        \end{itemize}
+        \item The ketone can also form the enol in very small amount.
+        \begin{itemize}
+            \item This is a moderate nucleophile.
+        \end{itemize}
+        \item Recall that there is \emph{no} protonated ketone in basic media!
+    \end{itemize}
+    \item Base-catalyzed mechanism.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=\linewidth]{aldolMechBase.png}
+        \caption{Aldol condensation mechanism (base-catalyzed).}
+        \label{fig:aldolMechBase}
+    \end{figure}
+    \begin{itemize}
+        \item In the first step of the mechanism, hydroxide comes in to form the enolate.
+        \item The enolate then adds nucleophilically into a molecule of (regular, nonprotonated) ketone.
+        \item We then protonated the oxyanion to form the aldol.
+        \item Important note: Every step is reversible, once again!
+        \item This is a very efficient process: Base-catalyzed, with no cationic intermediates.
+    \end{itemize}
+    \item How do we get from the aldol adduct to the $\alpha,\beta$-unsaturated ketone?
+    \item Via the \textbf{dehydration} of aldol adducts!
+    \item \textbf{Dehydration} (reaction): A reaction that involves the loss of \ce{H2O}.
+    \item A possible (but incorrect!) acidic mechanism.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.85\linewidth]{aldolDehMechAcidInc.png}
+        \caption{Incorrect acid-cataylzed aldol dehydration mechanism.}
+        \label{fig:aldolDehMechAcidInc}
+    \end{figure}
+    \begin{itemize}
+        \item In acidic media, we protonate the alcohol, which then leaves to give a tertiary carbocation.
+        \item Tertiary carbocations are ok here because we have all that hyperconjugation stabilization.
+        \item Then we get subsequent elimination to the $\alpha,\beta$-unsaturated ketone product.
+    \end{itemize}
+    \item To understand the real mechanism, consider the tetrahedral intermediates.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.37\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{pushGroupa.png}
+            \caption{Pushing hydroxide.}
+            \label{fig:pushGroupa}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.37\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{pushGroupb.png}
+            \caption{Pushing water.}
+            \label{fig:pushGroupb}
+        \end{subfigure}
+        \caption{Push groups in tetrahedral intermediates.}
+        \label{fig:pushGroup}
+    \end{figure}
+    \begin{itemize}
+        \item Hydroxide is a bad leaving group, but if we have a \textbf{push group} (ideally an anionic species) in the tetrahedral intermediate, we can kick it out (Figure \ref{fig:pushGroupa}).
+        \item In acidic media, \ce{OH} is typically not that good of a push group, but it is able to push out water, which can then come back and remove the proton (Figure \ref{fig:pushGroupb}).
+    \end{itemize}
+    \item In aldol reactions, alkenes act as "electron conduits."
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.37\linewidth}
+            \centering
+            \includegraphics[width=0.88\linewidth]{pushGroupDistanta.png}
+            \caption{Pushing hydroxide.}
+            \label{fig:pushGroupDistanta}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.37\linewidth}
+            \centering
+            \includegraphics[width=0.88\linewidth]{pushGroupDistantb.png}
+            \caption{Pushing water.}
+            \label{fig:pushGroupDistantb}
+        \end{subfigure}
+        \caption{Push groups can act from distant positions through electron conduits.}
+        \label{fig:pushGroupDistant}
+    \end{figure}
+    \begin{itemize}
+        \item This allows the (protonated or unprotonated) $\beta$-alcohols to feel the effect of the oxyanion or hydroxyl group even from further away!
+    \end{itemize}
+    \item With push groups in mind, let's now discuss the \emph{correct} acid-catalyzed aldol dehydration mechanism.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\linewidth]{aldolDehMechAcid.png}
+        \caption{Aldol dehydration mechanism (acid-catalyzed).}
+        \label{fig:aldolDehMechAcid}
+    \end{figure}
+    \begin{itemize}
+        \item The first two steps are keto-enol tautomerization.
+        \item We then protonate the $\beta$-alcohol.
+        \item Next, we push it out through out electron conduit.
+        \item Finally, we deprotonate our reformed ketone.
+    \end{itemize}
+    \item To drive these reactions in the forward direction, we often need to remove water.\footnote{Think Le Ch\^{a}telier's principle! Removing one product drives the equilbrium to the right.}
+    \begin{itemize}
+        \item We can remove water with some kind of dehydrating agent, though we don't need to show this on PSets or exams.
+    \end{itemize}
+    \item A story from Prof. Buchwald's undergrad years.
+    \begin{itemize}
+        \item Running a reaction in acetone on a \SI{200}{\milli\gram} scale, but isolated \SI{9}{\gram} of product!
+        \item What happened?
+        \item Someone had added a dehydrating agent to the bottle of acetone, turning it all into the aldol condensation product! So Prof. Buchwald hadn't used acetone as his solvent; he'd used the above aldol condensation product.
+    \end{itemize}
+    \item Complications that arise in aldol reactions.
+    \pagebreak
+    \item Complication \#1: Mixed aldols.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.85\linewidth]{mixedAldol.png}
+        \caption{Mixed aldol condensation product distribution.}
+        \label{fig:mixedAldol}
+    \end{figure}
+    \begin{itemize}
+        \item This is what happens if we have two kinds of potential enolate-forming species in solution.
+        \item We'll get a mixture of cross-condensation and self-condensation products! There's no way to do this selectively.
+        \item And we're all about \emph{efficiency} and \emph{elegance} in 5.13, so we need ways around this.
+    \end{itemize}
+    \item So how can we pick substrate combinations in which only one component can act as a nucleophile?
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemname{
+                \chemfig{H-[:30](=[2]O)-[:-30]}
+            }{formaldehyde}
+            \arrow{0}[,0.7]
+            \chemname{
+                \chemfig{{}^{\emph{t}}Bu-[:30](=[2]O)-[:-30]}
+            }{pivaldehyde}
+            \arrow{0}[,0.7]
+            \chemname{
+                \chemfig{Ph-[:30](=[2]O)-[:-30]}
+            }{benzaldehyde}
+        \schemestop
+        \caption{Non-enolizable carbonyl compound examples.}
+        \label{fig:nonEnolizable}
+    \end{figure}
+    \begin{itemize}
+        \item Carbonyls aren't inherently nucleophiles; we make them \emph{into} nucleophiles via deprotonation of an $\alpha$-proton.
+        \item But if we make a carbonyl without any $\alpha$-protons, we have a non-enolizable species that can \emph{only} react as an electrophile!
+        \item Examples: Formaldehyde, pivaldehyde (smells terrible), and benzaldehyde (smells like almonds).
+        \begin{itemize}
+            \item Aldehyde protons have high $\pKa$'s and won't be deprotonated.
+            \item Note that formaldehyde is a gas, but for the purposes of 5.13, we'll say that we can treat it as a liquid reagent like any other. This isn't entirely false because we can buy liquids that react like they're liquid formaldehyde (i.e., they decompose to formaldehyde \emph{in situ}).
+        \end{itemize}
+    \end{itemize}
+    \item Thus, if we mix acetophenone with formaldehyde, we will only get one aldol product!
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\linewidth]{crossAldolOne.png}
+        \caption{Cross-aldol condensation with only one enolizable species.}
+        \label{fig:crossAldolOne}
+    \end{figure}
+    \begin{itemize}
+        \item Note that we don't get competitve dimerization of acetophenone because aldehydes are \emph{much} more electrophilic, so they'll react with an enolate \emph{much} faster.
+    \end{itemize}
+    \pagebreak
+    \item Complication \#2: Intramolecular aldol condensations.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\linewidth]{crossAldolIntra.png}
+        \caption{Intramolecular cross-aldol condensation.}
+        \label{fig:crossAldolIntra}
+    \end{figure}
+    \begin{itemize}
+        \item Here, we'll form the $\beta$-hydroxy cyclohexanone.
+        \item Why did we deprotonate the methyl group? Indeed, we're under equilibrating conditions, so shouldn't we deprotonate at the other side to form the thermodynamic enolate?
+        \begin{itemize}
+            \item We can form that enolate, but it won't react! The proposed product is a cyclobutane derivative.
+            \item Cyclobutanes have \kcal{25} of ring strain.
+            \item \kcal{1.4} means 10-fold selectivity, so this cyclobutane product is like 19-orders of magnitude disfavored.
+            \item We'll just go from the thermodynamic enolate back to the ketone, until we deprotonate to form the kinetic enolate.
+        \end{itemize}
+    \end{itemize}
+    \item Complication \#3: A modern strategy for cross-aldol condensations between multiple enolizable products.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\linewidth]{crossAldolModern.png}
+        \caption{Modern cross-aldol condensation.}
+        \label{fig:crossAldolModern}
+    \end{figure}
+    \begin{itemize}
+        \item Deprotonate with cold LDA to form the kinetic enolate selectively.
+        \item Then add the other coupling partner for quick reactivity.
+        \item Note that \emph{p}-\ce{TsOH} is a good acid catalyst for dehydration!
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
