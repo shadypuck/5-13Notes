@@ -625,7 +625,7 @@
 
 
 
-\section{Aldol and Claisen Reactions}
+\section{Aldol Reactions}
 \begin{itemize}
     \item \marginnote{11/20:}Announcements.
     \begin{itemize}
@@ -649,14 +649,14 @@
         \end{itemize}
         \item $\beta$-dicarbonyl species are called "soft enolates," because they do less competitive chemistry.
     \end{itemize}
-    \item Today: Aldol condensations.
+    \item Today: Aldol reactions.
     \begin{itemize}
         \item Etymology: \underline{Ald}ehyde starting material and alcoh\underline{ol} product.
         \item We'll discuss more named reactions later on this semester (Diekmann, Michael, Claisen), but this one is not named after a person.
     \end{itemize}
     \item Lecture outline.
     \begin{enumerate}[label={\Alph*.},start=4]
-        \item Aldol condensation.
+        \item Aldol reactions.
         \begin{itemize}
             \item General form.
             \item Acid-catalyzed mechanism.
@@ -729,7 +729,7 @@
     \begin{figure}[h!]
         \centering
         \includegraphics[width=\linewidth]{aldolMechAcid.png}
-        \caption{Aldol condensation mechanism (acid-catalyzed).}
+        \caption{Aldol reaction mechanism (acid-catalyzed).}
         \label{fig:aldolMechAcid}
     \end{figure}
     \begin{itemize}
@@ -771,7 +771,7 @@
     \begin{figure}[h!]
         \centering
         \includegraphics[width=\linewidth]{aldolMechBase.png}
-        \caption{Aldol condensation mechanism (base-catalyzed).}
+        \caption{Aldol reaction mechanism (base-catalyzed).}
         \label{fig:aldolMechBase}
     \end{figure}
     \begin{itemize}
@@ -868,7 +868,7 @@
     \begin{figure}[h!]
         \centering
         \includegraphics[width=0.85\linewidth]{mixedAldol.png}
-        \caption{Mixed aldol condensation product distribution.}
+        \caption{Mixed aldol reaction product distribution.}
         \label{fig:mixedAldol}
     \end{figure}
     \begin{itemize}
@@ -909,18 +909,18 @@
     \begin{figure}[h!]
         \centering
         \includegraphics[width=0.6\linewidth]{crossAldolOne.png}
-        \caption{Cross-aldol condensation with only one enolizable species.}
+        \caption{Cross-aldol reaction with only one enolizable species.}
         \label{fig:crossAldolOne}
     \end{figure}
     \begin{itemize}
         \item Note that we don't get competitve dimerization of acetophenone because aldehydes are \emph{much} more electrophilic, so they'll react with an enolate \emph{much} faster.
     \end{itemize}
     \pagebreak
-    \item Complication \#2: Intramolecular aldol condensations.
+    \item Complication \#2: Intramolecular aldol reactions.
     \begin{figure}[h!]
         \centering
         \includegraphics[width=0.8\linewidth]{crossAldolIntra.png}
-        \caption{Intramolecular cross-aldol condensation.}
+        \caption{Intramolecular cross-aldol reaction.}
         \label{fig:crossAldolIntra}
     \end{figure}
     \begin{itemize}
@@ -933,17 +933,310 @@
             \item We'll just go from the thermodynamic enolate back to the ketone, until we deprotonate to form the kinetic enolate.
         \end{itemize}
     \end{itemize}
-    \item Complication \#3: A modern strategy for cross-aldol condensations between multiple enolizable products.
+    \item Complication \#3: A modern strategy for cross-aldol reactions between multiple enolizable products.
     \begin{figure}[h!]
         \centering
         \includegraphics[width=0.9\linewidth]{crossAldolModern.png}
-        \caption{Modern cross-aldol condensation.}
+        \caption{Modern cross-aldol reaction.}
         \label{fig:crossAldolModern}
     \end{figure}
     \begin{itemize}
         \item Deprotonate with cold LDA to form the kinetic enolate selectively.
         \item Then add the other coupling partner for quick reactivity.
         \item Note that \emph{p}-\ce{TsOH} is a good acid catalyst for dehydration!
+    \end{itemize}
+\end{itemize}
+
+
+
+\section{Claisen Condensations and Conjugate Additions}
+\begin{itemize}
+    \item \marginnote{11/22:}Lecture 31 recap.
+    \begin{itemize}
+        \item Recall Figure \ref{fig:aldol}.
+        \begin{itemize}
+            \item In an aldol reaction (not the dehydration part), every step is reversible.
+        \end{itemize}
+        \item Good aldol reactions ar those in which\dots
+        \begin{itemize}
+            \item Cross-aldols in which only one molecule can enolize;
+            \item Self-condensation/dimerization.
+            \item Intramolecular;
+            \item Use of LDA (1 equivalent) to selectively form the kinetic enolate, then add to an aldehyde.
+        \end{itemize}
+    \end{itemize}
+    \item Lecture outline.
+    \begin{enumerate}[label={\Alph*.},start=5]
+        \item Claisen condensations.
+        \item Michael additions.
+        \begin{itemize}
+            \item 1,4-additions.
+        \end{itemize}
+    \end{enumerate}
+    \item We'll begin with Topic E: Claisen condensations.
+    \begin{itemize}
+        \item These were discovered by Ludwig Claisen.
+    \end{itemize}
+    \item General form.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.85\linewidth]{claisenCondensation.png}
+        \caption{Claisen condensation.}
+        \label{fig:claisenCondensation}
+    \end{figure}
+    \begin{itemize}
+        \item This is a reaction between an ester and an ester/ketone to form a 1,3-dicarbonyl.
+        \item The ester/ketone will become the enolate and attack the other ester.
+        \begin{itemize}
+            \item It must have at least two protons on its $\alpha$-carbon in order for this reaction to work.
+            \item One of these protons will be picked off for the initial condensation, and the second will be picked off to form the enolate drawn above (which is stable until workup).
+        \end{itemize}
+        \item To prevent (noticeable) transesterification, we use an alkoxide base (\ce{RO-}) matching the ester.
+        \item Unlike aldol reactions (see Figure \ref{fig:aldol}), the first step is irreversible here.
+        \begin{itemize}
+            \item This is because the reaction is driven forward by the formation of a stable enolate in the pre-workup step.
+        \end{itemize}
+    \end{itemize}
+    \item Claisen condensation mechanism.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\linewidth]{claisenCondensationMech.png}
+        \caption{Claisen condensation mechanism.}
+        \label{fig:claisenCondensationMech}
+    \end{figure}
+    \begin{itemize}
+        \item The first step forms a tetrahedral intermediate.
+        \item The third step is driven by a $\pKa$ difference: The 1,3-dicarbonyl has $\pKa\approx 9$ and \ce{ROH} has $\pKa\approx 16$, so the alkoxide base will very much favor deprotonating the 1,3-dicarbonyl.
+        \item Note again the two different hydrogens that get picked off, and the enolate that is stable until workup.
+    \end{itemize}
+    \item Under workup conditions, why won't we protonate at the oxygen?
+    \begin{itemize}
+        \item This would form a $\beta$-ketoenol, and enols are unstable!
+        \item Even if we did form this, it would quickly tautomerize to a 1,3-dione.
+    \end{itemize}
+    \item Self-Claisen condensations.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\linewidth]{claisenCondensationSelf.png}
+        \caption{Self-Claisen condensations synthesize $\beta$-ketoesters.}
+        \label{fig:claisenCondensationSelf}
+    \end{figure}
+    \begin{itemize}
+        \item For the PSet, you will need to be able to make ethyl acetoacetate as above!!
+        \item Tip: If you ever need to synthesize a $\beta$-ketoester, think Claisen!
+        \item This is especially easy to do if you can start from two equivalents of the same starting material for pseudodimerization, as above.
+    \end{itemize}
+    \item What about intramolecular Claisen condensations? This is the Dieckmann condensation.
+    \begin{itemize}
+        \item Walter Dieckmann developed this while in M\"{u}nich at BASF.
+    \end{itemize}
+    \item General form.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{Me-[:150](=[2,0.6]O)-[:-150,1.3]-[6,1.3]-[:-30,1.3]-[:30,1.3](=[2,0.6]O)-[:-30]OMe}
+            \arrow{->[\ce{NaOMe}][\ce{MeOH}]}[,1.3]
+            \chemfig{*6(--(=O)--(=O)--)}
+        \schemestop
+        \caption{Dieckmann condensation.}
+        \label{fig:Dieckmann}
+    \end{figure}
+    \begin{itemize}
+        \item As per usual, the solvent is the alcohol that is the conjugate acid of the base used, which in turn is determined by the type of ester used in the starting material.
+        \begin{itemize}
+            \item For example, here we use \ce{MeOH} and \ce{NaOMe} because our starting material contains a methyl ester.
+        \end{itemize}
+        \item This reaction can be used to make 5- or 6-membered rings.
+    \end{itemize}
+    \item Mechanism.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.95\linewidth]{DieckmannMech.png}
+        \caption{Dieckmann condensation mechanism.}
+        \label{fig:DieckmannMech}
+    \end{figure}
+    \begin{itemize}
+        \item Making 1,3-diones is a topic that will probably be on the exam!! Prof. Buchwald likes these questions.
+    \end{itemize}
+    \item Crossed or mixed Claisen condensations.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.8\linewidth]{mixedClaisen.png}
+        \caption{Mixed Claisen condensation product distribution.}
+        \label{fig:mixedClaisen}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item Claisen reactions don't have to be dimerizations!
+        \item If we mix two esters, we will not get the coupled product selectively.
+        \begin{itemize}
+            \item Instead, we will get a mixture, and \emph{we do not like mixtures}.
+        \end{itemize}
+        \item Recall that \ce{NaOEt} only yields a small amount of enolate, so once it's formed, it can react with either compound.
+    \end{itemize}
+    \item Effective mixed Claisen.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.85\linewidth]{crossClaisenOne.png}
+        \caption{Cross-Claisen condensation with only one enolizable species.}
+        \label{fig:crossClaisenOne}
+    \end{figure}
+    \begin{itemize}
+        \item Analogously to Figure \ref{fig:crossAldolOne}, we can use a mixture containing only one enolizable position.
+        \item One side product we'd see is the dimerization product of the enolizable species.
+        \begin{itemize}
+            \item If we were desperate to make this compound, though, we could do this and then purify out just the heterocoupled product.
+        \end{itemize}
+        \item Thus, this is still inelegant.
+    \end{itemize}
+    \item Solution \#1 to mixed Claisens.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.65\linewidth]{crossClaisenModern.png}
+        \caption{Modern cross-Claisen condensation.}
+        \label{fig:crossClaisenModern}
+    \end{figure}
+    \begin{itemize}
+        \item Analogously to Figure \ref{fig:crossAldolModern}, use LDA!
+        \item One-pot, two-step process: To a container of your first ester in THF at $-\SI{78}{\celsius}$, add LDA. Then add your other ester.
+    \end{itemize}
+    \item Solution \#2 to mixed Claisens.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.55\linewidth]{crossClaisenDrop.png}
+        \caption{Dropwise cross-Claisen condensation.}
+        \label{fig:crossClaisenDrop}
+    \end{figure}
+    \begin{itemize}
+        \item Mix your nonenolizable ester and base. Then add your other ester slowly/dropwise.
+        \item This makes it so that as soon as a molecule of your enolizable ester forms the enolate, it is surrounded by many more molecules of the nonenolizable ester and thus is more likely to react with one of them!
+    \end{itemize}
+    \item Reactions between ketones and esters are usually clean.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.65\linewidth]{ketoneEster.png}
+        \caption{Ketone-ester condensation.}
+        \label{fig:ketoneEster}
+    \end{figure}
+    \begin{itemize}
+        \item Here, we take advantage of the difference in $\pKa$'s.
+        \begin{itemize}
+            \item Essentially, we will form \num{e6} times more ketone enolate than ester enolate because $\pKa\approx 19$ at the $\alpha$-position of a ketone, and $\pKa\approx 25$ at the $\alpha$-position of an ester.
+        \end{itemize}
+        \item Takeaway: $\Delta\pKa$'s control the selectivity.
+        \item However, there is one complication.
+        \begin{itemize}
+            \item Because ketones are more electrophilic than esters, the (non-dehydrogenated) aldol will form in solution more readily than the Claisen condensation product.
+            \item However, the aldol product forms reversibly, and the Claisen one does not!
+            \item Thus, the quick reversible equilibrium to the aldol product gives way to a slow, steady, and irreversible conversion to the Claisen condensation product, forming it exclusively in the end.
+        \end{itemize}
+    \end{itemize}
+    \item This concludes our discussion of Claisen condensations.
+    \item We now move onto Topic F: Michael additions.
+    \begin{itemize}
+        \item These are also known as 1,4-additions.
+    \end{itemize}
+    \item General form.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{michael.png}
+        \caption{Michael addition.}
+        \label{fig:michael}
+    \end{figure}
+    \begin{itemize}
+        \item We run these reactions with catalytic base.
+        \item In retrosynthesis, look for 1,5-dicarbonyls! This is a big clue that Michael addition was used.
+        \item The left compound (the enolizable ketone) is called a \textbf{Michael donor}.
+        \begin{itemize}
+            \item It is nucleophilic.
+            \item Examples: The enolates of esters, ketones, and 1,3-dicarbonyl compounds.
+        \end{itemize}
+        \item The right compound (the $\alpha,\beta$-unsaturated ketone) is called a \textbf{Michael acceptor}.
+        \begin{itemize}
+            \item It is electrophilic.
+            \item Examples: $\alpha,\beta$-unsaturated acyl \ce{X} groups, where $\ce{X}=\ce{H},\text{alkyl},\text{aryl},\ce{OR},\ce{NR2}$, etc. $\alpha,\beta$-unsaturated nitriles and nitro-compounds work, too.
+        \end{itemize}
+    \end{itemize}
+    \item Why do we get nucleophilic attack at the $\alpha,\beta$-unsaturated ketone's $\beta$-carbon?
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{enoneForm.png}
+        \caption{Resonance forms of an $\alpha,\beta$-unsaturated ketone.}
+        \label{fig:enoneForm}
+    \end{figure}
+    \begin{itemize}
+        \item Because of resonance, that $\beta$-carbon has a $\delta^+$ partial charge on it!
+    \end{itemize}
+    \item Michael addition mechanism.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.9\linewidth]{michaelMech.png}
+        \caption{Michael addition mechanism.}
+        \label{fig:michaelMech}
+    \end{figure}
+    \begin{itemize}
+        \item The Michael donor gets converted to its enolate form, which then attacks the Michael acceptor.
+    \end{itemize}
+    \pagebreak
+    \item Example Michael addition.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{michaelIntra.png}
+        \caption{Intramolecular Michael addition.}
+        \label{fig:michaelIntra}
+    \end{figure}
+    \begin{itemize}
+        \item This type of reaction leads into another important reaction!
+    \end{itemize}
+    \item The Robinson annulation.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.55\linewidth]{robinson.png}
+        \caption{Robinson annulation.}
+        \label{fig:robinson}
+    \end{figure}
+    \begin{itemize}
+        \item This reaction is a Michael addition, followed by an aldol condensation, followed by a dehydration.
+        \item A historically important reaction that is still used today to synthesize pharmaceuticals at scale.
+    \end{itemize}
+    \item 1,4-additions are a broader class of reactions than just Michael additions.
+    \begin{itemize}
+        \item Recall Figure \ref{fig:AddClCu}: Gilman reagents can do a kind of 1,4-addition, too!
+        \item Note that we can synthesize a broader class of Gilman reagents called \textbf{cuprates} by combining 2 equivalents of an alkyllithium reagent \ce{RLi} with \ce{CuI}; these \ce{R2CuLi} reagents will then add \ce{R} instead of \ce{Me}!
+    \end{itemize}
+    \item If we have an $\alpha,\beta$-unsaturated ketone, a Grignard or alkyllithium reagent could be used to do 1,2-addition to the ketone.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \schemestart
+            \chemfig{*6(----(=O)-=)}
+            \arrow{->[\ce{MeMgBr}][or \ce{MeLi}]}[,1.4]
+            \chemfig{*6(----(-[:70]Me)(-[:110]\charge{135=$\ominus$}{O})-=)}
+        \schemestop
+        \caption{1,2-addition with Grignards and alkyllithium reagents.}
+        \label{fig:12add}
+    \end{figure}
+    \begin{itemize}
+        \item This is called 1,2-addition because we add a metal (\ce{Mg} or \ce{Li}) to the 1-atom (the oxygen), and an \ce{R} group to the 2-atom (the carbon).
+    \end{itemize}
+    \item If we have an $\alpha,\beta$-unsaturated ketone, a Gilman reagent can do 1,4-addition to the entire enone system!
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.35\linewidth]{14add.png}
+        \caption{1,4-addition with the Gilman reagent.}
+        \label{fig:14add}
+    \end{figure}
+    \begin{itemize}
+        \item This is called 1,4-addition because we add a metal (\ce{Cu}) to the 1-atom (the oxygen), and an \ce{R} group to the 4-atom (the $\beta$-position).
+    \end{itemize}
+    \item 1,4-addition also gives us an enolate, and an enolate is a terrible thing to waste.
+    \begin{itemize}
+        \item We can work this up directly to get rid of it, \emph{or} we can use it.
+        \item For instance, we could trap it as a silyl enol ether (as in Figure \ref{fig:enolateTMS}).
+        \begin{itemize}
+            \item Recall that we could then regenerate the enolate later with \ce{MeLi}.
+        \end{itemize}
     \end{itemize}
 \end{itemize}
 
