@@ -271,7 +271,7 @@
     \begin{itemize}
         \item Dimerization under equilibrating conditions would give \emph{mostly} the trisubstituted olefin, but not $100:0$ because the trisubstituted olefin has some steric clash between the methyl and \emph{t}-butyl group. This steric clash raises its energy relative to the disubstituted alkene product.
     \end{itemize}
-    \item We now move onto Subtopic 3: Rearrangements and fragmentations.
+    \item We now move onto Subtopic C.3: Rearrangements and fragmentations.
     \begin{figure}[h!]
         \centering
         \begin{subfigure}[b]{\linewidth}
@@ -367,6 +367,272 @@
         \item If $\ce{MG}=\ce{R}$, then it's an \textbf{alkyl shift}, also known as a \textbf{Wagner-Meerwein rearrangement}.
     \end{itemize}
     \item There \emph{might} be a guest in Wednesday's lecture!!
+\end{itemize}
+\newpage
+
+
+
+\section{Cationic Rearrangements}
+\begin{itemize}
+    \item \marginnote{11/27:}Lecture 33 recap.
+    \begin{itemize}
+        \item Order of stability: $
+            \text{benzyl} > \text{allyl} > 3^\circ > 2^\circ > 1^\circ > \ce{Me} > \text{vinyl} > \text{phenyl}
+        $.
+        \begin{itemize}
+            \item Primary, methyl, vinyl, and phenyl cations are very unstable and will not be discussed in 5.13.
+            \item Particylarly stable carbocations: Benzyl, allyl, heteroatom-stabilized carbocations, and aromatic (e.g., see Figure \ref{fig:CCstableb}).
+        \end{itemize}
+        \item Generation of carbocations.
+        \begin{enumerate}[label={\arabic*)}]
+            \item Addition of an electrophile to a multiple bond (Figure \ref{fig:CCmultiple}).
+            \item Heterolytic cleavage of \ce{C-X} bonds (Figure \ref{fig:CCheteroCleavea}).
+        \end{enumerate}
+        \item Reactions.
+        \begin{enumerate}[label={\arabic*)}]
+            \item E\textsubscript{1} elimination (Figure \ref{fig:CCelimE1}).
+            \item Reactions with nucleophiles (e.g., lone pairs in S\textsubscript{N}1, aromatic rings in Friedel-Crafts); reactions with olefins.
+        \end{enumerate}
+        \item Rearrangements and fragmentations.
+        \begin{itemize}
+            \item Most common type: 1,2-shifts.
+            \item Driving force: Converting a secondary carbocation into a tertiary carbocation.
+            \item Nomenclature.
+            \begin{itemize}
+                \item Hydride shift: When \ce{H} is the migrating group (MG).
+                \item Alkyl shift: When \ce{R} is the MG.
+            \end{itemize}
+            \item Concerted vs. stepwise mechanisms (Figure \ref{fig:CCrearr}).
+        \end{itemize}
+    \end{itemize}
+    \item Today: More on rearrangements with carbocation intermediates.
+    \item Lecture outline.
+    \begin{enumerate}[label={\Alph*.},start=3]
+        \item Reactions.
+        \begin{enumerate}[label={\arabic*)},start=3]
+            \item Rearrangements and fragmentations.
+            \begin{itemize}
+                \item Hydride shifts in hydrohalogenations.
+                \item Methyl shifts driven by the need for a concerted shift.
+                \item Alkyl shifts induced by angle strain.
+                \item Dienone-phenol rearrangement.
+                \item Epoxide-aldehyde rearrangement.
+                \item Pinacol-pinacolone rearrangement (symmetric and asymmetric).
+                \item Baeyer-Villiger oxidation.
+            \end{itemize}
+        \end{enumerate}
+    \end{enumerate}
+    \item We now return to Subtopic C.3: Rearrangements and fragmentations.
+    \item \ce{H}-shifts vs. alkyl shifts.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{HshiftHydrohalo.png}
+        \caption{Hydride shifts in hydrohalogenations.}
+        \label{fig:HshiftHydrohalo}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the reaction of 3-methylbut-1-ene with \ce{HCl}.
+        \item We might expect the major product to be the 2-chlorinated alkene.
+        \begin{itemize}
+            \item This would arise from formation of the more substituted, secondary carbocation.
+            \item However, this is only 40\% of the product.
+        \end{itemize}
+        \item However, the major product (60\%) is the 3-chlorinated species!
+        \begin{itemize}
+            \item This product occurs because the carbocation undergoes a 1,2-hydride shift prior to trapping by chloride.
+        \end{itemize}
+        \item Indeed,
+        \begin{equation*}
+            \frac{k_1}{k_2} = \frac{40}{60} = 0.67
+        \end{equation*}
+        if the $k_2$ step is irreversible.
+        \item But why do we get a hydride shift instead of a methyl shift?
+        \begin{itemize}
+            \item Because a methyl shift would not generate a more stable carbocation! It would still be secondary.
+            \item General rule: \ce{H}-shifts are better than alkyl shifts because they form more substituted carbocations.
+        \end{itemize}
+    \end{itemize}
+    \item We now look at a case where we have to distinguish between two mechanistic possibilities that form carbocations.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\linewidth]{concertedStepMethyl.png}
+        \caption{Concerted vs. stepwise mechanisms with methyl shifts.}
+        \label{fig:concertedStepMethyl}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the reaction of neopentyl alcohol with \ce{HBr}. What is the most plausible mechanism?
+        \item The alcohol will get protonated and \emph{could} leave to yield a primary carbocation, which could then stepwise rearrange into a secondary cation that could be trapped.
+        \begin{itemize}
+            \item But we've said that in this class, primary carbocations are not allowed!
+        \end{itemize}
+        \item Thus, we can make use of a concerted pathway (Figure \ref{fig:CCrearrb}).
+        \begin{itemize}
+            \item This mechanism affords the secondary carbocation directly, which can then react.
+        \end{itemize}
+        \item Thinking about the relative energies of competing transition states is useful here.
+    \end{itemize}
+    \pagebreak
+    \item Chemists love small rings; let's look at a strain-releasing reaction with them.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.6\linewidth]{angleStrainAlk.png}
+        \caption{Angle strain can induce alkyl shifts.}
+        \label{fig:angleStrainAlk}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the reaction of 2-cyclobutylpropan-2-ol with \ce{HCl}.
+        \item If we form the tertiary carbocation and then do an \ce{H}-shift to put the cation in the 4-membered ring, we will induce immense strain.
+        \begin{itemize}
+            \item $sp^2$ likes to be \ang{120}, and we've got it confined to \ang{60}!
+        \end{itemize}
+        \item Instead, we can do an alkyl shift to release strain, even though it forms a secondary carbocation.
+        \item Takeaway: In cases where all else is equal, prefer \ce{H}-shifts. But there do exist cases in which all else is \emph{not} equal!
+    \end{itemize}
+    \item Let's now look at some rearrangements.
+    \begin{itemize}
+        \item We're going to teach 7-10 rearrangements that involve carbocation intermediates.
+        \item You can probably find another 500 if you go looking; most will have somebody's name on them.
+    \end{itemize}
+    \item Dienone-phenol rearrangement.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{dienonePhenol.png}
+        \caption{Dienone-phenol rearrangement.}
+        \label{fig:dienonePhenol}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item If we didn't have blocking methyl groups, we would tautomerize to the fully aromatic system.
+        \item But in the presence of catalytic acid, we get 3,4-dimethylphenol!
+        \item Protonating the carbonyl makes the $\beta$-positions \emph{very, very} electron-deficient; consider the enol resonance structure!
+        \begin{itemize}
+            \item Thus, a 1,2-migration can give us a stabilized tertiary, allylic carbocation.
+        \end{itemize}
+        \item Then some group (doesn't have to be very basic) can come in to deprotonate and aromatize the system.
+    \end{itemize}
+    \item TTQ: What happens to this the species at top-left below in the presence of acid?
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.35\linewidth]{TTQesterShift.png}
+        \caption{TTQ: Ester shifts.}
+        \label{fig:TTQesterShift}
+    \end{figure}
+    \begin{itemize}
+        \item Two things can happen: Either the methyl group or the ester group can migrate.
+        \item However, having the carbocation be next to a methyl group is far more favorable than having it next to a destabilizing EWG like an ester.
+        \item Thus, the reaction proceeds via an ester shift to yield the drawn phenol!
+    \end{itemize}
+    \item Converting epoxides to aldehydes.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.7\linewidth]{epoxideAldehydeRearr.png}
+        \caption{Epoxide-aldehyde rearrangement.}
+        \label{fig:epoxideAldehydeRearr}
+    \end{figure}
+    \begin{itemize}
+        \item \ce{MgBr2} is a mild Lewis acid that will coordinate to the epoxide oxygen.
+        \item The epoxide can then open, formally bonding to magnesium and kicking out one bromide.
+        \item The \ce{O-Mg} bond then collapses into the forming aldehyde $\pi$-system with a concurrent 1,2-\ce{H} shift.
+    \end{itemize}
+    \item Synthetic utility of the epoxide-aldehyde rearrangement.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.3\linewidth]{epoxideAldehydeRearrUse.png}
+        \caption{Epoxide-aldehyde rearrangement: Synthetic utility.}
+        \label{fig:epoxideAldehydeRearrUse}
+    \end{figure}
+    \begin{itemize}
+        \item We start with an alkene, turn it into an epoxide, open it as in Figure \ref{fig:epoxideAldehydeRearr}, and then reduce it.
+        \item This is an alternative to hydroboration!
+    \end{itemize}
+    \item Alternatives are important as they can be safer, cleaner, and more generally applicable to complicated systems.
+    \begin{itemize}
+        \item Both Profs. Buchwald and Elkin research such reaction alternatives in their labs!
+    \end{itemize}
+    \item Pinacol rearrangement of 1,2-diols.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.4\linewidth]{pinacolPinacolonea.png}
+            \caption{General form.}
+            \label{fig:pinacolPinacolonea}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.6\linewidth]{pinacolPinacoloneb.png}
+            \caption{Mechanism.}
+            \label{fig:pinacolPinacoloneb}
+        \end{subfigure}
+        \caption{Pinacol-pinacolone rearrangement.}
+        \label{fig:pinacolPinacolone}
+    \end{figure}
+    \begin{itemize}
+        \item Mechanistically, we begin by protonating a hydroxyl group to form a good leaving group.
+        \item Then we get a rearrangement, thermodynamically driven by the formation of a carbonyl.
+        \item Final deprotonation yields the pinacolone product.
+    \end{itemize}
+    \item Asymmetric pinacol rearrangements.
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{pinacolPinacoloneAsy.png}
+        \caption{Asymmetric pinacol-pinacolone rearrangement.}
+        \label{fig:pinacolPinacoloneAsy}
+    \end{figure}
+    \begin{itemize}
+        \item Both possible carbocations we could form from this substrate are quite good!
+        \begin{itemize}
+            \item However, while the tertiary carbocation is good, the tertiary diphenyl carbocation is \emph{awesome}; it should be in the carbocation hall of fame!
+        \end{itemize}
+        \item Thus, we get another alkyl shift, yielding a product with a six-membered ring.
+    \end{itemize}
+    \item Baeyer-Villiger oxidation.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.25\linewidth]{BaeyerVilligera.png}
+            \caption{General form.}
+            \label{fig:BaeyerVilligera}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.5\linewidth]{BaeyerVilligerb.png}
+            \caption{Mechanism.}
+            \label{fig:BaeyerVilligerb}
+        \end{subfigure}
+        \caption{Baeyer-Villiger oxidation.}
+        \label{fig:BaeyerVilliger}
+    \end{figure}
+    \begin{itemize}
+        \item Here, we convert a ketone into a lactone.
+        \item We generally use a peracid (like \emph{m}CPBA) to make this reaction proceed.
+        \begin{itemize}
+            \item We can just use a peroxide sometimes, though.
+        \end{itemize}
+        \item There's a very good depiction of the mechanism on \textcite[956]{bib:Clayden}.
+    \end{itemize}
+    \item Regioselectivity of the Baeyer-Villiger oxidation.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.4\linewidth]{BaeyerVilligerRegio.png}
+        \caption{Baeyer-Villiger oxidation regioselectivity.}
+        \label{fig:BaeyerVilligerRegio}
+    \end{figure}
+    \begin{itemize}
+        \item The example in Figure \ref{fig:BaeyerVilliger} was symmetric, but what if our ketone is asymmetric?
+        \item Here, we get exclusively the drawn enantiopure product from the drawn enantiopure starting material.
+        \item To decide regioselectivity, consider the migratory aptitude of various groups.
+        \begin{equation*}
+            3^\circ > 2^\circ > \text{phenyl} > \ce{Me}
+        \end{equation*}
+        \begin{itemize}
+            \item The drawing on \textcite[956]{bib:Clayden} has a good rationalization for this!
+            \item The typical rationalization is for which can best stabilize a positive charge; note that phenyl is the odd one out because it's weird.
+            \item Vinyl is not included because double bonds in the presence of \emph{m}CPBA will lead to an epoxidation more rapidly than a Baeyer-Villiger.
+        \end{itemize}
+        \item Thus, we form the drawn product because a $2^\circ$ carbons migrates instead of a methyl group.
+    \end{itemize}
 \end{itemize}
 
 
