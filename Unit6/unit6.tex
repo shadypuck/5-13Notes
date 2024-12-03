@@ -243,7 +243,7 @@
         \centering
         \includegraphics[width=0.45\linewidth]{Hock.png}
         \caption{Hock process (stage 1).}
-        \label{fig:Hock}
+        \label{fig:Hock1}
     \end{figure}
     \begin{itemize}
         \item This is the primary method of producing acetone.\footnote{You can read more about this process --- called the \textbf{Hock process} --- on \href{https://en.wikipedia.org/wiki/Cumene_process}{Wikipedia}.}
@@ -349,7 +349,7 @@
     \end{figure}
     \begin{itemize}
         \item These are often the times where we get the most interesting results; serendipity often leads to the most interesting discoveries.
-        \item Here, the primary carbocation is too high energy, so instead, we get concerted migration of the hydrogen to form the same secondary carbocation that we saw in Figure \ref{fig:Hock} from the protonation of propene.
+        \item Here, the primary carbocation is too high energy, so instead, we get concerted migration of the hydrogen to form the same secondary carbocation that we saw in Figure \ref{fig:Hock1} from the protonation of propene.
         \item This secondary cation can then react, as before, to form isopropyl benzene again.
     \end{itemize}
     \item Why wouldn't the activated isopropylbenzene react further?
@@ -372,7 +372,7 @@
 
 
 
-\section{Cationic Rearrangements}
+\section{Cationic Rearrangements - 1}
 \begin{itemize}
     \item \marginnote{11/27:}Lecture 33 recap.
     \begin{itemize}
@@ -632,6 +632,283 @@
             \item Vinyl is not included because double bonds in the presence of \emph{m}CPBA will lead to an epoxidation more rapidly than a Baeyer-Villiger.
         \end{itemize}
         \item Thus, we form the drawn product because a $2^\circ$ carbons migrates instead of a methyl group.
+    \end{itemize}
+\end{itemize}
+
+
+
+\section{Cationic Rearrangements - 2}
+\begin{itemize}
+    \item \marginnote{11/27:}Lecture 34 recap.
+    \begin{itemize}
+        \item 1,2-hydride shifts are generally favored (all else being equal).
+        \begin{itemize}
+            \item This is because shifting a hydride typically produces a more substituted carbocation.
+            \item 1,2-alkyl shifts will happen if they generate a more stable carbocation.
+        \end{itemize}
+        \item Epoxide openings (Figure \ref{fig:epoxideAldehydeRearr}).
+        \begin{itemize}
+            \item This is the \textbf{Meinwald rearrangement}, named after a Cornell chemist.
+        \end{itemize}
+        \item Pinacol rearrangement (Figure \ref{fig:pinacolPinacolone}).
+        \begin{itemize}
+            \item Takes a 1,2-diol (also known as a \textbf{viscinal} diol) to a ketone.
+        \end{itemize}
+        \item Baeyer-Villiger oxidation (Figure \ref{fig:BaeyerVilliger}).
+        \begin{itemize}
+            \item Converts a ketone into an ester, or a cyclic ketone into a lactone.
+            \item Know the migratory aptitudes! Example: In \emph{tert}-butyl methyl ketone, the \emph{tert}-butyl group will migrate first.
+        \end{itemize}
+    \end{itemize}
+    \item Today: More carbocation rearrangements.
+    \item Lecture outline.
+    \begin{enumerate}[label={\Alph*.},start=3]
+        \item Reactions.
+        \begin{enumerate}[label={\arabic*)},start=3]
+            \item Rearrangements and fragmentations.
+            \begin{itemize}
+                \item Beckmann rearrangement.
+            \end{itemize}
+            \item Neighboring group participation.
+            \begin{enumerate}[label={\alph*)}]
+                \item Aromatic rings as neighboring groups.
+                \item Carbonyls as neighboring groups.
+            \end{enumerate}
+        \end{enumerate}
+    \end{enumerate}
+    \item We now return to Subtopic C.3: Rearrangements and fragmentations.
+    \item The Beckmann rearrangement.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{Beckmann.png}
+        \caption{Beckmann rearrangement.}
+        \label{fig:Beckmann}
+    \end{figure}
+    \begin{itemize}
+        \item Take a ketone and add hydroxylamine hydrocholoride (recall from Figure \ref{fig:redAmin01b}) to form an oxime, and then use an acid catalyst to make an amide.
+    \end{itemize}
+    \item This reaction is more important at scale than the previous rearrangements we've discussed (not testable content).
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.65\linewidth]{nylonSynth.png}
+        \caption{Synthesizing nylon!}
+        \label{fig:nylonSynth}
+    \end{figure}
+    \begin{itemize}
+        \item This reaction is important because if you want to make a billion of tons of cyclohexanone, start from cyclohexane and subject it to oxygen and a catalyst.
+        \item Then make the oxime.
+        \item Then use your acid catalyst; it used to be a sulfuric acid catalyst, but now they use an acidic clay.
+        \item This yields caprolactam, the polymerization of which makes nylon-6,6 (or nylon!).
+        \item Prof. Buchwald once did some consulting on improving the efficiency of this reaction from 99.83\% to 99.84\%, which may seem small but means millions of dollars per year in savings.
+    \end{itemize}
+    \item Mechanism of the Beckmann rearragement.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.67\linewidth]{BeckmannMech.png}
+        \caption{Beckmann rearrangement mechanism.}
+        \label{fig:BeckmannMech}
+    \end{figure}
+    \begin{itemize}
+        \item The nitrogen gets protonated far more often than the oxygen, but every once in a while, the oxygen will be protonated.
+        \item This oxygen protonation allows the rest of the mechanism to proceed, starting with a migration and departure of the leaving group.
+        \item This yields a nitrilium ion, which is very strained.
+        \item The nitrilium ion can then react with water.
+        \item Then, following proton transfer, we get deprotonation to the product.
+    \end{itemize}
+    \item Selectivity of the Beckmann rearragement.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{R'-[:30](=[2]N-[:30]OH)-[:-30]R}
+                \arrow{->[\ce{Al2O3}]}
+                \chemfig{R'-[:30]\chemabove{N}{H}-[:-30](=[:30]O)-[6]R}
+            \schemestop
+            \caption{\emph{anti}-migration with weak acid.}
+            \label{fig:BeckmannSelecta}
+        \end{subfigure}
+        \begin{subfigure}[b]{0.49\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Et-[:-30](<[6]{{}^{\emph{n}}Bu})-[:30](=[2]N-[:30,,,,wvbnd]OH)-[:-30]Me}
+                \arrow{->[\ce{H+}]}
+                \chemfig{Et-[:-30](<[6]{{}^{\emph{n}}Bu})-[:30]\chemabove{N}{H}-[:-30](=[:30]O)-[6]Me}
+            \schemestop
+            \caption{Baeyer-Villiger-type migration with strong acid.}
+            \label{fig:BeckmannSelectb}
+        \end{subfigure}
+        \caption{Beckmann rearrangement selectivity.}
+        \label{fig:BeckmannSelect}
+    \end{figure}
+    \begin{itemize}
+        \item Only the \emph{anti}-group migrates!
+        \begin{itemize}
+            \item This is on full display with the use of a weak Lewis acid like \ce{Al2O3}.
+            \item Coordination is weak, so you need the \emph{anti}-oriented push.
+        \end{itemize}
+        \item However, there is a caveat: If you use a $10:1$ mixture of oxime isomers that is enantiomerically pure at the $\alpha$-carbon, you only form a single stereoretentive product.
+        \begin{itemize}
+            \item Indeed, the strong acid makes selectivity identical to that of the Baeyer-Villiger.
+        \end{itemize}
+        \item Takeaway: Weak Lewis acid catalysis implies that only the \emph{anti}-group migrates, while strong acid catalysis makes selectivity depend on the Baeyer-Villiger migratory aptitude.
+    \end{itemize}
+    \pagebreak
+    \item TTQ: Merging Profs. Elkin's and Buchwald's content.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{*6(--(<:[6]NH-[:-150](=[6]O)-[:150]Me)*6(-(=O)-=(-Me)-(=O)-)-(<:[2]H)--=)}
+                \arrow{=retro>}
+                \chemfig{HO-[:30]N=[:-30](-[6]Me)-[:30]*6(-(=O)-=(-Me)-(=O)-=)}
+            \schemestop
+            \caption{The desired molecule and starting materials.}
+            \label{fig:TTQunit26a}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{HO-[:30]N=[:-30](-[6]Me)-[:30]*6(-(=O)-=(-Me)-(=O)-=)}
+                \arrow{->[\chemfig[atom sep=1.4em]{*6([:-120]=-=)}]}
+                \chemfig{*6(--(<:[6,2](-[:-30]Me)=[:-150]N-[6,,,2]HO)*6(-(=O)-=(-Me)-(=O)-)-(<:[2]H)--=)}
+                \arrow{->[acid]}
+                \chemfig{*6(--(<:[6]NH-[:-150](=[6]O)-[:150]Me)*6(-(=O)-=(-Me)-(=O)-)-(<:[2]H)--=)}
+            \schemestop
+            \caption{Retrosynthetic pathway.}
+            \label{fig:TTQunit26b}
+        \end{subfigure}
+        \caption{TTQ: Merging Unit 2 and Unit 6 content.}
+        \label{fig:TTQunit26}
+    \end{figure}
+    \begin{itemize}
+        \item Synthesize the molecule at left in Figure \ref{fig:TTQunit26a} from the provided starting material.
+        \item Looking at the cyclohexene in the product, it seems like we might be able to start with a Diels-Alder reaction!
+        \begin{itemize}
+            \item Potential ambiguity: Which enantiomer are we forming? We will indeed form both, but we will only form one diastereomer (from the \emph{endo} transition state, etc.)
+            \item Potential ambituity: Which side is the stronger dienophile? The left side is because it has the stronger EWG attached.
+        \end{itemize}
+        \item Then we just need a Beckmann rearrangement, which we can cause using acid (either \ce{H+} or \ce{Al2O3})!
+    \end{itemize}
+    \item Recall that we've discussed that substituents can affect reactions, e.g., through steric hindrance or an EWG near a carbonyl. We'll now discuss a topic that's similar to this, but a bit different.
+    \item We now move onto Subtopic C.4: Neighboring group participation.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\linewidth]{NGP.png}
+        \caption{Neighboring group participation.}
+        \label{fig:NGP}
+    \end{figure}
+    \pagebreak
+    \begin{itemize}
+        \item Consider a group with a lone pair.
+        \item This group can speed up displacement of an adjacent leaving group (because intramolecular chemistry is faster), and speed up subsequent nucleophilic attack because it forms a charged intermediate.
+        \item This wins by $\Delta\Delta G^\ddagger$ over direct S\textsubscript{N}2-type displacement.
+    \end{itemize}
+    \item We now move onto Subtopic C.4.a{}: Aromatic rings as neighboring groups.
+    \begin{figure}[h!]
+        \centering
+        \footnotesize
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Ph-[:-60](<[:-100]Me)(<:[:-140]H)-(<[:40]Me)(<:[:80]H)-[:-60]OTs}
+                \arrow{->[\ce{AcOH}]}
+                \chemfig{Ph-[:-60](<[:-100]Me)(<:[:-140]H)-(<[:40]Me)(<:[:80]H)-[:-60]OAc}
+                \+{,,-2em}
+                \chemfig{Ph-[:-60](<[:-100]Me)(<:[:-140]H)-(<[:-80]Me)(<:[:-40]H)-[:60]OAc}
+            \schemestop
+            \caption{S\textsubscript{N}1 products.}
+            \label{fig:NGBsn1sn2a}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Ph-[:-60](<[:-100]Me)(<:[:-140]H)-(<[:40]Me)(<:[:80]H)-[:-60]OTs}
+                \arrow{->[\ce{AcOH}]}
+                \chemfig{Ph-[:-60](<[:-100]Me)(<:[:-140]H)-(<[:-80]Me)(<:[:-40]H)-[:60]OAc}
+            \schemestop
+            \caption{S\textsubscript{N}2 products.}
+            \label{fig:NGBsn1sn2b}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \schemestart
+                \chemfig{Ph-[:-60](<[:-100]Me)(<:[:-140]H)-(<[:40]Me)(<:[:80]H)-[:-60]OTs}
+                \arrow{->[\ce{AcOH}]}
+                \chemfig{Ph-[:-60](<[:-100]Me)(<:[:-140]H)-(<[:40]Me)(<:[:80]H)-[:-60]OAc}
+                \+{,,-2em}
+                \chemfig{Ph-[:-60](<[:-100]H)(<:[:-140]Me)-(<[:40]H)(<:[:80]Me)-[:-60]OAc}
+            \schemestop
+            \caption{Actual products.}
+            \label{fig:NGBsn1sn2c}
+        \end{subfigure}
+        \caption{Neighboring group participation provides an alternative to S\textsubscript{N}1 and S\textsubscript{N}2.}
+        \label{fig:NGBsn1sn2}
+    \end{figure}
+    \begin{itemize}
+        \item Consider the above \textbf{solvolysis} reaction of a single enantiomer, carried out in acetic acid.
+        \item If tosylate is going to leave, it can do so by either an S\textsubscript{N}1 or S\textsubscript{N}2 mechanism.
+        \item If S\textsubscript{N}1\dots
+        \begin{itemize}
+            \item We should form two diastereomers as products (the left stereocenter is retained, and the right one may or may not be flipped).
+        \end{itemize}
+        \item If S\textsubscript{N}2\dots
+        \begin{itemize}
+            \item We should form exactly 1 diastereomer (the inverted one) as a product.
+        \end{itemize}
+        \item However, when we do the actual experiment, we get two enantiomers as products!
+    \end{itemize}
+    \item \textbf{Solvolysis} (reaction): A reaction in which the solvent and the reactant are the same.
+    \item How can we explain the result in Figure \ref{fig:NGBsn1sn2c}?
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{NGBar.png}
+        \caption{Neighboring group participation with aromatic rings.}
+        \label{fig:NGBar}
+    \end{figure}
+    \begin{itemize}
+        \item The phenyl group attacks the other carbon, pushing out tosylate and forming an intermediate.
+        \begin{itemize}
+            \item The positive charge in this intermediate gets spread out over 5 carbons.
+            \item This intermediate also has a plane of symmetry.
+        \end{itemize}
+        \item Because of the plane of symmetry, acetate can add to either the right or left sides, giving our enantiomeric products.
+        \begin{itemize}
+            \item Indeed, we have destroyed our asymmetry by going through a symmetric intermediate.
+            \item Principle: Any reaction that goes through an achiral intermediate will \emph{not} give an enantioenriched product (at least for the purposed of 5.13).
+        \end{itemize}
+    \end{itemize}
+    \item We now move onto Subtopic C.4.b{}: Carbonyls as neighboring groups.
+    \item Consider a single enantiomeric starting material, heated in acetic acid.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.75\linewidth]{NGBcarbonyl.png}
+        \caption{Neighboring group participation with carbonyls.}
+        \label{fig:NGBcarbonyl}
+    \end{figure}
+    \begin{itemize}
+        \item The result is that we get a racemic mixture of products!
+        \item Thus, we must be going through an achiral intermediate, which we can build with the displacement drawn in Figure \ref{fig:NGBcarbonyl}.
+        \item Note that the starting material is \textbf{chiral} and \textbf{enantiomerically pure}, while the product is chiral and racemic. This subtlety is often missed!
+    \end{itemize}
+    \item \textbf{Chiral}: You have two hands that are not superimposable.
+    \item \textbf{Enantiomerically pure}: You only have one of those hands.
+    \item Recall our discussion of the Hock process (Figure \ref{fig:Hock1}) from couple of lectures ago.
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.95\linewidth]{Hock12.png}
+        \caption{Hock process (stages 1-2).}
+        \label{fig:Hock12}
+    \end{figure}
+    \begin{itemize}
+        \item The Hock process produces phenol (the smell of paste when Prof. Buchwald was a child) and acetone (nail polish remover, and an industrial solvent).
+        \item It does so on an unbelievable scale each year.
+        \item The process works by forming \textbf{cumene} in the presence of an acid catalyst.
+        \item We then form \textbf{cumene hydroperoxide}, an unstable intermediate, which rearranges and then fragments into the products.
+        \item You would think that there is a simpler way to do this, but because it produces \emph{two} value-added products at scale with cheap starting materials (benzene and propene are both products of petroleum cracking), it is more economical.
     \end{itemize}
 \end{itemize}
 
