@@ -914,5 +914,234 @@
 
 
 
+\section{Review for Exam 4}
+\begin{itemize}
+    \item \marginnote{12/4:}Lecture 35 recap.
+    \begin{itemize}
+        \item Regioselectivity in the Beckmann rearrangement (Figure \ref{fig:BeckmannSelect}).
+        \begin{itemize}
+            \item To clarify, the \emph{anti} group is the group that lines up antiperiplanar with the \ce{N-O} bond. Essentially, this is the \ce{C-R} bond that is parallel in the same plane to the \ce{N-O} bond.
+            \item Recall that stronger acids induce Baeyer-Villiger-type selectivity (e.g., dependent on "migratory aptitude").
+        \end{itemize}
+        \item Neighboring group participation (Figure \ref{fig:NGP}).
+        \begin{itemize}
+            \item Proceeds through an achiral intermediate.
+            \item Yields enantiomers.
+        \end{itemize}
+    \end{itemize}
+    \item Announcements.
+    \begin{itemize}
+        \item Prof. Buchwald will hold office hours today from 2:00-3:00 PM in his office (18-490).
+        \item Review sessions for Exam 4.
+        \begin{itemize}
+            \item Tonight (W) from 7:00-9:00 PM in 1-190.
+            \item Tomorrow (R) from 7:00-9:00 PM in 1-190.
+        \end{itemize}
+        \item Course evaluations are live.
+        \begin{itemize}
+            \item Constructive criticism is useful.
+            \item Taking potshots is less useful, but so be it if it makes you feel good.
+        \end{itemize}
+        \item On the exam, please use reactions learned in 5.12 or 5.13!!
+        \begin{itemize}
+            \item "Do not use reactions from when you did research when you were 8 years old; we're all very impressed, but it makes grading your exam much harder and you definitely will not get bonus points."
+        \end{itemize}
+        \item The exam will look like the practice exams.
+        \begin{itemize}
+            \item 1 mechanism question.
+            \item 2 synthesis questions.
+            \item Grading will be partially based on efficiency: If there's a compound you can make in 4 steps and you make it in 44 steps, you will lose a few points.
+            \item If you write more than one synthesis, cross out the one you don't want graded; otherwise, we will grade the first one we see.
+        \end{itemize}
+    \end{itemize}
+    \item We'll now begin doing some review problems.
+    \pagebreak
+    \item TTQ: Synthesize the molecule in Figure \ref{fig:TTQ4Ca} from a starting material of 4 carbons.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \footnotesize
+            \chemfig{Me-[:30]-[:-30]-[:30]-[:-30](-[6]-[:-150]Me)-[:30]-[:-30]OH}
+            \caption{The desired molecule.}
+            \label{fig:TTQ4Ca}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.75\linewidth]{TTQ4Cb.png}
+            \caption{Retrosynthetic pathway 1.}
+            \label{fig:TTQ4Cb}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.8\linewidth]{TTQ4Cc.png}
+            \caption{Retrosynthetic pathway 2.}
+            \label{fig:TTQ4Cc}
+        \end{subfigure}
+        \caption{TTQ: Synthesis from a 4-carbon starting material.}
+        \label{fig:TTQ4C}
+    \end{figure}
+    \begin{itemize}
+        \item The most straightforward answer cleaves the four carbons at left (Figure \ref{fig:TTQ4Cb}).
+        \item Retrosynthetically, we can get back to butyric acid as our 4-carbon starting material.
+        \begin{itemize}
+            \item In the forward direction, transform butyric acid into the ester via Fischer esterification.
+            \item We can also convert it into the bromide with reduction and alcohol bromination.
+            \item Then LDA-type alkylation chemistry would work, and reduction of the ester to the product.
+        \end{itemize}
+        \item Alternate pathway.
+        \begin{itemize}
+            \item Transform the initial alcohol into an aldehyde.
+            \item Transform the aldehyde into an $\alpha,\beta$-unsaturated aldehyde with \ce{H2 / Pd/C}.
+            \item Transform the $\alpha,\beta$-unsaturated aldehyde into two equivalents of butyraldehyde via an aldol condensation.
+        \end{itemize}
+    \end{itemize}
+    \item TTQ: Synthesize the molecule at left in Figure \ref{fig:TTQ13dionea} from ethyl acetate and any compound with three or fewer carbons.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \footnotesize
+            \schemestart
+                \chemfig{*6(--(=O)--(=O)--)}
+                \arrow{=retro>}
+                \chemfig{Me-[:30](=[2]O)-[:-30]OEt}
+            \schemestop
+            \caption{The desired molecule and starting materials.}
+            \label{fig:TTQ13dionea}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.95\linewidth]{TTQ13dioneb.png}
+            \caption{Retrosynthetic pathway.}
+            \label{fig:TTQ13dioneb}
+        \end{subfigure}
+        \caption{TTQ: Synthesis of a 1,3-dicarbonyl.}
+        \label{fig:TTQ13dione}
+    \end{figure}
+    \begin{itemize}
+        \item Transform the 1,3-dione into a ring-opened precursor via a Dieckmann condensation (an intramolecular Claisen; Prof. Buchwald will never test names).
+        \begin{itemize}
+            \item The resultant 1,5-dicarbonyl should always have us thinking Michael.
+            \item Next step: Transform the precursor into a Michael donor and acceptor.
+            \item Next step: The Michael donor is ethyl acetoacetate, which can be prepared from 2 equivalents of the starting material via a Claisen condensation.
+        \end{itemize}
+        \item You \emph{really, really, really} want to remember ethyl acetoacetate and dimethyl malonate!!
+        \begin{itemize}
+            \item Remember their $\pKa$'s, that their anions are stable, and that you can alkylate those anions!!
+        \end{itemize}
+        \item In the forward direction, we will need a hydrolysis-decarboylation following our acetoacetate synthesis.
+        \begin{itemize}
+            \item This will also require that we subsequently restore the ester at top (because we have no way to selectively hydrolyze the ester we want to decarboxylate).
+        \end{itemize}
+    \end{itemize}
+    \pagebreak
+    \item TTQ: Synthesize the molecule at left in Figure \ref{fig:TTQaminea} from ethyl acetate, cyclopentanone, and any compound with two or fewer carbons.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \footnotesize
+            \schemestart
+                \chemfig{*6(---(-(-[2]Me)-[:-30]\chembelow{N}{H}Et)---)}
+                \arrow{=retro>}
+                \chemfig{Me-[:30](=[2]O)-[:-30]OEt}
+                \arrow{0}[,0.1]\+{,,2.6em}
+                \chemfig{*5([:18]---(=O)--)}
+            \schemestop
+            \caption{The desired molecule and starting materials.}
+            \label{fig:TTQaminea}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.9\linewidth]{TTQamineb.png}
+            \caption{Retrosynthetic pathway.}
+            \label{fig:TTQamineb}
+        \end{subfigure}
+        \caption{TTQ: Synthesis of an amine.}
+        \label{fig:TTQamine}
+    \end{figure}
+    \begin{itemize}
+        \item Transform the product into the imine via sodium borohydride.
+        \begin{itemize}
+            \item Next step: Transform the imine into the ketone and ethylamine via acid-catalyzed imine formation.
+            \item Next step: Transform the ketone into a synthetic equivalent of an acetone anion (which is ethyl acetoacetate), and a synthetic equivalent of a 1,5-dication (which is 1,5-dibromopentane).
+            \begin{itemize}
+                \item In the forward direction, a hydrolysis-decarboxylation can give us the ketone following an acetoacetate synthesis.
+            \end{itemize}
+            \item Next step: Transform 1,5-dibromopentane into pentane-1,5-diol.
+            \begin{itemize}
+                \item In the forward direction, pentane-1,5-diol can be prepared from cyclopentanone via a Baeyer-Villiger oxidation followed by reduction of the lactone (a fancy term for a cyclic ester) using LAH and a water workup.
+            \end{itemize}
+        \end{itemize}
+        \item Note the mixed use of content from Units 3-6!! Questions like this are fair game for the exam.
+    \end{itemize}
+    \pagebreak
+    \item TTQ: Synthesize the molecule at left in Figure \ref{fig:TTQtriaminea} from dimethyl malonate and methyl acrylate.
+    \begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.6\linewidth]{TTQtriaminea.png}
+            \caption{The desired molecule and starting materials.}
+            \label{fig:TTQtriaminea}
+        \end{subfigure}\\[2em]
+        \begin{subfigure}[b]{\linewidth}
+            \centering
+            \includegraphics[width=0.6\linewidth]{TTQtriamineb.png}
+            \caption{Retrosynthetic pathway.}
+            \label{fig:TTQtriamineb}
+        \end{subfigure}
+        \caption{TTQ: Synthesis of a triamine.}
+        \label{fig:TTQtriamine}
+    \end{figure}
+    \begin{itemize}
+        \item Break the tertiary center into a symmetric chunk and an asymmetric bottom tail.
+        \begin{itemize}
+            \item The symmetric chunk will come from dimethyl malonate.
+            \item The bottom tail will come from Michael addition to methyl acrylate.
+        \end{itemize}
+        \item Retrosynthetically, all of the amines could come from amides via a triple LAH reduction.
+        \begin{itemize}
+            \item Next step: Transform the amides into esters via \ce{HNMe2} and heat.
+            \item Next step: Then this triester can be prepared from straight Michael addition of the starting materials.
+        \end{itemize}
+    \end{itemize}
+    % \item TTQ: Synthesize the molecule at left in Figure \ref{fig:TTQpiperidinea} from nitroethylene and diethyl succinate.
+    % \begin{figure}[h!]
+    %     \centering
+    %     \begin{subfigure}[b]{\linewidth}
+    %         \centering
+            
+    %         \caption{The desired molecule and starting materials.}
+    %         \label{fig:TTQpiperidinea}
+    %     \end{subfigure}\\[2em]
+    %     \begin{subfigure}[b]{\linewidth}
+    %         \centering
+            
+    %         \caption{Retrosynthetic pathway.}
+    %         \label{fig:TTQpiperidineb}
+    %     \end{subfigure}
+    %     \caption{TTQ: Synthesis of a piperidine.}
+    %     \label{fig:TTQpiperidine}
+    % \end{figure}
+    \includepdf[pages=-]{ExtFiles/TTQpiperidine.pdf}
+    \begin{itemize}
+        % \item First step: We \emph{know} that we will convert ethyl acetate into ethyl acetoacetate.
+        \item Nitroethylene looks a bit like methyl acrylate.
+        \begin{itemize}
+            \item Indeed, nitro groups are even stronger EWGs than esters, so nitroethylene is a \emph{super} good Michael acceptor.
+        \end{itemize}
+        \item Retrosynthetically, the nitrogen in the pyrrolidine could come from the nitrogen in the nitroethylene.
+        \begin{itemize}
+            \item Also, the pyrrolidine could come from the lactam (cyclic amide).
+            \item This could then come from the neighboring amide and ester, which could be assembled via Michael addition.
+        \end{itemize}
+        \item The amine-ester molecule will spontaneously close because it's an intramolecular reaction to produce a more stable amide.
+    \end{itemize}
+\end{itemize}
+
+
+
 
 \end{document}
